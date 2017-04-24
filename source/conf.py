@@ -242,7 +242,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
   ('index', 'BAGEL', u'BAGEL Reference Manual',
-   u'Shiozaki Group', 'BAGEL', 'One line description of project.',
+   u'Shiozaki Group', 'BAGEL', 'Freshly leavened quantum chemistry.',
    'Miscellaneous'),
 ]
 
