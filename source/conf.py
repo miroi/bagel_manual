@@ -105,18 +105,17 @@ html_theme = 'classic'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-   "stickysidebar" : "true",
    "rightsidebar": "true",
    "sidebarbgcolor": "black",
-   "footerbgcolor" : "bisque", #Background color for the footer line.
+   "footerbgcolor" : "white", #Background color for the footer line.
    "footertextcolor" : "black", #Text color for the footer line.
-   "sidebarbgcolor" : "orange", #Background color for the sidebar.
+   "sidebarbgcolor" : "white", #Background color for the sidebar.
    "sidebarbtncolor" : "indigo",  #Background color for the sidebar collapse button (used when collapsiblesidebar is True).
    "sidebartextcolor" : "black", #Text color for the sidebar.
    "sidebarlinkcolor" : "indigo", #Link color for the sidebar.
    "relbarbgcolor" : "black",  #Background color for the relation bar.
-   "relbartextcolor" : "white", #Text color for the relation bar.
-   "relbarlinkcolor" : "silver",  #Link color for the relation bar.
+   "relbartextcolor" : "darkorange", #Text color for the relation bar.
+   "relbarlinkcolor" : "orange",  #Link color for the relation bar.
    "bgcolor" : "white", #Body background color.
    "textcolor" : "black", #Body text color.
    "linkcolor" : "blue",  #Body link color.
@@ -142,7 +141,7 @@ html_theme_options = {
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = None
+html_logo = '_static/bagel-final.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -211,7 +210,7 @@ latex_elements = {
 #'papersize': 'letterpaper',
 
 # The font size ('10pt', '11pt' or '12pt').
-#'pointsize': '10pt',
+'pointsize': '12pt',
 
 # Additional stuff for the LaTeX preamble.
 #'preamble': '',
