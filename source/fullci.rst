@@ -1,20 +1,35 @@
 .. _fullci:
 
-***************
-METHOD: Full CI
-***************
-DESCRIPTION: Full CI diagonalizes Full CI Hamiltonian.
-EXAMPLE: [ { bagel, … } ]
-PRE-REQUISITE: Reference wave function (such as HF).
-KEYWORDS:
-Frozen: DESCRIPTION: to have frozen orbital or not.
+*******
+Full CI
+*******
+
+Description
+===========
+Full CI diagonalizes Full CI Hamiltonian.
+
+Example
+=======
+[ { bagel, … } ]
+
+Pre-requisite
+=============
+Reference wave function (such as HF).
+
+Keywords
+========
+Frozen
+------
+DESCRIPTION: to have frozen orbital or not.
   DEFAULT: false.
   DATATYPE: bool
   VALUES:
     TRUE: DESCRIPTION: have frozen orbital.
     FALSE: DESCRIPTION: do not have frozen orbital.
   RECOMMENDATION: use default.
-Algorithm:  DESCRIPTION: full CI algorithm.
+Algorithm
+---------
+DESCRIPTION: full CI algorithm.
   DEFAULT: kh.
   DATATYPE: string
   VALUES: 
