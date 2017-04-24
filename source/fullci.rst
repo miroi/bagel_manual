@@ -1,4 +1,8 @@
+.. _fullci:
+
+***************
 METHOD: Full CI
+***************
 DESCRIPTION: Full CI diagonalizes Full CI Hamiltonian.
 EXAMPLE: [ { bagel, … } ]
 PRE-REQUISITE: Reference wave function (such as HF).
