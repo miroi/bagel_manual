@@ -8,9 +8,8 @@ Description
 ===========
 Full CI diagonalizes Full CI Hamiltonian.
 
-Example
-=======
-[ { bagel, … } ]
+.. math::
+  H\Psi = E\Psi
 
 Pre-requisite
 =============
@@ -18,69 +17,62 @@ Reference wave function (such as HF).
 
 Keywords
 ========
-Frozen
-------
-| DESCRIPTION: to have frozen orbital or not.
-|   DEFAULT: false.
-|   DATATYPE: bool
-|   VALUES:
-|     TRUE: DESCRIPTION: have frozen orbital.
-|     FALSE: DESCRIPTION: do not have frozen orbital.
-|   RECOMMENDATION: use default.
-Algorithm
----------
-| DESCRIPTION: full CI algorithm.
-|   DEFAULT: kh.
-|   DATATYPE: string
-|   VALUES: 
-|     KH, Knowles, Handy: DESCRIPTION: use Knowles—Handy.
-|     HZ, Harrison, Zarrabian: DESCRIPTION: use Harrison—Zarrabian.
-|     Dist: DESCRIPTION: use Parallel algorithm.
-|   RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+.. topic:: ``frozen``
 
-.. math:: (a + b)^2 = a^2 + 2ab + b^2
-.. math::
- :nowrap:
+   | DESCRIPTION: to have frozen orbital or not.
+   | DEFAULT: false.
+   | DATATYPE: bool
+   | VALUES:
+   |    ``TRUE``: have frozen orbital.
+   |    ``FALSE``: do not have frozen orbital.
+   | RECOMMENDATION: use default.
 
-   \begin{eqnarray}
-      y    & = & ax^2 + bx + c \\
-      f(x) & = & x^2 + 2xy + y^2
-   \end{eqnarray}
+.. topic:: ``algorithm``
 
-.. math::
-  H\Psi = E\Psi
+   | DESCRIPTION: full CI algorithm.
+   | DEFAULT: kh.
+   | DATATYPE: string
+   | VALUES: 
+   |    ``KH, Knowles, Handy``: use Knowles—Handy.
+   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
+   |    ``Dist``: use Parallel algorithm.
+   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+
 
 Example
 =======
 This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
-.. topic:: Sample Input
+Sample input
+------------
 
-   | { "bagel" : [
+.. code-block:: javascript 
 
-   | {
-   |   "title" : "molecule",
-   |   "basis" : "sto-3g",
-   |   "df_basis" : "svp-jkfit",
-   |   "angstrom" : false,
-   |   "geometry" : [
-   |     { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-   |     { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
-   |   ]
-   | },
+   { "bagel" : [
 
-   | {
-   |   "title" : "hf",
-   |   "thresh" : 1.0e-10
-   | },
+   {
+     "title" : "molecule",
+     "basis" : "sto-3g",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : false,
+     "geometry" : [
+       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
+       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
+     ]
+   },
 
-   | {
-   |   "title" : "fci",
-   |   "algorithm" : "parallel",
-   |   "nstate" : 2
-   | }
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-10
+   },
 
-   | ]}
+   {
+     "title" : "fci",
+     "algorithm" : "parallel",
+     "nstate" : 2
+   }
+
+   ]}
 
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
