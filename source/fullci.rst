@@ -37,3 +37,15 @@ DESCRIPTION: full CI algorithm.
     HZ, Harrison, Zarrabian: DESCRIPTION: use Harrison—Zarrabian.
     Dist: DESCRIPTION: use Parallel algorithm.
   RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+
+.. math:: (a + b)^2 = a^2 + 2ab + b^2
+.. math::
+ :nowrap:
+
+   \begin{eqnarray}
+      y    & = & ax^2 + bx + c \\
+      f(x) & = & x^2 + 2xy + y^2
+   \end{eqnarray}
+
+.. math::
+  H\Psi = E\Psi
