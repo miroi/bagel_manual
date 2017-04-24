@@ -1,3 +1,7 @@
+
+Section                                                             Filename
+--------------------------------------------------------------------------------------------
+
 Introduction to BAGEL
 
 Compilation & Installation
@@ -16,7 +20,7 @@ Non-relativistic quantum chemistry: ground state
 
 Non-relativistic quantum chemistry: static correlation
 
-  Full configuration interaction (FCI)
+  Full configuration interaction (FCI)                              fullci.rst
   Restricted active space configuration interaction (RASCI)
   Complete active space self-consistent field (CASSCF)
 
