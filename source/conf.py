@@ -123,8 +123,8 @@ html_theme_options = {
    "visitedlinkcolor" : "royalblue", #Body color for visited links.
    "headbgcolor" : "indigo", #Background color for headings.
    "headtextcolor" : "white", #Text color for headings.
-   "headlinkcolor" : "gray", #Link color for headings.
-   "codebgcolor" : "gray", # Background color for code blocks.
+   "headlinkcolor" : "silver", #Link color for headings.
+   "codebgcolor" : "lavender", # Background color for code blocks.
    "codetextcolor" : "black", #Default text color for code blocks, if not set differently by the highlighting style.
    "bodyfont" : "gill sans", #Font for normal text.
    "headfont" : "bookman old style", #Font for headings.
