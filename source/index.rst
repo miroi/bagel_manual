@@ -6,6 +6,11 @@
 Welcome to BAGEL's documentation!
 =================================
 
+.. image:: _static/bagel-final.png
+   :width: 300px
+   :align: center
+   :alt: alternate text
+
 Contents:
 
 .. toctree::

@@ -99,12 +99,36 @@ pygments_style = 'sphinx'
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'default'
+html_theme = 'classic'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
 # documentation.
-#html_theme_options = {}
+html_theme_options = {
+   "stickysidebar" : "true",
+   "rightsidebar": "true",
+   "sidebarbgcolor": "black",
+   "footerbgcolor" : "bisque", #Background color for the footer line.
+   "footertextcolor" : "black", #Text color for the footer line.
+   "sidebarbgcolor" : "orange", #Background color for the sidebar.
+   "sidebarbtncolor" : "indigo",  #Background color for the sidebar collapse button (used when collapsiblesidebar is True).
+   "sidebartextcolor" : "black", #Text color for the sidebar.
+   "sidebarlinkcolor" : "indigo", #Link color for the sidebar.
+   "relbarbgcolor" : "black",  #Background color for the relation bar.
+   "relbartextcolor" : "white", #Text color for the relation bar.
+   "relbarlinkcolor" : "silver",  #Link color for the relation bar.
+   "bgcolor" : "white", #Body background color.
+   "textcolor" : "black", #Body text color.
+   "linkcolor" : "blue",  #Body link color.
+   "visitedlinkcolor" : "royalblue", #Body color for visited links.
+   "headbgcolor" : "indigo", #Background color for headings.
+   "headtextcolor" : "white", #Text color for headings.
+   "headlinkcolor" : "gray", #Link color for headings.
+   "codebgcolor" : "gray", # Background color for code blocks.
+   "codetextcolor" : "black", #Default text color for code blocks, if not set differently by the highlighting style.
+   "bodyfont" : "gill sans", #Font for normal text.
+   "headfont" : "bookman old style", #Font for headings.
+}
 
 # Add any paths that contain custom themes here, relative to this directory.
 #html_theme_path = []
