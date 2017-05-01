@@ -18,9 +18,6 @@ to the presence of multiple degenerate solutions.  For open-shell molecules, it 
 complete active space self-consistent field (ZCASSCF) instead, possibly with a minimal active space.  
 DHF can be used to generate guess orbitals by increasing the molecular charge to remove unpaired electrons.  
 
-.. math::
-  H\Psi = E\Psi
-
 Command: ``dhf``
 
 Prerequisite
@@ -121,8 +118,13 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| General text on relativistic electronic       | Marcus Reiher and A. Wolf, Relativistic Quantum Chemistry,            |
+| structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| Original implementation of density fitted     | Matthew S. Kelley and Toru Shiozaki J. Chem. Phys. 2013, 138, 204113. |
+| Dirac--Hartree--Fock with RMB spinor basis.   |                                                                       |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| Extension to permit external magnetic fields, | Ryan D. Reynolds and Toru Shiozaki Phys. Chem. Chem. Phys. 2015, 17,  |
+| including GIAO-RMB atomic basis.              | 14280-14283.                                                          |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
