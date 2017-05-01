@@ -13,7 +13,7 @@ Contents:
 
    molecule.rst
    scf/scf.rst
-   pt2.rst
+   pt2/pt2.rst
    ci.rst
    multi.rst
    grad_force.rst
