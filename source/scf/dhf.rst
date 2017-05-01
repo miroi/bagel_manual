@@ -1,7 +1,7 @@
-.. _hf:
+.. _dhf:
 
 *************
-Hartree--Fock
+Dirac--Hartree--Fock
 *************
 
 Description
@@ -10,19 +10,14 @@ Description
 .. math::
   H\Psi = E\Psi
 
-<<<<<<< HEAD:source/scf/rhf.rst
-=======
 Command: ``rhf`` or ``hf``
 
->>>>>>> 0f1518e03e41cc8de2ab6509d0fda76d83fdd67f:source/scf/hf.rst
 Prerequisite
 =============
 None
 
 Keywords
 ========
-The default values are recommended unless mentioned otherwise.
-
 .. topic:: ``gradient``
 
    | Description: to compute gradient
@@ -43,32 +38,36 @@ The default values are recommended unless mentioned otherwise.
    | Default: 100
    | Datatype: integer 
 
-.. topic:: ``maxiter`` and ``maxiter_scf``
+.. topic:: ``maxiter``
 
-   | Description: number of iterations and number of SCF interations, which are the same if you only run SCF calculations
+   | Description: number of iterations
    | Default: 100
    | Datatype: integer 
 
-.. topic:: ``diis_start`` and ``diis_size``
+.. topic:: ``maxiter_scf``
 
+   | Description: number of SCF iterations, which is the same as ``maxiter`` if you are only running SCF calculations
+   | Datatype: integer 
+   
+.. topic:: ``diis_start``
+.. topic:: ``diis_size``
 .. topic:: ``thresh_overlap``
-
-   | Description: overlap integral threshold 
-   | Default: 1e-8
-   | Datatype: double
-
-.. topic:: ``thresh`` or ``thresh_scf``
-
-   | Description: SCF convergence threshold 
-   | Default: 1e-8
-   | Datatype: double
+.. topic:: ``thresh``
+.. topic:: ``thresh_scf``
+   |
+  max_iter_ = idata_->get<int>("maxiter", 100);
+  max_iter_ = idata_->get<int>("maxiter_scf", max_iter_);
+  diis_start_ = idata_->get<int>("diis_start", 1);
+  diis_size_ = idata_->get<int>("diis_size", 5);
+  thresh_overlap_ = idata_->get<double>("thresh_overlap", 1.0e-8);
+  thresh_scf_ = idata_->get<double>("thresh", 1.0e-8);
 
 Example
 =======
 This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
-RHF
----
+Sample input
+------------
 
 .. code-block:: javascript 
 
@@ -93,59 +92,17 @@ RHF
    
    ]}
 
-ROHF
-----
-.. code-block:: javascript 
 
-   { "bagel" : [
-   
-   {
-     "title" : "molecule",
-     "symmetry" : "C1",
-     "basis" : "svp",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : "false",
-     "geometry" : [
-       { "atom" : "C",  "xyz" : [   -0.000000,     -0.000000,      3.000000] },
-       { "atom" : "H",  "xyz" : [    0.000000,      0.000000,      0.000000] }
-     ]
-   },
-   
-   {
-     "title" : "rohf",
-     "nact" : 1,
-     "thresh" : 1.0e-10
-   }
-   
-   ]}
-
-UHF
----
-.. code-block:: javascript 
-
-   { "bagel" : [
-   
-   {
-     "title" : "molecule",
-     "symmetry" : "C1",
-     "basis" : "svp",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "O",  "xyz" : [  -0.000000,     -0.000000,      1.500000]},
-       { "atom" : "H",  "xyz" : [  -0.000000,     -0.000000,      0.000000]}
-     ]
-   },
-   
-   {
-     "title" : "uhf",
-     "nact" : 1,
-     "thresh" : 1.0e-10
-   }
-   
-   ]}
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
+
+.. figure:: figure/example.png
+    :width: 200px
+    :align: center
+    :alt: alternate text
+    :figclass: align-center
+
+    This is an example of how to insert a figure. 
 
 References
 ==========
