@@ -11,7 +11,7 @@ Description
 note : MP2 is only implemented with DF
 
 .. math::
-  insert formula here
+  insert\quad formula\quad here
 
 
 Keywords
@@ -19,20 +19,20 @@ Keywords
 
 .. topic:: ``frozen``
 
-   | DESCRIPTION: to have frozen orbitals or not.
-   | DEFAULT: true
-   | DATATYPE: bool
+   | **description**: to have frozen orbitals or not.
+   | **Default**: true
+   | **Datatype**: bool
 
 .. topic:: ``ncore``
    
-   | DESCRIPTION: manually specify number of frozen orbitals, used when 'frozen' is turned on.
-   | DATATYPE: int
+   | **Description**: manually specify number of frozen orbitals, used when 'frozen' is turned on.
+   | **Datatype**: int
 
 .. topic:: ``aux_basis``
    
-   | DESCRIPTION: specify an alternative density fitting basis set.
-   | DEFAULT: use the same density fitting basis as in molecule/df_basis.
-   | DATATYPE: string
+   | **Description**: specify an alternative density fitting basis set.
+   | **Default**: use the same density fitting basis as in molecule/df_basis.
+   | **Datatype**: string
 
 
 Example
