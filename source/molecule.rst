@@ -1,18 +1,21 @@
 .. _molecule:
 
 *******
-Molecule
+Molecule 
 *******
 
+===========
 Description
 ===========
 Molecule is one of the basic blocks to specify information, such as basis sets and geometry for the input system.
 
 
+=============
 Pre-requisite
 =============
 None
 
+========
 Keywords
 ========
 .. topic:: ``basis``
@@ -43,12 +46,15 @@ Keywords
    | DATATYPE: vector 
    | VALUES: {"atom" : "Atom Name",  "xyz" : [x y z]}
    | RECOMMENDATION: None
+
+=======
 Example
 =======
 This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
+============
 Sample input
-------------
+============
 
 .. code-block:: javascript 
 {
@@ -65,6 +71,7 @@ molecule = {
 };
 }
 
+==========
 References
 ==========
 
