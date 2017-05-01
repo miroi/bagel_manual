@@ -1,4 +1,4 @@
-.. _gradient:
+.. _grad_force:
 
 *****
 Force
@@ -27,7 +27,7 @@ Required Keywords
 
 .. topic:: ``method``
 
-   | **Description:** The method to be used for energy evaluation 
+   | **Description:** The method to be used for the analytical gradient calculation (or for the energy evaluation when compyting the gradient by finite difference. 
    | **Default:** N/A 
    | **Datatype:** string 
    | **Values:**
@@ -62,9 +62,9 @@ Optional Keywords
    |    ``false`` : Uses analytical gradient  
    | **Recommendation:** N/A 
 
-.. topic:: ``diffsize``
+.. topic:: ``dx``
 
-   | **Description:** The diffsize is the step size used in the displacements in the finite difference calculations. The units are bohr. 
+   | **Description:** The step size used in the displacements in the finite difference calculations. The units are bohr. 
    | **Default:** 1.0e-3
    | **Datatype:** double precision 
    | **Recommendation:** Use default 

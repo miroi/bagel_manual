@@ -1,4 +1,4 @@
-.. _hessian:
+.. _grad_hesse:
 
 *******
 Hessian
@@ -6,41 +6,51 @@ Hessian
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
+The Hessian section can be used to compute the numerical Hessian by central gradient differences. The Hessian and mass weighted Hessian are printed. The translational degrees of freedom have been projected out and the Hessian has been symmetrized. Vibrational frequencies, infrared intensities, and the cartesian eigenvectors of each normal mode are also computed. The most abundant mass is used. 
 
-.. math::
-  H\Psi = E\Psi
+Required Keywords
+=================
+.. topic:: ``hessian``
 
-Pre-requisite
-=============
-Reference wave function (such as HF).
+   | **Description:** Requests that the Numerical hessian be computed 
 
-Keywords
-========
-.. topic:: ``frozen``
+.. topic:: ``method``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+   | **Description:** The method to be used for the gradient calculations for each displacment when computing the numerical Hessian by central gradient differences 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:**
+   |    ``UHF``: Unrestricted Hartree Fock 
+   |    ``ROHF``: Restricted Open-shell Hartree Fock
+   |    ``HF``: Restricted Hartree Fock
+   |    ``DHF`` : Dirac Hartree Fock
+   |    ``MP2`` : Moller Plesset Perturbation Theory
+   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
+   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
+   | **Recommendation:** N/A
 
-.. topic:: ``algorithm``
+.. topic:: ``dx``
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+   | **Description:** The step size used in the displacements in the gradient difference calculations. The units are bohr. 
+   | **Default:** 1.0e-3
+   | **Datatype:** double precision 
+   | **Recommendation:** Use default 
 
+Optional Keywords
+=================
+
+.. topic:: ``nproc``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
 
 Example
 =======
+
 This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
 Sample input
