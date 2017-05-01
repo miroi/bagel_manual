@@ -7,6 +7,22 @@ Dirac--Hartree--Fock
 Description
 ===========
 
+The Dirac--Hartree--Fock method performs a self-consistent field orbital optimization and energy calculation
+with a four-component relativistic framework.  The Dirac--Coulomb, Dirac--Coulomb--Gaunt, or full Dirac--Coulomb--Breit 
+Hamiltonian can be used.  In the BAGEL implementation, density fitting is used for the two-electron integrals, and 
+2-spinor basis functions are generated using restricted kinetic balance (RKB).  
+External magnetic fields can be applied, in which case the spinor basis functions are generated using restricted magnetic balance (RMB) instead.  
+
+Dirac--Hartree--Fock (DHF) cannot be run with an odd number of electrons in the absence of an external magnetic field, due 
+to the presence of multiple degenerate solutions.  For open-shell molecules, it is recommended to run relativistic 
+complete active space self-consistent field (ZCASSCF) instead, possibly with a minimal active space.  
+DHF can be used to generate guess orbitals by increasing the molecular charge to remove unpaired electrons.  
+
+Command: ``dhf``
+
+Prerequisite
+=============
+None
 
 Keywords
 ========
@@ -130,8 +146,13 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| General text on relativistic electronic       | Marcus Reiher and A. Wolf, Relativistic Quantum Chemistry,            |
+| structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| Original implementation of density fitted     | Matthew S. Kelley and Toru Shiozaki J. Chem. Phys. 2013, 138, 204113. |
+| Dirac--Hartree--Fock with RMB spinor basis.   |                                                                       |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| Extension to permit external magnetic fields, | Ryan D. Reynolds and Toru Shiozaki Phys. Chem. Chem. Phys. 2015, 17,  |
+| including GIAO-RMB atomic basis.              | 14280-14283.                                                          |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
