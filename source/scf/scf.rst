@@ -1,20 +1,14 @@
 .. _scf:
 
-*******
-SCF methods
-*******
+*************
+SCF
+*************
 
-Description
-===========
-SCF methods include Hartree--Fock and Kohn--Sham 
+Non-relativistic and relativistic Hartree--Fock
 
-Methods
-=======
 .. toctree::
    :maxdepth: 2
 
-   scf/hf.rst
-   scf/ks.rst
-
-
+  hf.rst
+  dhf.rst
 

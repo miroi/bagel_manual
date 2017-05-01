@@ -1,7 +1,7 @@
-.. _optimize:
+.. _scf:
 
 *******
-Optimize
+SCF
 *******
 
 Description
@@ -49,30 +49,26 @@ Sample input
 .. code-block:: javascript 
 
    { "bagel" : [
-
+   
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
+     "symmetry" : "C2v",
+     "basis" : "svp",
+     "angstrom" : "false",
      "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
+       { "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
+       { "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956]}
      ]
    },
-
+   
    {
      "title" : "hf",
+     "df" : false,
      "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
    }
-
+   
    ]}
+
 
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
