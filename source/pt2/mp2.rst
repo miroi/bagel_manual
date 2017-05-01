@@ -19,7 +19,7 @@ Keywords
 
 .. topic:: ``frozen``
 
-   | **description**: to have frozen orbitals or not.
+   | **Description**: to have frozen orbitals or not.
    | **Default**: true
    | **Datatype**: bool
 
@@ -33,6 +33,7 @@ Keywords
    | **Description**: specify an alternative density fitting basis set.
    | **Default**: use the same density fitting basis as in molecule/df_basis.
    | **Datatype**: string
+   | **Recommendation**: better use mp2-fit-auxbasis (auxiliary basis ends with 'ri')
 
 
 Example
@@ -71,7 +72,8 @@ Sample input
    
    {
      "title" : "mp2",
-     "frozen" : true
+     "frozen" : true,
+     "aux_basis" : "cc-pvtz-ri"
    }
    
    ]}

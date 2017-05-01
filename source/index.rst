@@ -14,8 +14,8 @@ Contents:
    molecule.rst
    scf/scf.rst
    pt2/pt2.rst
-   ci.rst
-   multi.rst
+   fci/fci.rst  
+   multi/multi.rst
    gradient.rst
    hessian.rst
    opt.rst
