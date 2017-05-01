@@ -7,7 +7,7 @@ MP2
 
 Description
 ===========
-add description for mp2 later
+
 note : MP2 is only implemented with DF
 
 .. math::
@@ -46,30 +46,37 @@ Sample input
 .. code-block:: javascript 
 
    { "bagel" : [
-
+   
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
+     "symmetry" : "C1",
+     "basis" : "svp",
      "df_basis" : "svp-jkfit",
-     "angstrom" : false,
+     "angstrom" : "true",
      "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
+       { "atom" : "C", "xyz" : [ -1.20433891360,  0.54285096106, -0.04748199659] },
+       { "atom" : "C", "xyz" : [ -1.20543291352, -0.83826393986,  0.12432899108] },
+       { "atom" : "C", "xyz" : [ -0.00000600000, -1.52953889027,  0.20833398505] },
+       { "atom" : "C", "xyz" : [  1.20544091352, -0.83825393987,  0.12432799108] },
+       { "atom" : "C", "xyz" : [  1.20433091360,  0.54284396106, -0.04748099659] },
+       { "atom" : "C", "xyz" : [  0.00000400000,  1.23314191154, -0.13372399041] },
+       { "atom" : "H", "xyz" : [ -2.13410484690,  1.07591192282, -0.12500499103] },
+       { "atom" : "H", "xyz" : [ -2.13651384673, -1.37179190159,  0.18742198655] },
+       { "atom" : "H", "xyz" : [  0.00000000000, -2.59646181374,  0.33932597566] },
+       { "atom" : "H", "xyz" : [  2.13651384673, -1.37179290159,  0.18742198655] },
+       { "atom" : "H", "xyz" : [  2.13410684690,  1.07591292282, -0.12500599103] },
+       { "atom" : "H", "xyz" : [ -0.00000000000,  2.29608983528, -0.28688797942] }
      ]
    },
-
+   
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
+     "title" : "mp2",
+     "frozen" : true
    }
-
+   
    ]}
+
+
 
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
