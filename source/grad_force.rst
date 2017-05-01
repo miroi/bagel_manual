@@ -1,43 +1,136 @@
 .. _gradient:
 
-*******
-Gradient
-*******
+*****
+Force
+*****
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
+The force section can be used to compute the analytical gradient (force), the numerical gradient (see section on finited difference for more information), and the non-adiabatic coutpling matrix elements (NACME) 
 
-.. math::
-  H\Psi = E\Psi
+Required Keywords
+=================
+.. topic:: ``force``
 
-Pre-requisite
-=============
-Reference wave function (such as HF).
+   | **Description:** Requests that the gradient (force) is calculated. 
 
-Keywords
-========
-.. topic:: ``frozen``
+.. topic:: ``title``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+   | **Description:** The title of the type of gradient calculation being performed. 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:** (force, nacme, dgrad)
+   |    ``force``: Calculates the gradient (force)
+   |    ``nacme``: Calculates the non-adiabatic coupling matrix elements
+   |    ``dgrad``: Difference gradient (only available for CASSCF)
+   | **Recommendation:** N/A
 
-.. topic:: ``algorithm``
+.. topic:: ``method``
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+   | **Description:** The method to be used for energy evaluation 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:**
+   |    ``UHF``: Unrestricted Hartree Fock 
+   |    ``ROHF``: Restricted Open-shell Hartree Fock
+   |    ``HF``: Restricted Hartree Fock
+   |    ``DHF`` : Dirac Hartree Fock
+   |    ``MP2`` : Moller Plesset Perturbation Theory
+   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
+   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
+   | **Recommendation:** N/A
 
+.. topic:: ``nacmetype``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+Optional Keywords
+=================
+
+.. topic:: ``numerical``
+
+   | **Description:** The gradients will be computed using finite difference 
+   | **Default:** false
+   | **Datatype:** bool
+   | **Values:** 
+   |    ``true``: Uses finite difference
+   |    ``false`` : Uses analytical gradient  
+   | **Recommendation:** N/A 
+
+.. topic:: ``diffsize``
+
+   | **Description:** The diffsize is the step size used in the displacements in the finite difference calculations. The units are bohr. 
+   | **Default:** 1.0e-3
+   | **Datatype:** double precision 
+   | **Recommendation:** Use default 
+
+.. topic:: ``target``
+
+   | **Description:** The target state for the energy and gradient evaluation (e.g. which state in a state-averaged CASSCF calculation)
+   | **Default:** 0 
+   | **Datatype:** integer
+   | **Values:** 
+   |    ``integer``: ground state = 0 
+   | **Recommendation:** N/A 
+
+.. topic:: ``target2``
+
+   | **Description:** In an NACME or DGRAD calculation, target2 designates the target state for the second state. 
+   | **Default:** 1 
+   | **Datatype:** integer
+   | **Values:** 
+   |    ``integer``: first exited state = 1 
+   | **Recommendation:** N/A 
+
+.. topic:: ``export``
+
+   | **Description:** 
+   | **Default:** false
+   | **Datatype:** bool
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``export_single``
+
+   | **Description:** 
+   | **Default:** false 
+   | **Datatype:** bool
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``maxziter``
+
+   | **Description:** 
+   | **Default:** 100 
+   | **Datatype:** int
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``save_ref``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``ref_out``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
 
 Example
 =======
