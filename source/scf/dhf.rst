@@ -1,43 +1,66 @@
-.. _pt2:
+.. _dhf:
 
-*******
-Perturbation theory
-*******
+*************
+Dirac--Hartree--Fock
+*************
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
 
 .. math::
   H\Psi = E\Psi
 
-Pre-requisite
+Command: ``rhf`` or ``hf``
+
+Prerequisite
 =============
-Reference wave function (such as HF).
+None
 
 Keywords
 ========
-.. topic:: ``frozen``
+.. topic:: ``gradient``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+   | Description: to compute gradient
+   | Default: false
+   | Datatype: bool
+   | Recommendation: use default.
 
-.. topic:: ``algorithm``
+.. topic:: ``restart``
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+   | Description: to restart the calculation from an archive file
+   | Default: false
+   | Datatype: bool
+   | Recommendation: use default.
 
+.. topic:: ``maxiter``
+
+   | Description: number of iterations
+   | Default: 100
+   | Datatype: integer 
+
+.. topic:: ``maxiter``
+
+   | Description: number of iterations
+   | Default: 100
+   | Datatype: integer 
+
+.. topic:: ``maxiter_scf``
+
+   | Description: number of SCF iterations, which is the same as ``maxiter`` if you are only running SCF calculations
+   | Datatype: integer 
+   
+.. topic:: ``diis_start``
+.. topic:: ``diis_size``
+.. topic:: ``thresh_overlap``
+.. topic:: ``thresh``
+.. topic:: ``thresh_scf``
+   |
+  max_iter_ = idata_->get<int>("maxiter", 100);
+  max_iter_ = idata_->get<int>("maxiter_scf", max_iter_);
+  diis_start_ = idata_->get<int>("diis_start", 1);
+  diis_size_ = idata_->get<int>("diis_size", 5);
+  thresh_overlap_ = idata_->get<double>("thresh_overlap", 1.0e-8);
+  thresh_scf_ = idata_->get<double>("thresh", 1.0e-8);
 
 Example
 =======
@@ -49,30 +72,26 @@ Sample input
 .. code-block:: javascript 
 
    { "bagel" : [
-
+   
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
+     "symmetry" : "C2v",
+     "basis" : "svp",
+     "angstrom" : "false",
      "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
+       { "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
+       { "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956]}
      ]
    },
-
+   
    {
      "title" : "hf",
+     "df" : false,
      "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
    }
-
+   
    ]}
+
 
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
