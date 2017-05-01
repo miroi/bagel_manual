@@ -62,7 +62,18 @@ Required Keywords
 
 .. topic:: ``method``
 
-   | **Description:** The block that defines the quantum chemistry method that is used in the optimization.
+   | **Description:** The method to be used for energy evaluation 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:**
+   |    ``UHF``: Unrestricted Hartree Fock 
+   |    ``ROHF``: Restricted Open-shell Hartree Fock
+   |    ``HF``: Restricted Hartree Fock
+   |    ``DHF`` : Dirac Hartree Fock
+   |    ``MP2`` : Moller Plesset Perturbation Theory
+   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
+   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
+   | **Recommendation:** N/A
 
 Convergence Criteria
 --------------------
@@ -99,7 +110,7 @@ Optional Keywords (Universal)
    | **Values:** 
    |    ``ef``: Eigenvector-following (EF) algorithm.
    |    ``rfo``: Rational functional optimization algorithm.
-   |    ``nr``: Newton-Raphson algorithm.
+   |    ``nr``: Newton--Raphson algorithm.
    |    ``steep``: Steepest descent algorithm.
    | **Recommendation:** use either "ef" or "rfo". Do not use "nr" or "steep".
 
