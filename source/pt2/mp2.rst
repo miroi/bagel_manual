@@ -7,11 +7,8 @@ MP2
 
 Description
 ===========
-
-note : MP2 is only implemented with DF
-
-.. math::
-  insert\quad formula\quad here
+Møller–Plesset
+note : MP2 is only implemented with density fitting
 
 
 Keywords
@@ -33,7 +30,7 @@ Keywords
    | **Description**: specify an alternative density fitting basis set.
    | **Default**: use the same density fitting basis as in molecule/df_basis.
    | **Datatype**: string
-   | **Recommendation**: better use mp2-fit-auxbasis (auxiliary basis ends with 'ri')
+   | **Recommendation**: use MP2-fit auxiliary basis (auxiliary basis ends with 'ri')
 
 
 Example
