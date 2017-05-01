@@ -19,27 +19,33 @@ None
 Keywords
 ========
 .. topic:: ``basis``
+
    | DESCRIPTION: basis sets for the system
    | DEFAULT: No Default Value
    | DATATYPE: string
    | VALUES:
    |    Please refer to $BAGEL_HOME/src/basis for possible aruments
    | RECOMMENDATION:
+
 .. topic:: ``df_basis``
+
    | DESCRIPTION: basis sets used for density fitting
    | DEFAULT: No Default Value
    | DATATYPE: string
    | VALUES:
    |     Please refer to $BAGEL_HOME/src/basis for possible aruments
    | RECOMMENDATION:
+
 .. topic:: ``angstrom``
+
    | DESCRIPTION: specify units for atomic coordinates
    | DEFAULT: false
    | DATATYPE: bool
    | VALUES:
    |    ``TRUE``: use angstrom
    |    ``FALSE``: use atomic units
-   | RECOMMENDATION: NONE
+   | RECOMMENDATION: NONE.   1 au = 0.52917721067 Angstrom
+
 .. topic:: ``geometry``
    | DESCRIPTION: specify elements and their Cartisian coordinates  
    | DEFAULT: No Default
@@ -47,19 +53,17 @@ Keywords
    | VALUES: {"atom" : "Atom Name",  "xyz" : [x y z]}
    | RECOMMENDATION: None
 
+
 =======
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
-============
 Sample input
-============
+------------
 
 .. code-block:: javascript 
 {
 molecule = { 
-  symmetry = C1; 
   basis = sto-3g;
   df_basis = svp;
   angstrom = true;
@@ -74,5 +78,3 @@ molecule = {
 ==========
 References
 ==========
-
-
