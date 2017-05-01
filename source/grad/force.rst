@@ -8,8 +8,11 @@ Description
 ===========
 The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree Fock (UHF), restricted open-shell Hartree Fock (ROHF), restricted Hartree Fock (RHF), Dirac Hartree Fock (DHF), Moller Plesset Perturbation Theory (MP2), complete active space self consistent field (CASSCF), and CASSCF with second order perturbation theory (CASPT2). 
 
+Keywords
+========
+
 Required Keywords
-=================
+-----------------
 .. topic:: ``force``
 
    | **Description:** Requests that the gradient (force) is calculated. 
@@ -40,7 +43,7 @@ Required Keywords
    |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
    | **Recommendation:** N/A
 
-.. topic:: ``nacmetype``
+.. topic:: ``nacmtype``
 
    | **Description:** Type of non-adiabatic coupling matrix element to be used
    | **Default:** 0
@@ -52,7 +55,7 @@ Required Keywords
    | **Recommendation:** use default 
 
 Optional Keywords
-=================
+-----------------
 
 .. topic:: ``numerical``
 
@@ -179,6 +182,21 @@ Some information about the output should also be included. This will not be enti
 
 References
 ==========
+
+BAGEL References
+----------------
++-----------------------------------------------+-----------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                    | 
++===============================================+=======================================================================+
+| SS-CASPT2 gradient                            | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| (X)MS-CASPT2 gradient                         | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| (X)MS-CASPT2 derivative coupling              | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
++-----------------------------------------------+-----------------------------------------------------------------------+
+
+General References
+------------------
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
