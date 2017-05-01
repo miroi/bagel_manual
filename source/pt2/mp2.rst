@@ -1,8 +1,8 @@
 .. _mp2:
 
-*******
-MP2 Method
-*******
+***
+MP2
+***
 
 
 Description

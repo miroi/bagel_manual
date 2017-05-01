@@ -4,12 +4,8 @@
 Perturbation theory
 *******
 
-Description
-===========
 PT2 methods include MP2, CASPT2, and NEVPT2
 
-Methods
-=======
 .. toctree::
    :maxdepth: 2
 
