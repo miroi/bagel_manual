@@ -1,7 +1,7 @@
-.. _hf:
+.. _dhf:
 
 *************
-Hartree--Fock
+Dirac--Hartree--Fock
 *************
 
 Description
