@@ -17,7 +17,6 @@ Contents:
    ci.rst
    multi.rst
    grad_force.rst
-   grad_finite.rst
    grad_hess.rst
    hessian.rst
    opt.rst
