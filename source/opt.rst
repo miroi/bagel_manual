@@ -24,8 +24,10 @@ from the saddle point can be calculated using the second order algorithm, withou
 The output contains the gradient evaluations at the first step of the optimization, and the status of the optimization.
 The other information, including the quantum chemistry calculations at the optimization steps, are deposited in the file ``opt.log``.
 
+Keywords
+========
 Required Keywords
-=================
+-----------------
 .. topic:: ``opttype``
 
    | **Description:** Type of the optimization calculations.
@@ -63,7 +65,7 @@ Required Keywords
    | **Description:** The block that defines the quantum chemistry method that is used in the optimization.
 
 Convergence Criteria
-====================
+--------------------
 
 .. topic:: ``maxgrad``
 
@@ -87,7 +89,7 @@ Convergence Criteria
    | **Recommendation:** use default.
 
 Optional Keywords (Universal)
-=============================
+-----------------------------
 
 .. topic:: ``algorithm``
 
@@ -192,11 +194,11 @@ Optional Keywords (Universal)
    | **Recommendation:** use default.
 
 Optional Keywords (Conical Intersection Optimization)
-=====================================================
+-----------------------------------------------------
 
 .. topic:: ``nacmtype``
 
-   | **Description:** Type of nonadiabatic coupling matrix element to be used.
+   | **Description:** Type of non-adiabatic coupling matrix element to be used.
    | **Default:** 1.
    | **Datatype:** integer
    | **Values:** 
@@ -220,7 +222,7 @@ Optional Keywords (Conical Intersection Optimization)
    | **Recommendation:** use default.
 
 Optional Keywords (Minimum Energy Path)
-========================================
+---------------------------------------
 
 .. topic:: ``mep_direction``
 
