@@ -1,7 +1,7 @@
-.. _scf:
+.. _optimize:
 
 *******
-SCF
+Optimize
 *******
 
 Description
