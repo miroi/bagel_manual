@@ -28,6 +28,10 @@ Keywords
 ========
 Required Keywords
 -----------------
+.. topic:: ``optimize``
+
+   | **Description:** Requests that the geometry optimization. 
+
 .. topic:: ``opttype``
 
    | **Description:** Type of the optimization calculations.
@@ -38,7 +42,7 @@ Required Keywords
    |    ``conical``: find the conical intersections, according to gradient projection method.
    |    ``transition``: find the transition state geometry (saddle point on the PES).
    |    ``mep``: find the minimum energy path using the second-order algorithm, starting from the transition state geometry.
-   | **Recommendation:** change according to your purpose.
+   | **Recommendation:** N/A
 
 .. topic:: ``target``
 
@@ -48,7 +52,7 @@ Required Keywords
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
-   | **Recommendation:** change according to your purpose.
+   | **Recommendation:** N/A
 
 .. topic:: ``target2``
 
@@ -58,11 +62,22 @@ Required Keywords
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
-   | **Recommendation:** change according to your purpose.
+   | **Recommendation:** N/A
 
 .. topic:: ``method``
 
-   | **Description:** The block that defines the quantum chemistry method that is used in the optimization.
+   | **Description:** The method to be used for energy evaluation 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:**
+   |    ``UHF``: Unrestricted Hartree Fock 
+   |    ``ROHF``: Restricted Open-shell Hartree Fock
+   |    ``HF``: Restricted Hartree Fock
+   |    ``DHF`` : Dirac Hartree Fock
+   |    ``MP2`` : Moller Plesset Perturbation Theory
+   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
+   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
+   | **Recommendation:** N/A
 
 Convergence Criteria
 --------------------
@@ -99,7 +114,7 @@ Optional Keywords (Universal)
    | **Values:** 
    |    ``ef``: Eigenvector-following (EF) algorithm.
    |    ``rfo``: Rational functional optimization algorithm.
-   |    ``nr``: Newton-Raphson algorithm.
+   |    ``nr``: Newton--Raphson algorithm.
    |    ``steep``: Steepest descent algorithm.
    | **Recommendation:** use either "ef" or "rfo". Do not use "nr" or "steep".
 

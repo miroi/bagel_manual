@@ -8,8 +8,11 @@ Description
 ===========
 The force section can be used to compute the analytical gradient (force), the numerical gradient (see section on finited difference for more information), and the non-adiabatic coutpling matrix elements (NACME) 
 
+Keywords
+========
+
 Required Keywords
-=================
+-----------------
 .. topic:: ``force``
 
    | **Description:** Requests that the gradient (force) is calculated. 
@@ -40,17 +43,19 @@ Required Keywords
    |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
    | **Recommendation:** N/A
 
-.. topic:: ``nacmetype``
+.. topic:: ``nacmtype``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Description:** Type of non-adiabatic coupling matrix element to be used.
+   | **Default:** 0.
+   | **Datatype:** integer
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``0``: use full nonadiabatic coupling.
+   |    ``1``: use interstate coupling.
+   |    ``2``: use nonadiabatic coupling with built-in electronic translational factor (ETF).
+   | **Recommendation:** use default.
 
 Optional Keywords
-=================
+-----------------
 
 .. topic:: ``numerical``
 
