@@ -24,7 +24,8 @@ Required Keywords
    |    ``ROHF``: Restricted Open-shell Hartree Fock
    |    ``HF``: Restricted Hartree Fock
    |    ``DHF`` : Dirac Hartree Fock
-   |    ``MP2`` : Moller Plesset Perturbation Theory
+   |    ``MP2`` : Moller-Plesset Perturbation Theory
+
    |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
    |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
    | **Recommendation:** N/A
@@ -41,12 +42,10 @@ Optional Keywords
 
 .. topic:: ``nproc``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
-   | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   | **Description:** The Hessian code is parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation. 
+   | **Default:** 1
+   | **Datatype:** integer
+   | **Recommendation:**  
 
 Example
 =======
@@ -98,11 +97,9 @@ Some information about the output should also be included. This will not be enti
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Vibrational Specroscopy book                  | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|          Description of Reference                  |                          Reference                                                                                    | 
++====================================================+=======================================================================================================================+
+| General description of vibrational spectroscopy    | E. Bright Wilson, Jr., J.C. Decius, and Paul C. Cross. Molecular Vibrations. Dover Publications, Inc. New York, 1955. |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 

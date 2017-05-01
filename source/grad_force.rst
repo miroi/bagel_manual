@@ -6,7 +6,7 @@ Force
 
 Description
 ===========
-The force section can be used to compute the analytical gradient (force), the numerical gradient (see section on finited difference for more information), and the non-adiabatic coutpling matrix elements (NACME) 
+The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree Fock (UHF), restricted open-shell Hartree Fock (ROHF), restricted Hartree Fock (RHF), Dirac Hartree Fock (DHF), Moller Plesset Perturbation Theory (MP2), complete active space self consistent field (CASSCF), and CASSCF with second order perturbation theory (CASPT2). 
 
 Required Keywords
 =================
@@ -42,25 +42,27 @@ Required Keywords
 
 .. topic:: ``nacmetype``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Description:** Type of non-adiabatic coupling matrix element to be used
+   | **Default:** 0
+   | **Datatype:** integer
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``0``: Use full non-adiabatic coupling
+   |    ``1``: Use interstate coupling 
+   |    ``2``: Use non-adiabtic coupling with built-in electronic translational factor (ETF)
+   | **Recommendation:** use default 
 
 Optional Keywords
 =================
 
 .. topic:: ``numerical``
 
-   | **Description:** The gradients will be computed using finite difference 
+   | **Description:** The gradients will be computed by finite difference. 
    | **Default:** false
    | **Datatype:** bool
    | **Values:** 
    |    ``true``: Uses finite difference
    |    ``false`` : Uses analytical gradient  
-   | **Recommendation:** N/A 
+   | **Recommendation:** If available, use analytical gradient. 
 
 .. topic:: ``dx``
 
@@ -89,48 +91,45 @@ Optional Keywords
 
 .. topic:: ``export``
 
-   | **Description:** 
+   | **Description:** This option will export the nuclear gradient to a text file.  
    | **Default:** false
    | **Datatype:** bool
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``true``: Export file
+   |    ``false``: Do not export file 
+   | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics. 
 
 .. topic:: ``export_single``
 
-   | **Description:** 
+   | **Description:** This option will export the nuclear gradient to a text file for a single state.  
    | **Default:** false 
    | **Datatype:** bool
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``true``: Export file
+   |    ``false``: Do not export file 
+   | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
 .. topic:: ``maxziter``
 
-   | **Description:** 
+   | **Description:* Maximum number of Z-vector iterations for gradient evaluation. Applies to CASSCF, CASPT2, and MP2 calculations.
    | **Default:** 100 
-   | **Datatype:** int
-   | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   | **Datatype:** integer
+   | **Recommendation:** Increase the value when Z-vector equation does not converge.
 
 .. topic:: ``save_ref``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Description:** The reference wavefunction is saved to an archive file. 
+   | **Default:** false
+   | **Datatype:** bool
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``true``: Archive file is saved 
+   |    ``false`` : Archive file is not saved
+   | **Recommendation:** Save file if it is likely that the calculation will need to be restarted 
 
 .. topic:: ``ref_out``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
-   | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   | **Description:** The name of the archive file for the stored reference. The path to the location the file should be written can also be specified here. 
+   | **Datatype:** string
 
 Example
 =======
