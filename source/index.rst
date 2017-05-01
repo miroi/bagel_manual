@@ -15,6 +15,7 @@ Contents:
    scf.rst
    pt2.rst
    ci.rst
+   multi.rst
    gradient.rst
    hessian.rst
    optimize.rst
