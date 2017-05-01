@@ -6,14 +6,10 @@ Gradient
 
 Description
 ===========
-Computes the nuclear gradient.
+The force section can be used to compute the analytical gradient (force), the numerical gradient (see section on finited difference for more information), and the non-adiabatic coutpling matrix elements (NACME) 
 
-Pre-requisite
-=============
-Reference wave function (such as HF).
-
-Keywords
-========
+Required Keywords
+=================
 .. topic:: ``title``
 
    | **Description:** The title of the type of gradient calculation being performed. 
@@ -40,6 +36,106 @@ Keywords
    |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
    | **Recommendation:** N/A
 
+.. topic:: ``nacmetype``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+Optional Keywords
+=================
+.. topic:: ``gradient``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``numerical``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``diffsize``
+
+   | **Description:** in numerical 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:**
+
+.. topic:: ``target``
+
+   | **Description:** The target state for the energy and gradient evaluation (e.g. which state in a state-averaged CASSCF calculation)
+   | **Default:** 0 
+   | **Datatype:** integer
+   | **Values:** 
+   |    ``integer``: ground state = 0 
+   | **Recommendation:** N/A 
+
+.. topic:: ``target2``
+
+   | **Description:** In an NACME or DGRAD calculation, target2 designates the target state for the second state. 
+   | **Default:** 1 
+   | **Datatype:** integer
+   | **Values:** 
+   |    ``integer``: first exited state = 1 
+   | **Recommendation:** N/A 
+
+.. topic:: ``export``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``export_single``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``maxziter``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``save_ref``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
+
+.. topic:: ``ref_out``
+
+   | **Description:** 
+   | **Default:** 
+   | **Datatype:** 
+   | **Values:** 
+   |    ````: 
+   | **Recommendation:** 
 
 Example
 =======
