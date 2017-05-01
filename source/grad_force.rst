@@ -1,15 +1,12 @@
 .. _gradient:
 
-*******
+********
 Gradient
-*******
+********
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
-
-.. math::
-  H\Psi = E\Psi
+Computes the nuclear gradient.
 
 Pre-requisite
 =============
@@ -17,26 +14,31 @@ Reference wave function (such as HF).
 
 Keywords
 ========
-.. topic:: ``frozen``
+.. topic:: ``title``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+   | **Description:** The title of the type of gradient calculation being performed. 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:** (force, nacme, dgrad)
+   |    ``force``: Calculates the gradient (force)
+   |    ``nacme``: Calculates the non-adiabatic coupling matrix elements
+   |    ``dgrad``: Difference gradient (only available for CASSCF)
+   | **Recommendation:** N/A
 
-.. topic:: ``algorithm``
+.. topic:: ``method``
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+   | **Description:** The method to be used for energy evaluation 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:**
+   |    ``UHF``: Unrestricted Hartree Fock 
+   |    ``ROHF``: Restricted Open-shell Hartree Fock
+   |    ``HF``: Restricted Hartree Fock
+   |    ``DHF`` : Dirac Hartree Fock
+   |    ``MP2`` : Moller Plesset Perturbation Theory
+   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
+   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
+   | **Recommendation:** N/A
 
 
 Example
