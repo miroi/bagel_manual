@@ -1,8 +1,8 @@
 .. _gradient:
 
-********
-Gradient
-********
+*****
+Force
+*****
 
 Description
 ===========
@@ -10,6 +10,10 @@ The force section can be used to compute the analytical gradient (force), the nu
 
 Required Keywords
 =================
+.. topic:: ``force``
+
+   | **Description:** Requests that the gradient (force) is calculated. 
+
 .. topic:: ``title``
 
    | **Description:** The title of the type of gradient calculation being performed. 
@@ -47,32 +51,23 @@ Required Keywords
 
 Optional Keywords
 =================
-.. topic:: ``gradient``
-
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
-   | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
 
 .. topic:: ``numerical``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Description:** The gradients will be computed using finite difference 
+   | **Default:** false
+   | **Datatype:** bool
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``true``: Uses finite difference
+   |    ``false`` : Uses analytical gradient  
+   | **Recommendation:** N/A 
 
 .. topic:: ``diffsize``
 
-   | **Description:** in numerical 
-   | **Default:** 
-   | **Datatype:** 
-   | **Values:** 
-   |    ````: 
-   | **Recommendation:**
+   | **Description:** The diffsize is the step size used in the displacements in the finite difference calculations. The units are bohr. 
+   | **Default:** 1.0e-3
+   | **Datatype:** double precision 
+   | **Recommendation:** Use default 
 
 .. topic:: ``target``
 
@@ -95,8 +90,8 @@ Optional Keywords
 .. topic:: ``export``
 
    | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Default:** false
+   | **Datatype:** bool
    | **Values:** 
    |    ````: 
    | **Recommendation:** 
@@ -104,8 +99,8 @@ Optional Keywords
 .. topic:: ``export_single``
 
    | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Default:** false 
+   | **Datatype:** bool
    | **Values:** 
    |    ````: 
    | **Recommendation:** 
@@ -113,8 +108,8 @@ Optional Keywords
 .. topic:: ``maxziter``
 
    | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Default:** 100 
+   | **Datatype:** int
    | **Values:** 
    |    ````: 
    | **Recommendation:** 
