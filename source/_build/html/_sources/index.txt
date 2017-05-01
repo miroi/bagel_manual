@@ -3,21 +3,15 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to BAGEL Reference manual!
-==================================
+Welcome to BAGEL's documentation!
+=================================
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
-   molecule.rst
-   scf.rst
-   pt2.rst
-   ci.rst
-   gradient.rst
-   hessian.rst
-   optimize.rst
+   fullci.rst
 
 
 Indices and tables
