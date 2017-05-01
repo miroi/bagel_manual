@@ -12,7 +12,7 @@ Contents:
    :maxdepth: 2
 
    molecule.rst
-   scf/rhf.rst
+   scf/scf.rst
    pt2.rst
    ci.rst
    multi.rst

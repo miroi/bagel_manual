@@ -1,8 +1,8 @@
-.. _scf:
+.. _hf:
 
-*******
-SCF
-*******
+*************
+Hartree--Fock
+*************
 
 Description
 ===========
@@ -11,33 +11,40 @@ Full CI diagonalizes Full CI Hamiltonian.
 .. math::
   H\Psi = E\Psi
 
-Pre-requisite
+Command: ``rhf`` or ``hf``
+
+Prerequisite
 =============
-Reference wave function (such as HF).
+None
 
 Keywords
 ========
-.. topic:: ``frozen``
+.. topic:: ``gradient``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+   | Description: to compute gradient
+   | Default: false.
+   | Datatype: bool
+   | Values:
+   |    ``TRUE`` or ``FALSE``
+   | Recommendation: use default.
 
-.. topic:: ``algorithm``
+.. topic:: ``restart``
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+   | Description: to restart the calculation from an archive file
+   | Default: false.
+   | Datatype: bool
+   | Values:
+   |    ``TRUE`` or ``FALSE``
+   | Recommendation: use default.
 
+.. topic:: ``maxiter``
+
+   | Description: to restart the calculation from 
+   | Default: false.
+   | Datatype: bool
+   | Values:
+   |    ``TRUE`` or ``FALSE``
+   | Recommendation: use default.
 
 Example
 =======
