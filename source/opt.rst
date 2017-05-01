@@ -21,6 +21,9 @@ degeneracy lifting vectors out. The advanced quasi-newton optimization methods, 
 rational functional optimization (RFO) are implemented. In addition, the minimum energy path to the reactants and products
 from the saddle point can be calculated using the second order algorithm, without mass weighting.
 
+The output contains the gradient evaluations at the first step of the optimization, and the status of the optimization.
+The other information, including the quantum chemistry calculations at the optimization steps, are deposited in the file ``opt.log``.
+
 Required Keywords
 =================
 .. topic:: ``opttype``
@@ -228,7 +231,7 @@ Optional Keywords (Minimum Energy Path)
 
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
+This optimizes the ground state geometry of hydrogen fluoride in the ground state, using two-state averaged CAASCF with active space of (2e,2o).
 
 Sample input
 ------------
@@ -239,38 +242,30 @@ Sample input
 
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
+     "basis" : "svp",
      "df_basis" : "svp-jkfit",
      "angstrom" : false,
      "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
+       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      1.700000] },
+       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      0.000000] }
      ]
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
+     "title" : "optimize",
+     "method" : [ {
+       "title" : "casscf",
+       "nact" : 0,
+       "nact_cas" : 2,
+       "nclosed" : 4,
+       "nstate" : 2
+     } ]
    }
 
    ]}
 
+This optimization ends in three steps.
 
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
-.. figure:: figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-    This is an example of how to insert a figure. 
 
 References
 ==========
