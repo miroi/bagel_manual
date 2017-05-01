@@ -58,6 +58,10 @@ Required Keywords
    |    ``1``: the first excited state, and so on.
    | **Recommendation:** change according to your purpose.
 
+.. topic:: ``method``
+
+   | **Description:** The block that defines the quantum chemistry method that is used in the optimization.
+
 Convergence Criteria
 ====================
 
