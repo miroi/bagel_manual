@@ -1,12 +1,12 @@
-.. _scf:
+.. _pt2:
 
 *******
-PT2 methods
+Perturbation theory
 *******
 
 Description
 ===========
-PT2 methods include MP2 and NEVPT2
+PT2 methods include MP2, CASPT2, and NEVPT2
 
 Methods
 =======
@@ -14,5 +14,7 @@ Methods
    :maxdepth: 2
 
    mp2.rst
+   nevpt2.rst
+   caspt2.rst
 
 

@@ -1,14 +1,13 @@
-.. _mp2:
+.. _caspt2:
 
 *******
-MP2 Method
+CASPT2
 *******
 
 
 Description
 ===========
-add description for mp2 later
-note : MP2 is only implemented with DF
+Description here
 
 .. math::
   insert formula here
