@@ -10,11 +10,8 @@ Description
 .. math::
   H\Psi = E\Psi
 
-<<<<<<< HEAD:source/scf/rhf.rst
-=======
 Command: ``rhf`` or ``hf``
 
->>>>>>> 0f1518e03e41cc8de2ab6509d0fda76d83fdd67f:source/scf/hf.rst
 Prerequisite
 =============
 None
