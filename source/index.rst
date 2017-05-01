@@ -12,12 +12,13 @@ Contents:
    :maxdepth: 2
 
    molecule.rst
-   scf.rst
-   pt2.rst
+   scf/scf.rst
+   pt2/pt2.rst
    ci.rst
+   multi.rst
    gradient.rst
    hessian.rst
-   optimize.rst
+   opt.rst
 
 
 Indices and tables

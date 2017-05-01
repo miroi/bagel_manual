@@ -1,47 +1,43 @@
-.. _fullci:
+.. _nevpt2:
 
-*******
-Full CI
-*******
+******
+NEVPT2
+******
+
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
+Description here
 
 .. math::
-  H\Psi = E\Psi
+  insert formula here
 
-Pre-requisite
-=============
-Reference wave function (such as HF).
 
 Keywords
 ========
+
 .. topic:: ``frozen``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
+   | DESCRIPTION: to have frozen orbitals or not.
+   | DEFAULT: true
    | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
 
-.. topic:: ``algorithm``
+.. topic:: ``ncore``
+   
+   | DESCRIPTION: manually specify number of frozen orbitals, used when 'frozen' is turned on.
+   | DATATYPE: int
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
+.. topic:: ``aux_basis``
+   
+   | DESCRIPTION: specify an alternative density fitting basis set.
+   | DEFAULT: use the same density fitting basis as in molecule/df_basis.
    | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
 
 
 Example
 =======
 This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
+
 
 Sample input
 ------------
