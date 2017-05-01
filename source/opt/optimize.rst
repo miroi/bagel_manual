@@ -1,8 +1,8 @@
 .. _optimize:
 
-*******
+********
 Optimize
-*******
+********
 
 Description
 ===========

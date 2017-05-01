@@ -18,7 +18,7 @@ Contents:
    multi/multi.rst
    gradient.rst
    hessian.rst
-   opt.rst
+   opt/opt.rst
 
 
 Indices and tables
