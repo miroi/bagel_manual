@@ -11,7 +11,7 @@ Full CI diagonalizes Full CI Hamiltonian.
 .. math::
   H\Psi = E\Psi
 
-Prerequisite
+Pre-requisite
 =============
 Reference wave function (such as HF).
 
