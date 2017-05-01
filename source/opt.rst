@@ -28,6 +28,10 @@ Keywords
 ========
 Required Keywords
 -----------------
+.. topic:: ``optimize``
+
+   | **Description:** Requests that the geometry optimization. 
+
 .. topic:: ``opttype``
 
    | **Description:** Type of the optimization calculations.
@@ -38,7 +42,7 @@ Required Keywords
    |    ``conical``: find the conical intersections, according to gradient projection method.
    |    ``transition``: find the transition state geometry (saddle point on the PES).
    |    ``mep``: find the minimum energy path using the second-order algorithm, starting from the transition state geometry.
-   | **Recommendation:** change according to your purpose.
+   | **Recommendation:** N/A
 
 .. topic:: ``target``
 
@@ -48,7 +52,7 @@ Required Keywords
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
-   | **Recommendation:** change according to your purpose.
+   | **Recommendation:** N/A
 
 .. topic:: ``target2``
 
@@ -58,7 +62,7 @@ Required Keywords
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
-   | **Recommendation:** change according to your purpose.
+   | **Recommendation:** N/A
 
 .. topic:: ``method``
 
