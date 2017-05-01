@@ -10,11 +10,9 @@ Description
 .. math::
   H\Psi = E\Psi
 
-Command: ``rhf`` or ``hf``
-
-Prerequisite
-=============
-None
+* Restricted HF: ``rhf`` or ``hf``
+* Restricted open-shell HF: ``rohf``
+* Un-restricted HF: ``uhf``
 
 Keywords
 ========

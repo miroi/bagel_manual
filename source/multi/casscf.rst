@@ -1,7 +1,7 @@
 .. _multi:
 
 *******
-MULTI
+CASSCF
 *******
 
 Description
