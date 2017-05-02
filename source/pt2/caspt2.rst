@@ -7,7 +7,7 @@ CASPT2
 
 Description
 ===========
-CASPT2 is the second-order perturbation theory based on the multireference complete active space self-consistent field theory.
+CASPT2 is the second-order perturbation theory based on the multiconfiguration self-consistent field theory.
 Single-state version (SS-CASPT2), multi-state version (MS-CASPT2) and its extended variant (XMS-CASPT2) are available.
 CASPT2 in BAGEL is implemented with the automatic code generator SMITH3,
 and the SMITH information for XMS-CASPT2 should be passed in a separate array in the input.
@@ -154,15 +154,15 @@ Some information about the output should also be included. This will not be enti
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| CASPT2                                        | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| MS-CASPT2                                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| XMS-CASPT2                                    | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| SMITH3                                        | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                                                 | 
++===============================================+====================================================================================================+
+| CASPT2                                        | K\. Andersson, P.-Å. Malmqvist, and B. O. Roos, J. Chem. Phys. 96, 1218 (1992).                    |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| MS-CASPT2                                     | J\. Finley, P.-Å. Malmqvist, B. O. Roos, and L. Serrano-Andres, Chem. Phys. Lett. 288, 299 (1998). |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| XMS-CASPT2                                    | T\. Shiozaki, W. Győrffy, P. Celani, and H.-J. Werner, J. Chem. Phys. 135, 081106 (2011).          |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+| SMITH3                                        | M\. K. MacLeod, and T. Shiozaki, J. Chem. Phys. 142, 010507 (2015).                                |
++-----------------------------------------------+----------------------------------------------------------------------------------------------------+
 
