@@ -36,23 +36,13 @@ Keywords
    |     Please refer to $BAGEL_HOME/src/basis for possible aruments
    | RECOMMENDATION:
 
-.. topic:: ``angstrom``
-
-   | DESCRIPTION: specify units for atomic coordinates
-   | DEFAULT: false
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: use angstrom
-   |    ``FALSE``: use atomic units
-   | RECOMMENDATION: NONE.   1 au = 0.52917721067 Angstrom
-
 .. topic:: ``geometry``
+
    | DESCRIPTION: specify elements and their Cartisian coordinates  
    | DEFAULT: No Default
-   | DATATYPE: vector 
+   | DATATYPE: vector
    | VALUES: {"atom" : "Atom Name",  "xyz" : [x y z]}
    | RECOMMENDATION: None
-
 
 =======
 Example
@@ -64,12 +54,14 @@ Sample input
 .. code-block:: javascript 
 {
 molecule = { 
-  basis = sto-3g;
-  df_basis = svp;
+  basis = svp;
+  df_basis = svp-jkfit;
   angstrom = true;
   geometry = [ 
     {atom = H; xyz = [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
+    
     {atom = O; xyz = [  0.18572998668, -0.14718998944,  -3.25788976629]; },
+    
     {atom = H; xyz = [  0.03000999785,  0.71438994875,  -2.79590979943]; }
   ];  
 };
