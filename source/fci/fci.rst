@@ -14,7 +14,7 @@ FCI describes the wavefunction as a linear combination of Slater determinants:
 .. math::
   \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
 
-This technique is good for describing systems featuring substantial dynamic correlation. The algorithm by which the coefficients are determined, the number of states to calculate are two of the most important quanties to be specified.
+This technique is good for describing systems featuring substantial dynamic correlation. The algorithm by which the coefficients are determined, the number of states to calculate are two of the most important quantities to be specified.
 
 This FCI section is closely connected to the :ref:`casscf` method.
 
@@ -50,9 +50,9 @@ Keywords
    | **Default**: KH.
    | **Datatype**: string
    | **Values**: 
-   |    ``KH, Knowles, Handy``: use Knowles-Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison-Zarrabian.
-   |    ``Dist, parallel``: use Parallel algorithm.
+   |    ``KH, Knowles, Handy``: Use Knowles-Handy.
+   |    ``HZ, Harrison, Zarrabian``: Use Harrison-Zarrabian.
+   |    ``Dist, parallel``: Use parallel algorithm.
    | **Recommendation**: If the active space is large and you have multiple processors, use Dist. Otherwise, use default.
 
 .. topic:: ``charge``
@@ -60,7 +60,7 @@ Keywords
    | **Description**: The electronic charge of the system.
    | **Default**:  0
    | **Datatype**: integer
-   | **Values**: `any int`
+   | **Values**: `Any integer`
    | **Recommendation**: The electronic charge of the system. 
 
 .. topic:: ``maxiter_fci``
@@ -68,7 +68,7 @@ Keywords
    | **Description**: Maximum number of iterations in FCI algorithm 
    | **Default**: 
    | **Datatype**: integer
-   | **Values**: ``and integer``
+   | **Values**: ``Any integer``
    | **Recommendation**: Becareful, a common mistake is to input the value s_z and not the number of electrons.
 
 .. topic:: ``nspin``
@@ -76,7 +76,7 @@ Keywords
    | **Description**: Number of unpaired electrons. 
    | **Default**: 0
    | **Datatype**: integer
-   | **Values**: ``and integer``
+   | **Values**: ``Any positive integer``
    | **Recommendation**: Becareful, a common mistake is to input the value s_z and not the number of electrons.
 
 .. topic:: ``nstates``
@@ -84,7 +84,7 @@ Keywords
    | **Description**: Number of states to calculate. 
    | **Default**:``must be specified``
    | **Datatype**: integer
-   | **Values**: ``any positive double``
+   | **Values**: ``Any positive double``
    | **Recommendation**: User dependent, calculation of multiple states are slower.
 
 .. topic:: ``restart``
@@ -101,7 +101,7 @@ Keywords
    | **Description**: Threshold for convergence of selected CI algorithm 
    | **Default**: 1.0e-10 
    | **Datatype**: double
-   | **Values**: ``any positive double``
+   | **Values**: ``Any positive double``
    | **Recommendation**: Default, reduce for greater accuracy.
 
 
@@ -119,8 +119,8 @@ Sample input
    { "bagel" : [
    {
      "title" : "molecule",
-     "basis" : "tzvpp",
-     "df_basis" : "tzvpp-jkfit",
+     "basis" : "cc-pvdz",
+     "df_basis" : "cc-pvdz-jkfit",
      "angstrom" : true,
      "geometry" : [
        { "atom" : "O",  "xyz" : [   -0.000000,     -0.000000,      1.5]},
