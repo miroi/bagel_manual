@@ -2,7 +2,7 @@
 
 
 ***********************************
-Full Configuration Interaction (FCI)
+Full configuration interaction (FCI)
 ***********************************
 
 ===========

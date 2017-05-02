@@ -1,7 +1,7 @@
 .. _optimize:
 
 *******************************
-Molecular Geometry Optimization
+Molecular geometry optimization
 *******************************
 
 Description

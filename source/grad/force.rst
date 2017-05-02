@@ -1,7 +1,7 @@
 .. _force:
 
 ****************************************
-Nuclear Gradient and Derivative Coupling
+Nuclear gradient and derivative coupling
 ****************************************
 
 Description

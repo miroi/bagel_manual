@@ -1,7 +1,7 @@
 .. _grad_hesse:
 
 ****************************************
-Molecular Hessian and Frequency Analysis
+Molecular Hessian and frequency analysis
 ****************************************
 
 Description
