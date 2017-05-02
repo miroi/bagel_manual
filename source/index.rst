@@ -25,6 +25,7 @@
    miscellaneous/misc.rst
    supp_info/supp_info.rst
    asd/asd.rst
+   author.rst
 
 Indices and tables
 ==================
