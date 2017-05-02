@@ -12,7 +12,7 @@ BAGEL runs by
 ``BAGEL your/path/to/input.json``
 
 BAGEL sends output to the standard I/O stream, so you have to pipe the output in order to save it as a file:
-``BAGEL your/path/to/input.json > some_output.out``
+``BAGEL your/path/to/input.json > output.out``
 
 =======================
 Test Input and Output
