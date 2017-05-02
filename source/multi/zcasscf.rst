@@ -17,142 +17,154 @@ Reference wave function (such as HF).
 
 Keywords
 ========
+.. topic:: ``algorithm``
+
+   | **Description**:  CASSCF optimization algorithm
+   | **Options**:  "second":  second-order optimization algorithm;  "noopt" - no orbital optimization performed; program exits after one CAS-CI calculation using the given input orbitals.  Obsolete versions of BAGEL might also include SuperCI and BFGS algorithms, but the second-order algorithm has shown better convergence.   
+   | **Default**: "second"
+   | **Datatype**: string
+   | **Recommendation**:  Use default
+
 .. topic:: ``gaunt``
 
-   | Description:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
+   | **Description**:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
    |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit 
    |     coupling between electrons.  
-   | Default: Value obtained from reference wavefunction.  
-   | Datatype: bool
-   | Recommendation:  Choose based on the importance of relativistic effects for your problem.  
+   | **Default**: Value obtained from reference wavefunction.  
+   | **Datatype**: bool
+   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.  
 
 .. topic:: ``breit``
 
-   | Description:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
-   | Default: Value obtained from reference wavefunction.  
-   | Datatype: bool
-   | Recommendation:  Choose based on the importance of relativistic effects for your problem.  
+   | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
+   | **Default**: Value obtained from reference wavefunction.  
+   | **Datatype**: bool
+   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.  
 
 .. topic:: ``nact (or nact_cas)``
 
-   | Description: Number of active orbitals
-   | Default: 0
-   | Datatype: int
+   | **Description**: Number of active orbitals
+   | **Default**: 0
+   | **Datatype**: int
 
 .. topic:: ``natocc``
 
-   | Description: If set to "true," occupation numbers of natural orbitals within the active space will be printed to casscf.log after each macroiteration.
-   | Default: false
-   | Datatype: bool
-   | Recommendation:  Use default
+   | **Description**: If set to "true," occupation numbers of natural orbitals within the active space will be printed to casscf.log after each macroiteration.
+   | **Default**: false
+   | **Datatype**: bool
+   | **Recommendation**:  Use default
 
 .. topic:: ``nclosed``
 
-   | Description:  Number of closed orbitals
-   | Default: Full core space (1 orbital for He - F atom; 5 for each Ne - Cl atom, etc.)
-   | Datatype: int
+   | **Description**:  Number of closed orbitals
+   | **Default**: Full core space (1 orbital for He - F atom; 5 for each Ne - Cl atom, etc.)
+   | **Datatype**: int
 
 .. topic:: ``charge``
 
-   | Description:  Molecular charge.  
-   | Default: 0
-   | Datatype: int
+   | **Description**:  Molecular charge.  
+   | **Default**: 0
+   | **Datatype**: int
 
 .. topic:: ``hcore_guess``
 
-   | Description:  If set to true, the one-electron Hamiltonian is diagonalized to generate initial guess orbitals.  
-   | Default: false
-   | Datatype: bool
-   | Recommendation:  Use default.  The guess orbitals obtained from this option are usually inferior to those from DHF or a CASSCF calculation with a smaller active space.   
+   | **Description**:  If set to true, the one-electron Hamiltonian is diagonalized to generate initial guess orbitals.  
+   | **Default**: false
+   | **Datatype**: bool
+   | **Recommendation**:  Use default.  The guess orbitals obtained from this option are usually inferior to those from DHF or a CASSCF calculation with a smaller active space.   
 
 .. topic:: ``maxiter``
 
-   | Description:  Maximum number of macroiterations, after which the program will terminate if convergence is not reached.  
-   | Default: 100
-   | Datatype: int
-   | Recommendation:  The default is usually more than enough, if it is going to converge.  
+   | **Description**:  Maximum number of macroiterations, after which the program will terminate if convergence is not reached.  
+   | **Default**: 100
+   | **Datatype**: int
+   | **Recommendation**:  The default is usually more than enough, if it is going to converge.  
    | Note that if DHF is automatically called to generate guess orbitals, "maxiter_scf" can be used to set a different maximum for that step.  
 
 .. topic:: ``maxiter_micro``
 
-   | Description:  Maximum number of microiterations, after which the program will terminate if convergence is not reached.  
-   | Default: 20
-   | Datatype: int
-   | Recommendation:  This parameter must sometimes be increased for difficult optimizations.  
+   | **Description**:  Maximum number of microiterations, after which the program will terminate if convergence is not reached.  
+   | **Default**: 20
+   | **Datatype**: int
+   | **Recommendation**:  This parameter must sometimes be increased for difficult optimizations.  
 
 .. topic:: ``thresh``
 
-   | Description:  Convergence threshold for the root-mean-squared of the error vector.  
-   | Default: 1.0e-8
-   | Datatype: double
-   | Recommendation:  1.0e-8 is a fairly tight threshold; 1.0e-7 or 1.0e-6 might be appropriate for some problems.  
+   | **Description**:  Convergence threshold for the root-mean-squared of the error vector.  
+   | **Default**: 1.0e-8
+   | **Datatype**: double
+   | **Recommendation**:  1.0e-8 is a fairly tight threshold; 1.0e-7 or 1.0e-6 might be appropriate for some problems.  
 
 .. topic:: ``thresh_micro``
 
-   | Description:  Microiteration convergence threshold
-   | Default:  One-half the value set for "thresh"
-   | Datatype: double
-   | Recommendation:  Use the default value.
+   | **Description**:  Microiteration convergence threshold
+   | **Default**:  One-half the value set for "thresh"
+   | **Datatype**: double
+   | **Recommendation**:  Use the default value.
 
 .. topic:: ``thresh_fci``
 
-   | Description:  Convergence threshold for the CI coefficients during the CAS-CI step
-   | Default:  Value copied from "thresh"
-   | Datatype: double
-   | Recommendation:  A low convergence threshold here sometimes causes a loss of time-reversal symmetry; we recommend setting it a couple orders of magnitude smaller than the "thresh" value.  
+   | **Description**:  Convergence threshold for the CI coefficients during the CAS-CI step
+   | **Default**:  Value copied from "thresh"
+   | **Datatype**: double
+   | **Recommendation**:  A low convergence threshold here sometimes causes a loss of time-reversal symmetry; we recommend setting it a couple orders of magnitude smaller than the "thresh" value.  
 
 .. topic:: ``active``
 
-   | Description:  Orbital indices for the spatial MOs that should be included in the active space.  
-   | Default:  Frontier orbitals are used.  If a DHF reference waveunction (or Hcore guess) is used, the canonical orbitals are ordered by orbital energy, 
+   | **Description**:  Orbital indices for the spatial MOs that should be included in the active space.  
+   | **Default**:  Frontier orbitals are used.  If a DHF reference waveunction (or Hcore guess) is used, the canonical orbitals are ordered by orbital energy, 
    |     the "nclosed" lowest-energy orbitals are set to closed, and the next "nact" are set to active.  If the reference wavefunction was 
    |     generated by CASSCF, the order of orbitals is maintained.  
-   | Datatype: vector of integers
-   | Recommendation:  The convergence behavior is often improved by choosing guess orbitals similar in character to your target active orbitals.  
+   | **Datatype**: vector of integers
+   | **Recommendation**:  The convergence behavior is often improved by choosing guess orbitals similar in character to your target active orbitals.  
    |     For both relativistic Hartree--Fock and CASSCF, useful tools to identify good starting orbitals include using the "pop" keyword to print 
    |     orbital population analysis and using the "moprint" module to visualize orbital densities using Gaussian cube format.  
 
-.. topic:: ``example``
+.. topic:: ``only_electrons``
 
-   | Description:  
-   | Default: 
-   | Datatype: bool
-   | Recommendation:  
+   | **Description**:  This option allows the user to freeze all positronic orbitals and optimize only for rotations between electronic orbitals.  
+   | **Default**:   false
+   | **Datatype**: bool
+   | **Recommendation**:  Use default 
 
-.. topic:: ``example``
+.. topic:: ``pop``
 
-   | Description:  
-   | Default: 
-   | Datatype: bool
-   | Recommendation:  
+   | **Description**:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.  
+   | **Default**: false
+   | **Datatype**: bool
+   | **Recommendation**:  It is recommended to verify that your converged orbitals are what you expect, and this is one tool for doing that.  
 
-.. topic:: ``example``
+.. topic:: ``aniso``
 
-   | Description:  
-   | Default: 
-   | Datatype: bool
-   | Recommendation:  
+   | **Description**:  This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis, in determination of g-factors and zero-field splitting parameters.  See below for details.  
 
 .. topic:: ``example``
 
-   | Description:  
-   | Default: 
-   | Datatype: bool
-   | Recommendation:  
+   | **Description**:  
+   | **Default**: 
+   | **Datatype**: bool
+   | **Recommendation**:  
 
 .. topic:: ``example``
 
-   | Description:  
-   | Default: 
-   | Datatype: bool
-   | Recommendation:  
+   | **Description**:  
+   | **Default**: 
+   | **Datatype**: bool
+   | **Recommendation**:  
 
 .. topic:: ``example``
 
-   | Description:  
-   | Default: 
-   | Datatype: bool
-   | Recommendation:  
+   | **Description**:  
+   | **Default**: 
+   | **Datatype**: bool
+   | **Recommendation**:  
+
+.. topic:: ``example``
+
+   | **Description**:  
+   | **Default**: 
+   | **Datatype**: bool
+   | **Recommendation**:  
 
 
 Example

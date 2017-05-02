@@ -116,9 +116,6 @@ Keywords
    | **Datatype:** integer
    | **Recommendation:** N/A
 
-
-
-
 Example
 =======
 This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
