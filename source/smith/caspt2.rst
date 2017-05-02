@@ -12,6 +12,8 @@ Fully internally contracted single-state version (SS-CASPT2), multi-state versio
 CASPT2 in BAGEL is implemented with the automatic code generator SMITH3,
 and the SMITH information for XMS-CASPT2 should be passed in a separate array in the input.
 
+Command: ``caspt2``
+
 Keywords
 ========
 CASSCF keywords
