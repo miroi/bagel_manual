@@ -15,10 +15,13 @@ Required keywords
 =================
 .. topic:: ``basis``
 
-   | **Description**: basis sets for the system
+   | **Description**: define default basis set used for the system
    | **Datatype**: string
    | **Values**:
    |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
+
+Note that the use of mixed basis sets is possible by specifying a different basis set other than the default
+for each atom (see example for `Effective core potential (ECP) basis sets`_ below).
 
 .. topic:: ``geometry``
 
@@ -129,13 +132,43 @@ Basis sets
 * aug-cc-pv6z
 * ano-rcc
 
-====================
-Auxiliary basis sets
-====================
-* cc-pv5z-ri
-* cc-pvdz-ri
-* cc-pvqz-ri
-* cc-pvtz-ri
+==========================
+Density fitting basis sets
+==========================
+* svp-jkfit
+* tzvpp-jkfit
+* qzvpp-jkfit
+* cc-pvdz-jkfit
+* cc-pvtz-jkfit
+* cc-pvqz-jkfit
+* cc-pv5z-jkfit
+
+Example
+-------
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+
+   {
+     "title" : "molecule",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : false,
+     "geometry" : [
+         {"atom" : "H", "xyz" : [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
+         {"atom" : "O", "xyz" : [  0.18572998668, -0.14718998944,  -3.25788976629]; },
+         {"atom" : "H", "xyz" : [  0.03000999785,  0.71438994875,  -2.79590979943]; }
+     ]
+   },
+
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-10
+   }
+
+   ]}
+
 
 =========================================
 Effective core potential (ECP) basis sets 

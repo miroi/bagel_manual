@@ -42,7 +42,7 @@ The method array allows the user to specify one or more methods to be used in th
         },
 
         {
-          "title" : "caspt2",
+          "title" : "smith",
           "method" : "caspt2",
           "shift" : 0.2,
           "frozen" : true
