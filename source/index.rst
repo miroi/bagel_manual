@@ -19,7 +19,7 @@ BAGEL manual
    smith/smith.rst
    grad/grad.rst
    print.rst
-   localize.rst
+   localization.rst
    supp_info/supp_info.rst
 
 Indices and tables
