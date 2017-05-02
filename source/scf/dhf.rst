@@ -29,90 +29,90 @@ Prerequisite
 
 .. topic:: Guess molecular orbitals
 
-   | Description: Usually, these are generated using the reference orbitals from an earlier calculation.  
+   | **Description**: Usually, these are generated using the reference orbitals from an earlier calculation.  
    |     Non-relativistic orbitals from HF, UHF, ROHF, and CASSCF can be used, as well as relativistic orbitals 
    |     from another DHF or relativistic CASSCF calculation.  If no starting orbitals are provided, the 1-electron 
    |     Hamiltonian will be diagonalized to obtain a starting guess.  
-   | Recommendation: Precede DHF with a non-relativistic HF calculation 
+   | **Recommendation**: Precede DHF with a non-relativistic HF calculation 
 
 Keywords
 ========
 
 .. topic:: ``gaunt``
 
-   | Description:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
+   | **Description**:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
    |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit 
    |     coupling between electrons.  Note that if "gaunt" is set to true, "breit" is also set to true unless otherwise specified by the user.  
-   | Default: false
-   | Datatype: bool
-   | Recommendation:  The default is often fine, unless very strong relativistic effects are expected.  
+   | **Default**: false
+   | **Detatype**: bool
+   | **Recommendation**:  The default is often fine, unless very strong relativistic effects are expected.  
 
 .. topic:: ``breit``
 
-   | Description:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
-   | Default: value copied from "gaunt"
-   | Datatype: bool
-   | Recommendation: Use default, unless you wish to include the Gaunt interaction without the additional computational costs of the 
+   | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
+   | **Default**: value copied from "gaunt"
+   | **Detatype**: bool
+   | **Recommendation**: Use default, unless you wish to include the Gaunt interaction without the additional computational costs of the 
    |      full Breit interaction.
 
 .. topic:: ``robust``
 
-   | Description:  Determines whether or not to use the "robust" density fitting algorithm.  
-   | Default: false
-   | Datatype: bool
-   | Recommendation: use default.
+   | **Description**:  Determines whether or not to use the "robust" density fitting algorithm.  
+   | **Default**: false
+   | **Detatype**: bool
+   | **Recommendation**: use default.
 
 .. topic:: ``maxiter (or maxiter_scf)``
 
-   | Description:  Maximum number of iterations, after which the program will terminate if convergence is not reached.  
-   | Default: 100
-   | Datatype: int
-   | Recommendation: use default.
+   | **Description**:  Maximum number of iterations, after which the program will terminate if convergence is not reached.  
+   | **Default**: 100
+   | **Detatype**: int
+   | **Recommendation**: use default.
 
 .. topic:: ``diis_start``
 
-   | Description:  After the specified iteration, we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm for the 
+   | **Description**:  After the specified iteration, we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm for the 
    |      to update the orbitals.  
-   | Default: 1
-   | Datatype: int
-   | Recommendation: use default.
+   | **Default**: 1
+   | **Detatype**: int
+   | **Recommendation**: use default.
 
 .. topic:: ``thresh (or thresh_scf)``
 
-   | Description:  Convergence threshold for the root-mean-squared of the error vector.  
-   | Default: 1.0e-8
-   | Datatype: double
-   | Recommendation: The default value is good for production runs; often a looser threshold may be used if generating 
+   | **Description**:  Convergence threshold for the root-mean-squared of the error vector.  
+   | **Default**: 1.0e-8
+   | **Detatype**: double
+   | **Recommendation**: The default value is good for production runs; often a looser threshold may be used if generating 
    |     guess orbitals for ZCASSCF.  
 
 .. topic:: ``thresh_overlap``
 
-   | Description:  Overlap threshold used to identify linear dependancy in the atomic basis set.  Increasing this value will 
+   | **Description**:  Overlap threshold used to identify linear dependancy in the atomic basis set.  Increasing this value will 
    |      more aggressively remove linearly dependent basis vectors.  
-   | Default: 1.0e-8
-   | Datatype: double
-   | Recommendation: use default.
+   | **Default**: 1.0e-8
+   | **Detatype**: double
+   | **Recommendation**: use default.
 
 .. topic:: ``charge``
 
-   | Description:  Molecular charge.  
-   | Default: 0
-   | Datatype: int
+   | **Description**:  Molecular charge.  
+   | **Default**: 0
+   | **Detatype**: int
 
 .. topic:: ``multipole``
 
-   | Description:  Order of multipoles to be used.  At this time, only dipoles are implemented for DHF, but this option is included 
+   | **Description**:  Order of multipoles to be used.  At this time, only dipoles are implemented for DHF, but this option is included 
    |      for future extensions and consistency with non-relativistic HF.  
-   | Default: 1
-   | Datatype: int
-   | Recommendation: use default.  
+   | **Default**: 1
+   | **Detatype**: int
+   | **Recommendation**: use default.  
 
 .. topic:: ``pop``
 
-   | Description:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.  
-   | Default: false
-   | Datatype: bool
-   | Recommendation:  Not needed for SCF calculations, but this feature can be helpful in finding guess active orbitals for ZCASSCF.  
+   | **Description**:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.  
+   | **Default**: false
+   | **Detatype**: bool
+   | **Recommendation**:  Not needed for SCF calculations, but this feature can be helpful in finding guess active orbitals for ZCASSCF.  
 
 Example
 =======
@@ -152,7 +152,7 @@ References
 ==========
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
+|          **Description** of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
 | General text on relativistic electronic       | Marcus Reiher and Alexander Wolf, Relativistic Quantum Chemistry,     |
 | structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |
