@@ -41,7 +41,7 @@ Keywords
    | **Datatype**: bool
    | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.  
 
-.. topic:: ``nact (or nact_cas)``
+.. topic:: ``nact``
 
    | **Description**: Number of active orbitals
    | **Default**: 0

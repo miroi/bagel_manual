@@ -71,9 +71,11 @@ The default values are recommended unless mentioned otherwise.
    | **Default** : :math:`0`
    | **Datatype**: int 
 
-.. topic:: ``nact``/``nocc``
+.. topic:: ``nopen``
 
-   | **Description**: number of unpaired electrons and occupied orbitals
+   | **Description**: number of unpaired electrons in high-spin unrestricted Hartree--Fock
+   | **Default** : (number of electrons - charge) % 2
+   | **Datatype** : int
 
 .. topic:: ``restart``
 
