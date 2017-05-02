@@ -1,25 +1,22 @@
-.. _ci:
+.. _zfci:
 
 
 *******
-Full CI
+Configuration interaction methods
 *******
 
-===========
-Description
-===========
-This section discusses three of the closely related configuration interaction (CI) methods available in BAGEL; non-relativistic full CI (FCI), non-relativistic restricted CI (RASCI), and 4-component relativistic CI.  These methods have many similarities, but substantial difference in their use, and so each shall be discussed in a different subsection. Note that keywords which work for one method may not work in another.
-
-Most of the relevant code for these methods can be found in $BAGEL/src/ci/ci (FCI) ,   
-$BAGEL/src/ci/ras (ras) 
-$BAGEL/src/ci/zfci (ZFCI) 
+================
+Relativistic FCI
+================
 
 FCI is aims to describe the wavefunction as a linear combination of Slater determinants:
 
 .. math::
   \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
 
-This technique is good for describing systems featuring substantial dynamic correlation.  the algorithm by which the coefficients are determined can all be specified. 
+Relativistic CI differs from non-relativistic CI primarily in the  Hamiltonian which is used in the diagonalization. The physical consequence of is that this accounts for spin-orbit coupling, and the associated mixing of different spin-multiplets.
+
+ As the kind of relativstic Hamiltonian used can have a significant impact on the computational cost there are three possible options of increasing accuracy. It is  worth noting that due to the seperarte treatement of all states within the same multiplet substantial degeneracies may occur, and so it is preferable to avoid requesting only some of the states in a multiplet.
 
 
 ==================

@@ -1,8 +1,8 @@
 .. _hessian:
 
-*******
-Hessian
-*******
+****************************************
+Molecular Hessian and Frequency Analysis
+****************************************
 
 Description
 ===========

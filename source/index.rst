@@ -14,11 +14,9 @@ Contents:
    molecule.rst
    scf/scf.rst
    pt2/pt2.rst
-   fci/fci.rst  
+   fci/ci_methods.rst  
    multi/multi.rst
-   gradient.rst
-   hessian.rst
-   opt.rst
+   grad/grad.rst
 
 
 Indices and tables
