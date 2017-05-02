@@ -1,8 +1,8 @@
 .. _caspt2:
 
-******
-CASPT2
-******
+********************************************************
+Multireference second-order perturbation theory (CASPT2)
+********************************************************
 
 
 Description
