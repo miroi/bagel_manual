@@ -146,7 +146,7 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| General text on relativistic electronic       | Marcus Reiher and A. Wolf, Relativistic Quantum Chemistry,            |
+| General text on relativistic electronic       | Marcus Reiher and Alexander Wolf, Relativistic Quantum Chemistry,     |
 | structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | Original implementation of density fitted     | Matthew S. Kelley and Toru Shiozaki J. Chem. Phys. 2013, 138, 204113. |
