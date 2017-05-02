@@ -6,23 +6,23 @@ Interface to dynamics codes
 
 Description
 ===========
-BAGEL can be used for performing QM/MM calculations and direct dynamics simulations, by interfacing it to external softwares.
+BAGEL can be used for performing QM/MM calculations and direct dynamics simulations, by interfacing it to external software.
 The "electrostatic embedding" scheme is used in inserting the QM region in MM region. BAGEL exports the gradients of the energy with respect
 to the displacements of the QM particles and MM particles in a form that can be directly read by the dynamics codes.
 
 How It Works
-============
+------------
 
 The communications between the quantum chemistry codes and the molecular dynamics codes are based on the text files.
 For example, in molecular dynamics (MD) jobs, after the trajectory initiates, the positions of the QM atoms and MM particles,
 and the charges of MM particles are passed into BAGEL, in a form of text input.
 The quantum chemical calculation is performed to calculate any needed quantities
 (such as energies, its gradients, and NACMEs for nonadiabatic dynamics). This is passed (exported) to the form that can be
-readed by the dynamics program, and the dynamics program propagates the trajectory according to these gradients. After
+read by the dynamics program, and the dynamics program propagates the trajectory according to these gradients. After a
 one time integration step, the positions of QM atoms and MM particles are again passed into BAGEL.
 This continues until the trajectory integration ends.
 
-In summary, to perform the dynamics simulations with external programs, one needs:
+In summary, to perform the dynamics simulations with external programs one needs:
 
 (1) quantum chemistry input writer in the dynamics program
 
@@ -33,20 +33,20 @@ In summary, to perform the dynamics simulations with external programs, one need
 (2) is included in BAGEL (with a keyword of ``export`` and ``export_single``); the users should insert (1) and (3) in the dynamics code.
 
 Input Format
-============
+------------
 
 The BAGEL input for QM/MM jobs is same to that used in the quantum chemistry, except for the external charges.
 The external MM charge can be added in BAGEL calculation, as
 
 .. code-block:: javascript
 
-  { "atom" : "Q", "xyz" : [   %lf,   %lf,    %lf ], "charge" :    %lf }
+  { "atom" : "Q", "xyz" : [   %lf,   %lf,   %lf ], "charge" :    %lf }
 
 where ``xyz`` has the positions, and ``charge`` has the charge on the MM particle (in the units of e).
 
 
 Export Format
-=============
+-------------
 
 Some of dynamics software reads the informations in a fixed form. The gradient export format is as follows.
 The name of the file exported is ``ENERGY.txt`` (energy), ``FORCE_%d.txt`` (gradient, %d is the number of the state)
@@ -68,13 +68,13 @@ The energy is also exported, as
     //   (statewise energy)
 
 The energies for the multiple states in ascending order are exported in the same file when one does multi-state
-calcultions, such as SA-CASSCF and XMS-CASPT2.
+calculations, such as SA-CASSCF and XMS-CASPT2.
 
 
 Files to be Modified in Dynamics Software
-=========================================
+-----------------------------------------
 
-Some source codes in the dynamics software should be modified. Many of the dynamics softwares in fact have QM/MM
+Some source codes in the dynamics software should be modified. Many of the dynamics software in fact have QM/MM
 interfaces to the other quantum chemistry software, and by modifying the existent interface, one can perform the
 QM/MM dynamics or gas phase dynamics simulations. For instance, to perform QM/MM calculations in ``GROMACS``, one should modify 
 
@@ -127,8 +127,8 @@ General References
 +-----------------------------------------------+--------------------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                             | 
 +===============================================+================================================================================+
-| Nonadiabatic dynamics (Surface hopping)       | M\. Barbatti, WIREs Comput. Mol. Sci. 1, 620 (2011).                           |
+| Nonadiabatic dynamics (Surface hopping)       | M\. Barbatti, WIREs Comput. Mol. Sci. **1**, 620 (2011).                       |
 +-----------------------------------------------+--------------------------------------------------------------------------------+
-| Excited state QM/MM in biomolecules           | E\. Brunk, and U. Rothlisburger, Chem. Rev. 115, 6217 (2015).                  |
+| Excited state QM/MM in biomolecules           | E\. Brunk, and U. Rothlisburger, Chem. Rev. **115**, 6217 (2015).              |
 +-----------------------------------------------+--------------------------------------------------------------------------------+
 

@@ -3,37 +3,25 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-**BAGEL Manual**
-================
+Brilliantly Advanced General Electronic-structure Library
+=============================================================
 
-.. figure:: _static/bagel-final.*
-    :width: 300px
-    :align: right 
+.. only:: html
 
-.. toctree::
-   :maxdepth: 1
-
-   molecule/molecule-toc.rst
+   .. image:: _static/bagel-final.*
+      :width: 300px
+      :align: right
 
 .. toctree::
    :maxdepth: 2
-   
-	 start_guide/installation_guide.rst
-	 start_guide/how_to_run_bagel.rst
-   scf/scf.rst
-   fci/ci_methods.rst  
-   multi/multi.rst
-   pt2/pt2.rst
-   smith/smith.rst
-   grad/grad.rst
-   asd/asd.rst
-   miscellaneous/misc.rst
-   supp_info/supp_info.rst
-   author.rst
 
-Developer Manual
-================
-This manual is intended for programmers wishing to customize or extend BAGEL.
+   user-manual.rst
+
+.. toctree::
+   :maxdepth: 2
+
+   developer-manual.rst
+
 
 Index
 ==================
