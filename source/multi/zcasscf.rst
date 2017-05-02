@@ -17,6 +17,14 @@ Reference wave function (such as HF).
 
 Keywords
 ========
+.. topic:: ``algorithm``
+
+   | **Description**:  CASSCF optimization algorithm
+   | **Options**:  "second":  second-order optimization algorithm;  "noopt" - no orbital optimization performed; program exits after one CAS-CI calculation using the given input orbitals.  Obsolete versions of BAGEL might also include SuperCI and BFGS algorithms, but the second-order algorithm has shown better convergence.   
+   | **Default**: "second"
+   | **Datatype**: string
+   | **Recommendation**:  Use default
+
 .. topic:: ``gaunt``
 
    | **Description**:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
@@ -112,19 +120,23 @@ Keywords
    |     For both relativistic Hartree--Fock and CASSCF, useful tools to identify good starting orbitals include using the "pop" keyword to print 
    |     orbital population analysis and using the "moprint" module to visualize orbital densities using Gaussian cube format.  
 
-.. topic:: ``example``
+.. topic:: ``only_electrons``
 
-   | **Description**:  
-   | **Default**: 
+   | **Description**:  This option allows the user to freeze all positronic orbitals and optimize only for rotations between electronic orbitals.  
+   | **Default**:   false
    | **Datatype**: bool
-   | **Recommendation**:  
+   | **Recommendation**:  Use default 
 
-.. topic:: ``example``
+.. topic:: ``pop``
 
-   | **Description**:  
-   | **Default**: 
+   | **Description**:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.  
+   | **Default**: false
    | **Datatype**: bool
-   | **Recommendation**:  
+   | **Recommendation**:  It is recommended to verify that your converged orbitals are what you expect, and this is one tool for doing that.  
+
+.. topic:: ``aniso``
+
+   | **Description**:  This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis, in determination of g-factors and zero-field splitting parameters.  See below for details.  
 
 .. topic:: ``example``
 

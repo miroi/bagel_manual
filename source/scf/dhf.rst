@@ -1,8 +1,8 @@
 .. _dhf:
 
-*************
+********************
 Dirac--Hartree--Fock
-*************
+********************
 
 Description
 ===========
@@ -44,14 +44,14 @@ Keywords
    |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit 
    |     coupling between electrons.  Note that if "gaunt" is set to true, "breit" is also set to true unless otherwise specified by the user.  
    | **Default**: false
-   | **Detatype**: bool
+   | **Datatype**: bool
    | **Recommendation**:  The default is often fine, unless very strong relativistic effects are expected.  
 
 .. topic:: ``breit``
 
    | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
    | **Default**: value copied from "gaunt"
-   | **Detatype**: bool
+   | **Datatype**: bool
    | **Recommendation**: Use default, unless you wish to include the Gaunt interaction without the additional computational costs of the 
    |      full Breit interaction.
 
@@ -59,14 +59,14 @@ Keywords
 
    | **Description**:  Determines whether or not to use the "robust" density fitting algorithm.  
    | **Default**: false
-   | **Detatype**: bool
+   | **Datatype**: bool
    | **Recommendation**: use default.
 
 .. topic:: ``maxiter (or maxiter_scf)``
 
    | **Description**:  Maximum number of iterations, after which the program will terminate if convergence is not reached.  
    | **Default**: 100
-   | **Detatype**: int
+   | **Datatype**: int
    | **Recommendation**: use default.
 
 .. topic:: ``diis_start``
@@ -74,14 +74,14 @@ Keywords
    | **Description**:  After the specified iteration, we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm for the 
    |      to update the orbitals.  
    | **Default**: 1
-   | **Detatype**: int
+   | **Datatype**: int
    | **Recommendation**: use default.
 
 .. topic:: ``thresh (or thresh_scf)``
 
    | **Description**:  Convergence threshold for the root-mean-squared of the error vector.  
    | **Default**: 1.0e-8
-   | **Detatype**: double
+   | **Datatype**: double
    | **Recommendation**: The default value is good for production runs; often a looser threshold may be used if generating 
    |     guess orbitals for ZCASSCF.  
 
@@ -90,28 +90,28 @@ Keywords
    | **Description**:  Overlap threshold used to identify linear dependancy in the atomic basis set.  Increasing this value will 
    |      more aggressively remove linearly dependent basis vectors.  
    | **Default**: 1.0e-8
-   | **Detatype**: double
+   | **Datatype**: double
    | **Recommendation**: use default.
 
 .. topic:: ``charge``
 
    | **Description**:  Molecular charge.  
    | **Default**: 0
-   | **Detatype**: int
+   | **Datatype**: int
 
 .. topic:: ``multipole``
 
    | **Description**:  Order of multipoles to be used.  At this time, only dipoles are implemented for DHF, but this option is included 
    |      for future extensions and consistency with non-relativistic HF.  
    | **Default**: 1
-   | **Detatype**: int
+   | **Datatype**: int
    | **Recommendation**: use default.  
 
 .. topic:: ``pop``
 
    | **Description**:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.  
    | **Default**: false
-   | **Detatype**: bool
+   | **Datatype**: bool
    | **Recommendation**:  Not needed for SCF calculations, but this feature can be helpful in finding guess active orbitals for ZCASSCF.  
 
 Example
@@ -152,7 +152,7 @@ References
 ==========
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
-|          **Description** of Reference             |                          Reference                                    | 
+|          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
 | General text on relativistic electronic       | Marcus Reiher and Alexander Wolf, Relativistic Quantum Chemistry,     |
 | structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |

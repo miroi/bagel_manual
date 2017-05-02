@@ -18,6 +18,7 @@ Contents:
    pt2/pt2.rst
    grad/grad.rst
    print.rst
+   supp_info/supp_info.rst
 
 Indices and tables
 ==================
