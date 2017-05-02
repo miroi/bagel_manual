@@ -22,11 +22,11 @@ Required keywords
 
 .. topic:: ``geometry``
 
-   | **Description**: specify elements and their Cartisian coordinates  
-   | **Default**: No Default
+   | **Description**: specify atoms and their Cartesian coordinates  
    | **Datatype**: vector
-   | **Values**: 
-   |    Elements are specified as {"atom" : "Atom Name",  "xyz" : [x y z]}
+   | **Values**:
+   |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
+        (see example below)
 
 .. topic:: ``df_basis``
 
