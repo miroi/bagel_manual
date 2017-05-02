@@ -151,7 +151,6 @@ RHF
    
    {
      "title" : "hf",
-     "df" : "true",
      "thresh" : 1.0e-8
    }
    

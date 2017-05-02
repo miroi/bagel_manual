@@ -1,3 +1,4 @@
+.. index:: asd
 .. _dimer_asd:
 
 *********
@@ -26,14 +27,14 @@ Required Keywords
 
 .. topic:: ``asd``
    
-   | **Description:** asd calculation for non-covalently linked molecular dimer
+   | **Description:** set ``"title" = "asd"`` to start asd calculation for non-covalently linked molecular dimer
 
 .. topic:: ``method``
    
    | **Description:** method to compute active subspaces
    | **Datatype:** string
    | **Value:**
-   |   ``cas``/``fci``: use full configuration interaction method
+   |   ``cas`` or ``fci``: use full configuration interaction method
    |   ``ras``: use restricted active space configuration interaction method
 
 .. topic:: ``fci``
@@ -77,7 +78,7 @@ Optional Keywords
 
    | **Description:** number of initial guess for Davidson diagonalization
    | **Datatype:** int
-   | **Default** :math:`10\times nstates`
+   | **Default:** :math:`10\times nstates`
 
 .. topic:: ``Davidson_subspace``
    
