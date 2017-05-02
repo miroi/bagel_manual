@@ -47,7 +47,7 @@ Optional keywords
 
    | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents 
    | **Default**: false 
-   | **Datatype**: boolean 
+   | **Datatype**: bool
    | **Recommendation**: Improves description of relativistic effects. 
 
 .. topic:: ``molden_file``
@@ -61,7 +61,7 @@ Optional keywords
    | **Description**: Option to do RHF-FMM, in which case density fitting is not used, for more details,
                       refer to :ref:`hf` section.
    | **Default**: false 
-   | **Datatype**: boolean 
+   | **Datatype**: bool
    | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules. 
 
 .. topic:: ``schwarz_thresh``
@@ -76,7 +76,7 @@ Optional keywords
 
    | **Description**: Option to do second order Douglas-Kroll-Hess (DKH2).
    | **Default**: false 
-   | **Datatype**: boolean 
+   | **Datatype**: bool
    | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.    
 
 .. topic:: ``magnetic_field``
@@ -97,7 +97,7 @@ Optional keywords
 
    | **Description**: Specify whether or not to use standard Gaussian basis functions from input, or to use input basis to generate gauge-invariant atomic orbitals (GIAO).
    | **Default**: Standard if no magnetic field, GIAO if there is a magnetic field.
-   | **Datatype**: String 
+   | **Datatype**: string 
    | **Values**: "london" or "giao" (for GIAO), and "gaussian".
    | **Recommendation**: Default. Asking for standard orbitals in a calculation with a finite magentic field will result in a common gauge origin being used in generation of the basis functions. This is less expensive, but significantly less accurate.
  
@@ -543,5 +543,5 @@ References
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-| Gauge invariant atomic orbitals               | R\. Ditchfield, Mol. Phys., **27**, 789 (1974).                                  |
+| Gauge invariant atomic orbitals               | R\. Ditchfield, Mol. Phys. **27**, 789 (1974).                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
