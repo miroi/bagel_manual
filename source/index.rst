@@ -17,7 +17,7 @@ Contents:
    multi/multi.rst
    pt2/pt2.rst
    grad/grad.rst
-   molden.rst
+   print.rst
 
 Indices and tables
 ==================
