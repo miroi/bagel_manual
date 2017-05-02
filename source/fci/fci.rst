@@ -38,7 +38,6 @@ Keywords
    | **Description**: to have frozen orbitals or not.
    | **Default**: true
    | **Datatype**: bool
-=======
 
 .. topic:: ``algorithm``
    
