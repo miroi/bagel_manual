@@ -9,11 +9,6 @@ Relativistic full configuration interaction (RelFCI)
 Description
 ===========
 
-FCI aims to describe the wavefunction as a linear combination of Slater determinants:
-
-.. math::
-  \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
-
 Relativistic CI differs from non-relativistic CI primarily in the Hamiltonian which is used in the diagonalization. The physical consequence of is that this accounts for spin-orbit coupling, and the associated mixing of different spin-multiplets. As the kind of relativstic Hamiltonian used can have a significant impact on the computational cost there are three possible options of increasing accuracy. It is  worth noting that due to the seperarte treatement of all states within the same multiplet substantial degeneracies may occur, and so it is preferable to avoid requesting only some of the states in a multiplet.
 
 

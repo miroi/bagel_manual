@@ -10,11 +10,6 @@ Restricted active space configuration interaction (RASCI)
 Description 
 ===========
 
-FCI is aims to describe the wavefunction as a linear combination of Slater determinants:
-
-.. math::
-  \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
-
 The basis into which the wavefunction is expanded is typically constructed by
 applying excitation operators to the determinant(s) included in the ground
 state wavefunction. The Restricted Active Space (RAS) method constrainst the
