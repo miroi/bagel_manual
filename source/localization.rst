@@ -34,11 +34,12 @@ Keywords
 .. topic:: ``algorithm``
 
    | **Description:** The localization scheme being used.
-   | **Default:** atomic 
+   | **Default:** pm
    | **Datatype:** string
    | **Values:** 
    |    ``pm``: Uses Pipek-Mezey localization
    |    ``region`` : Orthogonalize based on regions 
+   | **Recommendation:** Defining regions is particularly useful when studying dimers or trimers. For standard cases, use default 
 
 .. topic:: ``type``
 
@@ -48,14 +49,15 @@ Keywords
    | **Values:** 
    |    ``region`` : localize to a region (a group of atoms defined by the user) 
    |    ``atomic``: localize to the atoms
+   | **Recommendation:** Defining regions is particularly useful when studying dimers or trimers. For standard cases, use default 
 
-.. topic:: ``region_sizes" 
+.. topic:: ``region_size`` 
 
    | **Description:** Define the regions used if type is set to region. 
    | **Datatype:** vector of integers   
    | **Values:** Define vector. For example, 3 regions of 2 atoms each would be [2,2,2]  
-
-.. topic:: ``lowdin" 
+  
+.. topic:: ``lowdin``
 
    | **Description:** Lowdin charges are used in the localization (CHECK THIS)` 
    | **Default:** true 
@@ -63,7 +65,7 @@ Keywords
    | **Values:** 
    |    ``true``: Uses Lowdin charges 
    |    ``false`` : Uses Mulliken charges 
- 
+   | **Recommendation:** : Use default 
 
 =======
 Example

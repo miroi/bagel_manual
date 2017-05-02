@@ -58,13 +58,13 @@ SMITH keywords
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold.
-   | **Default:** 1.0e-8 (gradient) 1.0e-6 (otherwise)
+   | **Default:** For single point energy calculation, 1.0e-6. Tight convergence for gradient calculation, 1.0e-8.
    | **Datatype:** double precision
    | **Recommendation:** use default.
 
 .. topic:: ``thresh_overlap``
 
-   | **Description:** Overlap threshold.
+   | **Description:** Overlap cutoff threshold for internally contracted basis.
    | **Default:** 1.0-9
    | **Datatype:** double precision
    | **Recommendation:** use default.
@@ -76,7 +76,7 @@ SMITH keywords
    | **Datatype:** bool
    | **Values:**
    |    ``true``: use frozen orbitals.
-   |    ``false``: do without frozen orbitals.
+   |    ``false``: perform CASPT2 without frozen orbitals.
    | **Recommendation:** use default.
 
 .. topic:: ``maxiter``

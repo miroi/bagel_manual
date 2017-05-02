@@ -122,7 +122,7 @@ Optional Keywords
 
 .. topic:: ``maxziter``
 
-   | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to CASSCF, CASPT2, and MP2 calculations.
+   | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to SA-CASSCF, CASPT2, and MP2 calculations.
    | **Default:** 100 
    | **Datatype:** integer
    | **Recommendation:** Increase the value when Z-vector equation does not converge.
