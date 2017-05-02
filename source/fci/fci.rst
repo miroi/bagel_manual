@@ -219,10 +219,11 @@ References
 +-----------------------------------------------+--------------------------------------------------------------------------+
 |          Description of Reference             |                           Reference                                      | 
 +===============================================+==========================================================================+
-| Used for CI convergence algorithm.            | P\. J\. Knowles and N\. C\. Handy, **111**, 315-321, Chem. Phys.         |
-|                                               | Lett. 1984                                                               |        
+| Efficient calculation of matrix elements      | P\. J\. Knowles and N\. C\. Handy, **111**, 315-321, Chem. Phys.         |
+| between different states.                     | Lett. 1984                                                               |        
 +-----------------------------------------------+--------------------------------------------------------------------------+
-| Used for CI convergence algorithm.            | R\. J\. Harrison and S\. Zarrabian, **158**, 5, Chem. Phys. Lett. 1989   | 
+| Efficient calculation of matrix elements      | R\. J\. Harrison and S\. Zarrabian, **158**, 5, Chem. Phys. Lett. 1989   | 
+| between between different states.             |                                                                          |
 +-----------------------------------------------+--------------------------------------------------------------------------+
 | General reference for CI.                     | A\. Szabo and N\. S\. Ostlund, Modern Quantum Chemistry:                 |
 |                                               | Introduction to Advanced Electronic Structure Theory, Dover Publications |
