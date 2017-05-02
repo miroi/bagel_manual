@@ -32,6 +32,19 @@ In summary, to perform the dynamics simulations with external programs, one need
 
 (2) is included in BAGEL (with a keyword of ``export`` and ``export_single``); the users should insert (1) and (3) in the dynamics code.
 
+Input Format
+============
+
+The BAGEL input for QM/MM jobs is same to that used in the quantum chemistry, except for the external charges.
+The external MM charge can be added in BAGEL calculation, as
+
+.. code-block:: javascript
+
+  { "atom" : "Q", "xyz" : [   %lf,   %lf,    %lf ], "charge" :    %lf }
+
+where ``xyz`` has the positions, and ``charge`` has the charge on the MM particle (in the units of e).
+
+
 Export Format
 =============
 
