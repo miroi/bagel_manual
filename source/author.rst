@@ -1,7 +1,7 @@
 .. _author:
 
 ********************
-Author Contributions
+Author contributions
 ********************
 
 **Toru Shiozaki** (TS) has designed the density fitting utilities and implemented as a parallel program. He also implemented most of the molecular integrals and the non-relativistic HF, MP2, CASSCF, CASPT2, NEVPT2, and MRCI programs. He is also responsible for the code for HF, MP2, CASSCF, and SA-CASSCF nuclear gradients and the *Z*-vector equations for HF and CASSCF reference functions. The determinantal FCI code has been developed by **TS** and **Shane M. Parker** (SMP). The parallel FCI is due to **TS**. All of the code for restricted active spaces is due to **SMP**. All of the FMM capabilities and ECP integrals were implemented by **Hai-Anh Le** (HAL). Douglas-Kroll-Hess integrals were implemented by **Yiqun Wang** (YW).
