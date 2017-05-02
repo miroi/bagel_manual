@@ -178,7 +178,7 @@ Keywords
 
    | **Description**:  This parameter allows us to deactivate the generation of spin-adapted configuration state functions in the starting guess for the CAS-CI part.  
    | **Default**: true
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Recommendation**:  Normally use the default setting.  If you are computing all or nearly all the states that can be formed with a given 
    |     active space, you will encounter an error stating that "generate_guess produced an invalid determinant."  
    |     Deactivating this feature leads to a poorer guess but eliminates that problem.  
