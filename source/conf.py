@@ -105,17 +105,16 @@ html_theme = 'classic'
 # further.  For a list of options available for each theme, see the
 # documentation.
 html_theme_options = {
-   "rightsidebar": "true",
    "sidebarbgcolor": "black",
    "footerbgcolor" : "white", #Background color for the footer line.
    "footertextcolor" : "black", #Text color for the footer line.
-   "sidebarbgcolor" : "white", #Background color for the sidebar.
+   "sidebarbgcolor" : "darkorange", #Background color for the sidebar.
    "sidebarbtncolor" : "indigo",  #Background color for the sidebar collapse button (used when collapsiblesidebar is True).
    "sidebartextcolor" : "black", #Text color for the sidebar.
    "sidebarlinkcolor" : "indigo", #Link color for the sidebar.
    "relbarbgcolor" : "black",  #Background color for the relation bar.
    "relbartextcolor" : "darkorange", #Text color for the relation bar.
-   "relbarlinkcolor" : "orange",  #Link color for the relation bar.
+   "relbarlinkcolor" : "darkorange",  #Link color for the relation bar.
    "bgcolor" : "white", #Body background color.
    "textcolor" : "black", #Body text color.
    "linkcolor" : "blue",  #Body link color.
@@ -125,8 +124,8 @@ html_theme_options = {
    "headlinkcolor" : "silver", #Link color for headings.
    "codebgcolor" : "lavender", # Background color for code blocks.
    "codetextcolor" : "black", #Default text color for code blocks, if not set differently by the highlighting style.
-   "bodyfont" : "gill sans", #Font for normal text.
-   "headfont" : "bookman old style", #Font for headings.
+   "bodyfont" : "tahoma", #Font for normal text.
+   "headfont" : "tahoma", #Font for headings.
 }
 
 # Add any paths that contain custom themes here, relative to this directory.
