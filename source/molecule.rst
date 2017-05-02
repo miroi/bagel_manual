@@ -198,4 +198,3 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
    }
    
    ]}
->>>>>>> 58f90b74afd844fd3b1a23932d9f3fc37a509316
