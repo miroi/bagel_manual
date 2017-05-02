@@ -1,4 +1,4 @@
-.. _multi:
+.. _zcasscf:
 
 ********************************************************************
 Relativistic complete active space self-consistent field (RelCASSCF)
