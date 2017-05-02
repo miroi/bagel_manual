@@ -1,7 +1,7 @@
 .. _asd:
 
 *********************************
-Active Space Decomposition Method
+Active space decomposition method
 *********************************
 
 Efficient total active space decomposition method for multi-site molecules with distinct active subspaces. 
