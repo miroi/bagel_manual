@@ -1,14 +1,15 @@
 .. _ci:
 
 ******************************************
-Configuration interaction methods
+Configuration interaction 
 ******************************************
 
-Configuration interaction methods, fci and rassci
+Configuration interaction using Full Configuration interaction and Restricted active space configuration interaction
 
 .. toctree::
    :maxdepth: 1
 
-   fci.rst  
+   fci.rst 
+   zfci.rst 
    rasci.rst  
 
