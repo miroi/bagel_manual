@@ -9,14 +9,12 @@ Command
 =======
 
 BAGEL runs by
-``your/path/to/BAGEL your/path/to/input.json``
 
-BAGEL sends output to the standard I/O stream, so you have to pipe the output in order to save it as a file, like
-``your/path/to/BAGEL your/path/to/input.json >> some_output.out``
+``BAGEL your/path/to/input.json``
 
-Of course, you can set an alias of BAGEL in your ``.bashrc`` file.
+BAGEL sends output to the standard I/O stream, so you have to pipe the output in order to save it as a file:
 
-You can check if the installation was successful with the below example input/output for Hartree--Fock calculation.
+``BAGEL your/path/to/input.json > output.out``
 
 =======================
 Test Input and Output

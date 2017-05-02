@@ -11,7 +11,7 @@ The "electrostatic embedding" scheme is used in inserting the QM region in MM re
 to the displacements of the QM particles and MM particles in a form that can be directly read by the dynamics codes.
 
 How It Works
-============
+------------
 
 The communications between the quantum chemistry codes and the molecular dynamics codes are based on the text files.
 For example, in molecular dynamics (MD) jobs, after the trajectory initiates, the positions of the QM atoms and MM particles,
@@ -33,20 +33,20 @@ In summary, to perform the dynamics simulations with external programs one needs
 (2) is included in BAGEL (with a keyword of ``export`` and ``export_single``); the users should insert (1) and (3) in the dynamics code.
 
 Input Format
-============
+------------
 
 The BAGEL input for QM/MM jobs is same to that used in the quantum chemistry, except for the external charges.
 The external MM charge can be added in BAGEL calculation, as
 
 .. code-block:: javascript
 
-  { "atom" : "Q", "xyz" : [   %lf,   %lf,    %lf ], "charge" :    %lf }
+  { "atom" : "Q", "xyz" : [   %lf,   %lf,   %lf ], "charge" :    %lf }
 
 where ``xyz`` has the positions, and ``charge`` has the charge on the MM particle (in the units of e).
 
 
 Export Format
-=============
+-------------
 
 Some of dynamics software reads the informations in a fixed form. The gradient export format is as follows.
 The name of the file exported is ``ENERGY.txt`` (energy), ``FORCE_%d.txt`` (gradient, %d is the number of the state)
@@ -72,7 +72,7 @@ calculations, such as SA-CASSCF and XMS-CASPT2.
 
 
 Files to be Modified in Dynamics Software
-=========================================
+-----------------------------------------
 
 Some source codes in the dynamics software should be modified. Many of the dynamics software in fact have QM/MM
 interfaces to the other quantum chemistry software, and by modifying the existent interface, one can perform the
