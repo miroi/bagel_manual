@@ -19,6 +19,7 @@ Required Keywords
    | **Description:** Requests that the Numerical hessian be computed 
 
 .. topic:: ``method``
+
    | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information. 
 
 .. topic:: ``dx``
