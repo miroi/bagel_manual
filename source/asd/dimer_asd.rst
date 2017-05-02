@@ -25,10 +25,6 @@ Keywords
 Required Keywords
 -----------------
 
-.. topic:: ``asd``
-   
-   | **Description:** set ``"title" = "asd"`` to start asd calculation for non-covalently linked molecular dimer
-
 .. topic:: ``method``
    
    | **Description:** method to compute active subspaces
