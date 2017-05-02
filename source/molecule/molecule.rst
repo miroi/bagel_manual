@@ -54,7 +54,7 @@ Optional keywords
 
    | **Description**: filename of an input molden file, which is required if ``"basis" : "molden"`` is specified.
    | **Datatype**: string
-   | **Recommendation**: We recommend not restarting from a molden file whenever possible; however, this can be useful in some cases (for example, reading guess orbitals for highly symmetric molecules). Additionally, for larger calculations where the first calculation to converge the active space is time consuming, restarting from these optimized orbitals can be useful when performing subsequent calcualtions (for example, a geometry optimization) 
+   | **Recommendation**: We do not recommend restarting from a molden file if it is possible to generate the orbitals within Bagel; however, this can be useful in some cases (for example, reading guess orbitals for highly symmetric molecules). Additionally, for larger calculations where the first calculation to converge the active space is time consuming, restarting from these optimized orbitals can be useful when performing subsequent calcualtions (for example, a geometry optimization) 
 
  
 .. topic:: ``cfmm``
