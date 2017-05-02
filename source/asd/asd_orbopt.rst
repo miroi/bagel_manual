@@ -7,109 +7,142 @@ ASD orbital optimization
 
 Description
 ===========
-Description to ASD orbital optimization
+Active space decomposition with orbital optimization is implemented. The two fragments of the molecule can be covalently bonded, but the bridging orbitals cannot be active. Orbital rotations between active subspaces are included to partition the total active space into subspaces. The two active subspaces should be well separated. The calculation starts with dimer construction which is slightly different from that in (add hyperlink to dimer_asd).
+
+
+Dimer Construction
+==================
+.. toctree:: 
+   :maxdepth: 1
+
+   dimer_linked.rst
 
 
 Keywords
 ========
 
-.. topic:: ``active orbitals``
+Required Keywords
+-----------------
+
+.. topic:: ``asd``
    
-   | **Description**: assign active orbitals
+   | **Description:** asd calculation for non-covalently bonded molecular dimer
+
+.. topic:: ``method``
+   
+   | **Description:** method to compute active subspaces
+   | **Datatype:** string
+   | **Value:**
+   |   ``cas``/``fci``: use full configuration interaction method
+   |   ``ras``: use restricted active space configuration interaction method
+
+.. topic:: ``fci``
+
+   | **Description:** if ``fci`` is used, specify the implementations here
+   | **Recommendation:** see (add hyperlink to fci) for details
+
+.. topic:: ``ras``
+
+   | **Description:** if ``ras`` is used, specify the implementations here
+   | **Recommendation:** see (add hyperlink to ras) for details
+
+.. topic:: ``space``
+
+   | **Description:** specify important fragment states with the following keys:
+   |  ``charge``, ``spin``, ``nstate``
+   | **Recommendation:** see sample input for details
+
+Optional Keywords
+-----------------
+
+.. topic:: ``nstates``
+   
+   | **Description:** number of target states
+   | **Datatype:** int
+   | **Default** 10
+
+.. topic:: ``charge``
+
+   | **Description:** dimer charge
+   | **Datatype:** int
+   | **Default:** 0
+
+.. topic:: ``nspin``
+
+   | **Description:** number of dimer total spin
+   | **Datatype:** int
+   | **Default:** 0
+
+.. topic:: ``nguess``
+
+   | **Description:** number of initial guess for Davidson diagonalization
+   | **Datatype:** int
+   | **Default** :math:`10\times nstates`
+
+.. topic:: ``Davidson_subspace``
+   
+   | **Description:** size of Davidson subspace
+   | **Datatype:** int
+   | **Default:** 10
+
+.. topic:: ``max_iter``
+   
+   | **Description:** maximum number of iterations for Davidson diagonalization 
+   | **Datatype:** int
+   | **Default:** 50
+
+.. topic:: ``dipoles``
+   
+   | **Description:** whether to calculate dipole moment
+   | **Datatype:** bool
+   | **Default:** false
+
+.. topic:: ``thresh``
+   
+   | **Description:** threshold for convergence in Davidson diagonalization
+   | **Datatype:** double
+   | **Default:** :math:`1.0\times 10^{-7}`
+
+.. topic:: ``print_thresh``
+
+   | **Description:** threshold for printing out important configurations
+   | **Datatype:** double
+   | **Default:** 0.01
+
+.. topic:: ``store matrix``
+   
+   | **Description:** whether the Hamiltonian matrix is stored
+   | **Datatye:** bool
+   | **Default:** false
+
+.. topic:: ``print_info``   
+   
+   | **Description:** whether print out information (e.g. reduced density matrix and energy)
+   | **Datatype:** bool
+   | **Default:** false
 
 
 Example
 =======
-Give an example here
+Here is a sample calculation of a benzene dimer molecule.
 
+.. figure:: ../figure/benzene_dimer.png
+    :width: 100px
+    :align: center
+    :alt: alternate text
+    :figclass: align-center
 
 Sample input
 ------------
 
 .. code-block:: javascript
-   
-   { "bagel" : [
-   
-   {
-     "title" : "molecule",
-     "symmetry" : "C1",
-     "basis" : "sto-3g",
-     "df_basis" : "svp",
-     "angstrom" : true,
-     "cartesian" : false,
-     "geometry" : [
-        {"atom" :"C", "xyz" : [       0.0000000    ,  0.0000000,      1.3976222  ] },
-        {"atom" :"C", "xyz" : [       1.2106030    ,  0.0000000,      0.6988717  ] },
-        {"atom" :"C", "xyz" : [       1.2105988    ,  0.0000000,      -0.6988913 ] },
-        {"atom" :"C", "xyz" : [       0.0000000    ,  0.0000000,      -1.3976349 ] },
-        {"atom" :"C", "xyz" : [       -1.2105988   ,  0.0000000,      -0.6988913 ] },
-        {"atom" :"C", "xyz" : [       -1.2106030   ,  0.0000000,      0.6988717  ] },
-        {"atom" :"H", "xyz" : [       2.1549225    ,  0.0000000,      1.2444381  ] },
-        {"atom" :"H", "xyz" : [       2.1549235    ,  0.0000000,      -1.2444302 ] },
-        {"atom" :"H", "xyz" : [       0.0000000    ,  0.0000000,      -2.4881454 ] },
-        {"atom" :"H", "xyz" : [       -2.1549235   ,  0.0000000,      -1.2444302 ] },
-        {"atom" :"H", "xyz" : [       -2.1549225   ,  0.0000000,      1.2444381  ] },
-        {"atom" :"H", "xyz" : [       0.0000000    ,  0.0000000,      2.4881808  ] }
-     ]
-   },
-   
-   {
-     "title" : "hf"
-   },
-   
-   {
-     "title" : "dimerize",
-     "angstrom" : true,
-     "translate" : [ 0.5, 2.8, 0.0],
-     "dimer_active" : [ 17 ,20, 21, 22, 23, 24 ],
-     "hf" : {
-       "thresh" : 1.0e-10
-     },
-     "localization" : {
-       "max_iter" : 50,
-       "thresh" : 1.0e-8
-     }
-   },
-   
-   {
-     "title" : "asd_orbopt",
-     "algorithm" : "bfgs",
-     "maxiter" : 100,
-     "gradient_thresh" : 5.0e-7,
-     "asd" : {
-       "method" : "ras",
-       "thresh" : 5.0e-8,
-       "store_matrix" : false,
-       "space_a" : [
-         { "charge" : 0, "spin" : 0, "nstate" :8},
-         { "charge" : 0, "spin" : 2, "nstate" :8},
-         { "charge" : 1, "spin" : 1, "nstate" :8},
-         { "charge" :-1, "spin" : 1, "nstate" :8}
-       ],
-       "space_b" : [
-         { "charge" : 0, "spin" : 0, "nstate" :8},
-         { "charge" : 0, "spin" : 2, "nstate" :8},
-         { "charge" : 1, "spin" : 1, "nstate" :8},
-         { "charge" :-1, "spin" : 1, "nstate" :8}
-       ],
-       "restricted" : [ {
-         "orbitals" : [2,2,2],
-         "max_holes" : 4,
-         "max_particles" : 4
-       } ],
-       "ras" : {
-         "thresh" : 5.0e-8,
-         "nguess" : 400
-       },
-       "nstates" : 2,
-       "spin" : 1,
-       "charge" : 1
-     }
-   }
-   
-   ]}
 
 
-
+ 
 Reference
 =========
++-----------------------------------------------+--------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                             | 
++===============================================+================================================================================+
+
+
