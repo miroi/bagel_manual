@@ -13,6 +13,8 @@ The state-averaging scheme for calculating excited states is also implemented.
 The second-order algorithm is implemented in BAGEL. This algorithm is constructed of macroiterations and microiterations. At each macroiteration,
 the CI coefficient is optimized by FCI calculations, while the orbitals are rotated in microiterations. 
 
+Command: ``casscf``
+
 Keywords
 ========
 
@@ -36,8 +38,10 @@ Keywords
 
 .. topic:: ``active``
 
-   | **Description:** Specify active orbitals.
+   | **Description:** Specify active orbitals. Note that the orbital index starts from 1.
    | **Default:** Nact / 2 orbitals lower and higher from the valence orbital.
+   | **Example:**
+   |    [36, 37, 39] : include 36th, 37th, and 39th orbitals.
    | **Datatype:** integer array
 
 .. topic:: ``algorithm``
@@ -111,49 +115,10 @@ Keywords
 
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
 Sample input
 ------------
 
-.. code-block:: javascript 
-
-   { "bagel" : [
-
-   {
-     "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
-     ]
-   },
-
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
-   }
-
-   ]}
-
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
-.. figure:: ../figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-    This is an example of how to insert a figure. 
 
 References
 ==========
@@ -161,6 +126,6 @@ References
 +-----------------------------------------------+------------------------------------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                                             | 
 +===============================================+================================================================================================+
-| Second-order orbital optimization             | T\. Yanai, Y. Kurashige, D. Ghosh, and G. K.-L. Chan, Int. J. Quantum Chem. 109, 2178 (2009).  |
+| Second-order orbital optimization             | H\.-J. Werner, Adv. Chem. Phys. 69, 1 (1987).                                                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------------+
 

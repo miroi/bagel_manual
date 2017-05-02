@@ -1,4 +1,4 @@
-. _molecule:
+.. _molecule:
 
 ********
 Molecule 
@@ -13,15 +13,6 @@ information such as basis sets and geometry for the input system.
 =================
 Required keywords
 =================
-.. topic:: ``basis``
-
-   | **Description**: define default basis set used for the system
-   | **Datatype**: string
-   | **Values**:
-   |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
-
-Note that the use of mixed basis sets is possible by specifying a different basis set other than the default
-for each atom (see example for `Effective core potential (ECP) basis sets`_ below).
 
 .. topic:: ``geometry``
 
@@ -31,12 +22,22 @@ for each atom (see example for `Effective core potential (ECP) basis sets`_ belo
    |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
         (see example below)
 
+.. topic:: ``basis``
+
+   | **Description**: define default basis set used for the system
+   | **Datatype**: string
+   | **Values**:
+   |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
+
 .. topic:: ``df_basis``
 
    | **Description**: basis sets used for density fitting
    | **Datatype**: string
    | **Values**:
    |     Please refer to `Density fitting basis sets`_ for possible arguments
+
+Note that the use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
+basis set other than the default for each atom (see example for `Basis sets`_ below).
 
 =================
 Optional keywords
@@ -50,17 +51,23 @@ Optional keywords
    |    ``TRUE``: use Angstrom
    |    ``FALSE``: use Bohr
 
-.. topic:: ``molden_file``
-
-   | **Description**: filename of input molden file"
-   | **Default**: No Default
-   | **Datatype**: string
-
 .. topic:: ``schwarz_thresh``
 
    | **Description**: Schwarz screening integral threshold
    | **Default**: :math:`1.0\times 10^{-12}`
    | **Datatype**: double 
+
+.. topic:: ``finite_nucleus``
+
+   | **Description**: represent nucleus as a Gaussian charge distribution with default exponents 
+   | **Default**: false 
+   | **Datatype**: boolean 
+
+.. topic:: ``molden_file``
+
+   | **Description**: filename of input molden file"
+   | **Default**: No Default
+   | **Datatype**: string
 
 .. topic:: ``cfmm``
 
@@ -68,80 +75,21 @@ Optional keywords
    | **Default**: false 
    | **Datatype**: boolean 
 
-========================
-User defined basis sets
-========================
+.. topic:: ``dkh``
 
-The basis set file is in the following format
+   | **Description**: option to do Douglas-Kroll-Hess
+   | **Default**: false 
+   | **Datatype**: boolean 
 
-.. code-block:: javascript 
+.. topic:: ``magnetic_field``
 
- {
-  "H" : [
-    {
-      "angular" : "s",
-      "prim" : [5.4471780, 0.8245470],
-      "cont" : [[0.1562850, 0.9046910]]
-    }, {
-      "angular" : "s",
-      "prim" : [0.1831920],
-      "cont" : [[1.0000000]]
-    }
-  ],
-  "He" : [
-    {
-      "angular" : "s",
-      "prim" : [13.6267000, 1.9993500],
-      "cont" : [[0.1752300, 0.8934830]]
-    }, {
-      "angular" : "s",
-      "prim" : [0.3829930],
-      "cont" : [[1.0000000]]
-    }
-  ]
- }
+   | **Description**: a vector of external magnetic field
+   | **Default**: ``{{0.0, 0.0, 0.0}}``
 
+.. topic:: ``tesla``
 
-| The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element. The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties of a single basis function.
-
-| "angular" defines the kind of orbital (s,p,d,f...) . 
-
-| "prim" is a array containing the exponents of the primative orbitals from which the basis funciton is composed.
-
-| "cont" is an array containing the coefficients associated with each of these primiative orbitals.
-
-| The user can specify their own basis set using the above format, or use one of the predefined basis sets listed below. Note that not all of the below basis sets are defined for all atome; an error of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file.
-
-| To use a user specified basis the explicit path to the basis set file must be specified in the basis set block.
-
-
-
-Example
--------
-
-.. code-block:: javascript 
-
-   { "bagel" : [
-
-   {
-     "title" : "molecule",
-     "basis" : "/path/to/my/basis",
-     "df_basis" : "/path/to/my/basis",
-     "angstrom" : false,
-     "geometry" : [
-         {"atom" : "H", "xyz" : [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
-         {"atom" : "O", "xyz" : [  0.18572998668, -0.14718998944,  -3.25788976629]; },
-         {"atom" : "H", "xyz" : [  0.03000999785,  0.71438994875,  -2.79590979943]; }
-     ]
-   },
-
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   }
-
-   ]}
-
+   | **Description**: unit of the external magnetic field
+   | **Default**: false (use atomic unit)
 
 ==========
 Basis sets 
@@ -201,10 +149,102 @@ Example
 
    ]}
 
+Example with mixed basis sets and density fitting basis sets:
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : "false",
+     "geometry" : [
+       { "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
+       { "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956],
+                        "basis" : "sto-3g", "df_basis" : "cc-pvqz-jkfit" }
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-8
+   }
+   
+   ]}
+
+Example with running a calculation from a molden file using the keyword ``"basis" : "molden"``
+and providing a value for ``"molden_file"``:
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "molden",
+     "df_basis" : "svp-jkfit",
+     "cartesian" : true,
+     "molden_file" : "hf_write_mol_cart.molden"
+   }
+   
+   ]}
+
+(refer to :ref:`molden` in :ref:`misc` for more details)
+
+====================
+Auxiliary basis sets
+====================
+* cc-pv5z-ri
+* cc-pvdz-ri
+* cc-pvqz-ri
+* cc-pvtz-ri
+
+Example
+-------
+
+An example using ``cc-pvdz-ri`` in MP2 calculation
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "basis" : "cc-pvdz",
+     "df_basis" : "cc-pvdz-jkfit",
+     "angstrom" : "true",
+     "geometry" : [
+       { "atom" : "C", "xyz" : [ -1.20433891360,  0.54285096106, -0.04748199659] },
+       { "atom" : "C", "xyz" : [ -1.20543291352, -0.83826393986,  0.12432899108] },
+       { "atom" : "C", "xyz" : [ -0.00000600000, -1.52953889027,  0.20833398505] },
+       { "atom" : "C", "xyz" : [  1.20544091352, -0.83825393987,  0.12432799108] },
+       { "atom" : "C", "xyz" : [  1.20433091360,  0.54284396106, -0.04748099659] },
+       { "atom" : "C", "xyz" : [  0.00000400000,  1.23314191154, -0.13372399041] },
+       { "atom" : "H", "xyz" : [ -2.13410484690,  1.07591192282, -0.12500499103] },
+       { "atom" : "H", "xyz" : [ -2.13651384673, -1.37179190159,  0.18742198655] },
+       { "atom" : "H", "xyz" : [  0.00000000000, -2.59646181374,  0.33932597566] },
+       { "atom" : "H", "xyz" : [  2.13651384673, -1.37179290159,  0.18742198655] },
+       { "atom" : "H", "xyz" : [  2.13410684690,  1.07591292282, -0.12500599103] },
+       { "atom" : "H", "xyz" : [ -0.00000000000,  2.29608983528, -0.28688797942] }
+     ]
+   },
+   
+   {
+     "title" : "mp2",
+     "aux_basis" : "cc-pvdz-ri",
+     "frozen" : true
+   }
+   
+   ]}
 
 =========================================
 Effective core potential (ECP) basis sets 
 =========================================
+
 * ecp10mdf
 * ecp28mdf
 * ecp46mdf
@@ -213,6 +253,9 @@ Effective core potential (ECP) basis sets
 * def2-SVP-ecp
 * def2-SVP-2c-ecp
 * lanl2dz-ecp
+
+Note that user-defined ECP basis sets need to contain the keyword "ecp" in the names. 
+Refer to `User defined basis sets`_ for more details.
 
 ========================
 Auxiliary basis sets
@@ -228,8 +271,6 @@ Auxiliary basis sets
 * cc-pvqz-ri
 * cc-pvtz-ri
 * cc-pv5z-ri
-
-
 
 Example
 -------
@@ -262,3 +303,76 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
    }
    
    ]}
+
+========================
+User defined basis sets
+========================
+
+The basis set file is in the following format
+
+.. code-block:: javascript 
+
+ {
+  "H" : [
+    {
+      "angular" : "s",
+      "prim" : [5.4471780, 0.8245470],
+      "cont" : [[0.1562850, 0.9046910]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.1831920],
+      "cont" : [[1.0000000]]
+    }
+  ],
+  "He" : [
+    {
+      "angular" : "s",
+      "prim" : [13.6267000, 1.9993500],
+      "cont" : [[0.1752300, 0.8934830]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.3829930],
+      "cont" : [[1.0000000]]
+    }
+  ]
+ }
+
+The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
+The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
+of a single basis function.
+* ``angular`` defines the kind of orbital (s,p,d,f...) . 
+* ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
+* ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
+ 
+The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. Note that not
+all of the the basis sets are defined for all atoms;  an error of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
+ 
+To use a user specified basis the explicit path to the basis set file must be specified in the basis set block.
+
+Example
+-------
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+
+   {
+     "title" : "molecule",
+     "basis" : "/path/to/my/basis",
+     "df_basis" : "/path/to/my/basis",
+     "angstrom" : false,
+     "geometry" : [
+         {"atom" : "H", "xyz" : [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
+         {"atom" : "O", "xyz" : [  0.18572998668, -0.14718998944,  -3.25788976629]; },
+         {"atom" : "H", "xyz" : [  0.03000999785,  0.71438994875,  -2.79590979943]; }
+     ]
+   },
+
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-10
+   }
+
+   ]}
+
+

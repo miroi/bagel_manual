@@ -10,6 +10,7 @@ Gradient, Hessian and Geometry optimization
    :maxdepth: 2
 
    force.rst
+   dynamics.rst
    hess.rst
    ../opt/optimize.rst
 

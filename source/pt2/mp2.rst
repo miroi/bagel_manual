@@ -7,8 +7,7 @@ Møller–Plesset perturbation theory (MP2)
 
 Description
 ===========
-MP2 computes the Møller–Plesset perturbation theory second-order correction to the Hartree-Fock energy. (Resolution of the identity approximation algorithm) is implemented here. In BAGEL, MP2 only works with density fitting.
-
+MP2 computes the Møller–Plesset perturbation theory second-order correction to the Hartree-Fock energy. In BAGEL, MP2 only works with density fitting.
 
 Keywords
 ========
@@ -34,11 +33,6 @@ Keywords
 
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
-
-
-Sample input
-------------
 
 .. code-block:: javascript 
 
@@ -73,18 +67,8 @@ Sample input
    
    ]}
 
-
-
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
-.. figure:: ../figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-    This is an example of how to insert a figure. 
+The SCF calculation should converge after 11 iterations with energy -230.72159477 and the DF-MP2 gives correlation energy
+of -0.7813195592.
 
 References
 ==========
