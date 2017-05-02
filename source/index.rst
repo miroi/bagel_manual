@@ -15,6 +15,7 @@
 .. toctree::
    :maxdepth: 1
 
+   install.rst
    molecule/molecule-toc.rst
 
 .. toctree::
