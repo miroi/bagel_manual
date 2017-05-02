@@ -28,9 +28,6 @@ Required keywords
    | VALUES: 
    |    Elements are specified as {"atom" : "Atom Name",  "xyz" : [x y z]}
 
-=================
-Optional keywords
-=================
 .. topic:: ``df_basis``
 
    | DESCRIPTION: basis sets used for density fitting
@@ -38,6 +35,10 @@ Optional keywords
    | DATATYPE: string
    | VALUES:
    |     Please refer to `Density fitting basis sets`_ for possible aruments
+
+=================
+Optional keywords
+=================
 
 .. topic:: ``angstrom``
 
@@ -54,6 +55,12 @@ Optional keywords
    | DATATYPE: string
    | VALUE:
    |    User defined
+
+.. topic:: ``cfmm``
+
+   | DESCRIPTION: option to do RHF-FMM, in which case density fitting is not used
+   | DEFAULT: false 
+   | DATATYPE: boolean 
 
 ==========
 Basis sets 
