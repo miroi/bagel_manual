@@ -225,8 +225,9 @@ Sample input: NACME and DGRAD
 .. code-block:: javascript 
 
   {
-   "title" : "force",
+   "title" : "nacme",
      "target" : 0,
+     "target2" : 1,
      "method" : [ {
        "title" : "caspt2",
          "smith" : {
@@ -242,9 +243,6 @@ Sample input: NACME and DGRAD
        "nclosed" : 44 
      } ]
    }
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
 
 References
 ==========
