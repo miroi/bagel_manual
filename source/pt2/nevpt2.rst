@@ -1,5 +1,7 @@
 .. _nevpt2:
 
+.. index:: nevpt2
+
 *****************************************************
 N-electron valence state perturbation theory (NEVPT2)
 *****************************************************
