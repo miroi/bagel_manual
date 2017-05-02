@@ -1,8 +1,8 @@
 .. _multi:
 
-*******
-ZCASSCF
-*******
+*******************
+Relativistic CASSCF
+*******************
 
 Description
 ===========
