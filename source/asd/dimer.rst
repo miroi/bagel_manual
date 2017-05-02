@@ -2,30 +2,24 @@
 
 Description
 ===========
-The construction of the dimer molecule is separated from the ASD input block, it is built from one monomer by spatial translation. Then dimer active molecular orbitals are picked out by doing localization and comparing overlap with user-defined monomer active orbitals. Fragment wave functions are calculated within the active subspaces, whose linear combinations are used to construct the dimer wavefunction. 
+The constructor of dimer molecule. The dimer fragments can either be covalently bonded or not. The active subspaces should be well separated.
 
 
 Keywords
 ========
 
+Common keywords
+---------------
+
 .. topic:: ``title``
    
    | **Value:** dimerize
 
-.. topic:: ``translate``
-
-   | **Description:** spatial distance in Cartesian coordinates
-   | **Datatype:** array<double, 3>
-
-.. topic:: ``angstrom`` 
-
-   | **Description:** whether the translation is in a.u. or angstrom
-   | **Datatype:** bool
-   | **Default:** false
-
 .. topic:: ``dimer_active``
 
-   | **Description:** specify monomer active orbitals
+   | **Description:** 
+   |  * for non-covalently bonded dimer: specify monomer active orbitals, 
+   |  * for covalently bonded dimer: specify dimer active orbitals, 
    | **Datatype:** set<int>
 
 .. topic:: ``hf``
@@ -37,7 +31,27 @@ Keywords
 
    | **Description:** localize dimer molecular orbitals
    | **Default:** use default (add hyperlink here :: Localization)
-  
+
+.. topic:: ``active_thresh``
+   
+   | **Description:** threshold overlap for obitals to be treated as active
+   | **Datatype:** double
+   | **Default:** 0.5
+
+Keywords for non-covalently bonded dimer
+----------------------------------------
+
+.. topic:: ``translate``
+
+   | **Description:** spatial distance in Cartesian coordinates, duplicate and translate one monomer to form the dimer
+   | **Datatype:** array<double, 3>
+
+.. topic:: ``angstrom`` 
+
+   | **Description:** whether the translation is in a.u. or angstrom
+   | **Datatype:** bool
+   | **Default:** false
+
 .. topic:: ``scheme``
 
    | **Description:** options to assign dimer active orbitals
@@ -47,11 +61,22 @@ Keywords
    |   ``localize_first``: localize dimer orbitals, then pick the active space within each fragment
    | **Default:** active_first
 
-.. topic:: ``active_thresh``
+Keywords for covalently bonded dimer
+----------------------------------------
+
+.. topic:: ``form``
    
-   | **Description:** threshold overlap for obitals to be treated as active
-   | **Datatype:** double
-   | **Default:** 0.5
+   | **Description:** 
+   | **Datatype:**
+   | **Value**
+   |  * linked
+   |  * displace
+
+
+
+
+
+  
 
 
 Prerequisite
