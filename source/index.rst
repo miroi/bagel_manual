@@ -19,7 +19,7 @@ Contents:
    smith/smith.rst
    grad/grad.rst
    print.rst
-   localization.rst
+   localize.rst
    supp_info/supp_info.rst
 
 Indices and tables
