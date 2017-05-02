@@ -1,8 +1,8 @@
 .. _smith:
 
-********************
-SMITH3-written codes
-********************
+**********************
+SMITH3-generated codes
+**********************
 
 SMITH3-written functions
 

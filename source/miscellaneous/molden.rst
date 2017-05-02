@@ -1,8 +1,8 @@
-.. _print:
+.. _molden:
 
-*****
-Print
-*****
+******
+MOLDEN
+******
 
 ===========
 Description
