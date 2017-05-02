@@ -256,21 +256,6 @@ Effective core potential (ECP) basis sets
 Note that user-defined ECP basis sets need to contain the keyword "ecp" in the names. 
 Refer to `User defined basis sets`_ for more details.
 
-========================
-Auxiliary basis sets
-========================
-* svp-jkfit
-* tzvpp-jkfit
-* qzvpp-jkfit
-* cc-pvdz-jkfit
-* cc-pvqz-jkfit
-* cc-pvtz-jkfit
-* cc-pv5z-jkfit
-* cc-pvdz-ri
-* cc-pvqz-ri
-* cc-pvtz-ri
-* cc-pv5z-ri
-
 Example
 -------
 
