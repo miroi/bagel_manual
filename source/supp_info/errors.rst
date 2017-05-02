@@ -2,12 +2,9 @@
 
 .. _errors:
 
-*********
+*********************
 Common Error Messages
-*********
-
-Errors
-========
+*********************
 
 .. topic:: ``<filename.json>(#): expected key string``
 
