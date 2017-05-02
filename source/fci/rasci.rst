@@ -53,14 +53,6 @@ Keywords
    | **Values** : Three arrays with the containing indexes which specficy the orbitals between which excitations are permitted to occur.
    | **Recommendation** : This is highly system dependent, and dependent on the system under investigation. It is often good to run an initial Hartree Fock calculation, visualize the resulting orbitals in Molden (see section PRINT SECTION), and pick the spaces on the basis of chemical intuition. 
 
-.. topic:: ``space``
-
-   | **Description**: Specifies the output states
-   | **Default**: Must be specified by user.
-   | **Datatype** : array, user input variables to
-   | **Values**: One or more arrays which define a charge, spin and nstate (number of desired states with this charge and spin)
-   | **Recommendation** : This is highly system dependent. It shold be noted that picking the correct set of states may result in bettwe convergence, and that fewer states is not always better.
-
 .. topic:: ``max_holes``
 
    | **Description**: Maximum number of particles in R1.
@@ -146,8 +138,6 @@ Keywords
    | **Recommendation**: Default, the optimimum value willbe system dependent.
 
 
-
-
 Example
 =======
 Possibly series of calculations for H2 with stretching bond. HF and CI . The HF energies will not describe the bond breaking correclty.
@@ -177,7 +167,7 @@ Sample input
 
    {
      "title" : "fci",
-     "algorithm" : "parallel",
+     "algorithm" : "harrison",
      "nstate" : 2
    }
 
@@ -194,14 +184,10 @@ Some information about the output should also be included. This will not be enti
 
     This is an example of how to insert a figure. 
 
+=======
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Used for CI convergence algorithm.            | Knowles, N. C. Handy Chem. Phys. Lett.  J. Chem. Phys. 1984           |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Used for CI convergence algorithm.            | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-
+ Used for RASCI convergence algorithm            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984               
+ Used for RASCI convergence algorithm            | John Doe and Jane Doe. J. Chem. Phys. **5** 120-124.  1980,              
+ Informs the RASCI convergence algorithm         | Olsen, J.  Roos, B.O. , Jorgensen P., and Jensen H. J. A.,  J. Chem Phys **89.4** 2185-2192 (1988).

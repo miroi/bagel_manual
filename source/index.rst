@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to BAGEL Reference manual!
-==================================
+BAGEL manual
+============
 
-Contents:
+**Contents:**
 
 .. toctree::
    :maxdepth: 2
@@ -19,7 +19,7 @@ Contents:
    smith/smith.rst
    grad/grad.rst
    print.rst
-   localization.rst
+   localize.rst
    supp_info/supp_info.rst
 
 Indices and tables
