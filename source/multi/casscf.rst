@@ -1,4 +1,4 @@
-.. _multi:
+.. _casscf:
 
 ****************************************************
 Complete active space self-consistent field (CASSCF)

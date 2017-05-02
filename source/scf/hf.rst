@@ -12,6 +12,7 @@ SCF can be run by specifying the following values to the keyword ``title``:
 * Restricted HF for closed-shell systems: ``rhf`` or ``hf``
 * Restricted open-shell HF: ``rohf``
 * Unrestricted HF: ``uhf``
+* Two-component HF using ECP basis sets: ``soscf``
 
 Except for restricted Hartree--Fock, density fitting is used by default. Density fitting basis has to be
 specified in the Molecule block (see Molecule section).
@@ -23,19 +24,19 @@ Keywords
 ========
 The default values are recommended unless mentioned otherwise.
 
-.. topic:: ``thresh`` or ``thresh_scf``
+.. topic:: ``thresh``
 
    | **Description**: SCF convergence threshold for the root-mean-squared of the error vector.
    | **Default**: :math:`1.0\times 10^{-8}`
    | **Datatype**: double
 
-.. topic:: ``maxiter`` and ``maxiter_scf``
+.. topic:: ``maxiter``/``maxiter_scf``
 
    | **Description**: number of iterations and number of SCF interations, after which the program will terminate if convergence is not reached.
    | **Default**: :math:`100`
    | **Datatype**: int 
 
-.. topic:: ``diis_start`` and ``diis_size``
+.. topic:: ``diis_start``
    | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
                       algorithm for the to update the orbitals.
    | **Default**: :math:`1`
@@ -70,7 +71,7 @@ The default values are recommended unless mentioned otherwise.
    | **Default** : :math:`0`
    | **Datatype**: int 
 
-.. topic:: ``nact`` and ``nocc``
+.. topic:: ``nact``/``nocc``
 
    | **Description**: number of unpaired electrons and occupied orbitals
 
@@ -122,8 +123,8 @@ Keywords for RHF-FMM
    | **Datatype**: double 
 
 Examples
-=======
-Below are some examples for SCF calculations using RHF, ROHF, UHF, and RHF-FMM.
+========
+Below are some examples for SCF calculations using RHF, ROHF, UHF, SOSCF, and RHF-FMM.
 
 RHF
 ---
@@ -208,6 +209,33 @@ UHF
    ]}
 
 The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations.
+
+SOSCF
+-----
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "ecp28mdf",
+     "df_basis" : "tzvpp-jkfit",
+     "angstrom" : "true",
+     "geometry" : [
+       { "atom" : "Br",  "xyz" : [  0.000000,      0.000000,      0.000000]},
+       { "atom" :  "H",  "xyz" : [  0.000000,      1.420000,      0.000000],
+                        "basis" : "sto-3g"}
+     ]
+   },
+   
+   {
+     "title" : "soscf",
+     "thresh" : 1.0e-8
+   }
+   
+   ]}
 
 RHF-FMM
 -------
