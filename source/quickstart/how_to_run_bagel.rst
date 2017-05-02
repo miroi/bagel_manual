@@ -17,7 +17,7 @@ BAGEL sends output to the standard I/O stream, so you have to pipe the output in
 ``BAGEL your/path/to/input.json > output.out``
 
 =======================
-Test Input and Output
+Test input and output
 =======================
 
 This is an example input file for checking BAGEL installation.
