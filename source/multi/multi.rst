@@ -1,7 +1,7 @@
 .. _multi:
 
 ******************
-Multireference SCF
+Multireference self-consistent field
 ******************
 
 Non-relativistic and relativistic multireference SCF
