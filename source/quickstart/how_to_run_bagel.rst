@@ -39,7 +39,6 @@ This is an example input file for checking BAGEL installation.
 
 	{
 		"title" : "hf",
-		"thresh" : 1.0e-10
 	}
 
 	]}
