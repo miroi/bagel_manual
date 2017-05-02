@@ -2,7 +2,7 @@
 
 Description
 ===========
-The constructor of dimer molecule. The dimer fragments can either be covalently bonded or not. The active subspaces should be well separated.
+The constructor of dimer molecule. The dimer fragments can either be covalently linked or not. The active subspaces should be well separated.
 
 
 Keywords
@@ -15,11 +15,20 @@ Common keywords
    
    | **Value:** dimerize
 
+.. topic:: ``form``
+   
+   | **Description:** whether the dimer fragments are covalently linked
+   | **Datatype:** string
+   | **Value:**
+   |  * linked: covalently linked dimer
+   |  * displace: separated fragments
+   | **Default:** displace
+
 .. topic:: ``dimer_active``
 
    | **Description:** 
-   |  * for non-covalently bonded dimer: specify monomer active orbitals, 
-   |  * for covalently bonded dimer: specify dimer active orbitals, 
+   |  * for non-covalently linked dimer: specify monomer active orbitals, 
+   |  * for covalently linked dimer: specify dimer active orbitals, 
    | **Datatype:** set<int>
 
 .. topic:: ``hf``
@@ -38,7 +47,7 @@ Common keywords
    | **Datatype:** double
    | **Default:** 0.5
 
-Keywords for non-covalently bonded dimer
+Keywords for non-covalently linked dimer
 ----------------------------------------
 
 .. topic:: ``translate``
@@ -61,26 +70,16 @@ Keywords for non-covalently bonded dimer
    |   ``localize_first``: localize dimer orbitals, then pick the active space within each fragment
    | **Default:** active_first
 
-Keywords for covalently bonded dimer
+Keywords for covalently linked dimer
 ----------------------------------------
 
-.. topic:: ``form``
+.. topic:: ``region_sizes``
    
-   | **Description:** 
-   | **Datatype:**
-   | **Value**
-   |  * linked
-   |  * displace
-
-
-
-
-
-  
+   | **Description:** number of atoms in three regions [left, bridge, right]
+   | **Datatype:** vector<int>
 
 
 Prerequisite
 ============
 (add hyperlink here :: RHF) calculations are needed to obtain fragment active orbitals.
-
 

@@ -7,7 +7,7 @@ ASD orbital optimization
 
 Description
 ===========
-Active space decomposition with orbital optimization is implemented. The two fragments of the molecule can be covalently bonded, but the bridging orbitals cannot be active. Orbital rotations between active subspaces are included to partition the total active space into subspaces. The two active subspaces should be well separated. The calculation starts with dimer construction which is slightly different from that in (add hyperlink to dimer_asd).
+Active space decomposition with orbital optimization is implemented. The two fragments of the molecule can be covalently linked, but the bridging orbitals cannot be active. Orbital rotations between active subspaces are included to partition the total active space into subspaces. The two active subspaces should be well separated. The calculation starts with dimer construction which is slightly different from that in (add hyperlink to dimer_asd).
 
 
 Dimer Construction
@@ -15,7 +15,7 @@ Dimer Construction
 .. toctree:: 
    :maxdepth: 1
 
-   dimer_linked.rst
+   dimer.rst
 
 
 Keywords
@@ -24,125 +24,60 @@ Keywords
 Required Keywords
 -----------------
 
-.. topic:: ``asd``
+.. topic:: ``asd_orbopt``
    
-   | **Description:** asd calculation for non-covalently bonded molecular dimer
+   | **Description:** asd calculation for covalently linked molecular dimer
 
-.. topic:: ``method``
+.. topic:: ``algorithm``
    
-   | **Description:** method to compute active subspaces
+   | **Description:** 'bfgs' orbital optimization algorithm is implemented
    | **Datatype:** string
-   | **Value:**
-   |   ``cas``/``fci``: use full configuration interaction method
-   |   ``ras``: use restricted active space configuration interaction method
+   | **Value:** bfgs
 
-.. topic:: ``fci``
-
-   | **Description:** if ``fci`` is used, specify the implementations here
-   | **Recommendation:** see (add hyperlink to fci) for details
-
-.. topic:: ``ras``
-
-   | **Description:** if ``ras`` is used, specify the implementations here
-   | **Recommendation:** see (add hyperlink to ras) for details
-
-.. topic:: ``space``
-
-   | **Description:** specify important fragment states with the following keys:
-   |  ``charge``, ``spin``, ``nstate``
-   | **Recommendation:** see sample input for details
-
-Optional Keywords
------------------
-
-.. topic:: ``nstates``
+.. topic:: ``maxiter``
    
-   | **Description:** number of target states
-   | **Datatype:** int
-   | **Default** 10
-
-.. topic:: ``charge``
-
-   | **Description:** dimer charge
-   | **Datatype:** int
-   | **Default:** 0
-
-.. topic:: ``nspin``
-
-   | **Description:** number of dimer total spin
-   | **Datatype:** int
-   | **Default:** 0
-
-.. topic:: ``nguess``
-
-   | **Description:** number of initial guess for Davidson diagonalization
-   | **Datatype:** int
-   | **Default** :math:`10\times nstates`
-
-.. topic:: ``Davidson_subspace``
-   
-   | **Description:** size of Davidson subspace
-   | **Datatype:** int
-   | **Default:** 10
-
-.. topic:: ``max_iter``
-   
-   | **Description:** maximum number of iterations for Davidson diagonalization 
+   | **Description:** maximum number of orbita optimizatin iterations
    | **Datatype:** int
    | **Default:** 50
 
-.. topic:: ``dipoles``
-   
-   | **Description:** whether to calculate dipole moment
-   | **Datatype:** bool
-   | **Default:** false
+.. topic:: ``asd``
 
-.. topic:: ``thresh``
+   | **Description:** asd information
+   | **Recommendation:** see (add hyperlink to asd) for details
+
+.. topic:: ``gradient_thresh``
    
-   | **Description:** threshold for convergence in Davidson diagonalization
+   | **Description:** threshold for calculating gradient
    | **Datatype:** double
-   | **Default:** :math:`1.0\times 10^{-7}`
+   | **Default:** 0.0001
+   | **Recommendation:** use default
 
-.. topic:: ``print_thresh``
-
-   | **Description:** threshold for printing out important configurations
+.. topic:: ``rotation_thresh``
+   
+   | **Description:** threshold for orbital rotation
    | **Datatype:** double
-   | **Default:** 0.01
+   | **Default:** 0.0001
+   | **Recommendation:** use default
 
-.. topic:: ``store matrix``
+.. topic:: ``energy_thresh``
    
-   | **Description:** whether the Hamiltonian matrix is stored
-   | **Datatye:** bool
-   | **Default:** false
+   | **Description:** convergence threshold for calculating energy 
+   | **Datatype:** double
+   | **Default:** :math:`1.0\times 10^{-6}`
+   | **Recommendation:** use default
 
-.. topic:: ``print_info``   
+.. topic:: ``semi-canonicalize``
    
-   | **Description:** whether print out information (e.g. reduced density matrix and energy)
+   | **Description:** whether to semi-canonicalize localized orbitals
    | **Datatype:** bool
-   | **Default:** false
+   | **Default:** false 
 
 
-Example
-=======
-Here is a sample calculation of a benzene dimer molecule.
-
-.. figure:: ../figure/benzene_dimer.png
-    :width: 100px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-Sample input
-------------
-
-.. code-block:: javascript
-
-
- 
 Reference
 =========
 +-----------------------------------------------+--------------------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                             | 
 +===============================================+================================================================================+
-
+|  ASD orbital optimization                     | Kim I., Parker S. M., Shiozaki T., J. Chem. Theory Comput. **11**, 3636 (2015) |
++-----------------------------------------------+--------------------------------------------------------------------------------+
 
