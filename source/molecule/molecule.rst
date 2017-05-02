@@ -29,7 +29,7 @@ Required keywords
    |     Please refer to `Density fitting basis sets`_ for possible arguments
 
 .. note:: 
-   the use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
+   The use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
    basis set other than the default for each atom (see example for `Basis sets`_ below).
 
 Optional keywords
@@ -386,11 +386,11 @@ The basis set file is in the following format
  }
 
 The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
-The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
+The basis set for associated with each element is then made up of further arrays, each of which  contains information specifying the properties
 of a single basis function.
 
   * ``angular`` defines the kind of orbital (s,p,d,f...) . 
-  * ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
+  * ``prim`` is a array containing the exponents of the primitive orbitals from which the basis function is composed.
   * ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
  
 The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. 
@@ -435,7 +435,7 @@ It is possible to include artificial point charges in the calculation. These int
 Example
 -------
 
-A dihydrogen molecule with a nearby dummy charge of +0.2. Note that the charge specified in the "hf" block does not include the charge associated with with point charge. 
+A dihydrogen molecule with a nearby dummy charge of +0.2. Note that the charge specified in the "hf" block does not include the charge associated with the dummy atom.
 
 Sample input
 ------------
@@ -511,3 +511,16 @@ Sample output
 
     * Permanent dipole moment:
            (    0.000000,    -0.000000,    -0.427736) a.u.
+
+References
+==========
+
++-----------------------------------------------+----------------------------------------------------------------------------------+
+|          Description of Reference             |                               Reference                                          |
++===============================================+==================================================================================+
+| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+|                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
+|                                               | (McGraw-Hill, New York, 1989).                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+| Gauge invariant atomic orbitals               | R. Ditchfield.  Mol. Phys., *27* 789–807 1974.                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------+
