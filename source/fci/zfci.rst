@@ -1,4 +1,4 @@
-.. index:: zfci, relativistic FCI
+.. index:: zfci
 
 .. _zfci:
 

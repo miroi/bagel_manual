@@ -22,9 +22,9 @@
    pt2/pt2.rst
    smith/smith.rst
    grad/grad.rst
+   asd/asd.rst
    miscellaneous/misc.rst
    supp_info/supp_info.rst
-   asd/asd.rst
    author.rst
 
 Index
