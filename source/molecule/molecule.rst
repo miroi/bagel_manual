@@ -81,26 +81,28 @@ Optional keywords
 
 .. topic:: ``magnetic_field``
 
-   | **Description**: a vector of external magnetic field. When the magnetic field is non-zero,
-                      Gauge-invariant atomic orbitals (GIAO) is used by default.
-   | **Default**: ``{{0.0, 0.0, 0.0}}``
-   | **Datatype** : Array of integers
-   | **Recommendation**: Only use it if you need to; running with a magnetic field of zero, whilst physically equivalent to switching the magnetic field off, may be computationally more expensive. The gauge origin of the vector potential corresponding to the magentic field is at the origin of the co-ordinate system, hence the geometry should be specified such that the paramagnetic centre of the system is located at the origin, particularly if are making use of the :ref:`aniso` tools. At present finite magnetic field is only well tested for :ref:`dhf` and :ref:`hf`, but can potentially used with :ref:`zcasscf`. 
+   | **Description**: External magnetic field.  At this time, external magnetic fields are available only for the :ref:`hf` and :ref:`dhf` modules.  
+   | **Default**: zero magnetic field
+   | **Datatype** : Array of three doubles (x, y, z)
 
 .. topic:: ``tesla``
 
-   | **Description**: unit of the external magnetic field
-   | **Default**: false (use atomic unit)
-   | **Datatype** : double
+   | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.  
+   |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
+   | **Default**: false (so atomic units are used)
+   | **Datatype** : bool
  
 .. topic:: ``basis_type``
 
-   | **Description**: Specify whether or not to use standard Gaussian basis functions from input, or to use input basis to generate gauge-invariant atomic orbitals (GIAO).
-   | **Default**: Standard if no magnetic field, GIAO if there is a magnetic field.
+   | **Description**: Specifies the type of atomic orbital basis functions, 
+        either real Gaussian functions or complex gauge-including atomic orbitals (GIAOs).   
+        This keyword can be used to call the GIAO code with zero 
+        magnetic field, or to switch back to real Gaussians for common-gauge-origin calculations with the origin at (0, 0, 0).  
    | **Datatype**: String 
-   | **Values**: "london" or "giao" (for GIAO), and "gaussian".
-   | **Recommendation**: Default. Asking for standard orbitals in a calculation with a finite magentic field will result in a common gauge origin being used in generation of the basis functions. This is less expensive, but significantly less accurate.
- 
+   | **Values**: "gaussian" or "giao."  "London" can be used as an alias for "giao," and this option is case-insensitive.  
+   | **Default**: "gaussian" at zero magnetic field; GIAO a field is applied
+   | **Recommendation**:  Use the default.  
+
 
 
 
