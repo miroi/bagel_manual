@@ -9,7 +9,7 @@ N-electron valence state perturbation theory (NEVPT2)
 
 Description
 ===========
-Calculations using the strongly contracted n-electron valence state perturbation theory (NEVPT2) 
+Calculations using the strongly contracted state-specific n-electron valence state perturbation theory (NEVPT2) 
 are done using the keyword ``"title" : "nevpt2"``.
 
 Keywords
@@ -37,7 +37,7 @@ The default values are recommended unless mentioned otherwise.
    | **Datatype**: string
 
 .. topic:: ``norm_thresh``
-   | 
+     
    | **Default**: 1.0e-13
    | **Datatype**: double 
 
@@ -85,8 +85,13 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| Original references for NEVPT2                | Angeli, C.; Cimiraglia, R.; Evangelisti, S.; Leininger, T.; Malrieu   |
+|                                               | J.-P. J. Chem. Phys. 2001, **114**, 10252                             |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+|                                               | Angeli, C.; Cimiraglia, R.; Malrieu, J.-P. J. Chem. Phys. 2002,       |
+|                                               | **117**, 9138                                                         |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| Relativistic implementation of NEVPT2 in      | Shiozaki T., Mizukami W. J. Chem. Theory Comput. 2015, **11**, 4733   |
+| BAGEL                                         |                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
