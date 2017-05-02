@@ -426,7 +426,7 @@ It is possible to include artificial point charges in the calculation. These int
 Example
 -------
 
-A dihydrogen molecule with a nearby dummy charge of +2. Note that the charge specified in the "hf" block does not include the charge associated with with point charge. 
+A dihydrogen molecule with a nearby dummy charge of +0.2. Note that the charge specified in the "hf" block does not include the charge associated with with point charge. 
 
 Sample input
 ------------
@@ -442,7 +442,7 @@ Sample input
      "df_basis" : "tzvpp-jkfit",
      "angstrom" : "true",
      "geometry" : [
-       { "atom" :  "Q",  "xyz" : [  0.000000,   0.000000,   2.0000], "charge" : "2"},
+       { "atom" :  "Q",  "xyz" : [  0.000000,   0.000000,   2.0000], "charge" : "0.2"},
        { "atom" :  "H",  "xyz" : [  0.000000,   0.000000,   0.7414]},
        { "atom" :  "H",  "xyz" : [  0.000000,   0.000000,   0.0000]}
      ]
@@ -464,44 +464,41 @@ Sample output
 
 
   === RHF iteration (tzvpp) ===
-  
-               o Fock build                                  0.05
-      0         -1.31770292          0.01231637           0.05
-               o DIIS                                        0.00
-               o Diag                                        0.01
-               o Post process                                0.00
-               o Fock build                                  0.03
-      1         -1.32644825          0.00237184           0.04
-               o DIIS                                        0.00
-               o Diag                                        0.01
-               o Post process                                0.00
-               o Fock build                                  0.05
-      2         -1.32683161          0.00009404           0.06
+
+               o Fock build                                  0.01
+      0         -1.12552716          0.00743295           0.01
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.06
-      3         -1.32683219          0.00000684           0.06
-               o DIIS                                        0.00
-               o Diag                                        0.01
-               o Post process                                0.00
-               o Fock build                                  0.06
-      4         -1.32683220          0.00000108           0.06
+               o Fock build                                  0.01
+      1         -1.12987462          0.00139213           0.01
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.05
-      5         -1.32683220          0.00000005           0.05
+               o Fock build                                  0.01
+      2         -1.13008781          0.00009095           0.01
                o DIIS                                        0.00
-               o Diag                                        0.01
+               o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.04
-      6         -1.32683220          0.00000000           0.05
-  
+               o Fock build                                  0.01
+      3         -1.13008889          0.00000614           0.01
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.01
+      4         -1.13008889          0.00000054           0.01
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.01
+      5         -1.13008889          0.00000007           0.01
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.01
+      6         -1.13008889          0.00000000           0.01
+
     * SCF iteration converged.
 
     * Permanent dipole moment:
-           (    0.000000,    -0.000000,    -1.239951) a.u.
-
-
-    * METHOD: HF                                   0.79
+           (    0.000000,    -0.000000,    -0.427736) a.u.
