@@ -61,6 +61,7 @@ Required Keywords
    |    ``1``: the first excited state, and so on.
 
 .. topic:: ``method``
+
    | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information. 
 
 Convergence Criteria
