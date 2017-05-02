@@ -84,21 +84,21 @@ Convergence Criteria
 
 .. topic:: ``maxgrad``
 
-   | **Description:** Maximum component of the gradient.
+   | **Description:** Maximum component of the gradient in Hartree / Bohr.
    | **Default:** 0.00001 (atoms in the molecule < 4); 0.0003 (larger).
    | **Datatype:** double precision.
    | **Recommendation:** use default.
 
 .. topic:: ``maxdisp``
 
-   | **Description:** Maximum component of the displacement.
+   | **Description:** Maximum component of the displacement in Bohr.
    | **Default:** 0.00004 (atoms in the molecule < 4); 0.0012 (larger).
    | **Datatype:** double precision.
    | **Recommendation:** use default.
 
-.. topic:: ``maxdisp``
+.. topic:: ``maxchange``
 
-   | **Description:** Maximum component of the displacement.
+   | **Description:** The energy change in Hartree.
    | **Default:** 0.000001.
    | **Datatype:** double precision.
    | **Recommendation:** use default.
