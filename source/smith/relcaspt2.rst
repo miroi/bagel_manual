@@ -7,10 +7,8 @@ Relativistic multireference second-order perturbation theory (RelCASPT2)
 
 Description
 ===========
-CASPT2 is the second-order perturbation theory based on the multiconfiguration self-consistent field theory.
-Single-state version (SS-CASPT2), multi-state version (MS-CASPT2) and its extended variant (XMS-CASPT2) are available.
-CASPT2 in BAGEL is implemented with the automatic code generator SMITH3,
-and the SMITH information for XMS-CASPT2 should be passed in a separate array in the input.
+The relativistic version of the fully internally contracted CASPT2. As in its non-relativistic analogue, single-state calculations,
+multi-state calculations, and its extended variant are available. Of course, this is implemented with the automatic code generator SMITH3.
 
 Keywords
 ========
@@ -29,47 +27,46 @@ SMITH keywords
    | **Values:**
    |    ``true``: Do multistate CASPT2.
    |    ``false``: Do single-state CASPT2.
-   | **Recommendation:** N/A
 
 .. topic:: ``xms``
 
    | **Description:** Do extended multistate CASPT2.
-   | **Default:** false.
+   | **Default:** true.
    | **Datatype:** bool
    | **Values:**
-   |    ``true``: Do MS-CASPT2.
-   |    ``false``: Do XMS-CASPT2.
-   | **Recommendation:** N/A
+   |    ``true``: Do XMS-CASPT2.
+   |    ``false``: Do MS-CASPT2.
+   | **Recommendation:** Use default.
 
 .. topic:: ``sssr``
 
    | **Description:** Use SS-SR contraction scheme.
-   | **Default:** false.
+   | **Default:** true.
    | **Datatype:** bool
    | **Values:**
-   |    ``true``: Use SS-SR contraction scheme.
-   |    ``false``: Use MS-MR contraction scheme.
-   | **Recommendation:** N/A
+   |    ``true``: use SS-SR contraction scheme.
+   |    ``false``: use MS-MR contraction scheme.
+   | **Recommendation:** Use default for computational efficiency
 
 .. topic:: ``shift``
 
    | **Description:** Vertical shift.
    | **Default:** 0.0
    | **Datatype:** double precision
-   | **Recommendation:** N/A
+   | **Recommendation:** Use default. Increase the value if the convergence problem presents.
 
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold.
-   | **Default:** 1.0e-8 (gradient) 1.0e-6 (otherwise)
-   | **Datatype:** Double precision
+   | **Default:** For single point energy calculation, 1.0e-6. Tight convergence for gradient calculation, 1.0e-8.
+   | **Datatype:** double precision
    | **Recommendation:** Use default.
 
 .. topic:: ``thresh_overlap``
 
-   | **Description:** Overlap threshold.
+   | **Description:** Overlap cutoff threshold for internally contracted basis.
    | **Default:** 1.0-9
-   | **Datatype:** double precision
+   | **Datatype:** Double precision
    | **Recommendation:** Use default.
 
 .. topic:: ``frozen``
@@ -79,7 +76,7 @@ SMITH keywords
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Use frozen orbitals.
-   |    ``false``: Do without frozen orbitals.
+   |    ``false``: Perform CASPT2 without frozen orbitals.
    | **Recommendation:** Use default.
 
 .. topic:: ``maxiter``
@@ -98,73 +95,82 @@ SMITH keywords
 
 .. topic:: ``cimaxtile``
 
-   | **Description:** Maximum number of Slater determinant in a single data tile used in CASPT2 gradient.
+   | **Description:** Maximum number of Slater determinants in a single data tile used in CASPT2 gradient.
    | **Default:** 100 (When number of determinants is over 10000), 10 (otherwise)
    | **Datatype:** integer
-   | **Recommendation:** Use default. Increase further when the number of determinant is larger.
+   | **Recommendation:** Use default. Increase further when the number of determinants is larger.
 
 
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
-
+XMS-CASPT2 calculation based on the two-state CASSCF reference function, with vertical shift of 0.2 :math:`E_h`. "SS-SR" contraction scheme is used.
+The active space of (6e,6o), which comprises three :math:`\pi` and three :math:`\pi^*` orbitals, is used.
 
 Sample input
 ------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
-   { "bagel" : [
+  { "bagel" : [
 
-   {
-     "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
-     ]
-   },
-
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
-   }
-
-   ]}
-
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
-.. figure:: ../figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-    This is an example of how to insert a figure. 
+  {
+    "title" : "molecule",
+    "basis" : "svp",
+    "df_basis" : "svp-jkfit",
+    "geometry" : [
+    { "atom" : "C", "xyz" : [     -0.079002,      2.543870,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      2.557470,      2.543870,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      3.875630,      4.826190,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      2.557250,      7.109950,     -0.002266 ] },
+    { "atom" : "C", "xyz" : [     -0.078588,      7.109800,     -0.003171 ] },
+    { "atom" : "C", "xyz" : [     -1.396870,      4.826620,     -0.001289 ] },
+    { "atom" : "H", "xyz" : [     -1.117900,      0.744245,      0.000850 ] },
+    { "atom" : "H", "xyz" : [      3.595900,      0.743875,      0.002485 ] },
+    { "atom" : "H", "xyz" : [      5.953730,      4.826340,      0.001198 ] },
+    { "atom" : "H", "xyz" : [      3.596980,      8.909240,     -0.002377 ] },
+    { "atom" : "H", "xyz" : [     -1.118170,      8.909350,     -0.004972 ] },
+    { "atom" : "H", "xyz" : [     -3.474820,      4.826960,     -0.001629 ] }
+    ]
+  },
+  {
+    "title" : "caspt2",
+    "smith" : {
+      "method" : "caspt2",
+      "ms" : true,
+      "xms" : true,
+      "sssr" : true,
+      "shift" : 0.2
+    }
+    "nstate" : 2,
+    "nact" : 6,
+    "nclosed" : 18,
+    "active" : [17, 20, 21, 22, 23, 30]
+  }
+  ]}
 
 References
 ==========
 
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------+
-|          Description of Reference                 |                          Reference                                                                 | 
-+===================================================+====================================================================================================+
-| CASPT2                                            | K\. Andersson, P.-Å. Malmqvist, and B. O. Roos, J. Chem. Phys. 96, 1218 (1992).                    |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| MS-CASPT2                                         | J\. Finley, P.-Å. Malmqvist, B. O. Roos, and L. Serrano-Andres, Chem. Phys. Lett. 288, 299 (1998). |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| Extended multiconfigurational perturbation theory | A\. A. Granovsky, J. Chem. Phys. 134, 214113 (2011).                                               |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| XMS-CASPT2                                        | T\. Shiozaki, W. Győrffy, P. Celani, and H.-J. Werner, J. Chem. Phys. 135, 081106 (2011).          |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------+
-| SMITH3                                            | M\. K. MacLeod, and T. Shiozaki, J. Chem. Phys. 142, 010507 (2015).                                |
-+---------------------------------------------------+----------------------------------------------------------------------------------------------------+
+BAGEL References
+----------------
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
+|          Description of Reference                 |                          Reference                                                           | 
++===================================================+==============================================================================================+
+| XMS-CASPT2                                        | T\. Shiozaki, W. Győrffy, P. Celani, and H.-J. Werner, J. Chem. Phys. **135**, 081106 (2011).|
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
+| SMITH3                                            | M\. K. MacLeod, and T. Shiozaki, J. Chem. Phys. **142**, 010507 (2015).                      |
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
+| Relativistic CASPT2                               | T\. Shiozaki, and W. Mizukami, J. Chem. Theory Comput. **11**, 4733 (2015).                  |
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
 
+General References
+------------------
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+|          Description of Reference                 |                          Reference                                                                    | 
++===================================================+=======================================================================================================+
+| CASPT2                                            | K\. Andersson, P.-Å. Malmqvist, and B. O. Roos, J. Chem. Phys. **96**, 1218 (1992).                   |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| MS-CASPT2                                         | J\. Finley, P.-Å. Malmqvist, B. O. Roos, and L. Serrano-Andres, Chem. Phys. Lett. **288**, 299 (1998).|
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| Extended multiconfigurational perturbation theory | A\. A. Granovsky, J. Chem. Phys. **134**, 214113 (2011).                                              |
++---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
