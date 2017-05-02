@@ -102,6 +102,9 @@ Optional keywords
 ==========
 Basis sets 
 ==========
+
+The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
+
 * sto-3g
 * 3-21g  
 * 6-31g
@@ -123,6 +126,9 @@ Basis sets
 ==========================
 Density fitting basis sets
 ==========================
+
+The following density fitting basis sets are available in BAGEL library. The basis set name can be used with the ``df_basis`` keyword.
+
 * svp-jkfit
 * tzvpp-jkfit
 * qzvpp-jkfit
@@ -235,6 +241,10 @@ Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO
 ====================
 Auxiliary basis sets
 ====================
+
+The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``aux_basis`` keyword
+in the method block (refer to :ref:`mp2` for more details).
+
 * cc-pv5z-ri
 * cc-pvdz-ri
 * cc-pvqz-ri
@@ -243,7 +253,7 @@ Auxiliary basis sets
 Example
 -------
 
-An example using ``cc-pvdz-ri`` in MP2 calculation
+An example using cc-pvdz-ri in MP2 calculation
 
 .. code-block:: javascript 
 
@@ -281,6 +291,7 @@ An example using ``cc-pvdz-ri`` in MP2 calculation
 =========================================
 Effective core potential (ECP) basis sets 
 =========================================
+The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
 * ecp10mdf
 * ecp28mdf
