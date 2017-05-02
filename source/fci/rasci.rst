@@ -53,14 +53,6 @@ Keywords
    | **Values** : Three arrays with the containing indexes which specficy the orbitals between which excitations are permitted to occur.
    | **Recommendation** : This is highly system dependent, and dependent on the system under investigation. It is often good to run an initial Hartree Fock calculation, visualize the resulting orbitals in Molden (see section PRINT SECTION), and pick the spaces on the basis of chemical intuition. 
 
-.. topic:: ``space``
-
-   | **Description**: Specifies the output states
-   | **Default**: Must be specified by user.
-   | **Datatype** : array, user input variables to
-   | **Values**: One or more arrays which define a charge, spin and nstate (number of desired states with this charge and spin)
-   | **Recommendation** : This is highly system dependent. It shold be noted that picking the correct set of states may result in bettwe convergence, and that fewer states is not always better.
-
 .. topic:: ``max_holes``
 
    | **Description**: Maximum number of particles in R1.
@@ -175,7 +167,7 @@ Sample input
 
    {
      "title" : "fci",
-     "algorithm" : "parallel",
+     "algorithm" : "harrison",
      "nstate" : 2
    }
 
