@@ -152,17 +152,24 @@ to -99.92755305.
 
 References
 ==========
-
+BAGEL references
+----------------
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| General text on relativistic electronic       | Marcus Reiher and Alexander Wolf, Relativistic Quantum Chemistry,     |
-| structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Original implementation of density fitted     | Matthew S. Kelley and Toru Shiozaki J. Chem. Phys. 2013, 138, 204113. |
+| Original implementation of density fitted     | M\. S. Kelley, and T. Shiozaki, J. Chem. Phys. **138**, 204113 (2013).|
 | Dirac--Hartree--Fock with RMB spinor basis.   |                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Extension to permit external magnetic fields, | Ryan D. Reynolds and Toru Shiozaki Phys. Chem. Chem. Phys. 2015, 17,  |
-| including GIAO-RMB atomic basis.              | 14280-14283.                                                          |
+| Extension to permit external magnetic fields, | R\. D. Reynolds, and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,     |
+| including GIAO-RMB atomic basis.              | 14280 (2015).                                                         |
++-----------------------------------------------+-----------------------------------------------------------------------+
+
+General references
+------------------
++-----------------------------------------------+-----------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                    | 
++===============================================+=======================================================================+
+| General text on relativistic electronic       | M\. Reiher, and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH, |
+| structure, including Dirac--Hartree--Fock.    | Weinheim, 2009).                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
