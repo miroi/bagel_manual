@@ -10,4 +10,9 @@ SMITH3-written functions
    :maxdepth: 2
 
   caspt2.rst
+  mrci.rst
+  casa.rst
+  relcaspt2.rst
+  relmrci.rst
+  relcasa.rst
 
