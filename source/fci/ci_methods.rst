@@ -1,4 +1,4 @@
-.. index:: zfci
+.. index:: ci
 
 .. _ci:
 
