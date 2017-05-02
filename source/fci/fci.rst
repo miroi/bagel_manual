@@ -100,7 +100,7 @@ Keywords
 =======
 Example
 =======
-A series of calculations for H2 with stretching bond, one set using HF and the other set using CI. The HF energies will not describe the bond breaking correclty.
+A Hartree-Fock and FCI calculation on a dioxygen molecule with a stretched bond. The HF calculation yield an energy and set of orbitals (in the hf_orbitals.molden) which are quite incorrect. This can be compared the energies and orbitals (output to fci_orbitals.molden) obtained from the FCI calculation.
 
 Sample input
 ------------
@@ -108,54 +108,38 @@ Sample input
 .. code-block:: javascript 
 
    { "bagel" : [
-
    {
      "title" : "molecule",
      "basis" : "tzvpp",
      "df_basis" : "tzvpp-jkfit",
-     "angstrom" : false,
+     "angstrom" : true,
      "geometry" : [
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.9000]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.0]}
+       { "atom" : "O",  "xyz" : [   -0.000000,     -0.000000,      1.5]},
+       { "atom" : "O",  "xyz" : [   -0.000000,     -0.000000,      0.0]}
      ]
    },
-
    {
      "title" : "hf",
      "thresh" : 1.0e-10
+   },
+
+   { "title" : "print",
+     "filename" : "hf_orbitals.molden",
+     "orbitals" : true
    },
 
    {
      "title" : "fci",
      "algorithm" : "kh",
      "nstate" : 2
-   }
+   },
 
+   { "title" : "print",
+     "filename" : "fci_orbitals.molden",
+     "orbitals" : true
+   }
    ]}
 
-Sample output
--------------
-
-.. code-block:: javascript 
-
-     * ci vector   0, <S^2> = 0.0000, E =      -75.28621267
-       2-2222-..    -0.9869448133
-       2-2.22-.2     0.0722472124
-       2-22.2-2.     0.0518733106
-       2-2ba2-ba     0.0515088811
-       2-2ab2-ab     0.0515088811
-
-     * ci vector   1, <S^2> = 0.0000, E =      -74.84580572
-       2-222b-a.     0.6892819995
-       2-222a-b.     0.6892819995
-       2-2a2b-ab     0.0966215491
-       2-2b2a-ba     0.0966215491
-       2-22ab-2.     0.0724329521
-       2-22ba-2.     0.0724329521
-       2-2a2b-ba     0.0684729742
-       2-2b2a-ab     0.0684729742
-       2-a22b-2.    -0.0532858928
-       2-b22a-2.    -0.0532858928
 
 References
 ==========
