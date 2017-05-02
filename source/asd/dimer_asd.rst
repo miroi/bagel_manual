@@ -24,9 +24,9 @@ Keywords
 Required Keywords
 -----------------
 
-.. topic:: ``title``
+.. topic:: ``asd``
    
-   | **Value:** asd
+   | **Description:** asd calculation for non-covalently bonded molecular dimer
 
 .. topic:: ``method``
    
@@ -124,8 +124,13 @@ Optional Keywords
 
 Example
 =======
-Give an example here
+Here is a sample calculation of a benzene dimer molecule.
 
+.. figure:: ../figure/benzene_dimer.png
+    :width: 100px
+    :align: center
+    :alt: alternate text
+    :figclass: align-center
 
 Sample input
 ------------
@@ -136,8 +141,8 @@ Sample input
    
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
      "angstrom" : false,
      "cartesian" : false,
      "geometry" : [
@@ -181,25 +186,28 @@ Sample input
      "space" : [
        { "charge" : 0, "spin" : 0, "nstate" : 3},
        { "charge" : 0, "spin" : 2, "nstate" : 3},
-       { "charge" : 1, "spin" : 1, "nstate" : 2},
-       { "charge" :-1, "spin" : 1, "nstate" : 2}
+       { "charge" : 1, "spin" : 1, "nstate" : 3},
+       { "charge" :-1, "spin" : 1, "nstate" : 3}
      ],
      "fci" : {
        "thresh" : 1.0e-6,
        "algorithm" : "kh",
        "nguess" : 400
      },
-     "nstates" : 2
+     "nstates" : 5
    }
    
    ]}
 
-
-.. figure:: ../figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
  
 Reference
 =========
++-----------------------------------------------+--------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                             | 
++===============================================+================================================================================+
+| Active Space Decompotion Method               | Parker S. M., Seideman T., Ratner M. A., Shiozaki T.,                          |
+|                                               | J. Chem. Phys. **139**, 021108 (2013)                                          |
++-----------------------------------------------+--------------------------------------------------------------------------------+
+
+
+
