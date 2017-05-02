@@ -190,13 +190,13 @@ References
 +----------------------------------------------------+--------------------------------------------------------------------+
 |          Description of Reference                  |                          Reference                                 |
 +====================================================+====================================================================+
-| Used for CI convergence algorithm.                 | P\. J. Knowles, and N. C. Handy, Chem. Phys. Lett., **111**, 315   |
+| Efficient calculation of sigma vector              | P\. J. Knowles, and N. C. Handy, Chem. Phys. Lett., **111**, 315   |
 |                                                    | (1984).                                                            |
 +----------------------------------------------------+--------------------------------------------------------------------+
 | General text on relativistic quantum chemistry     | K\. G. Dyall, and K. Faegri Jr.,                                   |
 |                                                    | *Introduction to Relativistic Quantum Chemistry*                   |
 |                                                    | (Oxford University Press, Oxford, 2007).                           |
 +----------------------------------------------------+--------------------------------------------------------------------+
-| Used in the construction of the relativistic basis | W\. Kutzelnigg, Int. J. Quantum Chem., **25**, 107 (1984).         |
+| Restricted kinetic balance basis                   | W\. Kutzelnigg, Int. J. Quantum Chem., **25**, 107 (1984).         |
 +----------------------------------------------------+--------------------------------------------------------------------+
 

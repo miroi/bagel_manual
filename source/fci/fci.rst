@@ -217,10 +217,9 @@ References
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 |          Description of Reference             |                           Reference                                              |
 +===============================================+==================================================================================+
-| Efficient calculation of matrix elements      | P\. J\. Knowles and N\. C\. Handy, Chem. Phys. Lett. **111**, 315 (1984)         |
-| between different states.                     |                                                                                  |
+| Efficient calculation of sigma vector         | P\. J\. Knowles and N\. C\. Handy, Chem. Phys. Lett. **111**, 315 (1984).        |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-|                                               | R\. J\. Harrison, and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989)       |
+| Efficient calculation of sigma vector         | R\. J\. Harrison, and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989).      |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 | General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |

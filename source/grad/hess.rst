@@ -131,6 +131,6 @@ References
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 |          Description of Reference                  |                          Reference                                                                       | 
 +====================================================+==========================================================================================================+
-| General description of vibrational spectroscopy    | E.\ B. Wilson, Jr., J. C. Decius, and P. C. Cross, *Molecular Vibrations* (McGraw-Hill, New York, 1955). |
+| General description of vibrational spectroscopy    | E\. B. Wilson, Jr., J. C. Decius, and P. C. Cross, *Molecular Vibrations* (McGraw-Hill, New York, 1955). |
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
