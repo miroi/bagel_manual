@@ -48,6 +48,7 @@ This is an example input file for checking BAGEL installation.
 This is an example output file for checking BAGEL installation.
 
 .. code-block:: javascript
+
   ===============================================================
     BAGEL - Freshly leavened quantum chemistry                   
   ===============================================================
