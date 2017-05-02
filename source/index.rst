@@ -13,9 +13,13 @@
 **Contents:**
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    molecule.rst
+
+.. toctree::
+   :maxdepth: 2
+
    scf/scf.rst
    fci/ci_methods.rst  
    multi/multi.rst

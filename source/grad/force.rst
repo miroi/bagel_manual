@@ -31,6 +31,7 @@ Required Keywords
    | **Recommendation:** N/A
 
 .. topic:: ``method``
+
    | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information.
  
 .. topic:: ``nacmtype``
@@ -249,7 +250,7 @@ BAGEL References
 +-----------------------------------------------+---------------------------------------------------------------------------------+
 | (X)MS-CASPT2 gradient                         | B\. Vlaisavljevich and T. Shiozaki J. Chem. Theory Comput. 12, 3781 (2016)      | 
 +-----------------------------------------------+---------------------------------------------------------------------------------+
-| (X)MS-CASPT2 derivative coupling              | J\. W. Park and T. Shiozaki, Submitted.                                              | 
+| (X)MS-CASPT2 derivative coupling              | J\. W. Park and T. Shiozaki, Submitted.                                         | 
 +-----------------------------------------------+---------------------------------------------------------------------------------+
 
 General References
