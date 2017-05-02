@@ -95,16 +95,6 @@ Keywords
    |    ``false``: Do not print natural orbitals.
    | **Recommendation:** use default.
 
-.. topic:: ``sort_by_coeff``
-
-   | **Description:** Sort orbitals by coefficients or by occupation number.
-   | **Default:** false.
-   | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Sort by coefficients.
-   |    ``false``: Sort by occupation numbers.
-   | **Recommendation:** use default.
-
 .. topic:: ``maxiter``
 
    | **Description:** Maximum number of macroiteration.

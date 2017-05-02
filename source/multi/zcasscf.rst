@@ -88,6 +88,14 @@ Keywords
    | **Datatype**: int
    | **Recommendation**:  This parameter must sometimes be increased for difficult optimizations.  
 
+.. topic:: ``maxiter_fci``
+
+   | **Description**: Maximum number of iterations in CI coefficient optimization for the CAS-CI part
+   | **Default**: copied from "maxiter"
+   | **Datatype**: integer
+   | **Recommendation**:  It is recommended to set this to a fairly high value.  If the CAS-CI part does not fully converge, the 
+   |     CASSCF algorithm will continue using the approximate solution, but you should make sure it is fully converged in the final macroiteration.  
+
 .. topic:: ``thresh``
 
    | **Description**:  Convergence threshold for the root-mean-squared of the error vector.  
@@ -138,33 +146,37 @@ Keywords
 
    | **Description**:  This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis, in determination of g-factors and zero-field splitting parameters.  See below for details.  
 
-.. topic:: ``example``
+.. topic:: ``davison_subspace``
 
-   | **Description**:  
-   | **Default**: 
-   | **Datatype**: bool
-   | **Recommendation**:  
+   | **Description**:  Number of vectors retained in the limited-memory algorithm for the CAS-CI part
+   | **Default**: 20
+   | **Datatype**: integer
+   | **Recommendation**: Altering this parameter can sometimes change the convergence behavior.  Any number above 3 is reasonable.  
 
-.. topic:: ``example``
+.. topic:: ``print_thresh``
 
-   | **Description**:  
-   | **Default**: 
-   | **Datatype**: bool
-   | **Recommendation**:  
+   | **Description**:  Threshold below which CI coefficients are not printed (to casscf.log after each macroiteration, and to the standard output at the end of the calculation)
+   | **Default**: 0.05
+   | **Datatype**: double
 
-.. topic:: ``example``
+.. topic:: ``state``
 
-   | **Description**:  
-   | **Default**: 
-   | **Datatype**: bool
-   | **Recommendation**:  
+   | **Description**: Number of states computed for each spin value.  All are included in the state-averaging procedure when orbitals are optimized.   
+   | **Default**:  There is no default; this parameter must be supplied in the input.  
+   | **Datatype**: vector of integers
+   | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example, 
+   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).  
+   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the 
+   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.  
 
-.. topic:: ``example``
+.. topic:: ``spin_adapt``
 
-   | **Description**:  
-   | **Default**: 
-   | **Datatype**: bool
-   | **Recommendation**:  
+   | **Description**:  This parameter allows us to deactivate the generation of spin-adapted configuration state functions in the starting guess for the CAS-CI part.  
+   | **Default**: true
+   | **Datatype**: boolean
+   | **Recommendation**:  Normally use the default setting.  If you are computing all or nearly all the states that can be formed with a given 
+   |     active space, you will encounter an error stating that "generate_guess produced an invalid determinant."  
+   |     Deactivating this feature leads to a poorer guess but eliminates that problem.  
 
 
 Example
