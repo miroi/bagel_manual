@@ -35,7 +35,7 @@ Keywords
 
 .. topic:: ``norb``
 
-   | **Description**: Number of orbitals into which electrons can be excited..
+   | **Description**: Number of orbitals in which electrons can be populated.
    | **Default**: Uses all possible orbitals
    | **Datatype**: integer
    | **Recommendation**: System dependent, the user should specify a value. Using all possible configurations is typically computationally expensive, and is best reserved for benchmarking calculations.
