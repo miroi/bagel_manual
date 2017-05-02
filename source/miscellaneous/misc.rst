@@ -10,5 +10,5 @@ Molecular properties, printing and reading, processing data
    :maxdepth: 2
 
    localization.rst
-   print.rst
+   molden.rst
 
