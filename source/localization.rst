@@ -1,18 +1,19 @@
 .. _localization:
 
-************
-Localization
-************
+********************
+Orbital localization
+********************
 
 ===========
 Description
 ===========
+Orbital localization 
 
 ========
 Keywords
 ========
 
-.. topic:: ``file``
+.. topic:: ````
 
    | **Description:** Name of the file to be generated 
    | **Datatype:** string 

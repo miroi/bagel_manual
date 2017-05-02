@@ -1,12 +1,13 @@
 .. _localize:
 
-********
-Localize
-********
+********************
+Orbital localization
+********************
 
 ===========
 Description
 ===========
+Orbital localization 
 
 ========
 Keywords

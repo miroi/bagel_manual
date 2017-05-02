@@ -1,14 +1,14 @@
-.. _caspt2:
+.. _relcaspt2:
 
-********************************************************
-Multireference second-order perturbation theory (CASPT2)
-********************************************************
+************************************************************************
+Relativistic multireference second-order perturbation theory (RelCASPT2)
+************************************************************************
 
 
 Description
 ===========
 CASPT2 is the second-order perturbation theory based on the multiconfiguration self-consistent field theory.
-Fully internally contracted single-state version (SS-CASPT2), multi-state version (MS-CASPT2) and its extended variant (XMS-CASPT2) are available.
+Single-state version (SS-CASPT2), multi-state version (MS-CASPT2) and its extended variant (XMS-CASPT2) are available.
 CASPT2 in BAGEL is implemented with the automatic code generator SMITH3,
 and the SMITH information for XMS-CASPT2 should be passed in a separate array in the input.
 
