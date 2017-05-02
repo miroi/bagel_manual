@@ -1,4 +1,4 @@
-. _molecule:
+.. _molecule:
 
 ********
 Molecule 
@@ -174,6 +174,26 @@ Example with mixed basis sets and density fitting basis sets:
    }
    
    ]}
+
+Example with running a calculation from a molden file using the keyword ``"basis" : "molden"``
+and providing a value for ``"molden_file"``:
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "molden",
+     "df_basis" : "svp-jkfit",
+     "cartesian" : true,
+     "molden_file" : "hf_write_mol_cart.molden"
+   }
+   
+   ]}
+
+(refer to :ref:`molden` in :ref:`misc` for more details)
 
 ====================
 Auxiliary basis sets
