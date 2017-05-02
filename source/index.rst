@@ -10,15 +10,15 @@
     :width: 300px
     :align: right 
 
-**Contents:**
-
 .. toctree::
    :maxdepth: 1
 
+   install.rst
    molecule/molecule-toc.rst
 
 .. toctree::
    :maxdepth: 2
+   
 
    scf/scf.rst
    fci/ci_methods.rst  
@@ -30,6 +30,10 @@
    miscellaneous/misc.rst
    supp_info/supp_info.rst
    author.rst
+
+Developer Manual
+================
+This manual is intended for programmers wishing to customize or extend BAGEL.
 
 Index
 ==================
