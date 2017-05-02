@@ -41,9 +41,12 @@ Build BAGEL
 
   A minimal set of configure options is ::
 
-    ../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST_ROOT)/lib -L$(MKL_ROOT)/lib' '--with-include=-I$(BOOST_ROOT)/include -I$(MKL_ROOT)/include'
+    ../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST_ROOT)/lib' '--with-include=-I$(BOOST_ROOT)/include'
    
   Configure options:
+
+.. hlist::
+   :columns: 1
 
     * ``--with-mpi=value``  turns on MPI. *value* can be mvapich, intel, openmpi. However, Open MPI is not recommended. 
     * ``--enable-mkl``  turns on MKL extensions, such as efficient matrix transposition. MKL libraries are automatically detected.

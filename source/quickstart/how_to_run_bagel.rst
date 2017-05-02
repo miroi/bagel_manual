@@ -8,13 +8,13 @@ How to run BAGEL
 Command
 =======
 
-BAGEL runs by
+BAGEL runs by ::
 
-``BAGEL your/path/to/input.json``
+   BAGEL your/path/to/input.json
 
-BAGEL sends output to the standard I/O stream, so you have to pipe the output in order to save it as a file:
+BAGEL sends output to the standard I/O stream, so you have to pipe the output in order to save it as a file: ::
 
-``BAGEL your/path/to/input.json > output.out``
+   BAGEL your/path/to/input.json > output.out
 
 =======================
 Test input and output
@@ -39,7 +39,6 @@ This is an example input file for checking BAGEL installation.
 
 	{
 		"title" : "hf",
-		"thresh" : 1.0e-10
 	}
 
 	]}
