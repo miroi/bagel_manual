@@ -7,8 +7,7 @@ MP2
 
 Description
 ===========
-Møller–Plesset
-note : MP2 is only implemented with density fitting
+MP2 computes the Møller–Plesset perturbation theory second-order correction to the Hartree-Fock energy. (Resolution of the identity approximation algorithm) is implemented here. In BAGEL, MP2 only works with density fitting.
 
 
 Keywords
