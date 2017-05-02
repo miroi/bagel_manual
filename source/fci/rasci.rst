@@ -1,9 +1,9 @@
 .. _rasci:
 
 
-*******
-Restricted active space configuration interaction
-*******
+*********************************************************
+Restricted active space configuration interaction (RASCI)
+*********************************************************
 
 ======
 Description 
