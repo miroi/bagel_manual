@@ -116,7 +116,6 @@ Keywords
 
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
 .. code-block:: javascript 
 
@@ -146,7 +145,8 @@ This should be an example that is chemically relevant. There should be text expl
 
 	]}
 
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
+The non-relativistic SCF calculation converges in 13 iterations to -99.84772354 and the Dirac-HF converges after 9 iterations 
+to -99.92755305.
 
 References
 ==========
