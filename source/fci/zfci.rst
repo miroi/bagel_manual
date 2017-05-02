@@ -190,8 +190,8 @@ References
 +----------------------------------------------------+--------------------------------------------------------------------+
 |          Description of Reference                  |                          Reference                                 |
 +====================================================+====================================================================+
-| Efficient calculation of matrix elements between   | P\. J. Knowles, and N. C. Handy, Chem. Phys. Lett., **111**, 315   |
-| states.                                            | (1984).                                                            |
+| Efficient calculation of sigma vector              | P\. J. Knowles, and N. C. Handy, Chem. Phys. Lett., **111**, 315   |
+|                                                    | (1984).                                                            |
 +----------------------------------------------------+--------------------------------------------------------------------+
 | General text on relativistic quantum chemistry     | K\. G. Dyall, and K. Faegri Jr.,                                   |
 |                                                    | *Introduction to Relativistic Quantum Chemistry*                   |

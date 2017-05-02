@@ -203,7 +203,7 @@ References
 +-----------------------------------------------+---------------------------------------------------------------------+
 |          Description of Reference             |                           Reference                                 | 
 +===============================================+=====================================================================+
-| Used in RASCI convergence algorithm           | P.\ J. Knowles, and N. C. Handy, Chem. Phys. Lett.                  |
+| Efficient calculation of sigma vector         | P.\ J. Knowles, and N. C. Handy, Chem. Phys. Lett.                  |
 |                                               | **111**, 315-321 (1984).                                            |
 +-----------------------------------------------+---------------------------------------------------------------------+
 | RASCI algorithm                               | J\. Olsen, B. O. Roos, P. Jorgensen, and H. J. A.-Jensen, J. Chem.  |
