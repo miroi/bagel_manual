@@ -119,9 +119,9 @@ html_theme_options = {
    "textcolor" : "black", #Body text color.
    "linkcolor" : "blue",  #Body link color.
    "visitedlinkcolor" : "royalblue", #Body color for visited links.
-   "headbgcolor" : "indigo", #Background color for headings.
-   "headtextcolor" : "white", #Text color for headings.
-   "headlinkcolor" : "silver", #Link color for headings.
+   "headbgcolor" : "white", #Background color for headings.
+   "headtextcolor" : "indigo", #Text color for headings.
+   "headlinkcolor" : "indigo", #Link color for headings.
    "codebgcolor" : "lavender", # Background color for code blocks.
    "codetextcolor" : "black", #Default text color for code blocks, if not set differently by the highlighting style.
    "bodyfont" : "tahoma", #Font for normal text.
