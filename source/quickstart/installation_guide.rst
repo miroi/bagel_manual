@@ -7,21 +7,19 @@ Installation
 -------------
 Prerequisites
 -------------
+    ===================  =====================================  =======================
+    MPI C++ compiler                                            C++11 and MPI-3 support
+    GNU Libtool          https://www.gnu.org/software/libtool    
+    GNU Autoconf         https://www.gnu.org/software/autoconf  Version 2.69 or newer
+    GNU Automake         https://www.gnu.org/software/automake   
+    Boost C++ Libraries  http://www.boost.org                   Version 1.53.0 or newer
+    BLAS                 http://www.netlib.org/blas             Use optimized BLAS
+    LAPACK               http://www.netlib.org/lapack           Use optimized LAPACK
+    ScaLAPACK            http://www.netlib.org/scalapack        Use optimized ScaLPACK
+    ===================  =====================================  =======================
 
-.. topic:: ``Required``
 
-   | MPI C++ compiler (support C++11 and MPI-3 standard features)
-   | `GNU Libtool <https://www.gnu.org/software/libtool/>`_
-   | `GNU Autoconf <https://www.gnu.org/software/autoconf/autoconf.html>`_ (Version 2.69 or newer)
-   | `GNU AutoMake <https://www.gnu.org/software/automake/>`_
-   | `Boost C++ Libraries <http://www.boost.org/>`_ (Version 1.53.0 or newer)
-   | `BLAS <http://www.netlib.org/blas/>`_
-   | `LAPACK <http://www.netlib.org/lapack/>`_
-   | `ScaLAPACK <http://www.netlib.org/scalapack/scalapack_home.html>`_
-
-.. topic:: ``**Strongly Recommended** for BLAS, LAPACK & ScaLAPACK``
-
-   | `Intel MKL <https://software.intel.com/en-us/intel-mkl>`_ (Intel Math Kernel Library)
+Intel MKL is strongly recommended for BLAS, LAPACK, and ScaLAPACK (distributed for free for academic users) 
 
 -----------
 Build BAGEL
