@@ -4,7 +4,7 @@
 =======================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    installation_guide.rst
    how_to_run_bagel.rst   
