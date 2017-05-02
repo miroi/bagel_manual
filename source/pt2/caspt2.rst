@@ -61,14 +61,14 @@ SMITH keywords
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold.
-   | **Default:** 10^-8 (gradient) 10^-6 (otherwise)
+   | **Default:** 1.0e-8 (gradient) 1.0e-6 (otherwise)
    | **Datatype:** double precision
    | **Recommendation:** use default.
 
 .. topic:: ``thresh_overlap``
 
    | **Description:** Overlap threshold.
-   | **Default:** 10^-9
+   | **Default:** 1.0-9
    | **Datatype:** double precision
    | **Recommendation:** use default.
 
