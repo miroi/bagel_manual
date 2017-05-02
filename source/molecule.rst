@@ -15,25 +15,25 @@ Required keywords
 =================
 .. topic:: ``basis``
 
-   | DESCRIPTION: basis sets for the system
-   | DATATYPE: string
-   | VALUES:
+   | **Description**: basis sets for the system
+   | **Datatype**: string
+   | **Values**:
    |    Please refer to `Basis Sets`_ for possible aruments
 
 .. topic:: ``geometry``
 
-   | DESCRIPTION: specify elements and their Cartisian coordinates  
-   | DEFAULT: No Default
-   | DATATYPE: vector
-   | VALUES: 
+   | **Description**: specify elements and their Cartisian coordinates  
+   | **Default**: No Default
+   | **Datatype**: vector
+   | **Values**: 
    |    Elements are specified as {"atom" : "Atom Name",  "xyz" : [x y z]}
 
 .. topic:: ``df_basis``
 
-   | DESCRIPTION: basis sets used for density fitting
-   | DEFAULT: No Default Value
-   | DATATYPE: string
-   | VALUES:
+   | **Description**: basis sets used for density fitting
+   | **Default**: No Default Value
+   | **Datatype**: string
+   | **Values**:
    |     Please refer to `Density fitting basis sets`_ for possible aruments
 
 =================
@@ -42,25 +42,25 @@ Optional keywords
 
 .. topic:: ``angstrom``
 
-   | DESCRIPTION: specify units for atomic coordinates (Angstrom or Bohr)
-   | DEFAULT: false (Angstrom)
-   | DATATYPE: bool
+   | **Description**: specify units for atomic coordinates (Angstrom or Bohr)
+   | **Default**: false (Angstrom)
+   | **Datatype**: bool
    |    ``TRUE``: use Angstrom
    |    ``FALSE``: use Bohr
 
 .. topic:: ``molden_file``
 
-   | DESCRIPTION: filename of input molden file"
-   | DEFAULT: No Default
-   | DATATYPE: string
+   | **Description**: filename of input molden file"
+   | **Default**: No Default
+   | **Datatype**: string
    | VALUE:
    |    User defined
 
 .. topic:: ``cfmm``
 
-   | DESCRIPTION: option to do RHF-FMM, in which case density fitting is not used
-   | DEFAULT: false 
-   | DATATYPE: boolean 
+   | **Description**: option to do RHF-FMM, in which case density fitting is not used
+   | **Default**: false 
+   | **Datatype**: boolean 
 
 ==========
 Basis sets 
