@@ -149,34 +149,43 @@ Keywords
 
 Example
 =======
-Possibly series of calculations for H2 with stretching bond. HF and CI . The HF energies will not describe the bond breaking correclty.
+A Hartree-Fock and FCI calculation on a dioxygen molecule with a stretched bond. The HF calculation yield an energy and set of orbitals (in the hf_orbitals.molden) which are quite incorrect. This can be compared the energies and orbitals (output to fci_orbitals.molden) obtained from the FCI calculation.
 
+Sample input
+------------
 .. code-block:: javascript 
 
    { "bagel" : [
-
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
+     "basis" : "tzvpp",
+     "df_basis" : "tzvpp-jkfit",
+     "angstrom" : true,
      "geometry" : [
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.9000]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.0]}
+       { "atom" : "O",  "xyz" : [   -0.000000,     -0.000000,      1.5]},
+       { "atom" : "O",  "xyz" : [   -0.000000,     -0.000000,      0.0]}
      ]
    },
-
    {
      "title" : "hf",
      "thresh" : 1.0e-10
    },
 
+   { "title" : "print",
+     "filename" : "hf_orbitals.molden",
+     "orbitals" : true
+   },
+
    {
      "title" : "fci",
-     "algorithm" : "parallel",
+     "algorithm" : "kh",
      "nstate" : 2
-   }
+   },
 
+   { "title" : "print",
+     "filename" : "fci_orbitals.molden",
+     "orbitals" : true
+   }
    ]}
 
 
