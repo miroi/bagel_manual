@@ -68,9 +68,9 @@ Optional keywords
    | **Default**: false 
    | **Datatype**: boolean 
 
-====================
+========================
 User defined basis sets
-====================
+========================
 
 The basis set file is in the following format
 
@@ -182,9 +182,9 @@ Effective core potential (ECP) basis sets
 * def2-SVP-2c-ecp
 * lanl2dz-ecp
 
-==========
+========================
 Auxiliary basis sets
-==========
+========================
 * svp-jkfit
 * tzvpp-jkfit
 * qzvpp-jkfit
