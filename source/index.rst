@@ -6,9 +6,11 @@
 Brilliantly Advanced General Electronic-structure Library
 =============================================================
 
-.. figure:: _static/bagel-final.*
-    :width: 300px
-    :align: right 
+.. only:: html
+
+   .. image:: _static/bagel-final.*
+      :width: 300px
+      :align: right
 
 .. toctree::
    :maxdepth: 2
