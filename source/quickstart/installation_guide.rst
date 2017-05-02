@@ -34,7 +34,7 @@ Build BAGEL
    
  1. mkdir obj
  #. cd obj
- #. minimum configure: ``../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST)/lib -L$(MKL)/lib' '--with-include=-I$(BOOST)/include -I(MKL)/include'``
+ #. minimum configure: ``../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST_ROOT)/lib -L$(MKL_ROOT)/lib' '--with-include=-I$(BOOST_ROOT)/include -I$(MKL_ROOT)/include'``
    
   Configure Options
     * ``--with-mpi=value``  turns on MPI. *value* can be mvapich, intel, openmpi. However, Open MPI is not recommended. 
