@@ -1,5 +1,7 @@
 .. _mp2:
 
+.. index:: mp2
+
 ****************************************
 Møller–Plesset perturbation theory (MP2)
 ****************************************
@@ -7,7 +9,8 @@ Møller–Plesset perturbation theory (MP2)
 
 Description
 ===========
-MP2 computes the second-order Møller–Plesset perturbation theory with density fitting.
+MP2 computes the second-order Møller–Plesset perturbation theory with density fitting using
+the keyword ``"title" : "mp2"``.
 
 
 Keywords

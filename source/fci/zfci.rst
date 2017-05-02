@@ -1,5 +1,7 @@
 .. _zfci:
 
+.. index:: zfci
+
 ****************************************************
 Relativistic full configuration interaction (RelFCI)
 ****************************************************
