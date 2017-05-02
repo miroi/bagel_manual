@@ -23,69 +23,69 @@ Keywords
 
 .. topic:: ``method``
    
-   | **Description:** method to compute active subspaces
+   | **Description:** Method to compute active subspaces.
    | **Datatype:** string
    | **Value:**
    |   ``ras``: use restricted active space configuration interaction method
 
 .. topic:: ``ras``
 
-   | **Description:** specify restricted active space method settings 
-   | **Recommendation:** see :ref:`rasci` for details
+   | **Description:** Specify restricted active space method settings.
+   | **Recommendation:** See :ref:`rasci` for details.
 
 .. topic:: ``restricted``
    
-   | **Description:** specify occupation restriction in active space
-   | **Recommendation:** see sample input for details
+   | **Description:** Specify occupation restriction in active space.
+   | **Recommendation:** See sample input for details.
 
 .. topic:: ``spaces``
 
-   | **Description:** specify important single site states with the following keys:
+   | **Description:** Specify important single site states with the following keys:
    |  ``charge``, ``spin``, ``nstate``
-   | **Recommendation:** see sample input for details
+   | **Recommendation:** See sample input for details.
 
 .. topic:: ``nstates``
    
-   | **Description:** number of target states
+   | **Description:** Number of target states.
    | **Datatype:** int
    | **Default** 1
 
 .. topic:: ``ntrunc``
    
-   | **Description:** number of dmrg states to keep
+   | **Description:** Number of dmrg states to keep.
    | **Datatype:** int
 
 .. topic:: ``thresh``
    
-   | **Description:** threshold for convergence in Davidson diagonalization
+   | **Description:** Threshold for convergence in Davidson diagonalization.
    | **Datatype:** double
 
 .. topic:: ``maxiter``
    
-   | **Description:** maximum number of iterations for Davidson diagonalization 
+   | **Description:** Maximum number of iterations for Davidson diagonalization.
    | **Datatype:** int
    | **Default:** 50
 
 .. topic:: ``perturb``
    
-   | **Description:** initial perturbation value
+   | **Description:** Initial perturbation value.
    | **Datatype:** double
    | **Default:** 0.001
-   | **Recommendation:** use default
+   | **Recommendation:** Use default.
 
 .. topic:: ``perturb_thresh``
    
-   | **Description:** threshold for energy convergence when perturbation is applied
+   | **Description:** Threshold for energy convergence when perturbation is applied.
    | **Datatype:** double
    | **Default:** 0.0001
-   | **Recommendation:** use default
+   | **Recommendation:** Use default.
   
 .. topic:: ``perturb_min``
    
-   | **Description:** minimum perturbation to be applied
+   | **Description:** Minimum perturbation to be applied.
    | **Datatype:** double
    | **Default:** 0.00001
-   | **Recommendation:** use default
+   | **Recommendation:** Use default.
 
 
 Example
