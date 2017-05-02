@@ -79,31 +79,30 @@ Optional keywords
    | **Datatype**: boolean 
    | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.    
 
-.. topic:: ``basis_type``
-
-   | **Description**: Can request generation of gauge independent atomic orbitals (GIAO), London orbitals from requested basis.
-   | **Default**: Standard if no magnetic field, GIAO if there is a magnetic field.
-   | **Datatype**: String 
-   | **Recommendation**: Default. Asking for standard orbitals in a calculation with a finite magentic field is equivalent to asking for a common gauge origin, which is less expensive, bit significantly less accurate.
- 
 .. topic:: ``magnetic_field``
 
    | **Description**: a vector of external magnetic field. When the magnetic field is non-zero,
                       Gauge-invariant atomic orbitals (GIAO) is used by default.
    | **Default**: ``{{0.0, 0.0, 0.0}}``
+   | **Datatype** : Array of integers
    | **Recommendation**: Only use it if you need to; running with a magnetic field of zero, whilst physically equivalent to switching the magnetic field off, may be computationally more expensive. The gauge origin of the vector potential corresponding to the magentic field is at the origin of the co-ordinate system, hence the geometry should be specified such that the paramagnetic centre of the system is located at the origin, particularly if are making use of the :ref:`aniso` tools. At present finite magnetic field is only well tested for :ref:`dhf` and :ref:`hf`, but can potentially used with :ref:`zcasscf`. 
 
 .. topic:: ``tesla``
 
    | **Description**: unit of the external magnetic field
    | **Default**: false (use atomic unit)
-
+   | **Datatype** : double
+ 
 .. topic:: ``basis_type``
 
-   | **Description**: type of basis set used: standard Gaussian or Gauge-invariant atomic orbitals (GIAO).
-                      Note that when the magnetic field is non-zero, GIAO is used by default.
-   | **Default**: gaussian
-   | **Values**: "london" or "giao" (for GIAO), and "gaussian"
+   | **Description**: Specify whether or not to use standard Gaussian basis functions from input, or to use input basis to generate gauge-invariant atomic orbitals (GIAO).
+   | **Default**: Standard if no magnetic field, GIAO if there is a magnetic field.
+   | **Datatype**: String 
+   | **Values**: "london" or "giao" (for GIAO), and "gaussian".
+   | **Recommendation**: Default. Asking for standard orbitals in a calculation with a finite magentic field will result in a common gauge origin being used in generation of the basis functions. This is less expensive, but significantly less accurate.
+ 
+
+
 
 ==========
 Basis sets 
@@ -259,7 +258,7 @@ in the method block (refer to :ref:`mp2` for more details).
 Example
 -------
 
-An example using cc-pvdz-ri in MP2 calculation
+An example using cc-pvdz-ri in MP2 calculation.
 
 .. code-block:: javascript 
 
@@ -309,7 +308,7 @@ The following auxiliary basis sets are available in BAGEL library. The basis set
 * lanl2dz-ecp
 
 .. note::
-   user-defined ECP basis sets need to contain the keyword "ecp" in the names. 
+   User-defined ECP basis sets need to contain the keyword "ecp" in the names. 
    Refer to `User defined basis sets`_ for more details.
 
 Example
@@ -388,7 +387,7 @@ of a single basis function.
 The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. 
 
 .. note:: 
-   Not all of the the basis sets are defined for all atoms;  an error of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
+   Not all of the the basis sets are defined for all atoms;  an error message of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
  
 To use a user specified basis the explicit path to the basis set file must be specified in the basis set block.
 
@@ -427,7 +426,7 @@ It is possible to include artificial point charges in the calculation. These int
 Example
 -------
 
-A dihydrogen molecule with a nearby dummy charge of +2. Note that the charge specified in the "hf" block does not include the charge associated with with point charge. 
+A dihydrogen molecule with a nearby dummy charge of +0.2. Note that the charge specified in the "hf" block does not include the charge associated with with point charge. 
 
 Sample input
 ------------
@@ -443,7 +442,7 @@ Sample input
      "df_basis" : "tzvpp-jkfit",
      "angstrom" : "true",
      "geometry" : [
-       { "atom" :  "Q",  "xyz" : [  0.000000,   0.000000,   2.0000], "charge" : "2"},
+       { "atom" :  "Q",  "xyz" : [  0.000000,   0.000000,   2.0000], "charge" : "0.2"},
        { "atom" :  "H",  "xyz" : [  0.000000,   0.000000,   0.7414]},
        { "atom" :  "H",  "xyz" : [  0.000000,   0.000000,   0.0000]}
      ]
@@ -465,44 +464,41 @@ Sample output
 
 
   === RHF iteration (tzvpp) ===
-  
-               o Fock build                                  0.05
-      0         -1.31770292          0.01231637           0.05
-               o DIIS                                        0.00
-               o Diag                                        0.01
-               o Post process                                0.00
-               o Fock build                                  0.03
-      1         -1.32644825          0.00237184           0.04
-               o DIIS                                        0.00
-               o Diag                                        0.01
-               o Post process                                0.00
-               o Fock build                                  0.05
-      2         -1.32683161          0.00009404           0.06
+
+               o Fock build                                  0.01
+      0         -1.12552716          0.00743295           0.01
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.06
-      3         -1.32683219          0.00000684           0.06
-               o DIIS                                        0.00
-               o Diag                                        0.01
-               o Post process                                0.00
-               o Fock build                                  0.06
-      4         -1.32683220          0.00000108           0.06
+               o Fock build                                  0.01
+      1         -1.12987462          0.00139213           0.01
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.05
-      5         -1.32683220          0.00000005           0.05
+               o Fock build                                  0.01
+      2         -1.13008781          0.00009095           0.01
                o DIIS                                        0.00
-               o Diag                                        0.01
+               o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.04
-      6         -1.32683220          0.00000000           0.05
-  
+               o Fock build                                  0.01
+      3         -1.13008889          0.00000614           0.01
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.01
+      4         -1.13008889          0.00000054           0.01
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.01
+      5         -1.13008889          0.00000007           0.01
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.01
+      6         -1.13008889          0.00000000           0.01
+
     * SCF iteration converged.
 
     * Permanent dipole moment:
-           (    0.000000,    -0.000000,    -1.239951) a.u.
-
-
-    * METHOD: HF                                   0.79
+           (    0.000000,    -0.000000,    -0.427736) a.u.
