@@ -11,6 +11,12 @@
     :align: right 
 
 .. toctree::
+   :maxdepth: 2
+
+   installation_guide.rst
+   how_to_run_bagel.rst   
+
+.. toctree::
    :maxdepth: 1
 
    molecule/molecule-toc.rst
@@ -18,8 +24,6 @@
 .. toctree::
    :maxdepth: 2
 
-   installation_guide.rst
-   how_to_run_bagel.rst   
    scf/scf.rst
    fci/ci_methods.rst  
    multi/multi.rst

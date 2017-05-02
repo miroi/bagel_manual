@@ -31,9 +31,18 @@ Keywords
 
 .. topic:: ``frozen``
 
-   | **Description**: to have frozen orbitals or not.
+   | **Description**: To have frozen orbitals or not.
    | **Default**: true
    | **Datatype**: bool
+   | **Recommendation**: Default, otherwise the basis for the CI expansion will become very large. 
+
+
+.. topic:: ``norb``
+
+   | **Description**: Number of orbitals into which electrons can be excited..
+   | **Default**: Uses all possible orbitals
+   | **Datatype**: integer
+   | **Recommendation**: System dependent, the user should specify a value. Using all possible configurations is typically computationally expensive, and is best reserved for benchmarking calculations.
 
 .. topic:: ``algorithm``
    
@@ -100,7 +109,7 @@ Keywords
 =======
 Example
 =======
-A Hartree-Fock and FCI calculation on a dioxygen molecule with a stretched bond. The HF calculation yield an energy and set of orbitals (in the hf_orbitals.molden) which are quite incorrect. This can be compared the energies and orbitals (output to fci_orbitals.molden) obtained from the FCI calculation.
+A Hartree-Fock and FCI calculation on a dioxygen molecule with a stretched bond. The HF calculation yield an energy and set of orbitals (in the hf_orbitals.molden) which are quite incorrect. This can be compared the energies and orbitals (output to fci_orbitals.molden) obtained from the FCI calculation. Please refer to :ref:`molden` for more information on the print input block.
 
 Sample input
 ------------
