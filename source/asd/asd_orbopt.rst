@@ -27,7 +27,7 @@ Required Keywords
 
 .. topic:: ``asd_orbopt``
    
-   | **Description:** asd calculation for covalently linked molecular dimer
+   | **Description:** set ``"title" = "asd_orbopt"`` asd calculation for covalently linked molecular dimer
 
 .. topic:: ``algorithm``
    
