@@ -7,7 +7,7 @@ Hartree--Fock
 Description
 ===========
 
-SCF can be run using the following keywords
+SCF can be run by specifying the following values to the keyword ``title``:
 
 * Restricted HF for closed-shell systems: ``rhf`` or ``hf``
 * Restricted open-shell HF: ``rohf``
@@ -33,13 +33,13 @@ The default values are recommended unless mentioned otherwise.
 
    | **Description**: number of iterations and number of SCF interations, after which the program will terminate if convergence is not reached.
    | **Default**: :math:`100`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``diis_start`` and ``diis_size``
    | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
                       algorithm for the to update the orbitals.
    | **Default**: :math:`1`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 
 .. topic:: ``thresh_overlap``
@@ -60,21 +60,21 @@ The default values are recommended unless mentioned otherwise.
    | **Description**: rank of Cartesian multipole moments printed out.
    | **Default** : :math:`1` (dipoles)
    | **Values** : :math:`1, 2`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``dma``
 
    | **Description**: options to print out multipole moments from distributed multipole analysis.
    | **Default** : :math:`0` (not print out)
    | **Values** : :math:`0, 1, 2, 3`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 
 .. topic:: ``charge``
 
    | **Description**: molecular charge
    | **Default** : :math:`0`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``nact`` and ``nocc``
 
@@ -86,14 +86,14 @@ The default values are recommended unless mentioned otherwise.
    | **Default**: false
    | **Datatype**: bool
 
-Keywords for RHF/FMM
+Keywords for RHF-FMM
 ====================
 
 .. topic:: ``ns``
 
    | **Description**: level of descritization which controls the number of lowest-level boxes in one dimension for FMM
    | **Default**: :math:`4`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``ws``
 
@@ -101,25 +101,25 @@ Keywords for RHF/FMM
                       two collections of charges before they are considered distant 
                       and can interact through multipole expansions
    | **Default**: :math:`2`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``lmax``
 
    | **Description**: order of the multipole expansions in FMM-J
    | **Default**: :math:`10`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``exchange``
 
    | **Description**: whether to include far-field exchange using occ-RI-FMM
    | **Default**: false
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``lmax_exchange``
 
    | **Description**: order of the multipole expansions in FMM-K
    | **Default**: :math:`2`
-   | **Datatype**: integer 
+   | **Datatype**: int 
 
 .. topic:: ``fmm_thresh``
 
@@ -129,7 +129,7 @@ Keywords for RHF/FMM
 
 Examples
 =======
-Below are some examples for SCF calculations using RHF, ROHF, UHF, RHF with FMM.
+Below are some examples for SCF calculations using RHF, ROHF, UHF, and RHF-FMM.
 
 RHF
 ---
@@ -295,8 +295,14 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| General text on electronic structure theory   | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction to |
+|                                               | Advanced Electronic Structure Theory, Dover Publications.             |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| References for fast multipole method in       | White, C. A., Johnson B. G., Gill P. M. W., Head-Gordon M.,           |
+| quantum chemistry                             | *Chem. Phys. Lett.* 230, 8 (1994).                                    |
+|                                               +-----------------------------------------------------------------------+
+|                                               | Strain M. C., Scuseria G. E., Frisch M. J., *Science* 271, 51 (1996). |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| Exact exchange evaluation using occ-RI-FMM    |  Le H-.A., Shiozaki T., in preparation                                |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
