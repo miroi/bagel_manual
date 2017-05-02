@@ -188,9 +188,17 @@ Sample input: force
  ]}
 
 
-Methods that require the use of smith: 
+Using the same molecule block, a XMS-CASPT2 analytical gradient calculation can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 8 electrons and 7 orbitals, (8*e*,7*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states. 
 
 .. code-block:: javascript 
+
+  {
+    "title" : "casscf",
+    "nstate" : 2,
+    "nclosed" : 46,
+    "nact" : 3,
+    "active" : [37, 44, 49]
+  },
 
   {
     "title" : "force",
@@ -205,9 +213,9 @@ Methods that require the use of smith:
            "shift" : 0.2,
            "frozen" : true
        },
-       "nstate" : 3,
-       "nact_cas" : 7,
-       "nclosed" : 44
+       "nstate" : 2,
+       "nact_cas" : 3,
+       "nclosed" : 46
      } ]
    }
 
@@ -217,8 +225,9 @@ Sample input: NACME and DGRAD
 .. code-block:: javascript 
 
   {
-    "title" : "force",
+   "title" : "nacme",
      "target" : 0,
+     "target2" : 1,
      "method" : [ {
        "title" : "caspt2",
          "smith" : {
@@ -234,9 +243,6 @@ Sample input: NACME and DGRAD
        "nclosed" : 44 
      } ]
    }
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
 
 References
 ==========
