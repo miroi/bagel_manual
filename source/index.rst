@@ -13,11 +13,12 @@ Contents:
 
    molecule.rst
    scf/scf.rst
-   pt2/pt2.rst
-   multi/multi.rst
    fci/ci_methods.rst  
    multi/multi.rst
+   pt2/pt2.rst
    grad/grad.rst
+   supp_info/supp_info.rst
+   molden.rst
 
 Indices and tables
 ==================

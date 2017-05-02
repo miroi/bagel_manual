@@ -1,7 +1,7 @@
 .. _grad:
 
 *********************************************
-Nuclear Gradients and Related Functionalities
+Nuclear gradients and related functionalities
 *********************************************
 
 Gradient, Hessian and Geometry optimization
