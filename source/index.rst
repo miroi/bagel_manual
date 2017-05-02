@@ -22,7 +22,7 @@ BAGEL manual
    localize.rst
    supp_info/supp_info.rst
    molden.rst
-   asd_temp/asd.rst
+   asd/asd.rst
 
 Indices and tables
 ==================

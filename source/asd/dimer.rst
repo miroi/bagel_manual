@@ -69,24 +69,6 @@ Sample input
        "max_iter" : 50,
        "thresh" : 1.0e-8
      }
-   },
-   
-   {
-     "title" : "asd",
-     "method" : "cas",
-     "store_matrix" : false,
-     "space" : [
-       { "charge" : 0, "spin" : 0, "nstate" : 3},
-       { "charge" : 0, "spin" : 2, "nstate" : 3},
-       { "charge" : 1, "spin" : 1, "nstate" : 2},
-       { "charge" :-1, "spin" : 1, "nstate" : 2}
-     ],
-     "fci" : {
-       "thresh" : 1.0e-6,
-       "algorithm" : "kh",
-       "nguess" : 400
-     },
-     "nstates" : 2
    }
    
    ]}

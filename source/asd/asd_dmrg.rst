@@ -1,8 +1,8 @@
-.. _dimer_asd:
+.. _asd_dmrg:
 
-*********
-Dimer ASD
-*********
+******************
+ASD-DMRG Algorithm
+******************
 
 
 Description
@@ -25,4 +25,5 @@ Give an example here
 
 Sample input
 ------------
+find the triple benzene input and tune the ntrunc
 
