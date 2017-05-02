@@ -106,10 +106,11 @@ Keywords
 
 .. topic:: ``only_ints``
 
-   | **Description**:
+   | **Description**:  Used to compute integrals, print to a file, and terminate the program.
+   |      This can be used to interface BAGEL to an external CASSCF solver.  
    | **Default**: false
    | **Datatype**: boolean
-   | **Recommendation**:
+   | **Recommendation**:  Normally use the default value.  
 
 .. topic:: ``spin_adapt``
 

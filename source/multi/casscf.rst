@@ -21,21 +21,24 @@ Keywords
    | **Description:** Number of states included in the state averaging.
    | **Default:** 1.
    | **Datatype:** integer
-   | **Recommendation:** N/A
 
 .. topic:: ``nact``
 
    | **Description:** Number of active orbitals.
    | **Default:** 0.
    | **Datatype:** integer
-   | **Recommendation:** N/A
 
 .. topic:: ``nclosed``
 
    | **Description:** Number of closed orbitals.
-   | **Default:** full core orbitals (-1).
+   | **Default:** Number of electrons / 2.
    | **Datatype:** integer
-   | **Recommendation:** N/A
+
+.. topic:: ``active``
+
+   | **Description:** Specify active orbitals.
+   | **Default:** Nact / 2 orbitals lower and higher from the valence orbital.
+   | **Datatype:** integer array
 
 .. topic:: ``algorithm``
 
@@ -92,16 +95,6 @@ Keywords
    |    ``false``: Do not print natural orbitals.
    | **Recommendation:** use default.
 
-.. topic:: ``sort_by_coeff``
-
-   | **Description:** Sort orbitals by coefficients or by occupation number.
-   | **Default:** false.
-   | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Sort by coefficients.
-   |    ``false``: Sort by occupation numbers.
-   | **Recommendation:** use default.
-
 .. topic:: ``maxiter``
 
    | **Description:** Maximum number of macroiteration.
@@ -114,7 +107,7 @@ Keywords
    | **Description:** Maximum number of microiteration.
    | **Default:** 100.
    | **Datatype:** integer
-   | **Recommendation:** N/A
+   | **Recommendation:** use default.
 
 Example
 =======
