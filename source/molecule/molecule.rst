@@ -2,17 +2,6 @@
 
 .. _molecule:
 
-**************************************
-Molecule (system specification)
-**************************************
-
-Description
-===========
-
-Molecule, starting with ``"title" : "molecule"``, is the input block which specifies the basic features of the calculation.
-It contains information such as basis sets and geometry for the input system. The user has to specify the contents of this block
-in order to run the calculation.
-
 Required keywords
 =================
 
