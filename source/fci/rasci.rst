@@ -144,7 +144,10 @@ Keywords
 Example
 =======
 
-A water molecule. 
+A water molecule. The first active space, R1, contains the oxygen 1s orbital, the second active space, 
+R2 contains the 1a1, 1b1, 2a1 and 2b1, orbitals. The third active space, R3, contains the 
+3a1 and 2b2 antibonding orbitals. One excitation is allowed from R1 to R2, and two excitations are allowed from
+R2 to R3.
 
 Sample input
 ------------
