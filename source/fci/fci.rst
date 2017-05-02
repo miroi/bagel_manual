@@ -2,7 +2,7 @@
 
 
 *******
-Configuration interaction methods
+Full CI
 *******
 
 ===========
@@ -13,10 +13,6 @@ This section discusses three of the closely related configuration interaction (C
 Most of the relevant code for these methods can be found in $BAGEL/src/ci/ci (FCI) ,   
 $BAGEL/src/ci/ras (ras) 
 $BAGEL/src/ci/zfci (ZFCI) 
-
-======
-FullCI 
-======
 
 FCI is aims to describe the wavefunction as a linear combination of Slater determinants:
 

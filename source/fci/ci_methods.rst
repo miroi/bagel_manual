@@ -7,7 +7,7 @@ Configuration interaction methods
 Configuration interaction methods, fci and rassci
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    fci.rst  
    rasci.rst  
