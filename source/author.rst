@@ -12,4 +12,4 @@ The Dirac–Hartree–Fock program was developed by **TS** with contributions fr
 
 **JWP** implemented all of the geometry optimizers (for equilibrium geometries, transition states,  and conical intersections) that are currently used, replacing inefficient code due to **TS**. **JWP** is also responsible for the interfaces to dynamics programs. All of the code for the ASD algorithms was developed by **SMP** (except orbital optimization part written by **Inkoo Kim**). The GIAO code was written by **RDR**. 
 
-**Peter J. Cherry**, **JWP**, **BV**, **HAL**, **RDR**, **Yeonjun Jeong**, **Jheng-Wei Li**, and **YW** wrote the manual at a group retreat in Wisconsin while **TS** "supervised".
+**Peter J. Cherry**, **JWP**, **BV**, **HAL**, **RDR**, **Yeonjun Jeong**, **Jheng-Wei Li**, and **YW** wrote the manual at a group retreat in Wisconsin (May 1-3, 2017) while **TS** "supervised".
