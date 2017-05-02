@@ -7,56 +7,77 @@ Hartree--Fock
 Description
 ===========
 
-.. math::
-  H\Psi = E\Psi
+SCF can be run using the following keywords
 
-* Restricted HF: ``rhf`` or ``hf``
+* Restricted HF for closed-shell systems: ``rhf`` or ``hf``
 * Restricted open-shell HF: ``rohf``
-* Un-restricted HF: ``uhf``
+* Unrestricted HF: ``uhf``
+
+Except for restricted Hartree--Fock, density fitting is used by default. Density fitting basis has to be
+specified in the Molecule/Input section.
+
+RHF can be run with ECP basis sets and and fast multipole method (FMM).
 
 Keywords
 ========
 The default values are recommended unless mentioned otherwise.
 
-.. topic:: ``gradient``
+.. topic:: ``thresh`` or ``thresh_scf``
 
-   | Description: to compute gradient
-   | Default: false
-   | Datatype: bool
-   | Recommendation: use default.
-
-.. topic:: ``restart``
-
-   | Description: to restart the calculation from an archive file
-   | Default: false
-   | Datatype: bool
-   | Recommendation: use default.
-
-.. topic:: ``maxiter``
-
-   | Description: number of iterations
-   | Default: 100
-   | Datatype: integer 
+   | **Description**: SCF convergence threshold 
+   | **Default**: 1.0e-8
+   | **Datatype**: double
 
 .. topic:: ``maxiter`` and ``maxiter_scf``
 
-   | Description: number of iterations and number of SCF interations, which are the same if you only run SCF calculations
-   | Default: 100
-   | Datatype: integer 
+   | **Description**: number of iterations and number of SCF interations, which are the same if you only run SCF calculations
+   | **Default**: 100
+   | **Datatype**: integer 
 
 .. topic:: ``diis_start`` and ``diis_size``
 
 .. topic:: ``thresh_overlap``
 
-   | Description: overlap integral threshold 
-   | Default: 1e-8
-   | Datatype: double
+   | **Description**: overlap integral threshold 
+   | **Default**: 1.0e-8
+   | **Datatype**: double
 
-.. topic:: ``thresh`` or ``thresh_scf``
+.. topic:: ``df`` (only for RHF) 
 
-   | Description: SCF convergence threshold 
-   | Default: 1e-8
-   | Datatype: double
+   | **Description**: use density fitting or not
+   | **Default** : true
+   | **Datatype**: bool 
+
+.. topic:: ``multipole``
+
+   | **Description**: rank of multipole moments printed out
+   | **Default** : 1 (dipoles)
+   | **Values** : 1, 2
+   | **Datatype**: integer 
+
+.. topic:: ``dma``
+
+   | **Description**: options to print out multipole moments from distributed multipole analysis
+   | **Default** : 0 (not print out)
+   | **Values** : 0, 1, 2, 3
+   | **Datatype**: integer 
+
+
+.. topic:: ``charge``
+
+   | **Description**: molecular charge
+   | **Default** : 0
+   | **Datatype**: integer 
+
+.. topic:: ``nact`` and ``nocc``
+
+   | **Description**: number of unpaired electrons and occupied orbitals
+
+.. topic:: ``restart``
+
+   | **Description**: to restart the calculation from an archive file
+   | **Default**: false
+   | **Datatype**: bool
 
 Example
 =======
@@ -71,8 +92,8 @@ RHF
    
    {
      "title" : "molecule",
-     "symmetry" : "C2v",
      "basis" : "svp",
+     "df_basis" : "svp_jkfit",
      "angstrom" : "false",
      "geometry" : [
        { "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
@@ -82,8 +103,8 @@ RHF
    
    {
      "title" : "hf",
-     "df" : false,
-     "thresh" : 1.0e-10
+     "df" : "true",
+     "thresh" : 1.0e-8
    }
    
    ]}
@@ -109,7 +130,7 @@ ROHF
    {
      "title" : "rohf",
      "nact" : 1,
-     "thresh" : 1.0e-10
+     "thresh" : 1.0e-8
    }
    
    ]}
@@ -135,7 +156,7 @@ UHF
    {
      "title" : "uhf",
      "nact" : 1,
-     "thresh" : 1.0e-10
+     "thresh" : 1.0e-8
    }
    
    ]}
