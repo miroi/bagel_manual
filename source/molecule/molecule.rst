@@ -2,19 +2,17 @@
 
 .. _molecule:
 
-********
-Molecule 
-********
+**************************************
+Molecule (system specification)
+**************************************
 
-===========
 Description
 ===========
 
-Molecule, starting with ``"title" : "molecule"``, is one of the basic input blocks specifying important
-information such as basis sets and geometry for the input system. The user has to specify the contents of this block
-in order to run the calculation..
+Molecule, starting with ``"title" : "molecule"``, is the input block which specifies the basic features of the calculation.
+It contains information such as basis sets and geometry for the input system. The user has to specify the contents of this block
+in order to run the calculation.
 
-=================
 Required keywords
 =================
 
@@ -44,7 +42,6 @@ Required keywords
 Note that the use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
 basis set other than the default for each atom (see example for `Basis sets`_ below).
 
-=================
 Optional keywords
 =================
 
@@ -75,7 +72,7 @@ Optional keywords
                       refer to :ref:`hf` section.
    | **Default**: false 
    | **Datatype**: boolean 
-   | **Recommendation**: Use for calculations on very large systems. Is particularly effective for long, chain-like molecules. 
+   | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules. 
 
 .. topic:: ``schwarz_thresh``
 
@@ -92,12 +89,19 @@ Optional keywords
    | **Datatype**: boolean 
    | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.    
 
+.. topic:: ``basis_type``
+
+   | **Description**: Can request generation of gauge independent atomic orbitals (GIAO), London orbitals from requested basis.
+   | **Default**: Standard if no magnetic field, GIAO if there is a magnetic field.
+   | **Datatype**: String 
+   | **Recommendation**: Default. Asking for standard orbitals in a calculation with a finite magentic field is equivalent to asking for a common gauge origin, which is less expensive, bit significantly less accurate.
+ 
 .. topic:: ``magnetic_field``
 
    | **Description**: a vector of external magnetic field. When the magnetic field is non-zero,
                       Gauge-invariant atomic orbitals (GIAO) is used by default.
    | **Default**: ``{{0.0, 0.0, 0.0}}``
-   | **Recommendation**: Only use it if you need to; running with a magnetic field of zero, whilst physically equivalent to switching the magnetic field off, may be computationally more expensive. The gauge origin in at origin of the co-ordinate system, hence if you are making use of the :ref:`aniso` tools, be sure to have the paramagnetic centre of the system located at the origin. At present finite magnetic field is only well tested for :ref:`dhf` and :ref:`hf`, but can potentially used with :ref:`zcasscf`. 
+   | **Recommendation**: Only use it if you need to; running with a magnetic field of zero, whilst physically equivalent to switching the magnetic field off, may be computationally more expensive. The gauge origin of the vector potential corresponding to the magentic field is at the origin of the co-ordinate system, hence the geometry should be specified such that the paramagnetic centre of the system is located at the origin, particularly if are making use of the :ref:`aniso` tools. At present finite magnetic field is only well tested for :ref:`dhf` and :ref:`hf`, but can potentially used with :ref:`zcasscf`. 
 
 .. topic:: ``tesla``
 
@@ -114,6 +118,9 @@ Optional keywords
 ==========
 Basis sets 
 ==========
+
+The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
+
 * sto-3g
 * 3-21g  
 * 6-31g
@@ -135,6 +142,9 @@ Basis sets
 ==========================
 Density fitting basis sets
 ==========================
+
+The following density fitting basis sets are available in BAGEL library. The basis set name can be used with the ``df_basis`` keyword.
+
 * svp-jkfit
 * tzvpp-jkfit
 * qzvpp-jkfit
@@ -143,8 +153,9 @@ Density fitting basis sets
 * cc-pvqz-jkfit
 * cc-pv5z-jkfit
 
-Example
--------
+========
+Examples
+========
 
 .. code-block:: javascript 
 
@@ -246,6 +257,10 @@ Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO
 ====================
 Auxiliary basis sets
 ====================
+
+The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``aux_basis`` keyword
+in the method block (refer to :ref:`mp2` for more details).
+
 * cc-pv5z-ri
 * cc-pvdz-ri
 * cc-pvqz-ri
@@ -254,7 +269,7 @@ Auxiliary basis sets
 Example
 -------
 
-An example using ``cc-pvdz-ri`` in MP2 calculation
+An example using cc-pvdz-ri in MP2 calculation
 
 .. code-block:: javascript 
 
@@ -292,6 +307,7 @@ An example using ``cc-pvdz-ri`` in MP2 calculation
 =========================================
 Effective core potential (ECP) basis sets 
 =========================================
+The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
 * ecp10mdf
 * ecp28mdf
