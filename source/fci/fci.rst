@@ -1,6 +1,6 @@
-.. _fci:
-
 .. index:: fci
+
+.. _fci:
 
 ************************************
 Full configuration interaction (FCI)
