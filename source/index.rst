@@ -6,6 +6,10 @@
 BAGEL manual
 ============
 
+.. figure:: _static/bagel-final.png
+    :width: 300px
+    :align: center
+
 **Contents:**
 
 .. toctree::
