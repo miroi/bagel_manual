@@ -234,6 +234,7 @@ Effective core potential (ECP) basis sets
 * lanl2dz-ecp
 
 Note that user-defined ECP basis sets need to contain the keyword "ecp" in the names. 
+Refer to `User defined basis sets`_ for more details.
 
 ========================
 Auxiliary basis sets
@@ -319,9 +320,9 @@ The basis set file is in the following format
 | The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
 of a single basis function.
 | "angular" defines the kind of orbital (s,p,d,f...) . 
-| "prim" is a array containing the exponents of the primative orbitals from which the basis funciton is composed.
-| "cont" is an array containing the coefficients associated with each of these primiative orbitals.
+| "prim" is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
+| "cont" is an array containing the coefficients associated with each of these primitive orbitals.
 |
 | The user casn specify their own basis set using the above format, or use one of the predefined basis sets listed below. Note that not
-all of the below basis sets are defined for all atome; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
+all of the below basis sets are defined for all atoms; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
  
