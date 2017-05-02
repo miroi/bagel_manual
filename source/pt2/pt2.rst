@@ -1,7 +1,7 @@
 .. _pt2:
 
 *******************
-Perturbation theory
+Perturbation Theory
 *******************
 
 PT2 methods include MP2, CASPT2, and NEVPT2
