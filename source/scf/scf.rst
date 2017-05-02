@@ -1,8 +1,8 @@
 .. _scf:
 
-*************
-SCF
-*************
+*********************
+Self-consistent field
+*********************
 
 Non-relativistic and relativistic Hartree--Fock
 

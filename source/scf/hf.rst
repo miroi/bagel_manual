@@ -79,9 +79,12 @@ The default values are recommended unless mentioned otherwise.
    | **Default**: false
    | **Datatype**: bool
 
-Example
+Keywords for RHF/FMM
+====================
+
+Examples
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
+Below are some examples for SCF calculations using RHF, ROHF, UHF, RHF with FMM.
 
 RHF
 ---
@@ -162,6 +165,39 @@ UHF
    ]}
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
+
+RHF-FMM
+-------
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "sto-3g",
+     "angstrom" : "false",
+     "cfmm" : "true",
+     "geometry" : [
+       { "atom" : "H", "xyz" : [  -97.770374233,    -91.172348950,   -466.211922530] },
+       { "atom" : "F", "xyz" : [  -96.762432231,    -90.232427827,   -461.405614050] },
+       { "atom" : "H", "xyz" : [  -66.524172159,    -62.034794131,   -317.216359660] },
+       { "atom" : "F", "xyz" : [  -65.516230156,    -61.094873008,   -312.410051180] }
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "df" : "false",
+     "ns" : "2",
+     "ws" : "1",
+     "lmax" : "10",
+     "exchange" : "true",
+     "lmax_exchange" : "2",
+     "thresh" : 1.0e-8
+   }
+   
+   ]}
 
 References
 ==========
