@@ -316,13 +316,14 @@ The basis set file is in the following format
   ]
  }
 
-| The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
-| The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
+The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
+The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
 of a single basis function.
-| "angular" defines the kind of orbital (s,p,d,f...) . 
-| "prim" is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
-| "cont" is an array containing the coefficients associated with each of these primitive orbitals.
-|
-| The user casn specify their own basis set using the above format, or use one of the predefined basis sets listed below. Note that not
-all of the below basis sets are defined for all atoms; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
+ * ``angular`` defines the kind of orbital (s,p,d,f...) . 
+ * ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
+ * ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
+ 
+The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. Note that not
+all of the the basis sets are defined for all atoms; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
+Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
  
