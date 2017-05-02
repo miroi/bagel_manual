@@ -4,7 +4,7 @@
 Active Space Decomposition Method
 *********************************
 
-Description to ASD
+Efficient total active space decomposition method for multi-site molecules with distinct active subspaces. 
 
 .. toctree::
    :maxdepth: 2
