@@ -1,3 +1,4 @@
+.. index:: dimer
 .. _dimer:
 
 Description
@@ -11,24 +12,24 @@ Keywords
 Common keywords
 ---------------
 
-.. topic:: ``title``
+.. topic:: ``dimerize``
    
-   | **Value:** dimerize
+   | **Description:** set ``title`` to ``dimerize`` to start constructing dimer
 
 .. topic:: ``form``
    
    | **Description:** whether the dimer fragments are covalently linked
    | **Datatype:** string
    | **Value:**
-   |  * linked: covalently linked dimer
-   |  * displace: separated fragments
+   |   ``linked``: covalently linked dimer
+   |   ``displace``: separated fragments
    | **Default:** displace
 
 .. topic:: ``dimer_active``
 
    | **Description:** 
-   |  * for non-covalently linked dimer: specify monomer active orbitals, 
-   |  * for covalently linked dimer: specify dimer active orbitals, 
+   |   for non-covalently linked dimer: specify monomer active orbitals, 
+   |   for covalently linked dimer: specify dimer active orbitals
    | **Datatype:** set<int>
 
 .. topic:: ``hf``
@@ -81,5 +82,5 @@ Keywords for covalently linked dimer
 
 Prerequisite
 ============
-:ref:`hf` calculations are needed to obtain fragment active orbitals.
+:ref:`hf` calculations are needed to obtain fragment molecular orbitals.
 
