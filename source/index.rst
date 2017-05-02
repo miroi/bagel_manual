@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-BAGEL manual
-============
+**BAGEL Manual**
+================
 
 .. figure:: _static/bagel-final.*
     :width: 300px
@@ -25,6 +25,8 @@ BAGEL manual
    print.rst
    localization.rst
    supp_info/supp_info.rst
+   molden.rst
+   asd/asd.rst
 
 Indices and tables
 ==================
