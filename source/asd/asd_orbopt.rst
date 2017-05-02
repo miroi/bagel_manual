@@ -1,3 +1,4 @@
+.. index:: asd_orbital_optimization
 .. _asd_orbopt:
 
 ************************
@@ -42,7 +43,7 @@ Required Keywords
 
 .. topic:: ``asd``
 
-   | **Description:** asd information
+   | **Description:** ``asd`` block specifies asd options
    | **Recommendation:** see :ref:`dimer_asd` for details
 
 .. topic:: ``gradient_thresh``

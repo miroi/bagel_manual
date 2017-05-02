@@ -1,3 +1,4 @@
+.. index:: asd_dmrg
 .. _asd_dmrg:
 
 ********
@@ -20,6 +21,10 @@ Multisite construction
 Keywords
 ========
 
+.. topic:: ``asd_dmrg``
+   
+   | **Description:** set ``"title" = "asd_dmrg"`` to start ASD-DMRG calculation
+
 .. topic:: ``method``
    
    | **Description:** method to compute active subspaces
@@ -30,7 +35,12 @@ Keywords
 .. topic:: ``ras``
 
    | **Description:** specify restricted active space method settings 
-   | **Recommendation:** see (add hyperlink to ras) for details
+   | **Recommendation:** see :ref:`rasci` for details
+
+.. topic:: ``restricted``
+   
+   | **Description:** specify occupation restriction in active space
+   | **Recommendation:** see sample input for details
 
 .. topic:: ``spaces``
 
@@ -77,8 +87,9 @@ Keywords
 .. topic:: ``perturb_min``
    
    | **Description:** minimum perturbation to be applied
-   | **Datatype:** doubl
+   | **Datatype:** double
    | **Default:** 0.00001
+   | **Recommendation:** use default
 
 
 Example
