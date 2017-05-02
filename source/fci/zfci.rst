@@ -27,82 +27,79 @@ Keywords
 ========
 
 
-.. topic:: ``frozen``
+.. topic:: ``maxiter (or maxiter_fci)``
 
-   | **Description**: Sp.
-   | **Default**: false.
-   | **Datatype**: boolean
-   | **Values**:
-   |    ``TRUE``: Freeze orbitals..
-   |    ``FALSE``: Do not freeze obitals.
-   | **Recommendation**: Use default; no frozen orbitals. Freezing orbitals can reduce the cost, but also the accuracy of the calculation.
-
-.. topic:: ``maxiter (overwrites maxiter_fci)``
-
-   | **Description**: Maximum number of iterations in FCI algorithm 
-   | **Default**: 
+   | **Description**: Maximum number of iterations in the FCI algorithm
+   | **Default**: 100
    | **Datatype**: integer
-   | **Values**: ``and integer``
-   | **Recommendation**: Becareful, a common mistake is to input the value s_z and not the number of electrons.
+   | **Recommendation**:  The default is usually sufficient.  
 
-.. topic:: ``davison_subspace``
+.. topic:: ``davidson_subspace``
 
-   | **Description**: Maximum number of iterations in FCI algorithm 
+   | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
    | **Default**: 20
    | **Datatype**: integer
-   | **Values**:
-   | **Recommendation**:
+   | **Recommendation**: Altering this parameter can sometimes change the convergence behavior.  Any number above 3 is reasonable.  
 
-.. topic:: ``thresh (overwrites thresh_fci)``
+.. topic:: ``thresh (or thresh_fci)``
 
    | **Description**: Threshold for convergence of selected CI algorithm 
    | **Default**: 1.0e-10 
    | **Datatype**: double
    | **Values**: ``any positive double``
-   | **Recommendation**: Default, reduce for greater accuracy.
+   | **Recommendation**: Use default value
 
 .. topic:: ``print_thresh``
 
-   | **Description**:
+   | **Description**:  Threshold below which CI coefficients are not printed (to casscf.log after each macroiteration, and to the standard output at the end of the calculation)
    | **Default**: 0.05
    | **Datatype**: double
-   | **Values**:
-   | **Recommendation**:
 
 .. topic:: ``state``
 
-   | **Description**:
-   | **Default**: 0
-   | **Datatype**: integer
-   | **Recommendation**:
+   | **Description**: Number of states computed for each spin value.
+   | **Default**:  There is no default; this parameter must be supplied in the input.  
+   | **Datatype**: vector of integers
+   | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example, 
+   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).  
+   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the 
+   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.  
 
 .. topic:: ``gaunt``
 
-   | **Description**:
-   | **Default**: 
-   | **Datatype**: boolean
-   | **Recommendation**:
+   | **Description**:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
+   |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit 
+   |     coupling between electrons.  
+   | **Default**: Value obtained from reference wavefunction.  
+   | **Datatype**: bool
+   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.  
 
 .. topic:: ``breit``
 
-   | **Description**:
-   | **Default**:
+   | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
+   | **Default**: Value obtained from reference wavefunction.  
+   | **Datatype**: bool
+   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.  
+
+.. topic:: ``frozen``
+
+   | **Description**:  If this is set to true, and "ncore" is not specified, then core molecular orbitals are frozen as doubly occupied in all Slater determinants.  
+   | **Default**: false.
    | **Datatype**: boolean
-   | **Recommendation**:
+   | **Recommendation**:  Frozen orbitals reduce the computational cost with some tradeoff in accuracy.  Freezing the core is often a good compromise, but this will depend on your particular problem. 
 
 .. topic:: ``ncore``
 
-   | **Description**:
-   | **Default**: 
+   | **Description**:  Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by "frozen."
+   | **Default**: Either zero or all core orbitals, depending on the "frozen" parameter.  
    | **Datatype**: boolean
-   | **Recommendation**:
 
 .. topic:: ``norb``
 
-   | **Description**:
-   | **Default**: 
-   | **Datatype**: boolean
-   | **Recommendation**:
+   | **Description**: Number of correlated orbitals.  Any high-energy orbitals in excess of this number or left empty.  
+   | **Default**:  All molecular orbitals except those excluded using ncore.
+   | **Datatype**: int
+   | **Recommendation**:  Include all virtual orbitals if you can afford it
 
 .. topic:: ``only_ints``
 
@@ -114,21 +111,12 @@ Keywords
 
 .. topic:: ``spin_adapt``
 
-   | **Description**:
+   | **Description**:  This parameter allows us to deactivate the generation of spin-adapted configuration state functions in the starting guess for the CAS-CI part.  
    | **Default**: true
    | **Datatype**: boolean
-   | **Recommendation**:
-
-.. topic:: ``algorithm``
-   
-   | **Description**: Algorithm to be used in the determinantion of the CI coeffcients.
-   | **Default**: KH.
-   | **Datatype**: string
-   | **Values**: 
-   |    ``KH, Knowles, Handy``: use Knowles-Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison-Zarrabian.
-   |    ``Dist, parallel``: use Parallel algorithm.
-   | **Recommendation**: If the active space is large and you have multiple processors, use Dist. Otherwise, use default.
+   | **Recommendation**:  Normally use the default setting.  If you are computing all or nearly all the states that can be formed with a given 
+   |     active space, you will encounter an error stating that "generate_guess produced an invalid determinant."  
+   |     Deactivating this feature leads to a poorer guess but eliminates that problem.  
 
 .. topic:: ``charge``
 
@@ -137,22 +125,6 @@ Keywords
    | **Datatype**: integer
    | **Values**: `any int`
    | **Recommendation**: The electronic charge of the system. 
-
-.. topic:: ``nspin``
-
-   | **Description**: Number of unpaired electrons. 
-   | **Default**: 0
-   | **Datatype**: integer
-   | **Values**: ``and integer``
-   | **Recommendation**: Becareful, a common mistake is to input the value s_z and not the number of electrons.
-
-.. topic:: ``nstates``
-
-   | **Description**: Number of states to calculate. 
-   | **Default**:``must be specified``
-   | **Datatype**: integer
-   | **Values**: ``any positive double``
-   | **Recommendation**: User dependent, calculation of multiple states are slower.
 
 .. topic:: ``active``
 
@@ -171,13 +143,10 @@ Keywords
 
 .. topic:: ``restart``
 
-   | **Description**: Restart the calcualtion from an earlier one. 
+   | **Description**: Generate binary archive files that can be used to restart an incomplete calculation.  
    | **Default**: false
    | **Datatype**: boolean
-   | **Values**: ``true, false``
    | **Recommendation**: Use if possible.
-
-
 
 
 Example
