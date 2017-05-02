@@ -9,11 +9,13 @@ Description
 Three types of the geometry can be optimized: the most stable (minimum energy) geometry, conical intersections between the electronic states, and
 the transition state geometry (or the saddle point on the potential energy surface). 
 
-In the optimizations, rather than using the exact Hessian, which is expensive, one can
-start from the approximate Hessian and update it according to the step taken. In the conical intersection optimization, the
+In the optimizations, rather than using the exact Hessian, one can
+start using the approximate Hessian and update it according to the step taken.
+The advanced quasi-newton optimization methods, eigenvector following (EF) algorithm and rational functional optimization (RFO) are implemented. 
+In the conical intersection optimization, the
 molecular gradient is replaced by the sum of the energy difference gradient and the upper state gradient after projecting the 
-degeneracy lifting vectors out. The advanced quasi-newton optimization methods, eigenvector following (EF) algorithm and
-rational functional optimization (RFO) are implemented. In addition, the minimum energy path to the reactants and products
+degeneracy lifting vectors out (gradient projection). 
+In addition, the minimum energy path to the reactants and products
 from the saddle point can be calculated using the second order algorithm, without mass weighting.
 
 The output contains the gradient evaluation progress at the first step of the optimization, and the status of the optimization.
