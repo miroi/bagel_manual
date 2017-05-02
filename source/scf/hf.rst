@@ -16,11 +16,8 @@ SCF can be run by specifying the following values to the keyword ``title``:
 * Unrestricted HF: ``uhf``
 * Two-component HF using ECP basis sets: ``soscf``
 
-Except for restricted Hartree--Fock, density fitting is used by default. Density fitting basis has to be
-specified in the Molecule block (see :ref:`molecule` section).
-
 RHF can be run with fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
-has to be specified in the molecule block (see :ref:`molecule` section).
+has to be specified in the :ref:`molecule-toc`.
 
 Keywords
 ========
@@ -397,26 +394,27 @@ RHF-FMM
 
 References
 ==========
-BAGEL Reference
----------------
+BAGEL References
+----------------
 
 +-----------------------------------------------+----------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                    | 
 +===============================================+============================================================================+
-| Exact exchange evaluation using occ-RI-FMM    | H\.-A. Le, and T. Shiozaki, in preparation                                 |
+| Exact exchange evaluation using occ-RI-FMM    | H\.-A. Le, and T. Shiozaki, *in preparation*.                              |
 +-----------------------------------------------+----------------------------------------------------------------------------+
 
-General Reference
------------------
-+-----------------------------------------------+----------------------------------------------------------------------------+
-|          Description of Reference             |                               Reference                                    | 
-+===============================================+============================================================================+
-| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund, Modern Quantum Chemistry: Introduction to    |
-|                                               | Advanced Electronic Structure Theory, Dover Publications                   |
-+-----------------------------------------------+----------------------------------------------------------------------------+
-| References for fast multipole method in       | C\. A. White, B. G. Johnson, P. M. W. Gill, and M. Head-Gordon,            |
-| quantum chemistry                             | Chem. Phys. Lett. **230**, 8 (1994)                                        |
-+-----------------------------------------------+----------------------------------------------------------------------------+
-|                                               | M\. C. Strain, G. E. Scuseria, and M. J. Frisch, Science **271**, 51 (1996)|
-+-----------------------------------------------+----------------------------------------------------------------------------+
+General References
+------------------
++-----------------------------------------------+----------------------------------------------------------------------------------+
+|          Description of Reference             |                               Reference                                          | 
++===============================================+==================================================================================+
+| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+|                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
+|                                               | (McGraw-Hill, New York, 1989).                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+| References for fast multipole method in       | C\. A. White, B. G. Johnson, P. M. W. Gill, and M. Head-Gordon,                  |
+| quantum chemistry                             | Chem. Phys. Lett. **230**, 8 (1994)                                              |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+|                                               | M\. C. Strain, G. E. Scuseria, and M. J. Frisch, Science **271**, 51 (1996)      |
++-----------------------------------------------+----------------------------------------------------------------------------------+
 
