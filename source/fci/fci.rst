@@ -214,15 +214,15 @@ Sample output
 References
 ==========
 
-+-----------------------------------------------+--------------------------------------------------------------------------+
-|          Description of Reference             |                           Reference                                      | 
-+===============================================+==========================================================================+
-| Efficient calculation of matrix elements      | P\. J\. Knowles and N\. C\. Handy, **111**, 315-321, Chem. Phys.         |
-| between different states.                     | Lett. 1984                                                               |        
-+-----------------------------------------------+--------------------------------------------------------------------------+
-| Efficient calculation of matrix elements      | R\. J\. Harrison and S\. Zarrabian, **158**, 5, Chem. Phys. Lett. 1989   | 
-| between different states.                     |                                                                          |
-+-----------------------------------------------+--------------------------------------------------------------------------+
-| General reference for CI.                     | A\. Szabo and N\. S\. Ostlund, Modern Quantum Chemistry:                 |
-|                                               | Introduction to Advanced Electronic Structure Theory, Dover Publications |
-+-----------------------------------------------+--------------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------+
+|          Description of Reference             |                           Reference                                              |
++===============================================+==================================================================================+
+| Efficient calculation of matrix elements      | P\. J\. Knowles and N\. C\. Handy, Chem. Phys. Lett. **111**, 315 (1984)         |
+| between different states.                     |                                                                                  |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+|                                               | R\. J\. Harrison, and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989)       |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+|                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
+|                                               | (McGraw-Hill, New York, 1989).                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------+
