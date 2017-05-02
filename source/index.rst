@@ -10,8 +10,6 @@
     :width: 300px
     :align: right 
 
-**Contents:**
-
 .. toctree::
    :maxdepth: 1
 
@@ -31,6 +29,9 @@
    miscellaneous/misc.rst
    supp_info/supp_info.rst
    author.rst
+
+**Developer Manual**
+====================
 
 Index
 ==================
