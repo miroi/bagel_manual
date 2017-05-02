@@ -156,10 +156,10 @@ BAGEL references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Original implementation of density fitted     | M\. S. Kelley, and T. Shiozaki, J. Chem. Phys. **138**, 204113 (2013).|
+| Original implementation of density fitted     | M\. S. Kelley and T. Shiozaki, J. Chem. Phys. **138**, 204113 (2013). |
 | Dirac--Hartree--Fock with RMB spinor basis.   |                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Extension to permit external magnetic fields, | R\. D. Reynolds, and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,     |
+| Extension to permit external magnetic fields, | R\. D. Reynolds and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,      |
 | including GIAO-RMB atomic basis.              | 14280 (2015).                                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
@@ -168,7 +168,7 @@ General references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| General text on relativistic electronic       | M\. Reiher, and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH, |
+| General text on relativistic electronic       | M\. Reiher and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH,  |
 | structure, including Dirac--Hartree--Fock.    | Weinheim, 2009).                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 

@@ -27,45 +27,45 @@ Required Keywords
 
 .. topic:: ``algorithm``
    
-   | **Description:** 'bfgs' orbital optimization algorithm is implemented
+   | **Description:** 'bfgs' orbital optimization algorithm is implemented.
    | **Datatype:** string
    | **Value:** bfgs
 
 .. topic:: ``maxiter``
    
-   | **Description:** maximum number of orbital optimization iterations
+   | **Description:** Maximum number of orbital optimization iterations.
    | **Datatype:** int
    | **Default:** 50
 
 .. topic:: ``asd``
 
-   | **Description:** ``asd`` block specifies asd options
-   | **Recommendation:** see :ref:`dimer_asd` for details
+   | **Description:** ``asd`` block specifies asd options.
+   | **Recommendation:** See :ref:`dimer_asd` for details.
 
 .. topic:: ``gradient_thresh``
    
-   | **Description:** threshold for calculating gradient
+   | **Description:** Threshold for calculating gradient.
    | **Datatype:** double
    | **Default:** 0.0001
-   | **Recommendation:** use default
+   | **Recommendation:** Use default.
 
 .. topic:: ``rotation_thresh``
    
-   | **Description:** threshold for orbital rotation
+   | **Description:** Threshold for orbital rotation.
    | **Datatype:** double
    | **Default:** 0.0001
-   | **Recommendation:** use default
+   | **Recommendation:** Use default.
 
 .. topic:: ``energy_thresh``
    
-   | **Description:** convergence threshold for calculating energy 
+   | **Description:** Convergence threshold for calculating energy.
    | **Datatype:** double
    | **Default:** :math:`1.0\times 10^{-6}`
-   | **Recommendation:** use default
+   | **Recommendation:** Use default.
 
 .. topic:: ``semi-canonicalize``
    
-   | **Description:** whether to semi-canonicalize localized orbitals
+   | **Description:** Whether to semi-canonicalize localized orbitals.
    | **Datatype:** bool
    | **Default:** false 
 
