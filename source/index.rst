@@ -14,7 +14,12 @@ Brilliantly Advanced General Electronic-structure Library
    :maxdepth: 2
 
    user-manual.rst
+
+.. toctree::
+   :maxdepth: 2
+
    developer-manual.rst
+
 
 Index
 ==================
