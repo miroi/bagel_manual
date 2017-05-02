@@ -43,37 +43,85 @@ This should be an example that is chemically relevant. There should be text expl
 
 Sample input
 ------------
+A sample input for the benzene molecule for Hartree-Fock.
 
 .. code-block:: javascript 
 
-   { "bagel" : [
+  { "bagel" : [
 
-   {
-     "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
-     ]
-   },
+  {
+    "title" : "molecule",
+    "symmetry" : "C1",
+    "basis" : "svp",
+    "df_basis" : "cc-pvdz-jkfit",
+    "angstrom" : false,
+    "geometry" : [
+    { "atom" : "C", "xyz" : [     -0.072972,      2.554311,     -0.000005 ] },
+    { "atom" : "C", "xyz" : [      2.551272,      2.554150,     -0.000005 ] },
+    { "atom" : "C", "xyz" : [      3.863393,      4.826435,     -0.001030 ] },
+    { "atom" : "C", "xyz" : [      2.551429,      7.099204,     -0.002139 ] },
+    { "atom" : "C", "xyz" : [     -0.072483,      7.099365,     -0.002170 ] },
+    { "atom" : "C", "xyz" : [     -1.384772,      4.826799,     -0.001078 ] },
+    { "atom" : "H", "xyz" : [     -1.095603,      0.783105,      0.000799 ] },
+    { "atom" : "H", "xyz" : [      3.573593,      0.782757,      0.000939 ] },
+    { "atom" : "H", "xyz" : [      5.908616,      4.826483,     -0.000944 ] },
+    { "atom" : "H", "xyz" : [      3.574399,      8.870211,     -0.002887 ] },
+    { "atom" : "H", "xyz" : [     -1.095141,      8.870560,     -0.003114 ] },
+    { "atom" : "H", "xyz" : [     -3.429999,      4.827102,     -0.001033 ] }
+    ]
+  },
 
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
+  {
+    "title" : "hessian",
+    "nproc" : 2,
+      "method" : [ {
+        "title" : "hf"
+    } ]
+  }
 
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
-   }
+  ]}
+ 
+For CASPT2, the Hessian input would be the following:
 
-   ]}
+.. code-block:: javascript 
 
+  {
+  "title" : "hf"
+  },
 
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
+  {
+    "title" : "casscf",
+    "nstate" : 2,
+    "nclosed" : 18,
+    "nact" : 6,
+    "active" : [17, 20, 21, 22, 23, 30],
+    "thresh" : 1.0e-9
+  },
+
+  {
+    "title" : "hessian",
+    "target" : 0,
+    "nproc" : 2,
+    "method" : [ {
+       "title" : "caspt2",
+         "smith" : {
+           "method" : "caspt2",
+           "ms" : "true",
+           "xms" : "true",
+           "sssr" : "true",
+           "shift" : 0.2,
+           "frozen" : true
+       },
+       "nstate" : 2,
+       "nact_cas" : 6,
+       "nclosed" : 18,
+       "thresh" : 1.0e-9
+    } ]
+  }
+
+  ]}
+ 
+If you are running a Hessian calculation on many MPI processes, it is recommended to only have the hessian calculation in your input. If you need to start from a CASSCF reference, as is the case in benzene where the orbitals need to be reordered, recall that your calculation can be restared from a molden output. 
 
 References
 ==========
