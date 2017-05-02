@@ -9,14 +9,14 @@ Description
 ===========
 CASPT2 is the second-order perturbation theory based on the multiconfiguration self-consistent field theory.
 Single-state version (SS-CASPT2), multi-state version (MS-CASPT2) and its extended variant (XMS-CASPT2) are available.
-CASPT2 in BAGEL is implemented with the automatic code generator SMITH3,
+CASPT2 is implemented in BAGEL using the automatic code generator SMITH3,
 and the SMITH information for XMS-CASPT2 should be passed in a separate array in the input.
 
 Keywords
 ========
 CASSCF keywords
 ---------------
-See CASSCF.
+See :ref:`casscf`.
 
 SMITH keywords
 --------------
