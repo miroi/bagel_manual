@@ -108,8 +108,7 @@ Optional Keywords (Universal)
    |    ``ef``: Eigenvector-following (EF) algorithm.
    |    ``rfo``: Rational functional optimization algorithm.
    |    ``nr``: Newton--Raphson algorithm.
-   |    ``steep``: Steepest descent algorithm.
-   | **Recommendation:** use either "ef" or "rfo". Do not use "nr" or "steep".
+   | **Recommendation:** use either "ef" or "rfo".
 
 .. topic:: ``maxstep``
 
@@ -147,7 +146,7 @@ Optional Keywords (Universal)
 
 .. topic:: ``maxziter``
 
-   | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to CASSCF, CASPT2, and MP2 calculations.
+   | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to SA-CASSCF, CASPT2, and MP2 calculations.
    | **Default:** 100.
    | **Datatype:** integer
    | **Recommendation:** increase the value when the Z-vector equation does not converge.
