@@ -102,8 +102,7 @@ Optional keywords
 .. topic:: ``tesla``
 
    | **Description**: unit of the external magnetic field
-   | **Default**: false 
-   | **Datatype**: integer 
+   | **Default**: false (use atomic unit)
 
 .. topic:: ``basis_type``
 
@@ -215,6 +214,34 @@ and providing a value for ``"molden_file"``:
    ]}
 
 (refer to :ref:`molden` in :ref:`misc` for more details)
+
+Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO):
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : "false",
+     "basis_type" : "giao",
+     "tesla" : "false",
+     "magnetic_field" : [  0.2000,   0.3000,  -0.1500   ],
+     "geometry" : [
+       { "atom" : "F",  "xyz" : [ -1.200000,      2.500000,      2.720616]},
+       { "atom" : "H",  "xyz" : [ -1.200000,      2.500000,      0.305956]}
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-10
+   }
+
+   ]}
 
 ====================
 Auxiliary basis sets
