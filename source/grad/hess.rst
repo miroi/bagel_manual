@@ -16,7 +16,7 @@ Required Keywords
 -----------------
 .. topic:: ``hessian``
 
-   | **Description:** Requests that the Numerical hessian be computed 
+   | **Description:** Requests that the Numerical Hessian be computed 
 
 .. topic:: ``method``
 
@@ -124,7 +124,7 @@ For CASPT2, the Hessian input would be the following:
 
   ]}
  
-If you are running a Hessian calculation on many MPI processes, it is recommended to only have the hessian calculation in your input. If you need to start from a CASSCF reference, as is the case in benzene where the orbitals need to be reordered, recall that your calculation can be restared from a molden output. 
+If you are running a Hessian calculation on many MPI processes, it is recommended to only have the Hessian calculation in your input. If you need to start from a CASSCF reference, as is the case in benzene where the orbitals need to be reordered, recall that your calculation can be restared from a molden output. 
 
 References
 ==========
