@@ -9,6 +9,7 @@ Gradient, Hessian and Geometry optimization
 .. toctree::
    :maxdepth: 2
 
+   methods.rst
    force.rst
    dynamics.rst
    hess.rst
