@@ -18,6 +18,7 @@ Contents:
    fci/ci_methods.rst  
    multi/multi.rst
    grad/grad.rst
+   supp_info/supp_info.rst
 
 Indices and tables
 ==================
