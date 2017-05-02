@@ -9,6 +9,7 @@ Configuration interaction using Full Configuration interaction and Restricted ac
 .. toctree::
    :maxdepth: 1
 
-   fci.rst  
+   fci.rst 
+   zfci.rst 
    rasci.rst  
 

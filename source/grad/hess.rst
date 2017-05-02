@@ -1,4 +1,4 @@
-.. _hessian:
+.. _grad_hesse:
 
 ****************************************
 Molecular Hessian and Frequency Analysis
@@ -6,41 +6,50 @@ Molecular Hessian and Frequency Analysis
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
+The Hessian section can be used to compute the numerical Hessian by central gradient differences. The Hessian, mass weighted Hessian, and symmetrized mass weighted Hessian are printed in the output by default. The rotational and translational degrees of freedom have been projected out. Vibrational frequencies, infrared intensities, and the cartesian eigenvectors of each normal mode are also computed. The masses are averaged over the natural occurance of isotopes. 
 
-.. math::
-  H\Psi = E\Psi
+Required Keywords
+=================
+.. topic:: ``hessian``
 
-Pre-requisite
-=============
-Reference wave function (such as HF).
+   | **Description:** Requests that the Numerical hessian be computed 
 
-Keywords
-========
-.. topic:: ``frozen``
+.. topic:: ``method``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+   | **Description:** The method to be used for the gradient calculations for each displacment when computing the numerical Hessian by central gradient differences 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:**
+   |    ``UHF``: Unrestricted Hartree Fock 
+   |    ``ROHF``: Restricted Open-shell Hartree Fock
+   |    ``HF``: Restricted Hartree Fock
+   |    ``DHF`` : Dirac Hartree Fock
+   |    ``MP2`` : Moller-Plesset Perturbation Theory
 
-.. topic:: ``algorithm``
+   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
+   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
+   | **Recommendation:** N/A
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+.. topic:: ``dx``
 
+   | **Description:** The step size used in the displacements in the gradient difference calculations. The units are bohr. 
+   | **Default:** 1.0e-3
+   | **Datatype:** double precision 
+   | **Recommendation:** Use default 
+
+Optional Keywords
+=================
+
+.. topic:: ``nproc``
+
+   | **Description:** The Hessian code is parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation. 
+   | **Default:** 1
+   | **Datatype:** integer
+   | **Recommendation:**  
 
 Example
 =======
+
 This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
 
 Sample input
@@ -88,11 +97,9 @@ Some information about the output should also be included. This will not be enti
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
+|          Description of Reference                  |                          Reference                                                                                    | 
++====================================================+=======================================================================================================================+
+| General description of vibrational spectroscopy    | E. Bright Wilson, Jr., J.C. Decius, and Paul C. Cross. Molecular Vibrations. Dover Publications, Inc. New York, 1955. |
++----------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
