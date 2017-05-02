@@ -10,7 +10,8 @@ Description
 ===========
 This section discusses three of the closely related configuration interaction (CI) methods available in BAGEL; non-relativistic full CI (FCI), non-relativistic restricted CI (RASCI), and 4-component relativistic CI.  These methods have many similarities, but substantial difference in their use, and so each shall be discussed in a different subsection. Note that keywords which work for one method may not work in another.
 
-Most of the relevant code for these methods can be found in $BAGEL/src/ci/ci (FCI) ,   
+Most of the relevant code for these methods can be found in 
+BAGEL/src/ci/ci (FCI) ,   
 $BAGEL/src/ci/ras (ras) 
 $BAGEL/src/ci/zfci (ZFCI) 
 
@@ -114,6 +115,7 @@ ZFCI Keywords
 
 
 
+=======
 Example
 =======
 Possibly series of calculations for H2 with stretching bond. HF and CI . The HF energies will not describe the bond breaking correclty.
