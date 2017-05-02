@@ -1,13 +1,36 @@
 .. _force:
 
 ****************************************
-Nuclear Gradient and Derivative Coupling
+Nuclear gradient and derivative coupling
 ****************************************
 
 Description
 ===========
-The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree Fock (UHF), restricted open-shell Hartree Fock (ROHF), restricted Hartree Fock (RHF), Dirac Hartree Fock (DHF), Moller Plesset Perturbation Theory (MP2), complete active space self consistent field (CASSCF), and CASSCF with second order perturbation theory (CASPT2). 
+The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree–Fock (UHF), restricted open-shell Hartree–Fock (ROHF), restricted Hartree–Fock (RHF), Dirac–Hartree–Fock (DHF), Moller–Plesset perturbation theory (MP2), complete active space self consistent field (CASSCF), and multireference perturbation theory (CASPT2). 
 
+TODO: Add something specific about CASPT2 gradients.
+
+Method Array
+===========
+The method array allows the user to specify one or more methods to be used in the force calculation. This is used, for example, to compute CASPT2 gradients where the CASSCF calculation must first be performed.  
+
+.. code-block:: javascript 
+
+  {
+    "title" : "force",
+      "method" : [ {
+      "title" : "caspt2",
+        "smith" : {
+           "method" : "caspt2",
+           "shift" : 0.2,
+           "frozen" : true
+      },
+      "nstate" : 3,
+      "nact_cas" : 7,
+      "nclosed" : 44 
+    } ]
+  }
+ 
 Keywords
 ========
 
@@ -26,21 +49,6 @@ Required Keywords
    |    ``force``: Calculates the gradient (force)
    |    ``nacme``: Calculates the non-adiabatic coupling matrix elements
    |    ``dgrad``: Difference gradient (only available for CASSCF)
-   | **Recommendation:** N/A
-
-.. topic:: ``method``
-
-   | **Description:** The method to be used for the analytical gradient calculation (or for the energy evaluation when compyting the gradient by finite difference. 
-   | **Default:** N/A 
-   | **Datatype:** string 
-   | **Values:**
-   |    ``UHF``: Unrestricted Hartree Fock 
-   |    ``ROHF``: Restricted Open-shell Hartree Fock
-   |    ``HF``: Restricted Hartree Fock
-   |    ``DHF`` : Dirac Hartree Fock
-   |    ``MP2`` : Moller Plesset Perturbation Theory
-   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
-   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
    | **Recommendation:** N/A
 
 .. topic:: ``nacmtype``
@@ -136,42 +144,116 @@ Optional Keywords
 
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
+The benzophenone molecule
 
-Sample input
-------------
-
-.. code-block:: javascript 
-
-   {
-      "title" : "force",
-      "target" : 0,
-      "method" : [ {
-        "title" : "caspt2",
-          "smith" : {
-            "method" : "caspt2",
-            "ms" : "true",
-            "xms" : "false",
-            "sssr" : "true",
-            "shift" : 0.2,
-            "frozen" : true
-        },
-        "nstate" : 4,
-        "nact_cas" : 4,
-       "nclosed" : 3
-     } ]
-   }
-
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
-.. figure:: figure/example.png
+.. figure:: benzophenone.png
     :width: 200px
     :align: center
     :alt: alternate text
     :figclass: align-center
 
-    This is an example of how to insert a figure. 
+    The benzophenone molecule with carbon atoms in grey, oxygen in red, and hydrogen in white. 
+ 
+Sample input: force
+-------------------
+
+.. code-block:: javascript 
+
+  { "bagel" : [
+
+  {
+    "title" : "molecule",
+    "symmetry" : "C1",
+    "basis" : "cc-pvdz",
+    "df_basis" : "cc-pvdz-jkfit",
+    "angstrom" : false,
+    "geometry" : [
+    { "atom" : "C", "xyz" : [     -2.002493,     -2.027773,      0.004882 ] },
+    { "atom" : "C", "xyz" : [     -2.506057,     -4.613700,      0.009896 ] },
+    { "atom" : "C", "xyz" : [      0.536515,     -1.276360,      0.003515 ] },
+    { "atom" : "C", "xyz" : [     -0.558724,     -6.375134,      0.013503 ] },
+    { "atom" : "H", "xyz" : [     -4.396140,     -5.341490,      0.011057 ] },
+    { "atom" : "C", "xyz" : [      2.478233,     -3.024614,      0.007049 ] },
+    { "atom" : "H", "xyz" : [      0.959539,      0.714937,     -0.000292 ] },
+    { "atom" : "C", "xyz" : [      1.936441,     -5.592475,      0.012127 ] },
+    { "atom" : "H", "xyz" : [     -1.012481,     -8.367883,      0.017419 ] },
+    { "atom" : "H", "xyz" : [      4.418042,     -2.380738,      0.005919 ] },
+    { "atom" : "H", "xyz" : [      3.448750,     -6.968581,      0.014980 ] },
+    { "atom" : "C", "xyz" : [     -6.758666,     -0.057378,      0.001157 ] },
+    { "atom" : "C", "xyz" : [     -8.231109,     -2.241648,      0.000224 ] },
+    { "atom" : "C", "xyz" : [     -8.022986,      2.269249,      0.001194 ] },
+    { "atom" : "C", "xyz" : [    -10.853532,     -2.110536,     -0.000769 ] },
+    { "atom" : "H", "xyz" : [     -7.410047,     -4.093049,      0.000224 ] },
+    { "atom" : "C", "xyz" : [    -10.632155,      2.405932,      0.000369 ] },
+    { "atom" : "H", "xyz" : [     -6.913797,      3.976253,      0.001805 ] },
+    { "atom" : "C", "xyz" : [    -12.064741,      0.207004,     -0.000695 ] },
+    { "atom" : "H", "xyz" : [    -11.941318,     -3.840822,     -0.001614 ] },
+    { "atom" : "H", "xyz" : [    -11.548963,      4.232744,      0.000447 ] },
+    { "atom" : "H", "xyz" : [    -14.107194,      0.302907,     -0.001460 ] },
+    { "atom" : "C", "xyz" : [     -3.892311,      0.136360,      0.001267 ] },
+    { "atom" : "O", "xyz" : [     -3.026383,      2.227189,     -0.001563 ] }
+    ]
+  },
+
+  {
+    "title" : "force",
+     "method" : [ {
+      "title" : "hf",
+      "thresh" : 1.0e-12
+    } ]
+  }
+ ]}
+
+
+Methods that require the use of smith: 
+
+.. code-block:: javascript 
+
+  {
+    "title" : "force",
+     "target" : 0,
+     "method" : [ {
+       "title" : "caspt2",
+         "smith" : {
+           "method" : "caspt2",
+           "ms" : "true",
+           "xms" : "true",
+           "sssr" : "true",
+           "shift" : 0.2,
+           "frozen" : true
+       },
+       "nstate" : 3,
+       "nact_cas" : 7,
+       "nclosed" : 44
+     } ]
+   }
+
+Sample input: NACME and DGRAD 
+-----------------------------
+
+.. code-block:: javascript 
+
+  {
+    "title" : "force",
+     "target" : 0,
+     "method" : [ {
+       "title" : "caspt2",
+         "smith" : {
+           "method" : "caspt2",
+           "ms" : "true",
+           "xms" : "true",
+           "sssr" : "true",
+           "shift" : 0.2,
+           "frozen" : true
+       },
+       "nstate" : 3,
+       "nact_cas" : 7,
+       "nclosed" : 44 
+     } ]
+   }
+
+Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
+
 
 References
 ==========
@@ -181,11 +263,11 @@ BAGEL References
 +-----------------------------------------------+---------------------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                              | 
 +===============================================+=================================================================================+
-| SS-CASPT2 gradient                            |  MacLeod, M. K. and Shiozaki. T. J. Chem. Phys. 2015, 142, 051103.              |
+| SS-CASPT2 gradient                            | M\. K. MacLeod and T. Shiozaki. J. Chem. Phys. 142, 051103 (2015)               |
 +-----------------------------------------------+---------------------------------------------------------------------------------+
-| (X)MS-CASPT2 gradient                         | Vlaisavljevich, B. and Shiozaki, T. J. Chem. Theory Comput. 2016, 12, 3781-3787.| 
+| (X)MS-CASPT2 gradient                         | B\. Vlaisavljevich and T. Shiozaki J. Chem. Theory Comput. 12, 3781 (2016)      | 
 +-----------------------------------------------+---------------------------------------------------------------------------------+
-| (X)MS-CASPT2 derivative coupling              | Park, J. W. and Shiozaki, T. Submitted.                                         |
+| (X)MS-CASPT2 derivative coupling              | J\. W. and T. Shiozaki, Submitted.                                              | 
 +-----------------------------------------------+---------------------------------------------------------------------------------+
 
 General References
