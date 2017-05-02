@@ -4,10 +4,10 @@
 Constants
 *********
 
-Here is a table of the fundamental physical and mathematical constants used in BAGEL.
+Here is a table of the fundamental physical constants used in BAGEL.
 
 +---------------------------------------+--+---------------------------------------+------------------+
-| Physical/Mathematical Constants       |  | Value                                 | Unit             |
+| Physical Constants                    |  | Value                                 | Unit             |
 +=======================================+==+=======================================+==================+
 | speed of light in atomic units        |  | :math:`137.035999139`                 | atomic units     |
 +---------------------------------------+--+---------------------------------------+------------------+

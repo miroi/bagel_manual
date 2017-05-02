@@ -142,7 +142,7 @@ Sample input
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
 
-.. figure:: figure/example.png
+.. figure:: ../figure/example.png
     :width: 200px
     :align: center
     :alt: alternate text
