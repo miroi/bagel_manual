@@ -87,7 +87,7 @@ Keywords
 
    | **Description**: Restart the calcualtion from an earlier one. 
    | **Default**: false
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Values**: ``true, false``
    | **Recommendation**: Use if possible.
 

@@ -78,14 +78,14 @@ Keywords
 
    | **Description**:  If this is set to true, and "ncore" is not specified, then core molecular orbitals are frozen as doubly occupied in all Slater determinants.  
    | **Default**: false.
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Recommendation**:  Frozen orbitals reduce the computational cost with some tradeoff in accuracy.  Freezing the core is often a good compromise, but this will depend on your particular problem. 
 
 .. topic:: ``ncore``
 
    | **Description**:  Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by "frozen."
    | **Default**: Either zero or all core orbitals, depending on the "frozen" parameter.  
-   | **Datatype**: boolean
+   | **Datatype**: bool
 
 .. topic:: ``norb``
 
@@ -99,14 +99,14 @@ Keywords
    | **Description**:  Used to compute integrals, print to a file, and terminate the program.
    |      This can be used to interface BAGEL to an external CASSCF solver.  
    | **Default**: false
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Recommendation**:  Normally use the default value.  
 
 .. topic:: ``spin_adapt``
 
    | **Description**:  This parameter allows us to deactivate the generation of spin-adapted configuration state functions in the starting guess for the CAS-CI part.  
    | **Default**: true
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Recommendation**:  Normally use the default setting.  If you are computing all or nearly all the states that can be formed with a given 
    |     active space, you will encounter an error stating that "generate_guess produced an invalid determinant."  
    |     Deactivating this feature leads to a poorer guess but eliminates that problem.  
@@ -138,7 +138,7 @@ Keywords
 
    | **Description**: Generate binary archive files that can be used to restart an incomplete calculation.  
    | **Default**: false
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Recommendation**: Use if possible.
 
 
