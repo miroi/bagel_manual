@@ -19,24 +19,24 @@ Keywords
 ========
 .. topic:: ``frozen``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
+   | **Description**: to have frozen orbital or not.
+   | **Default**: false.
+   | **Datatype**: bool
+   | **Values**:
    |    ``TRUE``: have frozen orbital.
    |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+   | **Recommendation**: use default.
 
 .. topic:: ``algorithm``
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
+   | **Description**: full CI algorithm.
+   | **Default**: kh.
+   | **Datatype**: string
+   | **Values**: 
    |    ``KH, Knowles, Handy``: use Knowles—Handy.
    |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
    |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+   | **Recommendation**: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
 
 
 Example
