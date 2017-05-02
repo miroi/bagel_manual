@@ -36,7 +36,7 @@ Export Format
 =============
 
 Some of dynamics software reads the informations in a fixed form. The gradient export format is as follows.
-The name of the file exported is ``ENERGY.txt`` (energy), ``FORCE_%d.txt`` (gradient, %d is the order of the state)
+The name of the file exported is ``ENERGY.txt`` (energy), ``FORCE_%d.txt`` (gradient, %d is the number of the state)
 and ``NACME_%d_%d.txt`` (derivative coupling). The gradient is written in ``FORCE.txt`` when ``export_single`` is ``true``.
 
 .. code-block:: cxx
