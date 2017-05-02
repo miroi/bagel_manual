@@ -1,8 +1,8 @@
 .. _dhf:
 
-*************
+********************
 Dirac--Hartree--Fock
-*************
+********************
 
 Description
 ===========
@@ -152,7 +152,7 @@ References
 ==========
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
-|          **Description** of Reference             |                          Reference                                    | 
+|          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
 | General text on relativistic electronic       | Marcus Reiher and Alexander Wolf, Relativistic Quantum Chemistry,     |
 | structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |

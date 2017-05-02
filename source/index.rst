@@ -18,8 +18,8 @@ Contents:
    pt2/pt2.rst
    smith/smith.rst
    grad/grad.rst
+   print.rst
    supp_info/supp_info.rst
-   molden.rst
 
 Indices and tables
 ==================
