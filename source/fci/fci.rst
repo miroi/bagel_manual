@@ -220,7 +220,7 @@ References
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 | Efficient calculation of sigma vector         | R\. J\. Harrison and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989).       |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+| General text on electronic structure theory   | A\. Szabo and N. S. Ostlund,                                                     |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
