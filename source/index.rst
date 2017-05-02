@@ -16,7 +16,6 @@ Contents:
    pt2/pt2.rst
    multi/multi.rst
    fci/ci_methods.rst  
-   multi/multi.rst
    grad/grad.rst
 
 Indices and tables
