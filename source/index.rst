@@ -19,6 +19,7 @@ Contents:
    grad/grad.rst
    supp_info/supp_info.rst
    molden.rst
+   asd_temp/asd.rst
 
 Indices and tables
 ==================
