@@ -31,8 +31,9 @@
    supp_info/supp_info.rst
    author.rst
 
-**Developer Manual**
-====================
+Developer Manual
+================
+This manual is intended for programmers wishing to customize or extend BAGEL.
 
 Index
 ==================
