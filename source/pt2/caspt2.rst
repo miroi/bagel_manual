@@ -7,31 +7,101 @@ CASPT2
 
 Description
 ===========
-Description here
-
-.. math::
-  insert formula here
-
+CASPT2 is the second-order perturbation theory based on the multireference complete active space self-consistent field theory.
+Single-state version (SS-CASPT2), multi-state version (MS-CASPT2) and its extended variant (XMS-CASPT2) are available.
+CASPT2 in BAGEL is implemented with the automatic code generator SMITH3,
+and the SMITH information for XMS-CASPT2 should be passed in a separate array in the input.
 
 Keywords
 ========
+CASSCF keywords
+---------------
+See CASSCF.
+
+SMITH keywords
+--------------
+
+.. topic:: ``ms``
+
+   | **Description:** Do multistate CASPT2.
+   | **Default:** true.
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: do multistate CASPT2.
+   |    ``false``: do single-state CASPT2.
+   | **Recommendation:** N/A
+
+.. topic:: ``xms``
+
+   | **Description:** Do extended multistate CASPT2.
+   | **Default:** false.
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: do MS-CASPT2.
+   |    ``false``: do XMS-CASPT2.
+   | **Recommendation:** N/A
+
+.. topic:: ``sssr``
+
+   | **Description:** Use SS-SR contraction scheme.
+   | **Default:** false.
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: use SS-SR contraction scheme.
+   |    ``false``: use MS-MR contraction scheme.
+   | **Recommendation:** N/A
+
+.. topic:: ``shift``
+
+   | **Description:** Vertical shift.
+   | **Default:** 0.0
+   | **Datatype:** double precision
+   | **Recommendation:** N/A
+
+.. topic:: ``thresh``
+
+   | **Description:** Convergence threshold.
+   | **Default:** 1.0e-8 (gradient) 1.0e-6 (otherwise)
+   | **Datatype:** double precision
+   | **Recommendation:** use default.
+
+.. topic:: ``thresh_overlap``
+
+   | **Description:** Overlap threshold.
+   | **Default:** 1.0-9
+   | **Datatype:** double precision
+   | **Recommendation:** use default.
 
 .. topic:: ``frozen``
 
-   | DESCRIPTION: to have frozen orbitals or not.
-   | DEFAULT: true
-   | DATATYPE: bool
+   | **Description:** Have frozen orbitals or not.
+   | **Default:** true.
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: use frozen orbitals.
+   |    ``false``: do without frozen orbitals.
+   | **Recommendation:** use default.
 
-.. topic:: ``ncore``
-   
-   | DESCRIPTION: manually specify number of frozen orbitals, used when 'frozen' is turned on.
-   | DATATYPE: int
+.. topic:: ``maxiter``
 
-.. topic:: ``aux_basis``
-   
-   | DESCRIPTION: specify an alternative density fitting basis set.
-   | DEFAULT: use the same density fitting basis as in molecule/df_basis.
-   | DATATYPE: string
+   | **Description:** Maximum number of iterations in CASPT2 calculations.
+   | **Default:** 50
+   | **Datatype:** integer
+   | **Recommendation:** use default.
+
+.. topic:: ``maxtile``
+
+   | **Description:** Maximum number of orbitals in a single data tile used in CASPT2.
+   | **Default:** 10
+   | **Datatype:** integer
+   | **Recommendation:** use default.
+
+.. topic:: ``cimaxtile``
+
+   | **Description:** Maximum number of Slater determinant in a single data tile used in CASPT2 gradient.
+   | **Default:** 100 (When number of determinants is over 10000), 10 (otherwise)
+   | **Datatype:** integer
+   | **Recommendation:** use default. Increase further when the number of determinant is larger.
 
 
 Example
@@ -87,8 +157,12 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| CASPT2                                        | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
+| MS-CASPT2                                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| XMS-CASPT2                                    | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
++-----------------------------------------------+-----------------------------------------------------------------------+
+| SMITH3                                        | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
