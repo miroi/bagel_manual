@@ -19,7 +19,7 @@ Keywords
    | DATATYPE: string
    | VALUES:
    |    Please refer to `Basis Sets`_ for possible aruments
-   | RECOMMENDATION:
+   | RECOMMENDATION: None
 
 .. topic:: ``df_basis``
 
@@ -28,22 +28,39 @@ Keywords
    | DATATYPE: string
    | VALUES:
    |     Please refer to `Density fitting basis sets`_ for possible aruments
-   | RECOMMENDATION:
+   | RECOMMENDATION: None
+
+.. topic:: ``angstrom``
+
+   | DESCRIPTION: specify units for atomic coordinates  
+   | DEFAULT: false
+   | DATATYPE: bool
+   | VALUES:
+   |    ``TRUE``: use angstrom
+   |    ``FALSE``: use atomic units
+   | RECOMMENDATION: None
 
 .. topic:: ``geometry``
 
    | DESCRIPTION: specify elements and their Cartisian coordinates  
    | DEFAULT: No Default
    | DATATYPE: vector
-   | VALUES: {"atom" : "Atom Name",  "xyz" : [x y z]}
+   | VALUES: 
+   |    Elements are specified as {"atom" : "Atom Name",  "xyz" : [x y z]}
+   | RECOMMENDATION: None
+
+.. topic:: ``molden_file``
+
+   | DESCRIPTION: filename of input molden file"
+   | DEFAULT: No Default
+   | DATATYPE: string
+   | VALUE:
+   |    User defined
    | RECOMMENDATION: None
 
 =======
 Example
 =======
-
-Sample input
-------------
 
 .. code-block:: javascript 
 
@@ -55,9 +72,9 @@ Sample input
      "df_basis" : "svp-jkfit",
      "angstrom" : false,
      "geometry" : [
-         {atom = H; xyz = [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
-         {atom = O; xyz = [  0.18572998668, -0.14718998944,  -3.25788976629]; },
-         {atom = H; xyz = [  0.03000999785,  0.71438994875,  -2.79590979943]; }
+         {"atom" : "H", "xyz" : [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
+         {"atom" : "O", "xyz" : [  0.18572998668, -0.14718998944,  -3.25788976629]; },
+         {"atom" : "H", "xyz" : [  0.03000999785,  0.71438994875,  -2.79590979943]; }
      ]
    },
 
@@ -75,13 +92,22 @@ Basis sets
 * 6-31g
 * sto-3g
 * svp
+* tzvpp
+* qzvpp
 * cc-pv5z  
 * cc-pv6z  
 * cc-pvdz  
 * cc-pvtz  
 * cc-pvqz
-* tzvpp
-* qzvpp
+* cc-pv5z-ri
+* cc-pvdz-ri
+* cc-pvqz-ri
+* cc-pvtz-ri
+* aug-cc-pv5z
+* aug-cc-pv6z
+* aug-cc-pvdz
+* aug-cc-pvtz
+* aug-cc-pvqz
 * ano-rcc
 * ecp10mdf
 * ecp28mdf
@@ -91,28 +117,16 @@ Basis sets
 * def2-SVP-ecp
 * def2-SVP-2c-ecp
 * lanl2dz-ecp
+* molden ( :any:`molden_file` is required)
 
 ==========
 Density fitting basis sets
 ==========
 * svp-jkfit
-* cc-pv5z-ri
-* cc-pvdz-ri
-* cc-pvqz-ri
-* cc-pvtz-ri
 * tzvpp-jkfit
 * qzvpp-jkfit
 * cc-pv5z-jkfit
 * cc-pvdz-jkfit
 * cc-pvqz-jkfit
 * cc-pvtz-jkfit
-* aug-cc-pv5z
-* aug-cc-pv6z
-* aug-cc-pvdz
-* aug-cc-pvtz
-* aug-cc-pvqz
-
-==========
-References
-==========
 

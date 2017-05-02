@@ -6,9 +6,9 @@
 BAGEL manual
 ============
 
-.. figure:: _static/bagel-final.png
+.. figure:: _static/bagel-final.*
     :width: 300px
-    :align: center
+    :align: right 
 
 **Contents:**
 
