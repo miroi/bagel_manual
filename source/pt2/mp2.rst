@@ -1,6 +1,6 @@
-.. _mp2:
-
 .. index:: mp2
+
+.. _mp2:
 
 ****************************************
 Møller–Plesset perturbation theory (MP2)
