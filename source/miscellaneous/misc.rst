@@ -4,7 +4,7 @@
 Miscellaneous features
 *********************************************
 
-Molecular properties, printing and reading, processing data
+Molecular properties, printing and reading, processing data.
 
 .. toctree::
    :maxdepth: 2

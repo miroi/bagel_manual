@@ -4,7 +4,7 @@
 Multiconfiguration self-consistent field
 ****************************************
 
-Non-relativistic and relativistic multiconfiguration SCF
+Non-relativistic and relativistic multi-configuration self-consistent field.
 
 .. toctree::
    :maxdepth: 2

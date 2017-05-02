@@ -8,7 +8,7 @@ Relativistic complete active space self-consistent field (RelCASSCF)
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
+Full CI diagonalizes the full CI Hamiltonian.
 
 .. math::
   H\Psi = E\Psi
