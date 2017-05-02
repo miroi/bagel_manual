@@ -146,13 +146,6 @@ Keywords
    | **Recommendation**: Default, the optimimum value willbe system dependent.
 
 
-
-References
-==========
-Used for CI convergence algorithm.            | Knowles, P. J. and  Handy,  N. C. Handy Chem. Phys. Lett.  J. Chem. Phys. 1984           
-Used for RASCI algortihm                      Olsen, J., Roos, B. O., Jorgensen, P., Jensen, H. J. A., J. Chem. Phys. **89.4** 2185-2192, 1988.
-
-
 Example
 =======
 Possibly series of calculations for H2 with stretching bond. HF and CI . The HF energies will not describe the bond breaking correclty.
@@ -191,7 +184,6 @@ Sample input
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
 
-=======
 .. figure:: figure/example.png
     :width: 200px
     :align: center
@@ -200,14 +192,10 @@ Some information about the output should also be included. This will not be enti
 
     This is an example of how to insert a figure. 
 
+=======
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Used for CI convergence algorithm.            | Knowles, N. C. Handy Chem. Phys. Lett.  J. Chem. Phys. 1984           |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Used for CI convergence algorithm.            | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-
+ Used for RASCI convergence algorithm            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984               
+ Used for RASCI convergence algorithm            | John Doe and Jane Doe. J. Chem. Phys. **5** 120-124.  1980,              
+ Informs the RASCI convergence algorithm         | Olsen, J.  Roos, B.O. , Jorgensen P., and Jensen H. J. A.,  J. Chem Phys **89.4** 2185-2192 (1988).
