@@ -5,9 +5,9 @@
 Restricted active space configuration interaction (RASCI)
 *********************************************************
 
-======
+===========
 Description 
-======
+===========
 
 FCI is aims to describe the wavefunction as a linear combination of Slater determinants:
 
@@ -200,7 +200,7 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Used for CI convergence algorithm.            | Knowles, N. C. Handy Chem. Phys. Lett.  J. Chem. Phys. 1984               |
+| Used for CI convergence algorithm.            | Knowles, N. C. Handy Chem. Phys. Lett.  J. Chem. Phys. 1984           |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | Used for CI convergence algorithm.            | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
 +-----------------------------------------------+-----------------------------------------------------------------------+
