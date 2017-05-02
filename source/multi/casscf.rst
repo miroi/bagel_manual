@@ -13,6 +13,8 @@ The state-averaging scheme for calculating excited states is also implemented.
 The second-order algorithm is implemented in BAGEL. This algorithm is constructed of macroiterations and microiterations. At each macroiteration,
 the CI coefficient is optimized by FCI calculations, while the orbitals are rotated in microiterations. 
 
+Command: ``casscf``
+
 Keywords
 ========
 

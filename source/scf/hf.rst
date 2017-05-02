@@ -71,9 +71,11 @@ The default values are recommended unless mentioned otherwise.
    | **Default** : :math:`0`
    | **Datatype**: int 
 
-.. topic:: ``nact``/``nocc``
+.. topic:: ``nopen``
 
-   | **Description**: number of unpaired electrons and occupied orbitals
+   | **Description**: number of unpaired electrons in high-spin unrestricted Hartree--Fock
+   | **Default** : (number of electrons - charge) % 2
+   | **Datatype** : int
 
 .. topic:: ``restart``
 
@@ -162,7 +164,6 @@ ROHF
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "svp",
      "df_basis" : "svp-jkfit",
      "angstrom" : "false",
@@ -190,7 +191,6 @@ UHF
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "svp",
      "df_basis" : "svp-jkfit",
      "angstrom" : false,
@@ -219,7 +219,6 @@ SOSCF
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "ecp28mdf",
      "df_basis" : "tzvpp-jkfit",
      "angstrom" : "true",
@@ -252,7 +251,6 @@ RHF-FMM
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "/home/le/develop/bagel/src/basis/3-21g.json",
      "angstrom" : "true",
      "cfmm" : "true",
@@ -403,7 +401,7 @@ References
 | General text on electronic structure theory   | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction to |
 |                                               | Advanced Electronic Structure Theory, Dover Publications              |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| References for fast multipole method in       | White, C. A., Johnson B. G., Gill P. M. W., Head-Gordon M.,           |
+| References for fast multipole method in       | White C. A., Johnson B. G., Gill P. M. W., Head-Gordon M.,            |
 | quantum chemistry                             | Chem. Phys. Lett. **230**, 8 (1994)                                   |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |                                               | Strain M. C., Scuseria G. E., Frisch M. J., Science **271**, 51 (1996)|
