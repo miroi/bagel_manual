@@ -1,10 +1,8 @@
 .. _zfci:
 
-
-*******
-Configuration interaction methods
-*******
-
+***********************************
+Relativistic Full Configuration Interaction (RelFCI)
+***********************************
 ================
 Relativistic FCI
 ================
