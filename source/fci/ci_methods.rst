@@ -9,6 +9,7 @@ Configuration interaction methods, fci and rassci
 .. toctree::
    :maxdepth: 1
 
-   fci.rst  
+   fci.rst 
+   zfci.rst 
    rasci.rst  
 
