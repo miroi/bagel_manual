@@ -9,10 +9,6 @@ Full configuration interaction (FCI)
 ===========
 Description
 ===========
-FCI describes the wavefunction as a linear combination of Slater determinants:
-
-.. math::
-  \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
 
 This technique is good for describing systems featuring substantial dynamic correlation. The algorithm by which the coefficients are determined, the number of states to calculate are two of the most important quantities to be specified.
 
