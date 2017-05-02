@@ -291,18 +291,18 @@ References
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                                   | 
 +===============================================+======================================================================================+
-| Eigenvector following algorithm               | Baker, J. J. Comput. Chem. 1986, 7, 385-395.                                         |
+| Eigenvector following algorithm               | J\. Baker, J. Comput. Chem. 7, 385 (1986).                                           |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
-| Rational functional optimization algorithm    | Banerjee, A.; Adams, N.; Simons, J. and Shepard, R. J. Phys. Chem. 1985, 89, 52-57.  |
+| Rational functional optimization algorithm    | A\. Banerjee, N. Adams, J. Simons, and R. J. Shepard, J. Phys. Chem. 89, 52 (1985).  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
-| Second-order minimum energy path search       | Gonzalez, C. and Schlegel, H. B. J. Chem. Phys. 1989, 90, 2154-2161.                 |
+| Second-order minimum energy path search       | C\. Gonzalez and H. B. Schlegel, J. Chem. Phys. 90, 2154 (1989).                     |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
-| Gradient projection algorithm                 | Bearpark, M. J.; Robb, M. A.; Schlegel, H. B. Chem. Phys. Lett. 1994, 223, 269-274.  |
+| Gradient projection algorithm                 | M\. J. Bearpark, M. A. Robb, and H. B. Schlegel, Chem. Phys. Lett. 223, 269 (1994).  |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
-| Flowchart method                              | Birkholz, A. B. and Schlegel, H. B. Theor. Chem. Acc. 2016, 135, 84.                 |
+| Flowchart method                              | A\. B. Birkholz, and H. B. Schlegel, Theor. Chem. Acc. 135, 84 (2016).               |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
-| ETF in nonadiabatic coupling                  | Fatehi, S. and Subotnik, J. E. J. Phys. Chem. Lett. 2012, 3, 2039-2043.              |
+| ETF in nonadiabatic coupling                  | S\. Fatehi, and J. E. Subotnik, J. Phys. Chem. Lett. 3, 2039 (2012).                 |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
-| Thiel's conical intersection parameters       | Keal, T. W.; Koslowski, A. and Thiel, W. Theor. Chem. Acc. 2007, 118, 837-844.       |
+| Thiel's conical intersection parameters       | T\. W. Keal, A. Koslowski and W. Thiel, Theor. Chem. Acc. 118, 837 (2007).           |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
 

@@ -88,7 +88,7 @@ Optional Keywords
    | **Values:** 
    |    ``true``: Uses finite difference
    |    ``false`` : Uses analytical gradient  
-   | **Recommendation:** If available, use analytical gradient. 
+   | **Recommendation:** If available, use analytical gradient. If analytical gradient is not available, BAGEL automatically switches to numerical gradient.
 
 .. topic:: ``dx``
 

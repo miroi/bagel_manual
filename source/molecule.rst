@@ -9,12 +9,6 @@ Description
 ===========
 Molecule is one of the basic blocks to specify information, such as basis sets and geometry for the input system.
 
-
-=============
-Pre-requisite
-=============
-None
-
 ========
 Keywords
 ========
@@ -24,7 +18,7 @@ Keywords
    | DEFAULT: No Default Value
    | DATATYPE: string
    | VALUES:
-   |    Please refer to $BAGEL_HOME/src/basis for possible aruments
+   |    Please refer to `Basis Sets`_ for possible aruments
    | RECOMMENDATION:
 
 .. topic:: ``df_basis``
@@ -33,7 +27,7 @@ Keywords
    | DEFAULT: No Default Value
    | DATATYPE: string
    | VALUES:
-   |     Please refer to $BAGEL_HOME/src/basis for possible aruments
+   |     Please refer to `Density fitting basis sets`_ for possible aruments
    | RECOMMENDATION:
 
 .. topic:: ``geometry``
@@ -57,7 +51,7 @@ Sample input
 
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
+     "basis" : "svp",
      "df_basis" : "svp-jkfit",
      "angstrom" : false,
      "geometry" : [
@@ -77,48 +71,46 @@ Sample input
 ==========
 Basis sets 
 ==========
-3-21g
-6-31g
-ano-rcc
-aug-cc-pv5z
-aug-cc-pv6z
-aug-cc-pvdz
-aug-cc-pvqz
-aug-cc-pvtz
-cc-pv5z
-cc-pv5z-ri
-cc-pv6z
-cc-pvdz
-cc-pvdz-ri
-cc-pvqz
-cc-pvqz-ri
-cc-pvtz
-cc-pvtz-ri
-complete
-def2-SVP-2c-ecp
-def2-SVP-ecp
-ecp10mdf
-ecp28mdf
-ecp46mdf
-ecp60mdf
-ecp78mdf
-lanl2dz-ecp
-qzvpp
-sto-3g
-svp
-tzvpp
+* 3-21g  
+* 6-31g
+* sto-3g
+* svp
+* cc-pv5z  
+* cc-pv6z  
+* cc-pvdz  
+* cc-pvtz  
+* cc-pvqz
+* tzvpp
+* qzvpp
+* ano-rcc
+* ecp10mdf
+* ecp28mdf
+* ecp46mdf
+* ecp60mdf
+* ecp78mdf
+* def2-SVP-ecp
+* def2-SVP-2c-ecp
+* lanl2dz-ecp
 
 ==========
 Density fitting basis sets
 ==========
-svp-jkfit
-tzvpp-jkfit
-cc-pv5z-jkfit
-cc-pvdz-jkfit
-cc-pvqz-jkfit
-cc-pvtz-jkfit
-qzvpp-jkfit
-
+* svp-jkfit
+* cc-pv5z-ri
+* cc-pvdz-ri
+* cc-pvqz-ri
+* cc-pvtz-ri
+* tzvpp-jkfit
+* qzvpp-jkfit
+* cc-pv5z-jkfit
+* cc-pvdz-jkfit
+* cc-pvqz-jkfit
+* cc-pvtz-jkfit
+* aug-cc-pv5z
+* aug-cc-pv6z
+* aug-cc-pvdz
+* aug-cc-pvtz
+* aug-cc-pvqz
 
 ==========
 References
