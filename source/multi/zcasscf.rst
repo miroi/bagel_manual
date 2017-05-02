@@ -145,7 +145,7 @@ Keywords
 
 .. topic:: ``aniso``
 
-   | **Description**:  This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis, in determination of g-factors and zero-field splitting parameters.  See below for details.  
+   | **Description**:  This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis, in determination of *g*-factors and zero-field splitting parameters.  See below for details.  
 
 .. topic:: ``davison_subspace``
 
