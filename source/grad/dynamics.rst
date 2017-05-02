@@ -127,8 +127,8 @@ General References
 +-----------------------------------------------+--------------------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                             | 
 +===============================================+================================================================================+
-| Nonadiabatic dynamics (Surface hopping)       | M\. Barbatti, WIREs Comput. Mol. Sci. 1, 620 (2011).                           |
+| Nonadiabatic dynamics (Surface hopping)       | M\. Barbatti, WIREs Comput. Mol. Sci. **1**, 620 (2011).                       |
 +-----------------------------------------------+--------------------------------------------------------------------------------+
-| Excited state QM/MM in biomolecules           | E\. Brunk, and U. Rothlisburger, Chem. Rev. 115, 6217 (2015).                  |
+| Excited state QM/MM in biomolecules           | E\. Brunk, and U. Rothlisburger, Chem. Rev. **115**, 6217 (2015).              |
 +-----------------------------------------------+--------------------------------------------------------------------------------+
 
