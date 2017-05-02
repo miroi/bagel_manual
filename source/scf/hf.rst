@@ -404,7 +404,7 @@ BAGEL Reference
 +-----------------------------------------------+----------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                    | 
 +===============================================+============================================================================+
-| Exact exchange evaluation using occ-RI-FMM    | H\.-A. Le, and T. Shiozaki, in preparation                                |
+| Exact exchange evaluation using occ-RI-FMM    | H\.-A. Le, and T. Shiozaki, in preparation                                 |
 +-----------------------------------------------+----------------------------------------------------------------------------+
 
 General Reference
