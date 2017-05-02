@@ -31,8 +31,8 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``gaunt``
 
    | Description:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
-   |     If ``gaunt'' is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit 
-   |     coupling between electrons.  Note that if ``gaunt'' is set to true, ``breit'' is also set to true unless otherwise specified by the user.  
+   |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit 
+   |     coupling between electrons.  Note that if "gaunt" is set to true, "breit" is also set to true unless otherwise specified by the user.  
    | Default: false
    | Datatype: bool
    | Recommendation:  The default is often fine, unless very strong relativistic effects are expected.  
@@ -40,14 +40,14 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``breit``
 
    | Description:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
-   | Default: value copied from ``gaunt''
+   | Default: value copied from "gaunt"
    | Datatype: bool
    | Recommendation: Use default, unless you wish to include the Gaunt interaction without the additional computational costs of the 
    |      full Breit interaction.
 
 .. topic:: ``robust``
 
-   | Description:  Determines whether or not to use the ``robust'' density fitting algorithm.  
+   | Description:  Determines whether or not to use the "robust" density fitting algorithm.  
    | Default: false
    | Datatype: bool
    | Recommendation: use default.
@@ -99,7 +99,7 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``pop``
 
-   | Description:  If set to ``true,'' population analysis of the molecular orbitals will be printed to a file names dhf.log.  
+   | Description:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.  
    | Default: false
    | Datatype: bool
    | Recommendation:  Not needed for SCF calculations, but this feature can be helpful in finding guess active orbitals for ZCASSCF.  
