@@ -108,13 +108,13 @@ html_theme_options = {
    "sidebarbgcolor": "black",
    "footerbgcolor" : "white", #Background color for the footer line.
    "footertextcolor" : "black", #Text color for the footer line.
-   "sidebarbgcolor" : "darkorange", #Background color for the sidebar.
-   "sidebarbtncolor" : "indigo",  #Background color for the sidebar collapse button (used when collapsiblesidebar is True).
-   "sidebartextcolor" : "black", #Text color for the sidebar.
-   "sidebarlinkcolor" : "indigo", #Link color for the sidebar.
-   "relbarbgcolor" : "black",  #Background color for the relation bar.
-   "relbartextcolor" : "darkorange", #Text color for the relation bar.
-   "relbarlinkcolor" : "darkorange",  #Link color for the relation bar.
+   "sidebarbgcolor" : "indigo", #Background color for the sidebar.
+   "sidebarbtncolor" : "white",  #Background color for the sidebar collapse button (used when collapsiblesidebar is True).
+   "sidebartextcolor" : "white", #Text color for the sidebar.
+   "sidebarlinkcolor" : "white", #Link color for the sidebar.
+   "relbarbgcolor" : "white",  #Background color for the relation bar.
+   "relbartextcolor" : "indigo", #Text color for the relation bar.
+   "relbarlinkcolor" : "indigo",  #Link color for the relation bar.
    "bgcolor" : "white", #Body background color.
    "textcolor" : "black", #Body text color.
    "linkcolor" : "blue",  #Body link color.
