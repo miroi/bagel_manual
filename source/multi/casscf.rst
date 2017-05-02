@@ -10,7 +10,8 @@ Description
 ===========
 
 CASSCF simultaneously optimizes the orbital coefficients and the CI coefficients of all the possible determinants generated from the active space.
-The state-averaging scheme for calculating excited states is also implemented.
+The state-averaging scheme for calculating excited states is also implemented. When no orbitals are specified as a input to CASSCF calculation,
+Hartree--Fock calculation is performed by default prior to CASSCF. For the Hartree--Fock options, see the SCF section.
 
 The second-order algorithm is implemented in BAGEL. This algorithm is constructed of macroiterations and microiterations. At each macroiteration,
 the CI coefficient is optimized by FCI calculations, while the orbitals are rotated in microiterations. 
@@ -117,9 +118,61 @@ Keywords
 
 Example
 =======
+Two-state CASSCF calculation of benzene. The active space of (6e,6o), which comprises three :math:`\pi` and three :math:`\pi^*` orbitals, is used.
 
 Sample input
 ------------
+
+.. code-block:: javascript
+
+  { "bagel" : [
+
+  {
+    "title" : "molecule",
+    "basis" : "svp",
+    "df_basis" : "svp-jkfit",
+    "geometry" : [
+    { "atom" : "C", "xyz" : [     -0.079002,      2.543870,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      2.557470,      2.543870,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      3.875630,      4.826190,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      2.557250,      7.109950,     -0.002266 ] },
+    { "atom" : "C", "xyz" : [     -0.078588,      7.109800,     -0.003171 ] },
+    { "atom" : "C", "xyz" : [     -1.396870,      4.826620,     -0.001289 ] },
+    { "atom" : "H", "xyz" : [     -1.117900,      0.744245,      0.000850 ] },
+    { "atom" : "H", "xyz" : [      3.595900,      0.743875,      0.002485 ] },
+    { "atom" : "H", "xyz" : [      5.953730,      4.826340,      0.001198 ] },
+    { "atom" : "H", "xyz" : [      3.596980,      8.909240,     -0.002377 ] },
+    { "atom" : "H", "xyz" : [     -1.118170,      8.909350,     -0.004972 ] },
+    { "atom" : "H", "xyz" : [     -3.474820,      4.826960,     -0.001629 ] }
+    ]
+  },
+  {
+    "title" : "casscf",
+    "nstate" : 2,
+    "nact" : 6,
+    "nclosed" : 18,
+    "active" : [17, 20, 21, 22, 23, 30]
+  }
+  ]}
+
+The specified active orbitals are printed in the output:
+
+.. code-block:: javascript
+
+  ---------------------------
+      CASSCF calculation
+  ---------------------------
+
+  ==== Active orbitals : =====
+       Orbital 17
+       Orbital 20
+       Orbital 21
+       Orbital 22
+       Orbital 23
+       Orbital 30
+  ============================
+
+This converges in five macroiterations.
 
 
 References

@@ -25,12 +25,12 @@ Keywords
 .. topic:: ``hf``
 
    | **Description:** multisite restricted Hartree-Fock calculation options
-   | **Default:** use the same options as single site (add hyperlink here :: RHF) calculations
+   | **Default:** use the same options as single site :ref:`hf` calculations
 
 .. topic:: ``localization``
 
    | **Description:** localize multisite molecular orbitals
-   | **Default:** use default (add hyperlink here :: Localization)
+   | **Default:** use default :ref:`localization`
    
    
 
@@ -38,4 +38,4 @@ Keywords
 
 Prerequisite
 ============
-(add hyperlink here :: RHF) calculations are needed to obtain fragment orbitals.
+:ref:`hf` calculations are needed to obtain fragment orbitals.

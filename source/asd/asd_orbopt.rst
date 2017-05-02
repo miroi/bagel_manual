@@ -7,7 +7,7 @@ ASD orbital optimization
 
 Description
 ===========
-Active space decomposition with orbital optimization is implemented. The two fragments of the molecule can be covalently linked, but the bridging orbitals cannot be active. Orbital rotations between active subspaces are included to partition the total active space into subspaces. The two active subspaces should be well separated. The calculation starts with dimer construction which is slightly different from that in (add hyperlink to dimer_asd).
+Active space decomposition with orbital optimization is implemented. The two fragments of the molecule can be covalently linked, but the bridging orbitals cannot be active. Orbital rotations between active subspaces are included to partition the total active space into subspaces. The two active subspaces should be well separated. The calculation starts with dimer construction which is slightly different from that in :ref:`dimer_asd`.
 
 
 Dimer Construction
@@ -43,7 +43,7 @@ Required Keywords
 .. topic:: ``asd``
 
    | **Description:** asd information
-   | **Recommendation:** see (add hyperlink to asd) for details
+   | **Recommendation:** see :ref:`dimer_asd` for details
 
 .. topic:: ``gradient_thresh``
    
