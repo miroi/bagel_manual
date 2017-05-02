@@ -135,8 +135,7 @@ Example
 	},
 
 	{
-		"title" : "hf",
-		"thresh" : 1.0e-10
+		"title" : "hf"
 	},
 
 	{

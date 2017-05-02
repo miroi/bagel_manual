@@ -87,7 +87,7 @@ Keywords
 
    | **Description**: Restart the calcualtion from an earlier one. 
    | **Default**: false
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Values**: ``true, false``
    | **Recommendation**: Use if possible.
 
@@ -124,8 +124,7 @@ Sample input
      ]
    },
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
+     "title" : "hf"
    },
 
    { "title" : "print",
@@ -219,7 +218,7 @@ References
 +===============================================+==================================================================================+
 | Efficient calculation of sigma vector         | P\. J\. Knowles and N\. C\. Handy, Chem. Phys. Lett. **111**, 315 (1984).        |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-| Efficient calculation of sigma vector         | R\. J\. Harrison, and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989).      |
+| Efficient calculation of sigma vector         | R\. J\. Harrison and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989).       |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 | General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
