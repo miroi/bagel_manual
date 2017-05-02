@@ -2,7 +2,7 @@
 
 
 *******
-Restricted Active Space Configuration Interaction
+Restricted active space configuration interaction
 *******
 
 ======
