@@ -59,18 +59,7 @@ Required Keywords
    |    ``1``: the first excited state, and so on.
 
 .. topic:: ``method``
-
-   | **Description:** The method to be used for the analytical gradient calculation (or for the energy evaluation when compyting the gradient by finite difference. 
-   | **Default:** N/A 
-   | **Datatype:** string 
-   | **Values:**
-   |    ``UHF``: Unrestricted Hartree–Fock 
-   |    ``ROHF``: Restricted Open-shell Hartree–Fock
-   |    ``HF``: Restricted Hartree–Fock
-   |    ``DHF`` : Dirac–Hartree–Fock
-   |    ``MP2`` : Moller–Plesset perturbation theory
-   |    ``CASSCF`` : Complete active space self consistent field (CASSCF)
-   |    ``CASPT2`` : Multireference perturbation theory (CASPT2) 
+   | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information. 
 
 Convergence Criteria
 --------------------

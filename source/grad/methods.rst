@@ -1,16 +1,17 @@
 .. _methods:
 
-****************************************
+******************************
 Description of input structure   
-****************************************
+******************************
 
 Description
 ===========
-The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree–Fock (UHF), restricted open-shell Hartree–Fock (ROHF), restricted Hartree–Fock (RHF), Dirac–Hartree–Fock (DHF), Moller–Plesset perturbation theory (MP2), complete active space self consistent field (CASSCF), and multireference perturbation theory (CASPT2). 
+One key feature that is heavily used in the nuclear gradients and relatived functionalities in Bagel is to use method array within the force (or optimize, or hessian) section. Since this array allow for quite a bit of flexiblity in the input, several examples are given below to demonstrate its use. 
 
-Method Array
-============
-The method array allows the user to specify one or more methods to be used in the force calculation. This is used, for example, to compute CASPT2 gradients where the CASSCF calculation must first be performed.
+Examples
+========
+
+In a force calculation, the methods can be nested in the follwoing way. This is particuarlly useful for performing a CASPT2 gradient calculation where a CASSCF calculation must also be performed. The options for caspte are specified in the smith block while the CASSCF parameters (in this case nstate, nact, and nclosed) are specified outside of the smith brackets.
 
 .. code-block:: javascript 
 
@@ -24,10 +25,12 @@ The method array allows the user to specify one or more methods to be used in th
            "frozen" : true
       },
       "nstate" : 3,
-      "nact_cas" : 7,
+      "nact" : 7,
       "nclosed" : 44 
     } ]
   }
+
+The same calculation could also be performed by setting up the input specifiying both CASSCF and CASPT2 within in the method array but by first requesting a CASSCF calculation and subsequently asking for a CASPT2 calculation. 
 
 .. code-block:: javascript 
 
@@ -37,8 +40,8 @@ The method array allows the user to specify one or more methods to be used in th
         {
           "title" : "casscf",
           "nstate" : 3,
-           "nact_cas" : 7,
-           "nclosed" : 44
+          "nact" : 7,
+          "nclosed" : 44
         },
 
         {
@@ -49,4 +52,5 @@ The method array allows the user to specify one or more methods to be used in th
         } 
       ]
   }
+
 
