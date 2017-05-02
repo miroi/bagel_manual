@@ -236,41 +236,91 @@ Optional Keywords (Minimum Energy Path)
 
 Example
 =======
-This optimizes the ground state geometry of hydrogen fluoride in the ground state, using two-state averaged CAASCF with active space of (2e,2o).
+This optimizes the ground state geometry of benzophenone.
+
+.. figure:: benzophenone.png
+    :width: 200px
+    :align: center
+    :alt: alternate text
+    :figclass: align-center
+
+    The benzophenone molecule with carbon atoms in grey, oxygen in red, and hydrogen in white. 
 
 Sample input
 ------------
 
 .. code-block:: javascript 
 
-   { "bagel" : [
+  { "bagel" : [
 
-   {
-     "title" : "molecule",
-     "basis" : "svp",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      1.700000] },
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      0.000000] }
-     ]
-   },
+  {
+    "title" : "molecule",
+    "symmetry" : "C1",
+    "basis" : "cc-pvdz",
+    "df_basis" : "cc-pvdz-jkfit",
+    "angstrom" : false,
+    "geometry" : [
+    { "atom" : "C", "xyz" : [     -2.002493,     -2.027773,      0.004882 ] },
+    { "atom" : "C", "xyz" : [     -2.506057,     -4.613700,      0.009896 ] },
+    { "atom" : "C", "xyz" : [      0.536515,     -1.276360,      0.003515 ] },
+    { "atom" : "C", "xyz" : [     -0.558724,     -6.375134,      0.013503 ] },
+    { "atom" : "H", "xyz" : [     -4.396140,     -5.341490,      0.011057 ] },
+    { "atom" : "C", "xyz" : [      2.478233,     -3.024614,      0.007049 ] },
+    { "atom" : "H", "xyz" : [      0.959539,      0.714937,     -0.000292 ] },
+    { "atom" : "C", "xyz" : [      1.936441,     -5.592475,      0.012127 ] },
+    { "atom" : "H", "xyz" : [     -1.012481,     -8.367883,      0.017419 ] },
+    { "atom" : "H", "xyz" : [      4.418042,     -2.380738,      0.005919 ] },
+    { "atom" : "H", "xyz" : [      3.448750,     -6.968581,      0.014980 ] },
+    { "atom" : "C", "xyz" : [     -6.758666,     -0.057378,      0.001157 ] },
+    { "atom" : "C", "xyz" : [     -8.231109,     -2.241648,      0.000224 ] },
+    { "atom" : "C", "xyz" : [     -8.022986,      2.269249,      0.001194 ] },
+    { "atom" : "C", "xyz" : [    -10.853532,     -2.110536,     -0.000769 ] },
+    { "atom" : "H", "xyz" : [     -7.410047,     -4.093049,      0.000224 ] },
+    { "atom" : "C", "xyz" : [    -10.632155,      2.405932,      0.000369 ] },
+    { "atom" : "H", "xyz" : [     -6.913797,      3.976253,      0.001805 ] },
+    { "atom" : "C", "xyz" : [    -12.064741,      0.207004,     -0.000695 ] },
+    { "atom" : "H", "xyz" : [    -11.941318,     -3.840822,     -0.001614 ] },
+    { "atom" : "H", "xyz" : [    -11.548963,      4.232744,      0.000447 ] },
+    { "atom" : "H", "xyz" : [    -14.107194,      0.302907,     -0.001460 ] },
+    { "atom" : "C", "xyz" : [     -3.892311,      0.136360,      0.001267 ] },
+    { "atom" : "O", "xyz" : [     -3.026383,      2.227189,     -0.001563 ] }
+    ]
+  },
 
-   {
-     "title" : "optimize",
+  {
+    "title" : "optimize",
      "method" : [ {
-       "title" : "casscf",
-       "nact" : 0,
-       "nact_cas" : 2,
-       "nclosed" : 4,
-       "nstate" : 2
+      "title" : "hf",
+      "thresh" : 1.0e-12
+    } ]
+  }
+ ]}
+
+
+Methods that require the use of smith: 
+
+.. code-block:: javascript 
+
+  {
+    "title" : "optimize",
+     "target" : 0,
+     "method" : [ {
+       "title" : "caspt2",
+         "smith" : {
+           "method" : "caspt2",
+           "ms" : "true",
+           "xms" : "true",
+           "sssr" : "true",
+           "shift" : 0.2,
+           "frozen" : true
+       },
+       "nstate" : 3,
+       "nact_cas" : 7,
+       "nclosed" : 44
      } ]
    }
 
    ]}
-
-This optimization ends in three steps.
-
 
 References
 ==========
