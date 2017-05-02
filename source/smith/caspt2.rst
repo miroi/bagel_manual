@@ -16,7 +16,7 @@ Keywords
 ========
 CASSCF keywords
 ---------------
-See CASSCF.
+See :ref:`casscf`.
 
 SMITH keywords
 --------------
@@ -27,8 +27,8 @@ SMITH keywords
    | **Default:** true.
    | **Datatype:** bool
    | **Values:**
-   |    ``true``: do multistate CASPT2.
-   |    ``false``: do single-state CASPT2.
+   |    ``true``: Do multistate CASPT2.
+   |    ``false``: Do single-state CASPT2.
 
 .. topic:: ``xms``
 
@@ -36,9 +36,9 @@ SMITH keywords
    | **Default:** true.
    | **Datatype:** bool
    | **Values:**
-   |    ``true``: do XMS-CASPT2.
-   |    ``false``: do MS-CASPT2.
-   | **Recommendation:** use default.
+   |    ``true``: Do XMS-CASPT2.
+   |    ``false``: Do MS-CASPT2.
+   | **Recommendation:** Use default.
 
 .. topic:: ``sssr``
 
@@ -48,28 +48,28 @@ SMITH keywords
    | **Values:**
    |    ``true``: use SS-SR contraction scheme.
    |    ``false``: use MS-MR contraction scheme.
-   | **Recommendation:** use default for computational efficiency
+   | **Recommendation:** Use default for computational efficiency
 
 .. topic:: ``shift``
 
    | **Description:** Vertical shift.
    | **Default:** 0.0
    | **Datatype:** double precision
-   | **Recommendation:** Increase the value if the convergence problem presents.
+   | **Recommendation:** Use default. Increase the value if the convergence problem presents.
 
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold.
    | **Default:** For single point energy calculation, 1.0e-6. Tight convergence for gradient calculation, 1.0e-8.
    | **Datatype:** double precision
-   | **Recommendation:** use default.
+   | **Recommendation:** Use default.
 
 .. topic:: ``thresh_overlap``
 
    | **Description:** Overlap cutoff threshold for internally contracted basis.
    | **Default:** 1.0-9
-   | **Datatype:** double precision
-   | **Recommendation:** use default.
+   | **Datatype:** Double precision
+   | **Recommendation:** Use default.
 
 .. topic:: ``frozen``
 
@@ -77,30 +77,30 @@ SMITH keywords
    | **Default:** true.
    | **Datatype:** bool
    | **Values:**
-   |    ``true``: use frozen orbitals.
-   |    ``false``: perform CASPT2 without frozen orbitals.
-   | **Recommendation:** use default.
+   |    ``true``: Use frozen orbitals.
+   |    ``false``: Perform CASPT2 without frozen orbitals.
+   | **Recommendation:** Use default.
 
 .. topic:: ``maxiter``
 
    | **Description:** Maximum number of iterations in CASPT2 calculations.
    | **Default:** 50
    | **Datatype:** integer
-   | **Recommendation:** use default.
+   | **Recommendation:** Use default.
 
 .. topic:: ``maxtile``
 
    | **Description:** Maximum number of orbitals in a single data tile used in CASPT2.
    | **Default:** 10
    | **Datatype:** integer
-   | **Recommendation:** use default.
+   | **Recommendation:** Use default.
 
 .. topic:: ``cimaxtile``
 
    | **Description:** Maximum number of Slater determinants in a single data tile used in CASPT2 gradient.
    | **Default:** 100 (When number of determinants is over 10000), 10 (otherwise)
    | **Datatype:** integer
-   | **Recommendation:** use default. Increase further when the number of determinants is larger.
+   | **Recommendation:** Use default. Increase further when the number of determinants is larger.
 
 
 Example
