@@ -33,11 +33,14 @@ Keywords
 ============
 
 
+<<<<<<< Updated upstream
 .. topic:: ``frozen``
 
    | **Description**: to have frozen orbitals or not.
    | **Default**: true
    | **Datatype**: bool
+=======
+>>>>>>> Stashed changes
 
 .. topic:: ``algorithm``
    
@@ -61,10 +64,17 @@ Keywords
 
 .. topic:: ``frozen``
 
+<<<<<<< Updated upstream
    | **Description**: Sp.
    | **Default**: false.
    | **Datatype**: boolean
    | **Values**:
+=======
+   | DESCRIPTION: Set whether or not orbitals are frozen.
+   | DEFAULT: false.
+   | DATATYPE: boolean
+   | VALUES:
+>>>>>>> Stashed changes
    |    ``TRUE``: Freeze orbitals..
    |    ``FALSE``: Do not freeze obitals.
    | **Recommendation**: Use default; no frozen orbitals. Freezing orbitals can reduce the cost, but also the accuracy of the calculation.
@@ -85,8 +95,6 @@ Keywords
    | **Values**: ``and integer``
    | **Recommendation**: Becareful, a common mistake is to input the value s_z and not the number of electrons.
 
-
-
 .. topic:: ``nstates``
 
    | **Description**: Number of states to calculate. 
@@ -102,7 +110,6 @@ Keywords
    | **Datatype**: boolean
    | **Values**: ``true, false``
    | **Recommendation**: Use if possible.
-
 
 
 .. topic:: ``thresh`` or ``thresh_fci``
@@ -149,25 +156,15 @@ The HF energies will not describe the bond breaking correclty.
 
    ]}
 
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
-.. figure:: figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-    This is an example of how to insert a figure. 
-
 References
 ==========
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Used for CI convergence algorithm.            | Knowles, P. J. and Handy, N. C. Chem. Phys. Lett.  1984               |
+| Used for CI convergence algorithm.            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984               |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Used for CI convergence algorithm.            | Harrison, R. J. and Zarrabian, S.  Chem. Phys. Lett.  1989            |
+| Used for CI convergence algorithm.            | Harrison, R. J. and Zarrabian, S., **158**, 5, Chem. Phys. Lett.  1989            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-
+| General reference for CI.                     | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory, Dover Publications            |
++-----------------------------------------------+-----------------------------------------------------------------------+
