@@ -15,7 +15,7 @@
 .. toctree::
    :maxdepth: 1
 
-   molecule.rst
+   molecule/molecule-toc.rst
 
 .. toctree::
    :maxdepth: 2

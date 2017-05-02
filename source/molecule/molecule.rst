@@ -2,18 +2,6 @@
 
 .. _molecule:
 
-********
-Molecule 
-********
-
-===========
-Description
-===========
-
-Molecule, starting with ``"title" : "molecule"``, is one of the basic input blocks specifying important
-information such as basis sets and geometry for the input system. The user has to specify the contents of this block
-in order to run the calculation..
-
 =================
 Required keywords
 =================
@@ -143,8 +131,9 @@ Density fitting basis sets
 * cc-pvqz-jkfit
 * cc-pv5z-jkfit
 
-Example
--------
+========
+Examples
+========
 
 .. code-block:: javascript 
 
