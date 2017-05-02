@@ -53,7 +53,7 @@ Optional keywords
 
 .. topic:: ``schwarz_thresh``
 
-   | **Description**: Schwarz screening integral threshold
+   | **Description**: Schwarz screening integral threshold (only used in RHF-FMM)
    | **Default**: :math:`1.0\times 10^{-12}`
    | **Datatype**: double 
 
