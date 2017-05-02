@@ -1,8 +1,8 @@
 .. _force:
 
-*****
-Force
-*****
+****************************************
+Nuclear Gradient and Derivative Coupling
+****************************************
 
 Description
 ===========
