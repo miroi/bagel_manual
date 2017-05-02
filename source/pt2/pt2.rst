@@ -12,5 +12,6 @@ PT2 methods include MP2, CASPT2, and NEVPT2
    mp2.rst
    nevpt2.rst
    ../smith/caspt2.rst
+   ../smith/relcaspt2.rst
 
 
