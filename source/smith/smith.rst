@@ -11,8 +11,6 @@ SMITH3-written functions
 
   caspt2.rst
   mrci.rst
-  casa.rst
   relcaspt2.rst
   relmrci.rst
-  relcasa.rst
 
