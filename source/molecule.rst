@@ -1,8 +1,8 @@
 .. _molecule:
 
-*******
+********
 Molecule 
-*******
+********
 
 ===========
 Description
@@ -15,45 +15,56 @@ Required keywords
 =================
 .. topic:: ``basis``
 
-   | DESCRIPTION: basis sets for the system
-   | DATATYPE: string
-   | VALUES:
-   |    Please refer to `Basis Sets`_ for possible aruments
+   | **Description**: basis sets for the system
+   | **Datatype**: string
+   | **Values**:
+   |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
 
 .. topic:: ``geometry``
 
-   | DESCRIPTION: specify elements and their Cartisian coordinates  
-   | DEFAULT: No Default
-   | DATATYPE: vector
-   | VALUES: 
+   | **Description**: specify elements and their Cartisian coordinates  
+   | **Default**: No Default
+   | **Datatype**: vector
+   | **Values**: 
    |    Elements are specified as {"atom" : "Atom Name",  "xyz" : [x y z]}
+
+.. topic:: ``df_basis``
+
+   | **Description**: basis sets used for density fitting
+   | **Default**: No Default Value
+   | **Datatype**: string
+   | **Values**:
+   |     Please refer to `Density fitting basis sets`_ for possible arguments
 
 =================
 Optional keywords
 =================
-.. topic:: ``df_basis``
-
-   | DESCRIPTION: basis sets used for density fitting
-   | DEFAULT: No Default Value
-   | DATATYPE: string
-   | VALUES:
-   |     Please refer to `Density fitting basis sets`_ for possible aruments
 
 .. topic:: ``angstrom``
 
-   | DESCRIPTION: specify units for atomic coordinates (Angstrom or Bohr)
-   | DEFAULT: false (Angstrom)
-   | DATATYPE: bool
+   | **Description**: specify units for atomic coordinates (Angstrom or Bohr)
+   | **Default**: false (Angstrom)
+   | **Datatype**: bool
    |    ``TRUE``: use Angstrom
    |    ``FALSE``: use Bohr
 
 .. topic:: ``molden_file``
 
-   | DESCRIPTION: filename of input molden file"
-   | DEFAULT: No Default
-   | DATATYPE: string
-   | VALUE:
-   |    User defined
+   | **Description**: filename of input molden file"
+   | **Default**: No Default
+   | **Datatype**: string
+
+.. topic:: ``schwarz_thresh``
+
+   | **Description**: Schwarz screening integral threshold
+   | **Default**: :math:`1.0\times 10^{-12}`
+   | **Datatype**: double 
+
+.. topic:: ``cfmm``
+
+   | **Description**: option to do RHF-FMM, in which case density fitting is not used
+   | **Default**: false 
+   | **Datatype**: boolean 
 
 ==========
 Basis sets 
@@ -157,7 +168,7 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
    {
      "charge" : "-1",
      "title" : "hf",
-     "thresh" : 1.0e-10
+     "thresh" : 1.0e-8
    }
    
    ]}
