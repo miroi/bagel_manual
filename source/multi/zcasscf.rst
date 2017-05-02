@@ -15,6 +15,8 @@ Pre-requisite
 =============
 Reference wave function (such as HF).
 
+Command: ``zcasscf``
+
 Keywords
 ========
 .. topic:: ``algorithm``
