@@ -6,22 +6,17 @@ Molecular Geometry Optimization
 
 Description
 ===========
-In BAGEL, quasi-newton optimization of the molecular geometry critical points is possible. Three types of the geometry critical
-points would be optimized: the most stable (minimum energy) geometry, conical intersections between the electronic states, and
-the transition state geometry (or the saddle point on the potential energy surface). The quasi-newton optimization is
-performed by taking a step via
+Three types of the geometry can be optimized: the most stable (minimum energy) geometry, conical intersections between the electronic states, and
+the transition state geometry (or the saddle point on the potential energy surface). 
 
-.. math::
-  \Delta \mathbf{x} = -\mathbf{H}^{-1} \mathbf{g}
-  
-while **H** is the Hessian and **g** is the molecular gradient. Rather than using the exact Hessian, which is expensive, one can
+In the optimizations, rather than using the exact Hessian, which is expensive, one can
 start from the approximate Hessian and update it according to the step taken. In the conical intersection optimization, the
 molecular gradient is replaced by the sum of the energy difference gradient and the upper state gradient after projecting the 
 degeneracy lifting vectors out. The advanced quasi-newton optimization methods, eigenvector following (EF) algorithm and
 rational functional optimization (RFO) are implemented. In addition, the minimum energy path to the reactants and products
 from the saddle point can be calculated using the second order algorithm, without mass weighting.
 
-The output contains the gradient evaluations at the first step of the optimization, and the status of the optimization.
+The output contains the gradient evaluation progress at the first step of the optimization, and the status of the optimization.
 The other information, including the quantum chemistry calculations at the optimization steps, are deposited in the file ``opt.log``.
 
 Keywords
@@ -30,7 +25,7 @@ Required Keywords
 -----------------
 .. topic:: ``optimize``
 
-   | **Description:** Requests that the geometry optimization. 
+   | **Description:** Requests the geometry optimization. 
 
 .. topic:: ``opttype``
 
