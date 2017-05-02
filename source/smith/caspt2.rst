@@ -105,50 +105,50 @@ SMITH keywords
 
 Example
 =======
-This should be an example that is chemically relevant. There should be text explaining what the example is and why it's interesting.
-
+XMS-CASPT2 calculation based on the two-state CASSCF reference function, with vertical shift of 0.2 :math:`E_h`. "SS-SR" contraction scheme is used.
+The active space of (6e,6o), which comprises three :math:`\pi` and three :math:`\pi^*` orbitals, is used.
 
 Sample input
 ------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
-   { "bagel" : [
+  { "bagel" : [
 
-   {
-     "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
-     ]
-   },
-
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
-   }
-
-   ]}
-
-
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
-.. figure:: ../figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-    This is an example of how to insert a figure. 
+  {
+    "title" : "molecule",
+    "basis" : "svp",
+    "df_basis" : "svp-jkfit",
+    "geometry" : [
+    { "atom" : "C", "xyz" : [     -0.079002,      2.543870,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      2.557470,      2.543870,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      3.875630,      4.826190,      0.000000 ] },
+    { "atom" : "C", "xyz" : [      2.557250,      7.109950,     -0.002266 ] },
+    { "atom" : "C", "xyz" : [     -0.078588,      7.109800,     -0.003171 ] },
+    { "atom" : "C", "xyz" : [     -1.396870,      4.826620,     -0.001289 ] },
+    { "atom" : "H", "xyz" : [     -1.117900,      0.744245,      0.000850 ] },
+    { "atom" : "H", "xyz" : [      3.595900,      0.743875,      0.002485 ] },
+    { "atom" : "H", "xyz" : [      5.953730,      4.826340,      0.001198 ] },
+    { "atom" : "H", "xyz" : [      3.596980,      8.909240,     -0.002377 ] },
+    { "atom" : "H", "xyz" : [     -1.118170,      8.909350,     -0.004972 ] },
+    { "atom" : "H", "xyz" : [     -3.474820,      4.826960,     -0.001629 ] }
+    ]
+  },
+  {
+    "title" : "caspt2",
+    "smith" : {
+      "method" : "caspt2",
+      "ms" : true,
+      "xms" : true,
+      "sssr" : true,
+      "shift" : 0.2
+    }
+    "nstate" : 2,
+    "nact" : 6,
+    "nclosed" : 18,
+    "active" : [17, 20, 21, 22, 23, 30]
+  }
+  ]}
 
 References
 ==========
