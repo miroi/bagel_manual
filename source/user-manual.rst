@@ -6,8 +6,7 @@
 .. toctree::
    :maxdepth: 1
 
-   installation_guide.rst
-   how_to_run_bagel.rst   
+   quickstart/quickstart.rst
 
 .. toctree::
    :maxdepth: 1
