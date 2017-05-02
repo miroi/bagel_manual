@@ -6,38 +6,115 @@ Complete active space self-consistent field (CASSCF)
 
 Description
 ===========
-Full CI diagonalizes Full CI Hamiltonian.
 
-.. math::
-  H\Psi = E\Psi
+CASSCF simultaneously optimizes the orbital coefficients and the CI coefficients of all the possible determinants generated from the active space.
+The second-order algorithm is implemented in BAGEL. The state-averaging scheme for calculating excited states is also implemented.
 
-Pre-requisite
-=============
-Reference wave function (such as HF).
+This algorithm is constructed by macroiterations and microiterations. At each macroiteration,
+the CI coefficient is optimized by FCI calculations, while the orbitals are rotated in microiterations. 
 
 Keywords
 ========
-.. topic:: ``frozen``
 
-   | DESCRIPTION: to have frozen orbital or not.
-   | DEFAULT: false.
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: have frozen orbital.
-   |    ``FALSE``: do not have frozen orbital.
-   | RECOMMENDATION: use default.
+.. topic:: ``nstate``
+
+   | **Description:** Number of states included in the state averaging.
+   | **Default:** 1.
+   | **Datatype:** integer
+   | **Recommendation:** N/A
+
+.. topic:: ``nact``
+
+   | **Description:** Number of active orbitals.
+   | **Default:** 0.
+   | **Datatype:** integer
+   | **Recommendation:** N/A
+
+.. topic:: ``nclosed``
+
+   | **Description:** Number of closed orbitals.
+   | **Default:** full core orbitals (-1).
+   | **Datatype:** integer
+   | **Recommendation:** N/A
 
 .. topic:: ``algorithm``
 
-   | DESCRIPTION: full CI algorithm.
-   | DEFAULT: kh.
-   | DATATYPE: string
-   | VALUES: 
-   |    ``KH, Knowles, Handy``: use Knowles—Handy.
-   |    ``HZ, Harrison, Zarrabian``: use Harrison—Zarrabian.
-   |    ``Dist``: use Parallel algorithm.
-   | RECOMMENDATION: if the active space is large and you have multiple processes, use Dist. Otherwise, use default.
+   | **Description:** Orbital optimization algorithm.
+   | **Default:** ``second``
+   | **Datatype:** string
+   | **Values:**
+   |    ``second``: second-order algorithm.
+   |    ``noopt``: no orbital optimization.
+   | **Recommendation:** use default.
 
+.. topic:: ``fci_algorithm``
+
+   | **Description:** FCI algorithm employed in each macroiteration.
+   | **Default:** ``parallel`` (when the number of active orbital is larger than 9 and number of process is larger than 8), ``knowles`` (otherwise)
+   | **Datatype:** string
+   | **Values:**
+   |    ``knowles``, ``handy``, ``kh``: Knowles--Handy Algorithm.
+   |    ``harrison``, ``zarrabian``, ``hz``: Harrison--Zarrabian Algorithm.
+   |    ``parallel``, ``dist``: Parallel FCI algorithm.
+   | **Recommendation:** use default.
+
+.. topic:: ``thresh``
+
+   | **Description:** Convergence threshold in macroiteration.
+   | **Default:** 1.0e-8.
+   | **Datatype:** double precision
+   | **Recommendation:** use default.
+
+.. topic:: ``thresh_micro``
+
+   | **Description:** Convergence threshold in microiteration.
+   | **Default:** 5.0e-6.
+   | **Datatype:** double precision
+   | **Recommendation:** use default.
+
+.. topic:: ``conv_ignore``
+
+   | **Description:** Throw the calculation or not when the convergence is not reached.
+   | **Default:** false.
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: Do not throw the calculation.
+   |    ``false``: Throw the calculation.
+   | **Recommendation:** use default.
+
+.. topic:: ``natocc``
+
+   | **Description:** Print natural orbitals or not.
+   | **Default:** false.
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: Print natural orbitals.
+   |    ``false``: Do not print natural orbitals.
+   | **Recommendation:** use default.
+
+.. topic:: ``sort_by_coeff``
+
+   | **Description:** Sort orbitals by coefficients or by occupation number.
+   | **Default:** false.
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: Sort by coefficients.
+   |    ``false``: Sort by occupation numbers.
+   | **Recommendation:** use default.
+
+.. topic:: ``maxiter``
+
+   | **Description:** Maximum number of macroiteration.
+   | **Default:** 50.
+   | **Datatype:** integer
+   | **Recommendation:** Increase if convergence is not obtained.
+
+.. topic:: ``maxiter_micro``
+
+   | **Description:** Maximum number of microiteration.
+   | **Default:** 100.
+   | **Datatype:** integer
+   | **Recommendation:** N/A
 
 Example
 =======
@@ -88,11 +165,9 @@ Some information about the output should also be included. This will not be enti
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                                             | 
++===============================================+================================================================================================+
+| Second-order orbital optimization             | T\. Yanai, Y. Kurashige, D. Ghosh, and G. K.-L. Chan, Int. J. Quantum Chem. 109, 2178 (2009).  |
++-----------------------------------------------+------------------------------------------------------------------------------------------------+
 
