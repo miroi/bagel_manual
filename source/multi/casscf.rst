@@ -16,26 +16,29 @@ the CI coefficient is optimized by FCI calculations, while the orbitals are rota
 Keywords
 ========
 
-.. topic:: ``state``
+.. topic:: ``nstate``
 
    | **Description:** Number of states included in the state averaging.
    | **Default:** 1.
    | **Datatype:** integer
-   | **Recommendation:** N/A
 
 .. topic:: ``nact``
 
    | **Description:** Number of active orbitals.
    | **Default:** 0.
    | **Datatype:** integer
-   | **Recommendation:** N/A
 
 .. topic:: ``nclosed``
 
    | **Description:** Number of closed orbitals.
-   | **Default:** full core orbitals (-1).
+   | **Default:** Number of electrons / 2.
    | **Datatype:** integer
-   | **Recommendation:** N/A
+
+.. topic:: ``active``
+
+   | **Description:** Specify active orbitals.
+   | **Default:** Nact / 2 orbitals lower and higher from the valence orbital.
+   | **Datatype:** integer array
 
 .. topic:: ``algorithm``
 
@@ -114,7 +117,7 @@ Keywords
    | **Description:** Maximum number of microiteration.
    | **Default:** 100.
    | **Datatype:** integer
-   | **Recommendation:** N/A
+   | **Recommendation:** use default.
 
 Example
 =======
@@ -165,11 +168,9 @@ Some information about the output should also be included. This will not be enti
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------+------------------------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                                             | 
++===============================================+================================================================================================+
+| Second-order orbital optimization             | T\. Yanai, Y. Kurashige, D. Ghosh, and G. K.-L. Chan, Int. J. Quantum Chem. 109, 2178 (2009).  |
++-----------------------------------------------+------------------------------------------------------------------------------------------------+
 
