@@ -1,8 +1,8 @@
 .. _molden:
 
-******
+******************************************
 Saving and loading MOs and CI coefficients
-******
+******************************************
 
 ===========
 Description
@@ -35,7 +35,7 @@ Keywords
    |      If this option is set to false, the molecular orbitals from the archive will be projected to a new geometry or 
    |      basis set provided earlier in the input file.  
    | **Default:**  true
-   | **Datatype:** boolean
+   | **Datatype:** bool
 
 =======
 Example

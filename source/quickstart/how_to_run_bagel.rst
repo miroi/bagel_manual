@@ -10,40 +10,38 @@ Command
 
 BAGEL runs by ::
 
-   BAGEL your/path/to/input.json
+   BAGEL input.json
 
 BAGEL sends output to the standard I/O stream, so you have to pipe the output in order to save it as a file: ::
 
-   BAGEL your/path/to/input.json > output.out
+   BAGEL input.json > output.out
 
 =======================
 Test input and output
 =======================
 
-This is an example input file for checking BAGEL installation.
+This is an example input file for checking the BAGEL installation.
 
 .. code-block:: javascript
 
-	{ "bagel" : [
+  { "bagel" : [
 
-	{
-		"title" : "molecule",
-		"basis" : "svp",
-		"df_basis" : "svp-jkfit",
-		"angstrom" : "false",
-		"geometry" : [
-			{ "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
-			{ "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956]}
-		]
-	},
+  {
+    "title" : "molecule",
+    "basis" : "svp",
+    "df_basis" : "svp-jkfit",
+    "angstrom" : "false",
+    "geometry" : [
+      { "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
+      { "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956]}
+    ]
+  },
 
-	{
-		"title" : "hf",
-		"thresh" : 1.0e-10
-	}
+  {
+    "title" : "hf",
+  }
 
-	]}
-
+  ]}
 
 This is an example output file for checking BAGEL installation.
 

@@ -20,7 +20,7 @@ to the presence of multiple degenerate solutions.  For open-shell molecules, it 
 complete active space self-consistent field (ZCASSCF) instead, possibly with a minimal active space.  
 DHF can be used to generate guess orbitals by increasing the molecular charge to remove unpaired electrons.  
 
-Command: ``dhf``
+Calculations using DHF can be done using the keyword ``"title" : "dhf"``.
 
 Prerequisite
 =============
@@ -135,8 +135,7 @@ Example
 	},
 
 	{
-		"title" : "hf",
-		"thresh" : 1.0e-10
+		"title" : "hf"
 	},
 
 	{
@@ -157,10 +156,10 @@ BAGEL references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Original implementation of density fitted     | M\. S. Kelley, and T. Shiozaki, J. Chem. Phys. **138**, 204113 (2013).|
+| Original implementation of density fitted     | M\. S. Kelley and T. Shiozaki, J. Chem. Phys. **138**, 204113 (2013). |
 | Dirac--Hartree--Fock with RMB spinor basis.   |                                                                       |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-| Extension to permit external magnetic fields, | R\. D. Reynolds, and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,     |
+| Extension to permit external magnetic fields, | R\. D. Reynolds and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,      |
 | including GIAO-RMB atomic basis.              | 14280 (2015).                                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
@@ -169,7 +168,7 @@ General references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| General text on relativistic electronic       | M\. Reiher, and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH, |
+| General text on relativistic electronic       | M\. Reiher and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH,  |
 | structure, including Dirac--Hartree--Fock.    | Weinheim, 2009).                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 

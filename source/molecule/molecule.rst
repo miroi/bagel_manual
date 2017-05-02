@@ -83,14 +83,14 @@ Optional keywords
 
    | **Description**: External magnetic field.  At this time, external magnetic fields are available only for the :ref:`hf` and :ref:`dhf` modules.  
    | **Default**: zero magnetic field
-   | **Datatype** : Array of three doubles (x, y, z)
+   | **Datatype**: Array of three doubles (x, y, z)
 
 .. topic:: ``tesla``
 
    | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.  
    |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
    | **Default**: false (so atomic units are used)
-   | **Datatype** : bool
+   | **Datatype**: bool
  
 .. topic:: ``basis_type``
 

@@ -100,6 +100,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 html_theme = 'classic'
+html_style = 'override.css'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -112,9 +113,9 @@ html_theme_options = {
    "sidebarbtncolor" : "white",  #Background color for the sidebar collapse button (used when collapsiblesidebar is True).
    "sidebartextcolor" : "white", #Text color for the sidebar.
    "sidebarlinkcolor" : "white", #Link color for the sidebar.
-   "relbarbgcolor" : "white",  #Background color for the relation bar.
-   "relbartextcolor" : "indigo", #Text color for the relation bar.
-   "relbarlinkcolor" : "indigo",  #Link color for the relation bar.
+   "relbarbgcolor" : "indigo",  #Background color for the relation bar.
+   "relbartextcolor" : "white", #Text color for the relation bar.
+   "relbarlinkcolor" : "white",  #Link color for the relation bar.
    "bgcolor" : "white", #Body background color.
    "textcolor" : "black", #Body text color.
    "visitedlinkcolor" : "indigo",  #Body link color.

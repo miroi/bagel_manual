@@ -238,7 +238,7 @@ Example
 =======
 This optimizes the ground state geometry of benzophenone.
 
-.. figure:: benzophenone.png
+.. figure:: ../grad/benzophenone.png
     :width: 200px
     :align: center
     :alt: alternate text
@@ -296,10 +296,17 @@ Sample input
   }
  ]}
 
-
-Methods that require the use of smith: 
+Using the same molecule block, a geometry optimization with XMS-CASPT2 can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 8 electrons and 7 orbitals, (8*e*,7*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states. Since a multistate calculation is performed, the user must specify which state is to be optimized (the target). In this example, we optimize the ground state.
 
 .. code-block:: javascript 
+
+  {
+    "title" : "casscf",
+    "nstate" : 2,
+    "nclosed" : 46,
+    "nact" : 3,
+    "active" : [37, 44, 49]
+  },
 
   {
     "title" : "optimize",
@@ -314,9 +321,9 @@ Methods that require the use of smith:
            "shift" : 0.2,
            "frozen" : true
        },
-       "nstate" : 3,
-       "nact_cas" : 7,
-       "nclosed" : 44
+       "nstate" : 2,
+       "nact" : 3,
+       "nclosed" : 46
      } ]
    }
 
@@ -336,10 +343,10 @@ References
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
 | Gradient projection algorithm                 | M\. J. Bearpark, M. A. Robb, and H. B. Schlegel, Chem. Phys. Lett. **223**, 269 (1994).  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
-| Flowchart method                              | A\. B. Birkholz, and H. B. Schlegel, Theor. Chem. Acc. **135**, 84 (2016).               |
+| Flowchart method                              | A\. B. Birkholz and H. B. Schlegel, Theor. Chem. Acc. **135**, 84 (2016).                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
-| ETF in nonadiabatic coupling                  | S\. Fatehi, and J. E. Subotnik, J. Phys. Chem. Lett. **3**, 2039 (2012).                 |
+| ETF in nonadiabatic coupling                  | S\. Fatehi and J. E. Subotnik, J. Phys. Chem. Lett. **3**, 2039 (2012).                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
-| Thiel's conical intersection parameters       | T\. W. Keal, A. Koslowski and W. Thiel, Theor. Chem. Acc. **118**, 837 (2007).           |
+| Thiel's conical intersection parameters       | T\. W. Keal, A. Koslowski, and W. Thiel, Theor. Chem. Acc. **118**, 837 (2007).          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
 

@@ -87,7 +87,7 @@ BAGEL references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Relativistic implementation of NEVPT2 in      | T\. Shiozaki, and W. Mizukami, J. Chem. Theory Comput. **11**, 4733   |
+| Relativistic implementation of NEVPT2 in      | T\. Shiozaki and W. Mizukami, J. Chem. Theory Comput. **11**, 4733    |
 | BAGEL                                         | (2015).                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
