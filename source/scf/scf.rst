@@ -4,7 +4,7 @@
 Self-consistent field
 *********************
 
-Non-relativistic and relativistic Hartree--Fock
+Non-relativistic and relativistic Hartree--Fock.
 
 .. toctree::
    :maxdepth: 2
