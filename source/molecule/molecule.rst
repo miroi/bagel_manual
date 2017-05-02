@@ -39,8 +39,9 @@ Required keywords
    | **Values**:
    |     Please refer to `Density fitting basis sets`_ for possible arguments
 
-Note that the use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
-basis set other than the default for each atom (see example for `Basis sets`_ below).
+.. note:: 
+   the use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
+   basis set other than the default for each atom (see example for `Basis sets`_ below).
 
 Optional keywords
 =================
@@ -318,8 +319,9 @@ The following auxiliary basis sets are available in BAGEL library. The basis set
 * def2-SVP-2c-ecp
 * lanl2dz-ecp
 
-Note that user-defined ECP basis sets need to contain the keyword "ecp" in the names. 
-Refer to `User defined basis sets`_ for more details.
+.. note::
+   user-defined ECP basis sets need to contain the keyword "ecp" in the names. 
+   Refer to `User defined basis sets`_ for more details.
 
 Example
 -------
@@ -394,8 +396,10 @@ of a single basis function.
   * ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
   * ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
  
-The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. Note that not
-all of the the basis sets are defined for all atoms;  an error of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
+The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. 
+
+.. note:: 
+   Not all of the the basis sets are defined for all atoms;  an error of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
  
 To use a user specified basis the explicit path to the basis set file must be specified in the basis set block.
 
