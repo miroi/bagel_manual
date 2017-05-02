@@ -15,10 +15,13 @@ Required keywords
 =================
 .. topic:: ``basis``
 
-   | **Description**: basis sets for the system
+   | **Description**: define default basis set used for the system
    | **Datatype**: string
    | **Values**:
    |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
+
+Note that the use of mixed basis sets is possible by specifying a different basis set other than the default
+for each atom (see example for `Effective core potential (ECP) basis sets`_ below).
 
 .. topic:: ``geometry``
 
