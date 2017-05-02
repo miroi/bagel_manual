@@ -147,6 +147,9 @@ Sample input
     ]
   },
   {
+    "title" : "hf"
+  },
+  {
     "title" : "casscf",
     "nstate" : 2,
     "nact" : 6,
@@ -178,9 +181,4 @@ This converges in five macroiterations.
 References
 ==========
 
-+-----------------------------------------------+------------------------------------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                                             | 
-+===============================================+================================================================================================+
-| Second-order orbital optimization             | H\.-J. Werner, Adv. Chem. Phys. 69, 1 (1987).                                                  |
-+-----------------------------------------------+------------------------------------------------------------------------------------------------+
-
+The second-order orbital optimization is implemented with an assistance of Takeshi Yanai (Institute for Molecular Science, Japan).
