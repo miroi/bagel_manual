@@ -18,7 +18,7 @@ Required keywords
    | **Description**: basis sets for the system
    | **Datatype**: string
    | **Values**:
-   |    Please refer to `Basis Sets`_ for possible aruments
+   |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
 
 .. topic:: ``geometry``
 
@@ -34,7 +34,7 @@ Required keywords
    | **Default**: No Default Value
    | **Datatype**: string
    | **Values**:
-   |     Please refer to `Density fitting basis sets`_ for possible aruments
+   |     Please refer to `Density fitting basis sets`_ for possible arguments
 
 =================
 Optional keywords
@@ -53,8 +53,12 @@ Optional keywords
    | **Description**: filename of input molden file"
    | **Default**: No Default
    | **Datatype**: string
-   | **Value**:
-   |    User defined
+
+.. topic:: ``schwarz_thresh``
+
+   | **Description**: Schwarz screening integral threshold
+   | **Default**: :math:`1.0\times 10^{-12}`
+   | **Datatype**: double 
 
 .. topic:: ``cfmm``
 
