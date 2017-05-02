@@ -91,49 +91,6 @@ Optional keywords
    | **Description**: unit of the external magnetic field
    | **Default**: false (use atomic unit)
 
-========================
-User defined basis sets
-========================
-
-The basis set file is in the following format
-
-.. code-block:: javascript 
-
- {
-  "H" : [
-    {
-      "angular" : "s",
-      "prim" : [5.4471780, 0.8245470],
-      "cont" : [[0.1562850, 0.9046910]]
-    }, {
-      "angular" : "s",
-      "prim" : [0.1831920],
-      "cont" : [[1.0000000]]
-    }
-  ],
-  "He" : [
-    {
-      "angular" : "s",
-      "prim" : [13.6267000, 1.9993500],
-      "cont" : [[0.1752300, 0.8934830]]
-    }, {
-      "angular" : "s",
-      "prim" : [0.3829930],
-      "cont" : [[1.0000000]]
-    }
-  ]
- }
-
-| The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
-| The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
-of a single basis function.
-| "angular" defines the kind of orbital (s,p,d,f...) . 
-| "prim" is a array containing the exponents of the primative orbitals from which the basis funciton is composed.
-| "cont" is an array containing the coefficients associated with each of these primiative orbitals.
-|
-| The user casn specify their own basis set using the above format, or use one of the predefined basis sets listed below. Note that not
-all of the below basis sets are defined for all atome; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
- 
 ==========
 Basis sets 
 ==========
@@ -324,3 +281,47 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
    }
    
    ]}
+
+========================
+User defined basis sets
+========================
+
+The basis set file is in the following format
+
+.. code-block:: javascript 
+
+ {
+  "H" : [
+    {
+      "angular" : "s",
+      "prim" : [5.4471780, 0.8245470],
+      "cont" : [[0.1562850, 0.9046910]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.1831920],
+      "cont" : [[1.0000000]]
+    }
+  ],
+  "He" : [
+    {
+      "angular" : "s",
+      "prim" : [13.6267000, 1.9993500],
+      "cont" : [[0.1752300, 0.8934830]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.3829930],
+      "cont" : [[1.0000000]]
+    }
+  ]
+ }
+
+| The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
+| The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
+of a single basis function.
+| "angular" defines the kind of orbital (s,p,d,f...) . 
+| "prim" is a array containing the exponents of the primative orbitals from which the basis funciton is composed.
+| "cont" is an array containing the coefficients associated with each of these primiative orbitals.
+|
+| The user casn specify their own basis set using the above format, or use one of the predefined basis sets listed below. Note that not
+all of the below basis sets are defined for all atome; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
+ 
