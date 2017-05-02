@@ -419,3 +419,90 @@ Example
    ]}
 
 
+=====================================================
+Dummy atoms (inclusion of an artificial point charge)
+=====================================================
+It is possible to include artificial point charges in the calculation. These introduce a user specified charge into the system, but  have no associated basis functions. Introduction of such a charge is accomplished by inclusion of an additional line in the geometry block for an atom of  element "Q". The user can specify the charge of this dummy atom at the after the array in the geometry block which specifies its position.
+
+Example
+-------
+
+A dihydrogen molecule with a nearby dummy charge of +2. Note that the charge specified in the "hf" block does not include the charge associated with with point charge. 
+
+Sample input
+------------
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "tzvpp",
+     "df_basis" : "tzvpp-jkfit",
+     "angstrom" : "true",
+     "geometry" : [
+       { "atom" :  "Q",  "xyz" : [  0.000000,   0.000000,   2.0000], "charge" : "2"},
+       { "atom" :  "H",  "xyz" : [  0.000000,   0.000000,   0.7414]},
+       { "atom" :  "H",  "xyz" : [  0.000000,   0.000000,   0.0000]}
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "charge" : "0",
+     "thresh" : 1.0e-8
+   }
+   
+   ]}
+
+
+Sample output
+-------------
+
+.. code-block:: javascript
+
+
+  === RHF iteration (tzvpp) ===
+  
+               o Fock build                                  0.05
+      0         -1.31770292          0.01231637           0.05
+               o DIIS                                        0.00
+               o Diag                                        0.01
+               o Post process                                0.00
+               o Fock build                                  0.03
+      1         -1.32644825          0.00237184           0.04
+               o DIIS                                        0.00
+               o Diag                                        0.01
+               o Post process                                0.00
+               o Fock build                                  0.05
+      2         -1.32683161          0.00009404           0.06
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.06
+      3         -1.32683219          0.00000684           0.06
+               o DIIS                                        0.00
+               o Diag                                        0.01
+               o Post process                                0.00
+               o Fock build                                  0.06
+      4         -1.32683220          0.00000108           0.06
+               o DIIS                                        0.00
+               o Diag                                        0.00
+               o Post process                                0.00
+               o Fock build                                  0.05
+      5         -1.32683220          0.00000005           0.05
+               o DIIS                                        0.00
+               o Diag                                        0.01
+               o Post process                                0.00
+               o Fock build                                  0.04
+      6         -1.32683220          0.00000000           0.05
+  
+    * SCF iteration converged.
+
+    * Permanent dipole moment:
+           (    0.000000,    -0.000000,    -1.239951) a.u.
+
+
+    * METHOD: HF                                   0.79
