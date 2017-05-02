@@ -11,6 +11,7 @@ Gradient, Hessian and Geometry optimization
 
    methods.rst
    force.rst
+   dynamics.rst
    hess.rst
    ../opt/optimize.rst
 

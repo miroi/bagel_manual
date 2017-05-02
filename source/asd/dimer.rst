@@ -1,74 +1,61 @@
-.. _dimer_asd:
-
-****:
-Dimer
-****
-
+.. _dimer:
 
 Description
 ===========
-Description to dimer ASD
+The construction of the dimer molecule is separated from the ASD input block, it is built from one monomer by spatial translation. Then dimer active molecular orbitals are picked out by doing localization and comparing overlap with user-defined monomer active orbitals. Fragment wave functions are calculated within the active subspaces, whose linear combinations are used to construct the dimer wavefunction. 
 
 
 Keywords
 ========
 
-.. topic:: ``active orbitals``
+.. topic:: ``title``
    
-   | **Description**: assign active orbitals
+   | **Value:** dimerize
 
+.. topic:: ``translate``
 
-Example
-=======
-Give an example here
+   | **Description:** spatial distance in Cartesian coordinates
+   | **Datatype:** array<double, 3>
 
+.. topic:: ``angstrom`` 
 
-Sample input
-------------
+   | **Description:** whether the translation is in a.u. or angstrom
+   | **Datatype:** bool
+   | **Default:** false
 
-.. code-block:: javascript
+.. topic:: ``dimer_active``
 
-   { "bagel" : [
+   | **Description:** specify monomer active orbitals
+   | **Datatype:** set<int>
+
+.. topic:: ``hf``
+
+   | **Description:** dimer restricted Hartree-Fock calculation options
+   | **Default:** use the same options as monomer (add hyperlink here :: RHF) calculations
+
+.. topic:: ``localization``
+
+   | **Description:** localize dimer molecular orbitals
+   | **Default:** use default (add hyperlink here :: Localization)
+  
+.. topic:: ``scheme``
+
+   | **Description:** options to assign dimer active orbitals
+   | **Datatype:** string
+   | **Values:** 
+   |   ``active_first``: pick active space from dimer orbitals first, then attempt to localize
+   |   ``localize_first``: localize dimer orbitals, then pick the active space within each fragment
+   | **Default:** active_first
+
+.. topic:: ``active_thresh``
    
-   {
-     "title" : "molecule",
-     "symmetry" : "C1",
-     "basis" : "sto-3g",
-     "df_basis" : "svp",
-     "angstrom" : false,
-     "cartesian" : false,
-     "geometry" : [
-       {"atom" :"C", "xyz" : [    0.00000000000000,     0.00000000000000,     2.64112304663605] },
-       {"atom" :"C", "xyz" : [    2.28770766388446,     0.00000000000000,     1.32067631141874] },
-       {"atom" :"C", "xyz" : [    2.28770047235649,     0.00000000000000,    -1.32071294538560] },
-       {"atom" :"C", "xyz" : [    0.00000000000000,     0.00000000000000,    -2.64114665444819] },
-       {"atom" :"C", "xyz" : [   -2.28770047235649,     0.00000000000000,    -1.32071294538560] },
-       {"atom" :"C", "xyz" : [   -2.28770766388446,     0.00000000000000,     1.32067631141874] },
-       {"atom" :"H", "xyz" : [    4.07221260176630,     0.00000000000000,     2.35164689765998] },
-       {"atom" :"H", "xyz" : [    4.07221517814719,     0.00000000000000,    -2.35163163881380] },
-       {"atom" :"H", "xyz" : [    0.00000000000000,     0.00000000000000,    -4.70191324441092] },
-       {"atom" :"H", "xyz" : [   -4.07221517814719,     0.00000000000000,    -2.35163163881380] },
-       {"atom" :"H", "xyz" : [   -4.07221260176630,     0.00000000000000,     2.35164689765998] },
-       {"atom" :"H", "xyz" : [    0.00000000000000,     0.00000000000000,     4.70197960246451] }
-     ]
-   },
-   
-   {
-     "title" : "hf"
-   },
-   
-   {
-     "title" : "dimerize",
-     "angstrom" : true,
-     "translate" : [0.0, 4.0, 0.0],
-     "dimer_active" : [17, 20, 21, 22, 23, 24],
-     "hf" : {
-       "thresh" : 1.0e-12
-     },
-     "localization" : {
-       "max_iter" : 50,
-       "thresh" : 1.0e-8
-     }
-   }
-   
-   ]}
+   | **Description:** threshold overlap for obitals to be treated as active
+   | **Datatype:** double
+   | **Default:** 0.5
+
+
+Prerequisite
+============
+(add hyperlink here :: RHF) calculations are needed to obtain fragment active orbitals.
+
+
