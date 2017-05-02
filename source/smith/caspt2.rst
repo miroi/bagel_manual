@@ -36,8 +36,9 @@ SMITH keywords
    | **Default:** true.
    | **Datatype:** bool
    | **Values:**
-   |    ``true``: do MS-CASPT2.
-   |    ``false``: do XMS-CASPT2.
+   |    ``true``: do XMS-CASPT2.
+   |    ``false``: do MS-CASPT2.
+   | **Recommendation:** use default.
 
 .. topic:: ``sssr``
 
@@ -47,6 +48,7 @@ SMITH keywords
    | **Values:**
    |    ``true``: use SS-SR contraction scheme.
    |    ``false``: use MS-MR contraction scheme.
+   | **Recommendation:** use default for computational efficiency
 
 .. topic:: ``shift``
 
