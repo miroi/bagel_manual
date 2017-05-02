@@ -117,7 +117,7 @@ html_theme_options = {
    "relbarlinkcolor" : "indigo",  #Link color for the relation bar.
    "bgcolor" : "white", #Body background color.
    "textcolor" : "black", #Body text color.
-   "visitedlinkcolor" : "slateblue",  #Body link color.
+   "visitedlinkcolor" : "indigo",  #Body link color.
    "linkcolor" : "indigo", #Body color for visited links.
    "headbgcolor" : "white", #Background color for headings.
    "headtextcolor" : "indigo", #Text color for headings.
