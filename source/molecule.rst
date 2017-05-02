@@ -68,22 +68,22 @@ Optional keywords
 ==========
 Basis sets 
 ==========
+* sto-3g
 * 3-21g  
 * 6-31g
-* sto-3g
 * svp
 * tzvpp
 * qzvpp
-* cc-pv5z  
-* cc-pv6z  
 * cc-pvdz  
 * cc-pvtz  
 * cc-pvqz
-* aug-cc-pv5z
-* aug-cc-pv6z
+* cc-pv5z  
+* cc-pv6z  
 * aug-cc-pvdz
 * aug-cc-pvtz
 * aug-cc-pvqz
+* aug-cc-pv5z
+* aug-cc-pv6z
 * ano-rcc
 
 ==========================
@@ -92,10 +92,10 @@ Density fitting basis sets
 * svp-jkfit
 * tzvpp-jkfit
 * qzvpp-jkfit
-* cc-pv5z-jkfit
 * cc-pvdz-jkfit
-* cc-pvqz-jkfit
 * cc-pvtz-jkfit
+* cc-pvqz-jkfit
+* cc-pv5z-jkfit
 
 Example
 -------
@@ -126,10 +126,10 @@ Example
 ====================
 Auxiliary basis sets
 ====================
-* cc-pv5z-ri
 * cc-pvdz-ri
-* cc-pvqz-ri
 * cc-pvtz-ri
+* cc-pvqz-ri
+* cc-pv5z-ri
 
 Example
 -------
