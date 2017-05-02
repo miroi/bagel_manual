@@ -162,7 +162,6 @@ ROHF
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "svp",
      "df_basis" : "svp-jkfit",
      "angstrom" : "false",
@@ -190,7 +189,6 @@ UHF
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "svp",
      "df_basis" : "svp-jkfit",
      "angstrom" : false,
@@ -219,7 +217,6 @@ SOSCF
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "ecp28mdf",
      "df_basis" : "tzvpp-jkfit",
      "angstrom" : "true",
@@ -252,7 +249,6 @@ RHF-FMM
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "/home/le/develop/bagel/src/basis/3-21g.json",
      "angstrom" : "true",
      "cfmm" : "true",

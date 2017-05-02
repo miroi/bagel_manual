@@ -1,4 +1,4 @@
-.. _molecule:
+. _molecule:
 
 ********
 Molecule 
@@ -68,6 +68,49 @@ Optional keywords
    | **Default**: false 
    | **Datatype**: boolean 
 
+========================
+User defined basis sets
+========================
+
+The basis set file is in the following format
+
+.. code-block:: javascript 
+
+ {
+  "H" : [
+    {
+      "angular" : "s",
+      "prim" : [5.4471780, 0.8245470],
+      "cont" : [[0.1562850, 0.9046910]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.1831920],
+      "cont" : [[1.0000000]]
+    }
+  ],
+  "He" : [
+    {
+      "angular" : "s",
+      "prim" : [13.6267000, 1.9993500],
+      "cont" : [[0.1752300, 0.8934830]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.3829930],
+      "cont" : [[1.0000000]]
+    }
+  ]
+ }
+
+| The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
+| The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
+of a single basis function.
+| "angular" defines the kind of orbital (s,p,d,f...) . 
+| "prim" is a array containing the exponents of the primative orbitals from which the basis funciton is composed.
+| "cont" is an array containing the coefficients associated with each of these primiative orbitals.
+|
+| The user casn specify their own basis set using the above format, or use one of the predefined basis sets listed below. Note that not
+all of the below basis sets are defined for all atome; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
+ 
 ==========
 Basis sets 
 ==========
@@ -126,51 +169,6 @@ Example
 
    ]}
 
-====================
-Auxiliary basis sets
-====================
-* cc-pvdz-ri
-* cc-pvtz-ri
-* cc-pvqz-ri
-* cc-pv5z-ri
-
-Example
--------
-
-An example using ``cc-pvdz-ri`` in MP2 calculation
-
-.. code-block:: javascript 
-
-   { "bagel" : [
-   
-   {
-     "title" : "molecule",
-     "basis" : "cc-pvdz",
-     "df_basis" : "cc-pvdz-jkfit",
-     "angstrom" : "true",
-     "geometry" : [
-       { "atom" : "C", "xyz" : [ -1.20433891360,  0.54285096106, -0.04748199659] },
-       { "atom" : "C", "xyz" : [ -1.20543291352, -0.83826393986,  0.12432899108] },
-       { "atom" : "C", "xyz" : [ -0.00000600000, -1.52953889027,  0.20833398505] },
-       { "atom" : "C", "xyz" : [  1.20544091352, -0.83825393987,  0.12432799108] },
-       { "atom" : "C", "xyz" : [  1.20433091360,  0.54284396106, -0.04748099659] },
-       { "atom" : "C", "xyz" : [  0.00000400000,  1.23314191154, -0.13372399041] },
-       { "atom" : "H", "xyz" : [ -2.13410484690,  1.07591192282, -0.12500499103] },
-       { "atom" : "H", "xyz" : [ -2.13651384673, -1.37179190159,  0.18742198655] },
-       { "atom" : "H", "xyz" : [  0.00000000000, -2.59646181374,  0.33932597566] },
-       { "atom" : "H", "xyz" : [  2.13651384673, -1.37179290159,  0.18742198655] },
-       { "atom" : "H", "xyz" : [  2.13410684690,  1.07591292282, -0.12500599103] },
-       { "atom" : "H", "xyz" : [ -0.00000000000,  2.29608983528, -0.28688797942] }
-     ]
-   },
-   
-   {
-     "title" : "mp2",
-     "aux_basis" : "cc-pvdz-ri",
-     "frozen" : true
-   }
-   
-   ]}
 
 =========================================
 Effective core potential (ECP) basis sets 
@@ -184,6 +182,24 @@ Effective core potential (ECP) basis sets
 * def2-SVP-2c-ecp
 * lanl2dz-ecp
 
+========================
+Auxiliary basis sets
+========================
+* svp-jkfit
+* tzvpp-jkfit
+* qzvpp-jkfit
+* cc-pvdz-jkfit
+* cc-pvqz-jkfit
+* cc-pvtz-jkfit
+* cc-pv5z-jkfit
+* cc-pvdz-ri
+* cc-pvqz-ri
+* cc-pvtz-ri
+* cc-pv5z-ri
+
+
+
+=======
 Example
 -------
 
