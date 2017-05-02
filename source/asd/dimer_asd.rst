@@ -7,7 +7,7 @@ Dimer ASD
 
 Description
 ===========
-The active space decomposition algorithm for molecular dimers allows for efficient computation for the dimer's complete-active-space wave functions. The current algorithm only works for dimer molecules those fragments are not covalently linked. Full-CI and restricted-active-space-CI can be used to obtain the fragment state wave functions. ASD calculation starts with dimer molecule construction, see (add ref Dimer) section for more information.
+The active space decomposition algorithm for molecular dimers allows for efficient computation for the dimer's complete-active-space wave functions. The current algorithm only works for dimer molecules those fragments are not covalently linked. Full-CI and restricted-active-space-CI can be used to obtain the fragment state wave functions. ASD calculation starts with dimer molecule construction, see `Dimer Construction`_ section for more information.
 
 
 Dimer Construction
@@ -39,12 +39,12 @@ Required Keywords
 .. topic:: ``fci``
 
    | **Description:** if ``fci`` is used, specify the implementations here
-   | **Recommendation:** see (add hyperlink to fci) for details
+   | **Recommendation:** see :ref:`fci` for details
 
 .. topic:: ``ras``
 
    | **Description:** if ``ras`` is used, specify the implementations here
-   | **Recommendation:** see (add hyperlink to ras) for details
+   | **Recommendation:** see :ref:`rasci` for details
 
 .. topic:: ``space``
 
