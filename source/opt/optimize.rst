@@ -1,7 +1,7 @@
 .. _optimize:
 
 *******************************
-Molecular Geometry Optimization
+Molecular geometry optimization
 *******************************
 
 Description
@@ -66,17 +66,17 @@ Required Keywords
 
 .. topic:: ``method``
 
-   | **Description:** The method to be used for energy evaluation 
+   | **Description:** The method to be used for the analytical gradient calculation (or for the energy evaluation when compyting the gradient by finite difference. 
    | **Default:** N/A 
    | **Datatype:** string 
    | **Values:**
-   |    ``UHF``: Unrestricted Hartree Fock 
-   |    ``ROHF``: Restricted Open-shell Hartree Fock
-   |    ``HF``: Restricted Hartree Fock
-   |    ``DHF`` : Dirac Hartree Fock
-   |    ``MP2`` : Moller Plesset Perturbation Theory
-   |    ``CASSCF`` : Complete Active Space Self Consistent Field (CASSCF)
-   |    ``CASPT2`` : Complete Active Space SCF with Secont Order Perturbation Theory (CASPT2) 
+   |    ``UHF``: Unrestricted Hartree–Fock 
+   |    ``ROHF``: Restricted Open-shell Hartree–Fock
+   |    ``HF``: Restricted Hartree–Fock
+   |    ``DHF`` : Dirac–Hartree–Fock
+   |    ``MP2`` : Moller–Plesset perturbation theory
+   |    ``CASSCF`` : Complete active space self consistent field (CASSCF)
+   |    ``CASPT2`` : Multireference perturbation theory (CASPT2) 
    | **Recommendation:** N/A
 
 Convergence Criteria
