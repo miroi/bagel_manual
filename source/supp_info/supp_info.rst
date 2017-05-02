@@ -1,7 +1,7 @@
 .. _supp_info:
 
 *************************
-Supplementary Information
+Supplementary information
 *************************
 
 .. toctree::
