@@ -1,4 +1,4 @@
-.. _gradient:
+.. _force:
 
 ****************************************
 Nuclear Gradient and Derivative Coupling
@@ -6,7 +6,7 @@ Nuclear Gradient and Derivative Coupling
 
 Description
 ===========
-The force section can be used to compute the analytical gradient (force), the numerical gradient (see section on finited difference for more information), and the non-adiabatic coutpling matrix elements (NACME) 
+The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree Fock (UHF), restricted open-shell Hartree Fock (ROHF), restricted Hartree Fock (RHF), Dirac Hartree Fock (DHF), Moller Plesset Perturbation Theory (MP2), complete active space self consistent field (CASSCF), and CASSCF with second order perturbation theory (CASPT2). 
 
 Keywords
 ========
@@ -30,7 +30,7 @@ Required Keywords
 
 .. topic:: ``method``
 
-   | **Description:** The method to be used for energy evaluation 
+   | **Description:** The method to be used for the analytical gradient calculation (or for the energy evaluation when compyting the gradient by finite difference. 
    | **Default:** N/A 
    | **Datatype:** string 
    | **Values:**
@@ -45,31 +45,31 @@ Required Keywords
 
 .. topic:: ``nacmtype``
 
-   | **Description:** Type of non-adiabatic coupling matrix element to be used.
-   | **Default:** 0.
+   | **Description:** Type of non-adiabatic coupling matrix element to be used
+   | **Default:** 0
    | **Datatype:** integer
    | **Values:** 
-   |    ``0``: use full nonadiabatic coupling.
-   |    ``1``: use interstate coupling.
-   |    ``2``: use nonadiabatic coupling with built-in electronic translational factor (ETF).
-   | **Recommendation:** use default.
+   |    ``0``: Use full non-adiabatic coupling
+   |    ``1``: Use interstate coupling 
+   |    ``2``: Use non-adiabtic coupling with built-in electronic translational factor (ETF)
+   | **Recommendation:** use default 
 
 Optional Keywords
 -----------------
 
 .. topic:: ``numerical``
 
-   | **Description:** The gradients will be computed using finite difference 
+   | **Description:** The gradients will be computed by finite difference. 
    | **Default:** false
    | **Datatype:** bool
    | **Values:** 
    |    ``true``: Uses finite difference
    |    ``false`` : Uses analytical gradient  
-   | **Recommendation:** N/A 
+   | **Recommendation:** If available, use analytical gradient. 
 
-.. topic:: ``diffsize``
+.. topic:: ``dx``
 
-   | **Description:** The diffsize is the step size used in the displacements in the finite difference calculations. The units are bohr. 
+   | **Description:** The step size used in the displacements in the finite difference calculations. The units are bohr. 
    | **Default:** 1.0e-3
    | **Datatype:** double precision 
    | **Recommendation:** Use default 
@@ -94,48 +94,45 @@ Optional Keywords
 
 .. topic:: ``export``
 
-   | **Description:** 
+   | **Description:** This option will export the nuclear gradient to a text file.  
    | **Default:** false
    | **Datatype:** bool
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``true``: Export file
+   |    ``false``: Do not export file 
+   | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics. 
 
 .. topic:: ``export_single``
 
-   | **Description:** 
+   | **Description:** This option will export the nuclear gradient to a text file for a single state.  
    | **Default:** false 
    | **Datatype:** bool
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``true``: Export file
+   |    ``false``: Do not export file 
+   | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
 .. topic:: ``maxziter``
 
-   | **Description:** 
+   | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to CASSCF, CASPT2, and MP2 calculations.
    | **Default:** 100 
-   | **Datatype:** int
-   | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   | **Datatype:** integer
+   | **Recommendation:** Increase the value when Z-vector equation does not converge.
 
 .. topic:: ``save_ref``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
+   | **Description:** The reference wavefunction is saved to an archive file. 
+   | **Default:** false
+   | **Datatype:** bool
    | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   |    ``true``: Archive file is saved 
+   |    ``false`` : Archive file is not saved
+   | **Recommendation:** Save file if it is likely that the calculation will need to be restarted 
 
 .. topic:: ``ref_out``
 
-   | **Description:** 
-   | **Default:** 
-   | **Datatype:** 
-   | **Values:** 
-   |    ````: 
-   | **Recommendation:** 
+   | **Description:** The name of the archive file for the stored reference. The path to the location the file should be written can also be specified here. 
+   | **Datatype:** string
 
 Example
 =======
@@ -146,31 +143,24 @@ Sample input
 
 .. code-block:: javascript 
 
-   { "bagel" : [
-
    {
-     "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
-     ]
-   },
-
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
+      "title" : "force",
+      "target" : 0,
+      "method" : [ {
+        "title" : "caspt2",
+          "smith" : {
+            "method" : "caspt2",
+            "ms" : "true",
+            "xms" : "false",
+            "sssr" : "true",
+            "shift" : 0.2,
+            "frozen" : true
+        },
+        "nstate" : 4,
+        "nact_cas" : 4,
+       "nclosed" : 3
+     } ]
    }
-
-   ]}
 
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
@@ -188,24 +178,22 @@ References
 
 BAGEL References
 ----------------
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| SS-CASPT2 gradient                            | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| (X)MS-CASPT2 gradient                         | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| (X)MS-CASPT2 derivative coupling              | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------+---------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                              | 
++===============================================+=================================================================================+
+| SS-CASPT2 gradient                            |  MacLeod, M. K. and Shiozaki. T. J. Chem. Phys. 2015, 142, 051103.              |
++-----------------------------------------------+---------------------------------------------------------------------------------+
+| (X)MS-CASPT2 gradient                         | Vlaisavljevich, B. and Shiozaki, T. J. Chem. Theory Comput. 2016, 12, 3781-3787.| 
++-----------------------------------------------+---------------------------------------------------------------------------------+
+| (X)MS-CASPT2 derivative coupling              | Park, J. W. and Shiozaki, T. Submitted.                                         |
++-----------------------------------------------+---------------------------------------------------------------------------------+
 
 General References
 ------------------
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------+--------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                             | 
++===============================================+================================================================================+
+| General review of gradient methods            | Pulay, P. WIREs Comput. Mol. Sci. 2014, 4, 169-181.                            |
++-----------------------------------------------+--------------------------------------------------------------------------------+
 
