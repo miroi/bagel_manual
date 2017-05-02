@@ -1,4 +1,4 @@
-.. _ci:
+.. _fci:
 
 
 ************************************
@@ -104,27 +104,7 @@ Keywords
 =======
 Example
 =======
-A series of calculations for H2 with stretching bond, one set using HF and the other set using CI.
-The HF energies will not describe the bond breaking correclty.
-
-===========   ===========         ==========
-Bondlength    Hartree-fock         Full-CI
-(Angstrom)    Energy            
-===========   ===========         ==========
-0.75.         -0.8789543          -0.9944589  
-0.70          -0.9339395          -0.9946156  
-0.85          -0.9781963           0.9941103  
-0.80          -1.0138450           0.9942908  
-0.95          -1.0425208          -0.9937072  
-0.90          -1.0655018           0.9939161  
-1.00          -1.0837989           0.9934825  
-1.10          -1.1094197          -0.9929811  
-1.10          -1.1094197           0.9929811  
-1.20          -1.1241795          -0.9924015  
-1.30          -1.1312939          -0.9917318  
-1.40          -1.1329728           0.9909580  
-1.50          -1.1307655           0.9900640  
-==========    ===========         ===========
+A series of calculations for H2 with stretching bond, one set using HF and the other set using CI. The HF energies will not describe the bond breaking correclty.
 
 Sample input
 ------------
@@ -186,12 +166,17 @@ Sample output
 References
 ==========
 
- +-----------------------------------------------+-----------------------------------------------------------------------+
+ +===============================================+=======================================================================+
  |          Description of Reference             |                          Reference                                    | 
  +===============================================+=======================================================================+
- | Used for CI convergence algorithm.            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984               |
+ | Used for CI convergence algorithm.            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984|
+ |                                               |                                                                        | 
  +-----------------------------------------------+-----------------------------------------------------------------------+
- | Used for CI convergence algorithm.            | Harrison, R. J. and Zarrabian, S., **158**, 5, Chem. Phys. Lett.  1989            |
+ | Used for CI convergence algorithm.            | Harrison, R. J. and Zarrabian, S., **158**, 5, Chem. Phys. Lett.  1989 | 
+ |                                               |                                                                        |   
  +-----------------------------------------------+-----------------------------------------------------------------------+
  | General reference for CI.                     | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory, Dover Publications            |
+ |                                               |                                                                        |
  +===============================================+=======================================================================+
+
+

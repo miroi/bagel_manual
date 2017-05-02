@@ -79,7 +79,7 @@ Keywords
    | **Default**: 100
    | **Datatype**: int
    | **Recommendation**:  The default is usually more than enough, if it is going to converge.  
-   | Note that if DHF is automatically called to generate guess orbitals, "maxiter_scf" can be used to set a different maximum for that step.  
+   |      Note that if DHF is automatically called to generate guess orbitals, "maxiter_scf" can be used to set a different maximum for that step.  
 
 .. topic:: ``maxiter_micro``
 
@@ -102,6 +102,7 @@ Keywords
    | **Default**: 1.0e-8
    | **Datatype**: double
    | **Recommendation**:  1.0e-8 is a fairly tight threshold; 1.0e-7 or 1.0e-6 might be appropriate for some problems.  
+   |      Note that if DHF is automatically called to generate guess orbitals, "thresh_scf" can be used to set a different convergence threshold for that step.  
 
 .. topic:: ``thresh_micro``
 
@@ -178,6 +179,27 @@ Keywords
    |     active space, you will encounter an error stating that "generate_guess produced an invalid determinant."  
    |     Deactivating this feature leads to a poorer guess but eliminates that problem.  
 
+
+.. topic:: ``robust``
+
+   | **Description**:  If DHF is automatically called to generate starting orbitals, this parameter determines whether or not to use the "robust fitting" algorithm for the integrals in that part.  For the main CASSCF calculation, robust fitting is always used with the full Breit interaction and not with the Dirac--Coulomb or Dirac--Coulomb--Gaunt Hamiltonians.   
+   | **Default**: false
+   | **Datatype**: bool
+   | **Recommendation**: use default.
+
+.. topic:: ``diis_start``
+
+   | **Description**:  If DHF is automatically called to generate starting orbitals, then during that part we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm to update the orbitals after the specified iteration.   
+   | **Default**: 1
+   | **Datatype**: int
+   | **Recommendation**: use default.
+
+.. topic:: ``thresh_overlap``
+
+   | **Description**:  If DHF is automatically called to generate starting orbitals, this is used to identify linear dependancy in the atomic basis set.  Increasing this value will more aggressively remove linearly dependent basis vectors.  If starting orbitals are provided by a previous calculation, the same set of truncated orbitals is used, and this parameter is ignored.  
+   | **Default**: 1.0e-8
+   | **Datatype**: double
+   | **Recommendation**: use default.
 
 Example
 =======
