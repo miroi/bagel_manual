@@ -1,5 +1,3 @@
-.. index:: Perturbation theory
-
 .. _pt2:
 
 *******************

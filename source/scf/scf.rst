@@ -1,5 +1,3 @@
-.. index:: Hartree-Fock, Dirac-Hartree-Fock
-
 .. _scf:
 
 *********************
