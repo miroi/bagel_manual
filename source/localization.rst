@@ -34,7 +34,7 @@ Keywords
 .. topic:: ``algorithm``
 
    | **Description:** The localization scheme being used.
-   | **Default:** atomic 
+   | **Default:** pm
    | **Datatype:** string
    | **Values:** 
    |    ``pm``: Uses Pipek-Mezey localization
