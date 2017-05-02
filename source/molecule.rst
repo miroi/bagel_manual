@@ -1,89 +1,69 @@
 . _molecule:
 
-*******
+********
 Molecule 
-*******
+********
 
 ===========
 Description
 ===========
-Molecule is one of the basic blocks to specify information, such as basis sets and geometry for the input system.
+Molecule, starting with ``"title" : "molecule"``, is one of the basic input blocks specifying important
+information such as basis sets and geometry for the input system.
 
-========
-Keywords
-========
+=================
+Required keywords
+=================
 .. topic:: ``basis``
 
-   | DESCRIPTION: basis sets for the system
-   | DEFAULT: No Default Value
-   | DATATYPE: string
-   | VALUES:
-   |    Please refer to `Basis Sets`_ for possible aruments
-   | RECOMMENDATION: None
-
-.. topic:: ``df_basis``
-
-   | DESCRIPTION: basis sets used for density fitting
-   | DEFAULT: No Default Value
-   | DATATYPE: string
-   | VALUES:
-   |     Please refer to `Auxiliary basis sets`_ for possible aruments
-   | RECOMMENDATION: None
-
-.. topic:: ``angstrom``
-
-   | DESCRIPTION: specify units for atomic coordinates  
-   | DEFAULT: false
-   | DATATYPE: bool
-   | VALUES:
-   |    ``TRUE``: use angstrom
-   |    ``FALSE``: use atomic units
-   | RECOMMENDATION: None
+   | **Description**: basis sets for the system
+   | **Datatype**: string
+   | **Values**:
+   |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
 
 .. topic:: ``geometry``
 
-   | DESCRIPTION: specify elements and their Cartisian coordinates  
-   | DEFAULT: No Default
-   | DATATYPE: vector
-   | VALUES: 
-   |    Elements are specified as {"atom" : "Atom Name",  "xyz" : [x y z]}
-   | RECOMMENDATION: None
+   | **Description**: specify atoms and their Cartesian coordinates  
+   | **Datatype**: vector
+   | **Values**:
+   |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
+        (see example below)
+
+.. topic:: ``df_basis``
+
+   | **Description**: basis sets used for density fitting
+   | **Datatype**: string
+   | **Values**:
+   |     Please refer to `Density fitting basis sets`_ for possible arguments
+
+=================
+Optional keywords
+=================
+
+.. topic:: ``angstrom``
+
+   | **Description**: specify units for atomic coordinates (Angstrom or Bohr)
+   | **Default**: false (Angstrom)
+   | **Datatype**: bool
+   |    ``TRUE``: use Angstrom
+   |    ``FALSE``: use Bohr
 
 .. topic:: ``molden_file``
 
-   | DESCRIPTION: filename of input molden file
-   | DEFAULT: No Default
-   | DATATYPE: string
-   | VALUE:
-   |    User defined
-   | RECOMMENDATION: None
+   | **Description**: filename of input molden file"
+   | **Default**: No Default
+   | **Datatype**: string
 
-=======
-Example
-=======
+.. topic:: ``schwarz_thresh``
 
-.. code-block:: javascript 
+   | **Description**: Schwarz screening integral threshold
+   | **Default**: :math:`1.0\times 10^{-12}`
+   | **Datatype**: double 
 
-   { "bagel" : [
+.. topic:: ``cfmm``
 
-   {
-     "title" : "molecule",
-     "basis" : "svp",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-         {"atom" : "H", "xyz" : [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
-         {"atom" : "O", "xyz" : [  0.18572998668, -0.14718998944,  -3.25788976629]; },
-         {"atom" : "H", "xyz" : [  0.03000999785,  0.71438994875,  -2.79590979943]; }
-     ]
-   },
-
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   }
-
-   ]}
+   | **Description**: option to do RHF-FMM, in which case density fitting is not used
+   | **Default**: false 
+   | **Datatype**: boolean 
 
 ====================
 User defined basis sets
@@ -118,11 +98,15 @@ The basis set file is in the following format
   ]
  }
 
-| The file is essentially one large array, the elements of which each contain information specifying a given basis function.
+| The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
+| The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
+of a single basis function.
 | "angular" defines the kind of orbital (s,p,d,f...) . 
 | "prim" is a array containing the exponents of the primative orbitals from which the basis funciton is composed.
 | "cont" is an array containing the coefficients associated with each of these primiative orbitals.
-
+|
+| The user casn specify their own basis set using the above format, or use one of the predefined basis sets listed below. Note that not
+all of the below basis sets are defined for all atome; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
  
 ==========
 Basis sets 
@@ -144,6 +128,18 @@ Basis sets
 * aug-cc-pv5z
 * aug-cc-pv6z
 * ano-rcc
+
+====================
+Auxiliary basis sets
+====================
+* cc-pv5z-ri
+* cc-pvdz-ri
+* cc-pvqz-ri
+* cc-pvtz-ri
+
+=========================================
+Effective core potential (ECP) basis sets 
+=========================================
 * ecp10mdf
 * ecp28mdf
 * ecp46mdf
@@ -152,7 +148,6 @@ Basis sets
 * def2-SVP-ecp
 * def2-SVP-2c-ecp
 * lanl2dz-ecp
-* molden ( :any:`molden_file` is required)
 
 ==========
 Auxiliary basis sets
@@ -171,3 +166,36 @@ Auxiliary basis sets
 
 
 
+=======
+Example
+-------
+
+Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy atom Cu
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "lanl2dz-ecp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : "true",
+     "geometry" : [
+       { "atom" : "Cu",  "xyz" : [  0.000000,      0.000000,      0.000000]},
+       { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,     -1.560000],
+                        "basis" : "cc-pvtz"},
+       { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,      1.560000],
+                        "basis" : "cc-pvtz"}
+     ]
+   },
+   
+   {
+     "charge" : "-1",
+     "title" : "hf",
+     "thresh" : 1.0e-8
+   }
+   
+   ]}
+>>>>>>> 58f90b74afd844fd3b1a23932d9f3fc37a509316
