@@ -21,10 +21,6 @@ Multisite construction
 Keywords
 ========
 
-.. topic:: ``asd_dmrg``
-   
-   | **Description:** set ``"title" = "asd_dmrg"`` to start ASD-DMRG calculation
-
 .. topic:: ``method``
    
    | **Description:** method to compute active subspaces
