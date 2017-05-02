@@ -10,8 +10,10 @@ Description
 ===========
 The Hessian section can be used to compute the numerical Hessian by central gradient differences. The Hessian, mass weighted Hessian, and symmetrized mass weighted Hessian are printed in the output by default. The rotational and translational degrees of freedom have been projected out. Vibrational frequencies, infrared intensities, and the Cartesian eigenvectors of each normal mode are also computed. The masses are averaged over the natural occurrence of isotopes. 
 
+Keywords
+========
 Required Keywords
-=================
+-----------------
 .. topic:: ``hessian``
 
    | **Description:** Requests that the Numerical hessian be computed 
@@ -27,7 +29,7 @@ Required Keywords
    | **Recommendation:** Use default 
 
 Optional Keywords
-=================
+-----------------
 
 .. topic:: ``nproc``
 
