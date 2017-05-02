@@ -53,7 +53,7 @@ Optional keywords
    | **Description**: filename of input molden file"
    | **Default**: No Default
    | **Datatype**: string
-   | VALUE:
+   | **Value**:
    |    User defined
 
 .. topic:: ``cfmm``
