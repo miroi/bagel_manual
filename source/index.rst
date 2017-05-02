@@ -25,7 +25,6 @@
    print.rst
    localization.rst
    supp_info/supp_info.rst
-   molden.rst
    asd/asd.rst
 
 Indices and tables

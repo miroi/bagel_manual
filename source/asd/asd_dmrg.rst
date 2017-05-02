@@ -1,8 +1,8 @@
 .. _asd_dmrg:
 
-******************
-ASD-DMRG Algorithm
-******************
+********
+ASD-DMRG 
+********
 
 
 Description

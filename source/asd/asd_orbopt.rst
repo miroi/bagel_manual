@@ -1,7 +1,7 @@
 .. _asd_orbopt:
 
 ************************
-ASD Orbital Optimization
+ASD orbital optimization
 ************************
 
 

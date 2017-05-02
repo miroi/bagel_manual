@@ -9,6 +9,6 @@ Non-relativistic and relativistic multireference SCF
 .. toctree::
    :maxdepth: 2
 
-  casscf.rst
-  zcasscf.rst
+   casscf.rst
+   zcasscf.rst
 

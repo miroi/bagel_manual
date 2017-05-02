@@ -1,4 +1,4 @@
-.. _grad_hesse:
+.. _hess:
 
 ****************************************
 Molecular hessian and frequency analysis
