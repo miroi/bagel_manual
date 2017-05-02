@@ -118,7 +118,7 @@ Keywords
 
 Example
 =======
-Two-state CASSCF calculation of benzene. The active space of (6e,6o), which comprises three \pi and three \pi^* orbitals is used.
+Two-state CASSCF calculation of benzene. The active space of (6e,6o), which comprises three :math:`\pi` and three :math:`\pi^*` orbitals, is used.
 
 Sample input
 ------------
