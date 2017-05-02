@@ -15,19 +15,19 @@ Keywords
 
 .. topic:: ``frozen``
 
-   | **Description**: to have frozen orbitals or not.
+   | **Description**: to have frozen orbitals or not
    | **Default**: true
    | **Datatype**: bool
 
 .. topic:: ``ncore``
    
-   | **Description**: manually specify number of frozen orbitals, used when 'frozen' is turned on.
+   | **Description**: manually specify number of frozen orbitals, used when 'frozen' is turned on
    | **Datatype**: int
 
 .. topic:: ``aux_basis``
    
-   | **Description**: specify an alternative density fitting basis set.
-   | **Default**: use the same density fitting basis as in molecule/df_basis.
+   | **Description**: specify an auxiliary basis set for MP2
+   | **Default**: use the same density fitting basis as in molecule/df_basis
    | **Datatype**: string
    | **Recommendation**: use MP2-fit auxiliary basis (auxiliary basis ends with 'ri')
 
@@ -46,9 +46,8 @@ Sample input
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
-     "basis" : "svp",
-     "df_basis" : "svp-jkfit",
+     "basis" : "cc-pvdz",
+     "df_basis" : "cc-pvdz-jkfit",
      "angstrom" : "true",
      "geometry" : [
        { "atom" : "C", "xyz" : [ -1.20433891360,  0.54285096106, -0.04748199659] },
@@ -68,8 +67,8 @@ Sample input
    
    {
      "title" : "mp2",
-     "frozen" : true,
-     "aux_basis" : "cc-pvtz-ri"
+     "aux_basis" : "cc-pvdz-ri",
+     "frozen" : true
    }
    
    ]}
