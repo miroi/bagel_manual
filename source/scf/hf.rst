@@ -175,7 +175,6 @@ ROHF
    {
      "title" : "rohf",
      "nact" : 1,
-     "thresh" : 1.0e-8
    }
    
    ]}
@@ -202,7 +201,6 @@ UHF
    {
      "title" : "uhf",
      "nact" : 1,
-     "thresh" : 1.0e-8
    }
    
    ]}
@@ -230,7 +228,6 @@ SOSCF
    
    {
      "title" : "soscf",
-     "thresh" : 1.0e-8
    }
    
    ]}
