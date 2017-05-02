@@ -114,7 +114,6 @@ This should be an example that is chemically relevant. There should be text expl
 
 	{
 		"title" : "molecule",
-		"symmetry" : "C1",
 		"basis" : "svp",
 		"df_basis" : "svp-jkfit",
 		"angstrom" : "false",
