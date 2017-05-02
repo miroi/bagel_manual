@@ -13,13 +13,12 @@
 .. toctree::
    :maxdepth: 1
 
+   install.rst
    molecule/molecule-toc.rst
 
 .. toctree::
    :maxdepth: 2
    
-	 start_guide/installation_guide.rst
-	 start_guide/how_to_run_bagel.rst
    scf/scf.rst
    fci/ci_methods.rst  
    multi/multi.rst
