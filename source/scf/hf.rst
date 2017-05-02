@@ -14,9 +14,10 @@ SCF can be run using the following keywords
 * Unrestricted HF: ``uhf``
 
 Except for restricted Hartree--Fock, density fitting is used by default. Density fitting basis has to be
-specified in the Molecule/Input section.
+specified in the Molecule block (see Molecule section).
 
-RHF can be run with ECP basis sets and and fast multipole method (FMM).
+RHF can be run with ECP basis sets and and fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
+has to be specified in the Molecule block (see Molecule section).
 
 Keywords
 ========
@@ -45,7 +46,7 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``df`` (only for RHF) 
 
    | **Description**: use density fitting or not
-   | **Default** : true
+   | **Default** : true (except for FMM)
    | **Datatype**: bool 
 
 .. topic:: ``multipole``
@@ -81,6 +82,38 @@ The default values are recommended unless mentioned otherwise.
 
 Keywords for RHF/FMM
 ====================
+
+.. topic:: ``ns``
+
+   | **Description**: level of descritization which controls the number of lowest-level boxes in one dimension for FMM
+   | **Default**: 4 
+   | **Datatype**: integer 
+
+.. topic:: ``ws``
+
+   | **Description**: well-separatedness index, which is the number of boxes that must separate
+                      two collections of charges before they are considered distant 
+                      and can interact through multipole expansions
+   | **Default**: 2 
+   | **Datatype**: integer 
+
+.. topic:: ``lmax``
+
+   | **Description**: order of the multipole expansions in FMM-J
+   | **Default**: 10
+   | **Datatype**: integer 
+
+.. topic:: ``exchange``
+
+   | **Description**: whether to include far-field exchange using occ-RI-FMM
+   | **Default**: false
+   | **Datatype**: integer 
+
+.. topic:: ``lmax_exchange``
+
+   | **Description**: order of the multipole expansions in FMM-K
+   | **Default**: 2
+   | **Datatype**: integer 
 
 Examples
 =======
@@ -164,8 +197,6 @@ UHF
    
    ]}
 
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
-
 RHF-FMM
 -------
 .. code-block:: javascript 
@@ -175,7 +206,7 @@ RHF-FMM
    {
      "title" : "molecule",
      "symmetry" : "C1",
-     "basis" : "sto-3g",
+     "basis" : "tzvpp",
      "angstrom" : "false",
      "cfmm" : "true",
      "geometry" : [
@@ -198,6 +229,8 @@ RHF-FMM
    }
    
    ]}
+
+Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
 
 References
 ==========
