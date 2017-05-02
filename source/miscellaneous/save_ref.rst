@@ -14,6 +14,7 @@ For some non-relativistic methods, this feature is redundant with the restart ca
 the binary archives used in this module are compatible with every method in BAGEL.  
 
 This module is unavailable if -DDISABLE_SERIALIZATION is specified when baking BAGEL.  
+Binary archives generated using a different version of BAGEL might not be readable.  
 
 Commands: ``save_ref`` and ``load_ref``
 
@@ -145,7 +146,7 @@ We could also have changed the basis set in the input, rather than changing the 
     {   
       "title" : "load_ref",
       "file" : "/your/directory/filename"
-      "continue_geom" : "false"
+      "continue_geom" : false
     },  
 
     {   
