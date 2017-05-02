@@ -113,9 +113,9 @@ html_theme_options = {
    "sidebarbtncolor" : "white",  #Background color for the sidebar collapse button (used when collapsiblesidebar is True).
    "sidebartextcolor" : "white", #Text color for the sidebar.
    "sidebarlinkcolor" : "white", #Link color for the sidebar.
-   "relbarbgcolor" : "white",  #Background color for the relation bar.
-   "relbartextcolor" : "indigo", #Text color for the relation bar.
-   "relbarlinkcolor" : "indigo",  #Link color for the relation bar.
+   "relbarbgcolor" : "indigo",  #Background color for the relation bar.
+   "relbartextcolor" : "white", #Text color for the relation bar.
+   "relbarlinkcolor" : "white",  #Link color for the relation bar.
    "bgcolor" : "white", #Body background color.
    "textcolor" : "black", #Body text color.
    "visitedlinkcolor" : "indigo",  #Body link color.
