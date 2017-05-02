@@ -296,12 +296,12 @@ References
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
 | General text on electronic structure theory   | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction to |
-|                                               | Advanced Electronic Structure Theory, Dover Publications.             |
+|                                               | Advanced Electronic Structure Theory, Dover Publications              |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | References for fast multipole method in       | White, C. A., Johnson B. G., Gill P. M. W., Head-Gordon M.,           |
-| quantum chemistry                             | *Chem. Phys. Lett.* 230, 8 (1994).                                    |
+| quantum chemistry                             | Chem. Phys. Lett. **230**, 8 (1994)                                   |
 |                                               +-----------------------------------------------------------------------+
-|                                               | Strain M. C., Scuseria G. E., Frisch M. J., *Science* 271, 51 (1996). |
+|                                               | Strain M. C., Scuseria G. E., Frisch M. J., Science **271**, 51 (1996)|
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | Exact exchange evaluation using occ-RI-FMM    |  Le H-.A., Shiozaki T., in preparation                                |
 +-----------------------------------------------+-----------------------------------------------------------------------+
