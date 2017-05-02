@@ -21,10 +21,6 @@ Multisite construction
 Keywords
 ========
 
-.. topic:: ``asd_dmrg``
-   
-   | **Description:** set ``"title" = "asd_dmrg"`` to start ASD-DMRG calculation
-
 .. topic:: ``method``
    
    | **Description:** method to compute active subspaces
@@ -196,7 +192,7 @@ Reference
 +------------------------------------------------+--------------------------------------------------------------------------------+
 |          Description of Reference              |                          Reference                                             | 
 +================================================+================================================================================+
-| Active space decomposition with multiple sites:| Parker S. M., Shiozaki T., J. Chem. Phys. **141**, 211102 (2014)               |
+| Active space decomposition with multiple sites:| S\. M. Parker, and T. Shiozaki, J. Chem. Phys. **141**, 211102 (2014).         |
 | density matrix renormalization group algorithm |                                                                                |
 +------------------------------------------------+--------------------------------------------------------------------------------+
 

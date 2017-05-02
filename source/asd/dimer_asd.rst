@@ -8,7 +8,7 @@ Dimer ASD
 
 Description
 ===========
-The active space decomposition algorithm for molecular dimers allows for efficient computation for the dimer's complete-active-space wave functions. The current algorithm only works for dimer molecules those fragments are not covalently linked. Full-CI and restricted-active-space-CI can be used to obtain the fragment state wave functions. ASD calculation starts with dimer molecule construction, see `Dimer Construction`_ section for more information.
+The active space decomposition algorithm for molecular dimers allows for efficient computation of the dimer's complete-active-space wave functions. The current algorithm works for dimer molecules whose fragments are not covalently linked. Full-CI and restricted-active-space-CI can be used to obtain the fragment state wave functions. ASD calculation starts with dimer molecule construction, see `Dimer Construction`_ section for more information.
 
 
 Dimer Construction
@@ -24,10 +24,6 @@ Keywords
 
 Required Keywords
 -----------------
-
-.. topic:: ``asd``
-   
-   | **Description:** set ``"title" = "asd"`` to start asd calculation for non-covalently linked molecular dimer
 
 .. topic:: ``method``
    
@@ -76,7 +72,7 @@ Optional Keywords
 
 .. topic:: ``nguess``
 
-   | **Description:** number of initial guess for Davidson diagonalization
+   | **Description:** number of initial guess state vectors for Davidson diagonalization
    | **Datatype:** int
    | **Default:** :math:`10\times nstates`
 
@@ -206,9 +202,8 @@ Reference
 +-----------------------------------------------+--------------------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                             | 
 +===============================================+================================================================================+
-| Active Space Decompotion Method               | Parker S. M., Seideman T., Ratner M. A., Shiozaki T.,                          |
-|                                               | J. Chem. Phys. **139**, 021108 (2013)                                          |
+| Active Space Decompotion Method               | S\. M. Parker, T. Seideman, M. A. Ratner, and T. Shiozaki,                     |
+|                                               | J. Chem. Phys. **139**, 021108 (2013).                                         |
 +-----------------------------------------------+--------------------------------------------------------------------------------+
-
 
 

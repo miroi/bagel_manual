@@ -9,11 +9,6 @@ Relativistic full configuration interaction (RelFCI)
 Description
 ===========
 
-FCI aims to describe the wavefunction as a linear combination of Slater determinants:
-
-.. math::
-  \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
-
 Relativistic CI differs from non-relativistic CI primarily in the Hamiltonian which is used in the diagonalization. The physical consequence of is that this accounts for spin-orbit coupling, and the associated mixing of different spin-multiplets. As the kind of relativstic Hamiltonian used can have a significant impact on the computational cost there are three possible options of increasing accuracy. It is  worth noting that due to the seperarte treatement of all states within the same multiplet substantial degeneracies may occur, and so it is preferable to avoid requesting only some of the states in a multiplet.
 
 
@@ -192,14 +187,16 @@ Sample input
 References
 ==========
 
-+----------------------------------------------------+------------------------------------------------------------------+
-|          Description of Reference                  |                          Reference                               | 
-+====================================================+==================================================================+
-| Used for CI convergence algorithm.                 | P.J.  Knowles, N.C.  Handy, Chem. Phys. Lett., **111** 315-321   |
-|                                                    | 1984.                                                            |
-+----------------------------------------------------+------------------------------------------------------------------+
-| General textbook on relativistic quantum chemistry | K.G. Dyall and K. Faegri Jr., Oxford University Press, 2007.     |
-+----------------------------------------------------+------------------------------------------------------------------+
-| Used in the construction of the relativistic basis | W. Kutzelnigg, Int. J. Quant. Chem., **25** 107-129, 1984.       |
-+----------------------------------------------------+------------------------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------------+
+|          Description of Reference                  |                          Reference                                 |
++====================================================+====================================================================+
+| Efficient calculation of sigma vector              | P\. J. Knowles, and N. C. Handy, Chem. Phys. Lett., **111**, 315   |
+|                                                    | (1984).                                                            |
++----------------------------------------------------+--------------------------------------------------------------------+
+| General text on relativistic quantum chemistry     | K\. G. Dyall, and K. Faegri Jr.,                                   |
+|                                                    | *Introduction to Relativistic Quantum Chemistry*                   |
+|                                                    | (Oxford University Press, Oxford, 2007).                           |
++----------------------------------------------------+--------------------------------------------------------------------+
+| Restricted kinetic balance basis                   | W\. Kutzelnigg, Int. J. Quantum Chem., **25**, 107 (1984).         |
++----------------------------------------------------+--------------------------------------------------------------------+
 

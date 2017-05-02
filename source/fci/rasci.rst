@@ -10,11 +10,6 @@ Restricted active space configuration interaction (RASCI)
 Description 
 ===========
 
-FCI is aims to describe the wavefunction as a linear combination of Slater determinants:
-
-.. math::
-  \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
-
 The basis into which the wavefunction is expanded is typically constructed by
 applying excitation operators to the determinant(s) included in the ground
 state wavefunction. The Restricted Active Space (RAS) method constrainst the
@@ -208,11 +203,11 @@ References
 +-----------------------------------------------+---------------------------------------------------------------------+
 |          Description of Reference             |                           Reference                                 | 
 +===============================================+=====================================================================+
-| Used in RASCI convergence algorithm           | P. J. Knowles and  N. C. Handy, Chem. Phys. Lett.                   |
-|                                               | **111**, 315-321  1984.                                             |
+| Efficient calculation of sigma vector         | P.\ J. Knowles, and N. C. Handy, Chem. Phys. Lett.                  |
+|                                               | **111**, 315-321 (1984).                                            |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| Informs the RASCI convergence algorithm       | J. Olsen and B. O. Roos, P. Jorgensen, H. J. A.-Jensen, J. Chem.    |
-|                                               | Phys., **89** 2185-2192 (1988).                                     |
+| RASCI algorithm                               | J\. Olsen, B. O. Roos, P. Jorgensen, and H. J. A.-Jensen, J. Chem.  |
+|                                               | Phys., **89**, 2185-2192 (1988).                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 

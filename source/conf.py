@@ -122,7 +122,7 @@ html_theme_options = {
    "headbgcolor" : "white", #Background color for headings.
    "headtextcolor" : "indigo", #Text color for headings.
    "headlinkcolor" : "indigo", #Link color for headings.
-   "codebgcolor" : "lavender", # Background color for code blocks.
+   "codebgcolor" : "WhiteSmoke", # Background color for code blocks.
    "codetextcolor" : "black", #Default text color for code blocks, if not set differently by the highlighting style.
    "bodyfont" : "tahoma", #Font for normal text.
    "headfont" : "tahoma", #Font for headings.
@@ -213,7 +213,7 @@ latex_elements = {
 'pointsize': '10pt',
 
 # Additional stuff for the LaTeX preamble.
-#'preamble': '',
+'preamble':  '\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}'
 }
 
 # Grouping the document tree into LaTeX files. List of tuples

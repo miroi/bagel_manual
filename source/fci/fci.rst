@@ -9,10 +9,6 @@ Full configuration interaction (FCI)
 ===========
 Description
 ===========
-FCI describes the wavefunction as a linear combination of Slater determinants:
-
-.. math::
-  \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
 
 This technique is good for describing systems featuring substantial dynamic correlation. The algorithm by which the coefficients are determined, the number of states to calculate are two of the most important quantities to be specified.
 
@@ -133,7 +129,7 @@ Sample input
    },
 
    { "title" : "print",
-     "filename" : "hf_orbitals.molden",
+     "file" : "hf_orbitals.molden",
      "orbitals" : true
    },
 
@@ -144,23 +140,88 @@ Sample input
    },
 
    { "title" : "print",
-     "filename" : "fci_orbitals.molden",
+     "file" : "fci_orbitals.molden",
      "orbitals" : true
    }
    ]}
 
 
+Sample output
+-------------
+
+.. code-block:: javascript 
+
+ ---------------------------
+        FCI calculation
+  ---------------------------
+
+  Performs exactly the same way as Knowles & Handy 1984 CPL
+
+  o alpha-beta strings
+      length:           990
+  o size of the space
+      determinant space:  245025
+      spin-adapted space: 70785
+
+  o single displacement lists (alpha)
+      length:         19800
+  o single displacement lists (beta)
+      length:         19800
+    * Integral transformation done. Elapsed time: 0.01
+
+     guess   0:   closed 111111.1....         open ......1.1...
+
+  === FCI iteration ===
+
+      0  0      -149.42414775     1.22e-03      0.39
+      1  0      -149.59892712     5.67e-04      0.39
+      2  0      -149.63347311     2.03e-04      0.39
+      3  0      -149.63748895     9.00e-05      0.39
+      4  0      -149.63852095     4.82e-05      0.39
+      5  0      -149.63871658     1.67e-05      0.39
+      6  0      -149.63873281     5.08e-06      0.39
+      7  0      -149.63873450     1.50e-06      0.39
+      8  0      -149.63873466     5.12e-07      0.39
+      9  0      -149.63873468     1.74e-07      0.39
+     10  0      -149.63873468     6.26e-08      0.39
+     11  0      -149.63873468     2.29e-08      0.39
+     12  0      -149.63873468     7.27e-09      0.39
+     13  0      -149.63873468     2.02e-09      0.39
+     14  0      -149.63873468     6.14e-10      0.48
+     15  0      -149.63873468     2.82e-10      0.48
+     16  0      -149.63873468     1.11e-10      0.65
+     17  0 *    -149.63873468     3.03e-11      0.30
+
+     * ci vector, state   0, <S^2> = -0.0000
+       222222b2a...    -0.6394413743
+       222222a2b...    -0.6394413743
+       2222b22a2...    -0.2260112591
+       2222a22b2...    -0.2260112591
+       22222.b2a2..     0.0924592521
+       22222.a2b2..     0.0924592521
+       2222ba22ab..     0.0754268550
+       2222ab22ba..     0.0754268550
+       22222bba2a..    -0.0688206488
+       22222aab2b..    -0.0688206488
+       2222b.2a22..    -0.0675466768
+       2222a.2b22..    -0.0675466768
+
+    * METHOD: FCI                                  7.63
+
+
+
+
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                           Reference                                   | 
-+===============================================+=======================================================================+
-| Used for CI convergence algorithm.            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys.    |
-|                                               | Lett.  1984                                                           |        
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Used for CI convergence algorithm.            | Harrison, R. J. and Zarrabian, S., **158**, 5, Chem. Phys. Lett. 1989 | 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| General reference for CI.                     | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction    |
-|                                               | to Advanced Electronic Structure Theory, Dover Publications           |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------+----------------------------------------------------------------------------------+
+|          Description of Reference             |                           Reference                                              |
++===============================================+==================================================================================+
+| Efficient calculation of sigma vector         | P\. J\. Knowles and N\. C\. Handy, Chem. Phys. Lett. **111**, 315 (1984).        |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+| Efficient calculation of sigma vector         | R\. J\. Harrison, and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989).      |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+|                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
+|                                               | (McGraw-Hill, New York, 1989).                                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------+

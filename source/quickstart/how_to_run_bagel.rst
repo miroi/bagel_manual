@@ -22,13 +22,14 @@ Test input and output
 
 This is an example input file for checking BAGEL installation.
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
 	{ "bagel" : [
 
 	{
 		"title" : "molecule",
 		"basis" : "svp",
+		"df_basis" : "svp-jkfit",
 		"angstrom" : "false",
 		"geometry" : [
 			{ "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
@@ -38,16 +39,16 @@ This is an example input file for checking BAGEL installation.
 
 	{
 		"title" : "hf",
-		"df" : false,
 		"thresh" : 1.0e-10
 	}
 
 	]}
 
+
 This is an example output file for checking BAGEL installation.
 
 .. code-block:: javascript
- 
+
   ===============================================================
     BAGEL - Freshly leavened quantum chemistry                   
   ===============================================================
@@ -59,17 +60,26 @@ This is an example output file for checking BAGEL installation.
   { "atom" : "F", "xyz" : [     -0.000000,     -0.000000,      2.720616 ] },
   { "atom" : "H", "xyz" : [     -0.000000,     -0.000000,      0.305956 ] },
 
+  Number of auxiliary basis functions:       95
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.000 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.02
+       - 2-index ints                              0.01
+       - computing inverse                         0.17
+        elapsed time:        0.21 sec.
+
 
   Number of basis functions:       19
   Number of electrons      :       10
 
 
-    * METHOD: MOLECULE                             0.04
+    * METHOD: MOLECULE                             0.37
 
        - Overlap matrix                            0.01
-       - Hcore matrix                              0.01
+       - Hcore matrix                              0.02
        - Overlap orthog                            0.00
-       - Schwarz matrix                            0.00
 
   *** RHF ***
 
@@ -79,95 +89,85 @@ This is an example output file for checking BAGEL installation.
 
       * DIIS with orbital gradients will be used.
 
-       - SCF startup                               0.00
+       - SCF startup                               0.56
 
   === RHF iteration (svp) ===
   
-               o Fock build                                  0.03
-      0        -93.73328147          0.24317774           0.04
+               o Fock build                                  0.02
+      0        -99.70639103          0.06595513           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      1        -94.07182744          0.28718754           0.04
+               o Fock build                                  0.02
+      1        -99.78677680          0.04496384           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      2        -99.79661563          0.04248713           0.03
+               o Fock build                                  0.02
+      2        -99.84655378          0.00434989           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      3        -99.83163247          0.02198647           0.03
+               o Fock build                                  0.02
+      3        -99.84766336          0.00089762           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      4        -99.84455018          0.00928557           0.03
+               o Fock build                                  0.02
+      4        -99.84772173          0.00015090           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      5        -99.84773600          0.00101157           0.03
+               o Fock build                                  0.02
+      5        -99.84772349          0.00002429           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      6        -99.84778489          0.00026480           0.03
+               o Fock build                                  0.02
+      6        -99.84772354          0.00000255           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      7        -99.84779021          0.00003506           0.03
+               o Fock build                                  0.02
+      7        -99.84772354          0.00000043           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      8        -99.84779026          0.00000285           0.03
+               o Fock build                                  0.02
+      8        -99.84772354          0.00000012           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-      9        -99.84779026          0.00000042           0.03
+               o Fock build                                  0.02
+      9        -99.84772354          0.00000004           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-     10        -99.84779026          0.00000004           0.03
+               o Fock build                                  0.02
+     10        -99.84772354          0.00000000           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-     11        -99.84779026          0.00000001           0.03
+               o Fock build                                  0.02
+     11        -99.84772354          0.00000000           0.02
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.03
-     12        -99.84779026          0.00000000           0.03
-               o DIIS                                        0.00
-               o Diag                                        0.00
-               o Post process                                0.00
-               o Fock build                                  0.03
-     13        -99.84779026          0.00000000           0.03
-               o DIIS                                        0.00
-               o Diag                                        0.00
-               o Post process                                0.00
-               o Fock build                                  0.03
-     14        -99.84779026          0.00000000           0.03
+               o Fock build                                  0.02
+     12        -99.84772354          0.00000000           0.02
   
     * SCF iteration converged.
 
     * Permanent dipole moment:
-           (    0.000000,    -0.000000,     1.055539) a.u.
+           (    0.000000,    -0.000000,     1.055510) a.u.
 
 
-    * METHOD: HF                                   0.56
+    * METHOD: HF                                   0.83
 
 
   
   ===============================================================
-
+ 
 ---------------
 Common mistakes
 ---------------

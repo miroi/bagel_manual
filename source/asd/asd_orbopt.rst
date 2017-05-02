@@ -8,7 +8,7 @@ ASD orbital optimization
 
 Description
 ===========
-Active space decomposition with orbital optimization is implemented. The two fragments of the molecule can be covalently linked, but the bridging orbitals cannot be active. Orbital rotations between active subspaces are included to partition the total active space into subspaces. The two active subspaces should be well separated. The calculation starts with dimer construction which is slightly different from that in :ref:`dimer_asd`.
+Active space decomposition with orbital optimization is implemented. Set ``"title" = "asd_orbopt"`` to start the input section. The two fragments of the molecule can be covalently linked, but the bridging orbitals cannot be active. Orbital rotations between active subspaces are included to partition the total active space into subspaces. The two active subspaces should be well separated. The calculation starts with dimer construction which is slightly different from that in :ref:`dimer_asd`. 
 
 
 Dimer Construction
@@ -25,10 +25,6 @@ Keywords
 Required Keywords
 -----------------
 
-.. topic:: ``asd_orbopt``
-   
-   | **Description:** asd calculation for covalently linked molecular dimer
-
 .. topic:: ``algorithm``
    
    | **Description:** 'bfgs' orbital optimization algorithm is implemented
@@ -37,7 +33,7 @@ Required Keywords
 
 .. topic:: ``maxiter``
    
-   | **Description:** maximum number of orbita optimizatin iterations
+   | **Description:** maximum number of orbital optimization iterations
    | **Datatype:** int
    | **Default:** 50
 
@@ -76,9 +72,9 @@ Required Keywords
 
 Reference
 =========
-+-----------------------------------------------+--------------------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                             | 
-+===============================================+================================================================================+
-|  ASD orbital optimization                     | Kim I., Parker S. M., Shiozaki T., J. Chem. Theory Comput. **11**, 3636 (2015) |
-+-----------------------------------------------+--------------------------------------------------------------------------------+
++-----------------------------------------------+--------------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                                   |
++===============================================+======================================================================================+
+|  ASD orbital optimization                     | I\. Kim, S. M. Parker, and T. Shiozaki, J. Chem. Theory Comput. **11**, 3636 (2015). |
++-----------------------------------------------+--------------------------------------------------------------------------------------+
 
