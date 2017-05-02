@@ -1,5 +1,7 @@
 .. _hf:
 
+.. index:: scf, hf, rhf, uhf, rohf, soscf, cfmm
+
 *************
 Hartree--Fock
 *************
@@ -15,10 +17,10 @@ SCF can be run by specifying the following values to the keyword ``title``:
 * Two-component HF using ECP basis sets: ``soscf``
 
 Except for restricted Hartree--Fock, density fitting is used by default. Density fitting basis has to be
-specified in the Molecule block (see Molecule section).
+specified in the Molecule block (see :ref:`molecule` section).
 
-RHF can be run with ECP basis sets and and fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
-has to be specified in the Molecule block (see Molecule section).
+RHF can be run with fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
+has to be specified in the molecule block (see :ref:`molecule` section).
 
 Keywords
 ========
@@ -71,9 +73,11 @@ The default values are recommended unless mentioned otherwise.
    | **Default** : :math:`0`
    | **Datatype**: int 
 
-.. topic:: ``nact``/``nocc``
+.. topic:: ``nopen``
 
-   | **Description**: number of unpaired electrons and occupied orbitals
+   | **Description**: number of unpaired electrons in high-spin unrestricted Hartree--Fock
+   | **Default** : (number of electrons - charge) % 2
+   | **Datatype** : int
 
 .. topic:: ``restart``
 

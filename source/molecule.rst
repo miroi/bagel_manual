@@ -1,4 +1,4 @@
-. _molecule:
+.. _molecule:
 
 ********
 Molecule 
@@ -53,7 +53,7 @@ Optional keywords
 
 .. topic:: ``schwarz_thresh``
 
-   | **Description**: Schwarz screening integral threshold
+   | **Description**: Schwarz screening integral threshold (only used in RHF-FMM)
    | **Default**: :math:`1.0\times 10^{-12}`
    | **Datatype**: double 
 
@@ -164,7 +164,7 @@ Example with mixed basis sets and density fitting basis sets:
      "geometry" : [
        { "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
        { "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956],
-                        "basis" : "sto-3g", "df_basis" : "cc-pvqz-jkfit" }
+                        "basis" : "cc-pvqz", "df_basis" : "cc-pvqz-jkfit" }
      ]
    },
    
@@ -174,6 +174,26 @@ Example with mixed basis sets and density fitting basis sets:
    }
    
    ]}
+
+Example with running a calculation from a molden file using the keyword ``"basis" : "molden"``
+and providing a value for ``"molden_file"``:
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "molden",
+     "df_basis" : "svp-jkfit",
+     "cartesian" : true,
+     "molden_file" : "hf_write_mol_cart.molden"
+   }
+   
+   ]}
+
+(refer to :ref:`molden` in :ref:`misc` for more details)
 
 ====================
 Auxiliary basis sets
@@ -224,6 +244,7 @@ An example using ``cc-pvdz-ri`` in MP2 calculation
 =========================================
 Effective core potential (ECP) basis sets 
 =========================================
+
 * ecp10mdf
 * ecp28mdf
 * ecp46mdf
@@ -235,21 +256,6 @@ Effective core potential (ECP) basis sets
 
 Note that user-defined ECP basis sets need to contain the keyword "ecp" in the names. 
 Refer to `User defined basis sets`_ for more details.
-
-========================
-Auxiliary basis sets
-========================
-* svp-jkfit
-* tzvpp-jkfit
-* qzvpp-jkfit
-* cc-pvdz-jkfit
-* cc-pvqz-jkfit
-* cc-pvtz-jkfit
-* cc-pv5z-jkfit
-* cc-pvdz-ri
-* cc-pvqz-ri
-* cc-pvtz-ri
-* cc-pv5z-ri
 
 Example
 -------
@@ -319,11 +325,39 @@ The basis set file is in the following format
 The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
 The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
 of a single basis function.
- * ``angular`` defines the kind of orbital (s,p,d,f...) . 
- * ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
- * ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
+* ``angular`` defines the kind of orbital (s,p,d,f...) . 
+* ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
+* ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
  
 The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. Note that not
-all of the the basis sets are defined for all atoms; an error of form "node does not exist" often means that the relevant element was not found in the basis set file.
-Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
+all of the the basis sets are defined for all atoms;  an error of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
  
+To use a user specified basis the explicit path to the basis set file must be specified in the basis set block.
+
+Example
+-------
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+
+   {
+     "title" : "molecule",
+     "basis" : "/path/to/my/basis",
+     "df_basis" : "/path/to/my/basis",
+     "angstrom" : false,
+     "geometry" : [
+         {"atom" : "H", "xyz" : [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
+         {"atom" : "O", "xyz" : [  0.18572998668, -0.14718998944,  -3.25788976629]; },
+         {"atom" : "H", "xyz" : [  0.03000999785,  0.71438994875,  -2.79590979943]; }
+     ]
+   },
+
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-10
+   }
+
+   ]}
+
+
