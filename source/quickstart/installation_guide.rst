@@ -7,7 +7,7 @@ Installation
 -------------
 Prerequisites
 -------------
-    ===================  =====================================  =======================
+    ===================  =====================================  ==============================
     MPI C++ compiler                                            C++11 and MPI-3 support
     GNU Libtool          https://www.gnu.org/software/libtool    
     GNU Autoconf         https://www.gnu.org/software/autoconf  Version 2.69 or newer
@@ -16,7 +16,7 @@ Prerequisites
     BLAS                 http://www.netlib.org/blas             Use optimized BLAS
     LAPACK               http://www.netlib.org/lapack           Use optimized LAPACK
     ScaLAPACK            http://www.netlib.org/scalapack        Use optimized ScaLPACK
-    ===================  =====================================  =======================
+    ===================  =====================================  ==============================
 
 Intel MKL is strongly recommended for BLAS, LAPACK, and ScaLAPACK (distributed for free for academic users) 
 
@@ -24,21 +24,27 @@ Intel MKL is strongly recommended for BLAS, LAPACK, and ScaLAPACK (distributed f
 Build BAGEL
 -----------
 
-* Automake
+* Automake ::
 
- 1. glibtoolize (in Linux, "libtoolize" instead)
- #. aclocal
- #. autoconf
- #. autoheader
- #. automake -a
+     glibtoolize (in Linux, "libtoolize" instead)
+     aclocal
+     autoconf
+     autoheader
+     automake -a
  
-* Create an object directory & Configure
+* Create an object directory ::
    
- 1. mkdir obj
- #. cd obj
- #. minimum configure: ``../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST_ROOT)/lib -L$(MKL_ROOT)/lib' '--with-include=-I$(BOOST_ROOT)/include -I$(MKL_ROOT)/include'``
+    mkdir obj
+    cd obj
+
+* Configure
+
+  A minimal set of configure options is ::
+
+    ../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST_ROOT)/lib -L$(MKL_ROOT)/lib' '--with-include=-I$(BOOST_ROOT)/include -I$(MKL_ROOT)/include'
    
-  Configure Options
+  Configure options:
+
     * ``--with-mpi=value``  turns on MPI. *value* can be mvapich, intel, openmpi. However, Open MPI is not recommended. 
     * ``--enable-mkl``  turns on MKL extensions, such as efficient matrix transposition. MKL libraries are automatically detected.
     * ``--disable-scalapack``  will disable use of ScaLapack (parallel Lapack) which is not recommended.
@@ -55,10 +61,12 @@ Build BAGEL
        -I/opt/intel/mkl-11.3/mkl/include' '--with-mpi=intel' '--enable-static' '--disable-shared' 
        'CC=/usr/local/gcc/gcc-5.2.0/bin/gcc' 'CXX=/usr/local/gcc/gcc-5.2.0/bin/g++'
 
+* Compile ::
 
-* Compile
+    make -j4
+    make install
 
- 1. make -j4
- #. make install
- #. test run: ``./BAGEL Your_PATH_to_BAGEL/test/benzene_svp_mp2.json``
+* Test run ::
+
+    ./BAGEL Your_PATH_to_BAGEL/test/benzene_svp_mp2.json
 

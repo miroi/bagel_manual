@@ -122,7 +122,7 @@ html_theme_options = {
    "headbgcolor" : "white", #Background color for headings.
    "headtextcolor" : "indigo", #Text color for headings.
    "headlinkcolor" : "indigo", #Link color for headings.
-   "codebgcolor" : "lavender", # Background color for code blocks.
+   "codebgcolor" : "WhiteSmoke", # Background color for code blocks.
    "codetextcolor" : "black", #Default text color for code blocks, if not set differently by the highlighting style.
    "bodyfont" : "tahoma", #Font for normal text.
    "headfont" : "tahoma", #Font for headings.
