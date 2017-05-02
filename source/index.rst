@@ -6,6 +6,10 @@
 BAGEL manual
 ============
 
+.. figure:: _static/bagel-final.*
+    :width: 300px
+    :align: right 
+
 **Contents:**
 
 .. toctree::
@@ -19,7 +23,7 @@ BAGEL manual
    smith/smith.rst
    grad/grad.rst
    print.rst
-   localize.rst
+   localization.rst
    supp_info/supp_info.rst
    molden.rst
    asd/asd.rst

@@ -39,7 +39,6 @@ Required Keywords
    |    ``conical``: find the conical intersections, according to gradient projection method.
    |    ``transition``: find the transition state geometry (saddle point on the PES).
    |    ``mep``: find the minimum energy path using the second-order algorithm, starting from the transition state geometry.
-   | **Recommendation:** N/A
 
 .. topic:: ``target``
 
@@ -49,7 +48,6 @@ Required Keywords
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
-   | **Recommendation:** N/A
 
 .. topic:: ``target2``
 
@@ -59,7 +57,6 @@ Required Keywords
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
-   | **Recommendation:** N/A
 
 .. topic:: ``method``
 
@@ -74,7 +71,6 @@ Required Keywords
    |    ``MP2`` : Moller–Plesset perturbation theory
    |    ``CASSCF`` : Complete active space self consistent field (CASSCF)
    |    ``CASPT2`` : Multireference perturbation theory (CASPT2) 
-   | **Recommendation:** N/A
 
 Convergence Criteria
 --------------------

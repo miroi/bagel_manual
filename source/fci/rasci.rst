@@ -140,54 +140,73 @@ Keywords
 
 Example
 =======
-Possibly series of calculations for H2 with stretching bond. HF and CI . The HF energies will not describe the bond breaking correclty.
+
+A water molecule. 
 
 Sample input
 ------------
 
 .. code-block:: javascript 
 
-   { "bagel" : [
+ { "bagel" : [
+ { "title" : "molecule", 
+   "basis" : "tzvpp",
+   "df_basis" : "tzvpp-jkfit",
+   "angstrom" : true,
+   "geometry" : [
+    { "atom" : "H", "xyz" : [ -0.22767998367, -0.82511994081,  -2.66609980874] },
+    { "atom" : "O", "xyz" : [  0.18572998668, -0.14718998944,  -3.25788976629] },
+    { "atom" : "H", "xyz" : [  0.03000999785,  0.71438994875,  -2.79590979943] }
+  ]
+ },
 
-   {
-     "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : true,
-     "geometry" : [
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.9000]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.0]}
-     ]
-   },
+ {
+  "title" : "hf",
+  "thresh" : 1.0e-12
+ },
 
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "harrison",
-     "nstate" : 2
-   }
-
-   ]}
+ { "title" : "ras",
+  "nstate" : 2,
+  "active" : [ [1],
+             [2, 3, 4, 5],
+             [6, 7] ],
+  "max_holes" : 1,
+  "max_particles" : 2,
+  "maxiter" : 10,
+  "thresh" : 1.0e-7
+ }
+ ]}
 
 
-Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
+Sample output
+-------------
 
-.. figure:: figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
+.. code-block:: javascript 
 
-    This is an example of how to insert a figure. 
+     * ci vector   0, <S^2> = 0.0000, E =      -76.06133473
+       2-2222-..     0.9989778414
 
-=======
+     * ci vector   1, <S^2> = 0.0000, E =      -75.73609103
+       2-222a-b.    -0.6985148618
+       2-222b-a.    -0.6985148618
+       2-2a2b-ab    -0.0695352914
+       2-2b2a-ba    -0.0695352914
+       2-2b2b-aa    -0.0513545763
+       2-2a2a-bb    -0.0513545763
+       2-22ab-2.    -0.0510585950
+       2-22ba-2.    -0.0510585950
+
+
+
+
+==========
 References
 ==========
 
+ ==================================================================================================================================
  Used for RASCI convergence algorithm            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984               
+ ----------------------------------------------------------------------------------------------------------------------------------
  Used for RASCI convergence algorithm            | John Doe and Jane Doe. J. Chem. Phys. **5** 120-124.  1980,              
+ ----------------------------------------------------------------------------------------------------------------------------------
  Informs the RASCI convergence algorithm         | Olsen, J.  Roos, B.O. , Jorgensen P., and Jensen H. J. A.,  J. Chem Phys **89.4** 2185-2192 (1988).
+ ==================================================================================================================================
