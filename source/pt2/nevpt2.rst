@@ -87,8 +87,8 @@ BAGEL references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Relativistic implementation of NEVPT2 in      | Shiozaki T., Mizukami W. J. Chem. Theory Comput. 2015, **11**, 4733   |
-| BAGEL                                         |                                                                       |
+| Relativistic implementation of NEVPT2 in      | T\. Shiozaki, and W. Mizukami, J. Chem. Theory Comput. **11**, 4733   |
+| BAGEL                                         | (2015).                                                               |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
 General references
@@ -97,10 +97,10 @@ General references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Original references for NEVPT2                | Angeli, C.; Cimiraglia, R.; Evangelisti, S.; Leininger, T.; Malrieu   |
-|                                               | J.-P. J. Chem. Phys. 2001, **114**, 10252                             |
+| Original references for NEVPT2                | C\. Angeli, R. Cimiraglia, S. Evangelisti, T. Leininger, and J.-P.    |
+|                                               | Malrieu, J. Chem. Phys. **114**, 10252 (2011).                        |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-|                                               | Angeli, C.; Cimiraglia, R.; Malrieu, J.-P. J. Chem. Phys. 2002,       |
-|                                               | **117**, 9138                                                         |
+|                                               | C\. Angeli, R. Cimiraglia, and J.-P. Malrieu, J. Chem. Phys. **117**, |
+|                                               | 9138 (2012).                                                          |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 

@@ -203,11 +203,11 @@ References
 +-----------------------------------------------+---------------------------------------------------------------------+
 |          Description of Reference             |                           Reference                                 | 
 +===============================================+=====================================================================+
-| Used in RASCI convergence algorithm           | P. J. Knowles and  N. C. Handy, Chem. Phys. Lett.                   |
-|                                               | **111**, 315-321  1984.                                             |
+| Used in RASCI convergence algorithm           | P.\ J. Knowles, and N. C. Handy, Chem. Phys. Lett.                  |
+|                                               | **111**, 315-321 (1984).                                            |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| Informs the RASCI convergence algorithm       | J. Olsen and B. O. Roos, P. Jorgensen, H. J. A.-Jensen, J. Chem.    |
-|                                               | Phys., **89** 2185-2192 (1988).                                     |
+| RASCI algorithm                               | J\. Olsen, B. O. Roos, P. Jorgensen, and H. J. A.-Jensen, J. Chem.  |
+|                                               | Phys., **89**, 2185-2192 (1988).                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 
