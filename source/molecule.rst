@@ -52,21 +52,75 @@ Sample input
 ------------
 
 .. code-block:: javascript 
-{
-molecule = { 
-  basis = svp;
-  df_basis = svp-jkfit;
-  angstrom = true;
-  geometry = [ 
-    {atom = H; xyz = [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
-    
-    {atom = O; xyz = [  0.18572998668, -0.14718998944,  -3.25788976629]; },
-    
-    {atom = H; xyz = [  0.03000999785,  0.71438994875,  -2.79590979943]; }
-  ];  
-};
-}
+
+   { "bagel" : [
+
+   {
+     "title" : "molecule",
+     "basis" : "sto-3g",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : false,
+     "geometry" : [
+         {atom = H; xyz = [ -0.22767998367, -0.82511994081,  -2.66609980874]; },
+         {atom = O; xyz = [  0.18572998668, -0.14718998944,  -3.25788976629]; },
+         {atom = H; xyz = [  0.03000999785,  0.71438994875,  -2.79590979943]; }
+     ]
+   },
+
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-10
+   }
+
+   ]}
+
+==========
+Basis sets 
+==========
+3-21g
+6-31g
+ano-rcc
+aug-cc-pv5z
+aug-cc-pv6z
+aug-cc-pvdz
+aug-cc-pvqz
+aug-cc-pvtz
+cc-pv5z
+cc-pv5z-ri
+cc-pv6z
+cc-pvdz
+cc-pvdz-ri
+cc-pvqz
+cc-pvqz-ri
+cc-pvtz
+cc-pvtz-ri
+complete
+def2-SVP-2c-ecp
+def2-SVP-ecp
+ecp10mdf
+ecp28mdf
+ecp46mdf
+ecp60mdf
+ecp78mdf
+lanl2dz-ecp
+qzvpp
+sto-3g
+svp
+tzvpp
+
+==========
+Density fitting basis sets
+==========
+svp-jkfit
+tzvpp-jkfit
+cc-pv5z-jkfit
+cc-pvdz-jkfit
+cc-pvqz-jkfit
+cc-pvtz-jkfit
+qzvpp-jkfit
+
 
 ==========
 References
 ==========
+
