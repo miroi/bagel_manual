@@ -7,7 +7,7 @@ ASD-DMRG
 
 Description
 ===========
-Description to dimer ASD
+ASD-DMRG algorithm is able to deal with molecular aggregates with more than two sites.
 
 
 Keywords
@@ -20,10 +20,95 @@ Keywords
 
 Example
 =======
-Give an example here
+Here is a sample calculation of Helium trimer aggregate with ASD-DMRG.
 
 
 Sample input
 ------------
-find the triple benzene input and tune the ntrunc
 
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : false,
+     "cartesian" : false,
+     "geometry" : [
+       {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     0.00000000000000] }
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "saveref" : "A"
+   },
+   
+   {
+     "title" : "molecule",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : false,
+     "cartesian" : false,
+     "geometry" : [
+       {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     3.00000000000000] }
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "saveref" : "B"
+   },
+   
+   {
+     "title" : "molecule",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : false,
+     "cartesian" : false,
+     "geometry" : [
+       {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     6.00000000000000] }
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "saveref" : "C"
+   },
+   
+   {
+     "title" : "multisite",
+     "refs" : ["A", "B", "C"],
+     "active" : [ [1, 2, 3, 4, 5] ],
+     "hf" : {
+       "thresh" : 1.0e-12
+     },
+     "localization" : {
+       "max_iter" : 50,
+       "thresh" : 1.0e-12
+     }
+   },
+   
+   {
+     "title" : "asd_dmrg",
+     "nstate" : 1,
+     "ntrunc" : 12,
+     "method" : "ras",
+     "thresh" : 1.0e-8,
+     "perturb" : 0.0001,
+     "perturb_min" : 0.00001,
+     "perturb_thresh" : 1.0e-5,
+     "ras" : {
+       "nguess" : 5,
+       "maxiter" : 50,
+       "thresh" : 1.0e-8
+     },
+     "maxiter" : 50,
+     "spaces" : [ [ {"charge" : 0, "nspin" : 0, "nstate" : 1},
+                    {"charge" : 0, "nspin" : 2, "nstate" : 1},
+                    {"charge" : 1, "nspin" : 1, "nstate" : 1},
+                    {"charge" : -1, "nspin" : 1, "nstate" : 1} ] ],
+     "restricted" : [ { "orbitals" : [ 1, 0, 4], "max_holes" : 1, "max_particles" : 1 } ]
+   }
+   
+   ]}
