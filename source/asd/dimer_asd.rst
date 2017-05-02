@@ -7,15 +7,119 @@ Dimer ASD
 
 Description
 ===========
-Description to dimer ASD
+The active space decomposition algorithm for molecular dimers allows for efficient computation for the dimer's complete-active-space wave functions. The current algorithm only works for dimer molecules those fragments are not covalently bonded. Full-CI and restricted-active-space-CI can be used to obtain the fragment state wave functions. ASD calculation starts with dimer molecule construction, see (add ref Dimer) section for more information.
+
+
+Dimer Construction
+==================
+.. toctree:: 
+   :maxdepth: 1
+
+   dimer.rst
 
 
 Keywords
 ========
 
-.. topic:: ``active orbitals``
+Required Keywords
+-----------------
+
+.. topic:: ``title``
    
-   | **Description**: assign active orbitals
+   | **Value:** asd
+
+.. topic:: ``method``
+   
+   | **Description:** method to compute active subspaces
+   | **Datatype:** string
+   | **Value:**
+   |   ``cas``/``fci``: use full configuration interaction method
+   |   ``ras``: use restricted active space configuration interaction method
+
+.. topic:: ``fci``
+
+   | **Description:** if ``fci`` is used, specify the implementations here
+   | **Recommendation:** see (add hyperlink to fci) for details
+
+.. topic:: ``ras``
+
+   | **Description:** if ``ras`` is used, specify the implementations here
+   | **Recommendation:** see (add hyperlink to ras) for details
+
+.. topic:: ``space``
+
+   | **Description:** specify important fragment states with the following keys:
+   |  ``charge``, ``spin``, ``nstate``
+   | **Recommendation:** see sample input for details
+
+Optional Keywords
+-----------------
+
+.. topic:: ``nstates``
+   
+   | **Description:** number of target states
+   | **Datatype:** int
+   | **Default** 10
+
+.. topic:: ``charge``
+
+   | **Description:** dimer charge
+   | **Datatype:** int
+   | **Default:** 0
+
+.. topic:: ``nspin``
+
+   | **Description:** number of dimer total spin
+   | **Datatype:** int
+   | **Default:** 0
+
+.. topic:: ``nguess``
+
+   | **Description:** number of initial guess for Davidson diagonalization
+   | **Datatype:** int
+   | **Default** :math:`10\times nstates`
+
+.. topic:: ``Davidson_subspace``
+   
+   | **Description:** size of Davidson subspace
+   | **Datatype:** int
+   | **Default:** 10
+
+.. topic:: ``max_iter``
+   
+   | **Description:** maximum number of iterations for Davidson diagonalization 
+   | **Datatype:** int
+   | **Default:** 50
+
+.. topic:: ``dipoles``
+   
+   | **Description:** whether to calculate dipole moment
+   | **Datatype:** bool
+   | **Default:** false
+
+.. topic:: ``thresh``
+   
+   | **Description:** threshold for convergence in Davidson diagonalization
+   | **Datatype:** double
+   | **Default:** :math:`1.0\times 10^{-7}`
+
+.. topic:: ``print_thresh``
+
+   | **Description:** threshold for printing out important configurations
+   | **Datatype:** double
+   | **Default:** 0.01
+
+.. topic:: ``store matrix``
+   
+   | **Description:** whether the Hamiltonian matrix is stored
+   | **Datatye:** bool
+   | **Default:** false
+
+.. topic:: ``print_info``   
+   
+   | **Description:** whether print out information (e.g. reduced density matrix and energy)
+   | **Datatype:** bool
+   | **Default:** false
 
 
 Example
@@ -32,7 +136,6 @@ Sample input
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "sto-3g",
      "df_basis" : "svp",
      "angstrom" : false,
@@ -91,6 +194,12 @@ Sample input
    
    ]}
 
+
+.. figure:: ../figure/example.png
+    :width: 200px
+    :align: center
+    :alt: alternate text
+    :figclass: align-center
  
 Reference
 =========
