@@ -1,6 +1,6 @@
-.. _dhf:
-
 .. index:: dhf, gaunt, breit
+
+.. _dhf:
 
 ********************
 Dirac--Hartree--Fock

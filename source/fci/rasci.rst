@@ -1,6 +1,6 @@
-.. _rasci:
-
 .. index:: rasci
+
+.. _rasci:
 
 *********************************************************
 Restricted active space configuration interaction (RASCI)

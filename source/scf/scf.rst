@@ -1,6 +1,6 @@
-.. _scf:
-
 .. index:: Hartree-Fock, Dirac-Hartree-Fock
+
+.. _scf:
 
 *********************
 Self-consistent field
