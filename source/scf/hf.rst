@@ -39,6 +39,7 @@ The default values are recommended unless mentioned otherwise.
    | **Datatype**: int 
 
 .. topic:: ``diis_start``
+
    | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
                       algorithm for the to update the orbitals.
    | **Default**: :math:`1`
