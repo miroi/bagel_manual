@@ -16,9 +16,7 @@ Contents:
    pt2/pt2.rst
    fci/fci.rst  
    multi/multi.rst
-   gradient.rst
-   hessian.rst
-   opt.rst
+   grad/grad.rst
 
 
 Indices and tables

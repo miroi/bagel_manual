@@ -7,11 +7,7 @@ MP2
 
 Description
 ===========
-
-note : MP2 is only implemented with DF
-
-.. math::
-  insert\quad formula\quad here
+MP2 computes the Møller–Plesset perturbation theory second-order correction to the Hartree-Fock energy. (Resolution of the identity approximation algorithm) is implemented here. In BAGEL, MP2 only works with density fitting.
 
 
 Keywords
@@ -33,7 +29,7 @@ Keywords
    | **Description**: specify an alternative density fitting basis set.
    | **Default**: use the same density fitting basis as in molecule/df_basis.
    | **Datatype**: string
-   | **Recommendation**: better use mp2-fit-auxbasis (auxiliary basis ends with 'ri')
+   | **Recommendation**: use MP2-fit auxiliary basis (auxiliary basis ends with 'ri')
 
 
 Example
