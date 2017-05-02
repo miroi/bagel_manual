@@ -5,17 +5,8 @@
 Configuration interaction methods
 *******
 
-===========
-Description
-===========
-This section discusses three of the closely related configuration interaction (CI) methods available in BAGEL; non-relativistic full CI (FCI), non-relativistic restricted CI (RASCI), and 4-component relativistic CI.  These methods have many similarities, but substantial difference in their use, and so each shall be discussed in a different subsection. Note that keywords which work for one method may not work in another.
-
-Most of the relevant code for these methods can be found in $BAGEL/src/ci/ci (FCI) ,   
-$BAGEL/src/ci/ras (ras) 
-$BAGEL/src/ci/zfci (ZFCI) 
-
 ======
-FullCI 
+Description RASCI 
 ======
 
 FCI is aims to describe the wavefunction as a linear combination of Slater determinants:
@@ -23,7 +14,8 @@ FCI is aims to describe the wavefunction as a linear combination of Slater deter
 .. math::
   \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
 
-This technique is good for describing systems featuring substantial dynamic correlation.  the algorithm by which the coefficients are determined can all be specified. 
+The basis into which the wavefunction is expanded is typically constructed by applying excitation operators to the determinant(s) included in the ground state wavefunction. The Restricted Active Space (RAS) method only onl allows certain excitations to be performed resulting in a smaller basis. In Bagel, the user specifies three "active" spaces; sets of orbitals between which excitations can occur.  This is useful close analysis of the impact of specific excitations on dynamic correlation effects, and also for investigating properties which depend on only a few specific excitations (e.g., x-ray adsorption spectra). The disadvantage is that the RASCI basis smaller than CI, and that the active spaces must be selected with caution.
+
 
 
 ==================
