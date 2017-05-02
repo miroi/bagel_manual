@@ -147,6 +147,11 @@ Keywords
 
 
 
+References
+==========
+ Used for CI convergence algorithm.            | Knowles, P. J. and  Handy,  N. C. Handy Chem. Phys. Lett.  J. Chem. Phys. 1984           
+Used for RASCI algortihm                      Olsen, J., Roos, B. O., Jorgensen, P., Jensen, H. J. A., J. Chem. Phys. **89.4** 2185-2192, 1988.
+
 
 Example
 =======
@@ -186,22 +191,4 @@ Sample input
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
 
-.. figure:: figure/example.png
-    :width: 200px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
-
-    This is an example of how to insert a figure. 
-
-References
-==========
-
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Used for CI convergence algorithm.            | Knowles, N. C. Handy Chem. Phys. Lett.  J. Chem. Phys. 1984               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Used for CI convergence algorithm.            | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
 
