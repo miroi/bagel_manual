@@ -22,8 +22,7 @@
    pt2/pt2.rst
    smith/smith.rst
    grad/grad.rst
-   print.rst
-   localization.rst
+   miscellaneous/misc.rst
    supp_info/supp_info.rst
    asd/asd.rst
    author.rst
