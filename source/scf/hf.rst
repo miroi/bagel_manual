@@ -1,6 +1,6 @@
-.. _hf:
-
 .. index:: scf, hf, rhf, uhf, rohf, soscf, cfmm
+
+.. _hf:
 
 *************
 Hartree--Fock
