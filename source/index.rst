@@ -27,10 +27,9 @@
    asd/asd.rst
    author.rst
 
-Indices and tables
+Index
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 
