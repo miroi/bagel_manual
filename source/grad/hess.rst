@@ -34,7 +34,7 @@ Optional Keywords
 
 .. topic:: ``nproc``
 
-   | **Description:** The Hessian code is parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation. 
+   | **Description:** The Hessian code is embarrassingly parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation. 
    | **Default:** 1
    | **Datatype:** integer
    | **Recommendation:**  
@@ -46,7 +46,7 @@ This should be an example that is chemically relevant. There should be text expl
 
 Sample input
 ------------
-A sample input for the benzene molecule for Hartree-Fock.
+A sample input for the benzene molecule.
 
 .. code-block:: javascript 
 
@@ -54,7 +54,6 @@ A sample input for the benzene molecule for Hartree-Fock.
 
   {
     "title" : "molecule",
-    "symmetry" : "C1",
     "basis" : "svp",
     "df_basis" : "cc-pvdz-jkfit",
     "angstrom" : false,
@@ -75,20 +74,6 @@ A sample input for the benzene molecule for Hartree-Fock.
   },
 
   {
-    "title" : "hessian",
-    "nproc" : 2,
-      "method" : [ {
-        "title" : "hf"
-    } ]
-  }
-
-  ]}
- 
-For CASPT2, the Hessian input would be the following:
-
-.. code-block:: javascript 
-
-  {
   "title" : "hf"
   },
 
@@ -97,14 +82,12 @@ For CASPT2, the Hessian input would be the following:
     "nstate" : 2,
     "nclosed" : 18,
     "nact" : 6,
-    "active" : [17, 20, 21, 22, 23, 30],
-    "thresh" : 1.0e-9
+    "active" : [17, 20, 21, 22, 23, 30]
   },
 
   {
     "title" : "hessian",
     "target" : 0,
-    "nproc" : 2,
     "method" : [ {
        "title" : "caspt2",
          "smith" : {
@@ -117,14 +100,46 @@ For CASPT2, the Hessian input would be the following:
        },
        "nstate" : 2,
        "nact_cas" : 6,
-       "nclosed" : 18,
-       "thresh" : 1.0e-9
+       "nclosed" : 18
     } ]
   }
 
   ]}
  
-If you are running a Hessian calculation on many MPI processes, it is recommended to only have the Hessian calculation in your input. If you need to start from a CASSCF reference, as is the case in benzene where the orbitals need to be reordered, recall that your calculation can be restared from a molden output. 
+If you are running a Hessian calculation using the embarassingly parallel implementation, it is recommended to only have the Hessian calculation in your input. A molden file generated from a previous calculation can be read at the start of the calculation. 
+
+.. code-block:: javascript 
+
+  { "bagel" : [
+
+  {
+    "title" : "molecule",
+    "basis" : "molden",
+    "df_basis" : "cc-pvdz-jkfit",
+    "molden_file" : "restart.molden"
+  },
+
+  {
+    "title" : "hessian",
+    "target" : 0,
+    "method" : [ {
+       "title" : "caspt2",
+         "smith" : {
+           "method" : "caspt2",
+           "ms" : "true",
+           "xms" : "true",
+           "sssr" : "true",
+           "shift" : 0.2,
+           "frozen" : true
+       },
+       "nstate" : 2,
+       "nact_cas" : 6,
+       "nclosed" : 18
+    } ]
+  }
+
+  ]}
+
 
 References
 ==========
