@@ -34,12 +34,12 @@ Common keywords
 .. topic:: ``hf``
 
    | **Description:** dimer restricted Hartree-Fock calculation options
-   | **Default:** use the same options as monomer (add hyperlink here :: RHF) calculations
+   | **Default:** use the same options as monomer :ref:`hf` calculations
 
 .. topic:: ``localization``
 
    | **Description:** localize dimer molecular orbitals
-   | **Default:** use default (add hyperlink here :: Localization)
+   | **Default:** use default :ref:`localization`
 
 .. topic:: ``active_thresh``
    
@@ -81,5 +81,5 @@ Keywords for covalently linked dimer
 
 Prerequisite
 ============
-(add hyperlink here :: RHF) calculations are needed to obtain fragment active orbitals.
+:ref:`hf` calculations are needed to obtain fragment active orbitals.
 
