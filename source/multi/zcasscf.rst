@@ -1,8 +1,8 @@
 .. _multi:
 
-*******************
-Relativistic CASSCF
-*******************
+********************************************************************
+Relativistic complete active space self-consistent field (RelCASSCF)
+********************************************************************
 
 Description
 ===========

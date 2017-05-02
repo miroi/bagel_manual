@@ -2,7 +2,7 @@
 
 
 *******
-Restricted Active Space Configuration Interaction
+Restricted active space configuration interaction
 *******
 
 ======
@@ -14,7 +14,24 @@ FCI is aims to describe the wavefunction as a linear combination of Slater deter
 .. math::
   \Psi = \sum^{N}_{i}c_{i}\Phi_{N}
 
-The basis into which the wavefunction is expanded is typically constructed by applying excitation operators to the determinant(s) included in the ground state wavefunction. The Restricted Active Space (RAS) method only onl allows certain excitations to be performed resulting in a smaller basis. In Bagel, the user specifies three "active" spaces; sets of orbitals between which excitations can occur.  This is useful close analysis of the impact of specific excitations on dynamic correlation effects, and also for investigating properties which depend on only a few specific excitations (e.g., x-ray adsorption spectra). The disadvantage is that the RASCI basis smaller than CI, and that the active spaces must be selected with caution.
+The basis into which the wavefunction is expanded is typically constructed by
+applying excitation operators to the determinant(s) included in the ground
+state wavefunction. The Restricted Active Space (RAS) method constrainst the
+types of excitations which can occur resulting in a smaller basis, and ideally
+a lower computational cost than that of full CI.  In RASCI as implemented in
+Bagel, the user constrains the excitations by specifying three "active" spaces,
+R1, R2 and R3, which are three sets of orbitals.  The determinants in the CI
+expansion are obtained by exciting from R1 into R2, from R2 to R3, or between
+occupied and unoccupied orbitals in R2.  The number of excitations between R1
+and R2 is constrained by specifying the maximium number of holes which can
+occur in R1, whilst the number of excitations between R2 and R3 is constrained
+by specifying the maximium number of electrons which can occur in R2. 
+
+ This is useful close analysis of the impact of specific
+excitations on dynamic correlation effects, and also for investigating
+properties which depend on only a few specific excitations (e.g., x-ray
+adsorption spectra). The disadvantage is that the RASCI basis smaller than CI,
+and that the active spaces must be selected with caution.
 
 
 
@@ -31,8 +48,43 @@ Keywords
 .. topic:: ``active``
 
    | DESCRIPTION: Specifies the three active spaces used to generate the funcitons in the CI expansion.
-   | DEFAULT: Three arrays of integers (see example).
-   | DATATYPE: bool
+   | DEFAULT: Must be specified by user.
+   | DATATYPE: Three arrays of integers (see example).
+   | VALUES : Three arrays with the containing indexes which specficy the orbitals between which excitations are permitted to occur.
+   | RECOMMENDATION : This is highly system dependent, and dependent on the system under investigation. It is often good to run an initial Hartree Fock calculation, visualize the resulting orbitals in Molden (see section PRINT SECTION), and pick the spaces on the basis of chemical intuition. 
+
+.. topic:: ``space``
+
+   | DESCRIPTION: Specifies the output states
+   | DEFAULT: Must be specified by user.
+   | DATATYPE : array, user input variables to
+   | VALUES: One or more arrays which define a charge, spin and nstate (number of desired states with this charge and spin)
+   | RECOMMENDATION : This is highly system dependent. It shold be noted that picking the correct set of states may result in bettwe convergence, and that fewer states is not always better.
+
+.. topic:: ``max_holes``
+
+   | DESCRIPTION: Maximum number of particles in R1.
+   | DEFAULT: 0 
+   | DATATYPE : integer
+   | VALUES: Any integer which is possible given the initial occupation of R1 and R2..  
+   | RECOMMENDATION : System dependent, note that larger values increase the number of possible configurations, and hence the cost of the calculation.
+
+
+.. topic:: ``max_particles``
+
+   | DESCRIPTION: Maximum number of particles in R3.
+   | DEFAULT: 0 
+   | DATATYPE : integer
+   | VALUES: Any integer which is possible given the initial occupation of R2 and R3..  
+   | RECOMMENDATION : System dependent, note that alrger values increase the number of possible configurations, and hence the cost of the calculation.
+
+.. topic:: ``nspin``
+
+   | DESCRIPTION: Specifies the number of unpaired electrons, e.g., a triplet has an nspin of 2.
+   | DEFAULT: 0 
+   | DATATYPE : integer
+   | VALUES: Any integer.  
+   | RECOMMENDATION : The spin of the states or interest. 
 
 .. topic:: ``algorithm``
    
@@ -53,60 +105,46 @@ Keywords
    | VALUES: `any int`
    | RECOMMENDATION: The electronic charge of the system. 
 
+.. topic:: ``maxiter``
 
-.. topic:: ``frozen``
-
-   | DESCRIPTION: Sp.
-   | DEFAULT: false.
-   | DATATYPE: boolean
-   | VALUES:
-   |    ``TRUE``: Freeze orbitals..
-   |    ``FALSE``: Do not freeze obitals.
-   | RECOMMENDATION: Use default; no frozen orbitals. Freezing orbitals can reduce the cost, but also the accuracy of the calculation.
-
-.. topic:: ``maxiter_fci``
-
-   | DESCRIPTION: Maximum number of iterations in FCI algorithm 
-   | DEFAULT: 
+   | DESCRIPTION: Maximum number of iterations in RASCI algorithm 
+   | DEFAULT: 100 
    | DATATYPE: integer
-   | VALUES: ``and integer``
-   | RECOMMENDATION: Becareful, a common mistake is to input the value s_z and not the number of electrons.
+   | VALUES: ``Any positive integer``
+   | RECOMMENDATION: Keep as default. Whilst higher values can be experimented with, failure too converge could also indicate an issue with the reference function, active spaces, or requested states.
 
-.. topic:: ``nspin``
+.. topic:: ``davidson_subspace``
 
-   | DESCRIPTION: Number of unpaired electrons. 
-   | DEFAULT: 0
+   | DESCRIPTION: Maximum dimension of subspace used for Davidson diagonalization
+   | DEFAULT: 20 
    | DATATYPE: integer
-   | VALUES: ``and integer``
-   | RECOMMENDATION: Becareful, a common mistake is to input the value s_z and not the number of electrons.
+   | VALUES: ``Any positive integer``
+   | RECOMMENDATION: In most cases  it is best to use the default. If a large number of states are being requested if may be worth increasing it.
 
+.. topic:: ``nstate``
 
-
-.. topic:: ``nstates``
-
-   | DESCRIPTION: Number of states to calculate. 
-   | DEFAULT:``must be specified``
+   | DESCRIPTION: Number of states to calculate. If set to one, it calculates the ground state.
+   | DEFAULT:1
    | DATATYPE: integer
    | VALUES: ``any positive double``
    | RECOMMENDATION: User dependent, calculation of multiple states are slower.
 
-.. topic:: ``restart``
+.. topic:: ``thresh```
 
-   | DESCRIPTION: Restart the calcualtion from an earlier one. 
-   | DEFAULT: false
-   | DATATYPE: boolean
-   | VALUES: ``true, false``
-   | RECOMMENDATION: Use if possible.
-
-
-
-.. topic:: ``thresh`` or ``thresh_fci``
-
-   | DESCRIPTION: Threshold for convergence of selected CI algorithm 
+   | DESCRIPTION: Threshold for convergence of selected RASCI algorithm 
    | DEFAULT: 1.0e-10 
    | DATATYPE: double
    | VALUES: ``any positive double``
    | RECOMMENDATION: Default, reduce for greater accuracy.
+
+.. topic:: ``batchsize```
+
+   | DESCRIPTION : Number of terms from RASCI interaction to be evaluated at simulataneously.
+   | DEFAULT: 512 
+   | DATATYPE: integer
+   | VALUES: ``any positive integer``
+   | RECOMMENDATION: Default, the optimimum value willbe system dependent.
+
 
 
 
@@ -125,7 +163,7 @@ Sample input
      "title" : "molecule",
      "basis" : "sto-3g",
      "df_basis" : "svp-jkfit",
-     "angstrom" : false,
+     "angstrom" : true,
      "geometry" : [
        { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.9000]},
        { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.0]}

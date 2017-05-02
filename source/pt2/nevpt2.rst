@@ -1,8 +1,8 @@
 .. _nevpt2:
 
-******
-NEVPT2
-******
+*****************************************************
+N-electron valence state perturbation theory (NEVPT2)
+*****************************************************
 
 
 Description
