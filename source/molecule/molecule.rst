@@ -110,44 +110,47 @@ Basis sets
 
 The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
-* sto-3g
-* 3-21g  
-* 6-31g
-* svp
-* tzvpp
-* qzvpp
-* cc-pvdz  
-* cc-pvtz  
-* cc-pvqz
-* cc-pv5z  
-* cc-pv6z  
-* cc-pcvdz
-* cc-pcvtz
-* cc-pcvqz
-* cc-pcv5z
-* cc-pcvdz-dk
-* cc-pcvtz-dk
-* aug-cc-pvdz
-* aug-cc-pvtz
-* aug-cc-pvqz
-* aug-cc-pv5z
-* aug-cc-pv6z
-* aug-cc-pcvdz
-* aug-cc-pcvtz
-* aug-cc-pcvqz
-* aug-cc-pcv5z
-* aug-cc-pcvdz-dk
-* aug-cc-pcvtz-dk
-* aug-cc-pcvqz-dk
-* aug-cc-pwcvdz
-* aug-cc-pwcvtz
-* aug-cc-pwcvqz
-* aug-cc-pwcv5z
-* d-aug-cc-pvdz
-* d-aug-cc-pvtz
-* d-aug-cc-pvqz
-* d-aug-cc-pv5z
-* ano-rcc
+.. hlist::
+   :columns: 3
+
+   * sto-3g
+   * 3-21g  
+   * 6-31g
+   * svp
+   * tzvpp
+   * qzvpp
+   * cc-pvdz  
+   * cc-pvtz  
+   * cc-pvqz
+   * cc-pv5z  
+   * cc-pv6z  
+   * cc-pcvdz
+   * cc-pcvtz
+   * cc-pcvqz
+   * cc-pcv5z
+   * cc-pcvdz-dk
+   * cc-pcvtz-dk
+   * aug-cc-pvdz
+   * aug-cc-pvtz
+   * aug-cc-pvqz
+   * aug-cc-pv5z
+   * aug-cc-pv6z
+   * aug-cc-pcvdz
+   * aug-cc-pcvtz
+   * aug-cc-pcvqz
+   * aug-cc-pcv5z
+   * aug-cc-pcvdz-dk
+   * aug-cc-pcvtz-dk
+   * aug-cc-pcvqz-dk
+   * aug-cc-pwcvdz
+   * aug-cc-pwcvtz
+   * aug-cc-pwcvqz
+   * aug-cc-pwcv5z
+   * d-aug-cc-pvdz
+   * d-aug-cc-pvtz
+   * d-aug-cc-pvqz
+   * d-aug-cc-pv5z
+   * ano-rcc
 
 ==========================
 Density fitting basis sets
@@ -540,5 +543,5 @@ References
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-| Gauge invariant atomic orbitals               | R. Ditchfield.  Mol. Phys., *27* 789–807 1974.                                   |
+| Gauge invariant atomic orbitals               | R\. Ditchfield, Mol. Phys., **27**, 789 (1974).                                  |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
