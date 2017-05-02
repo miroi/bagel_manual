@@ -10,27 +10,33 @@
     :width: 300px
     :align: right 
 
-**Contents:**
+.. toctree::
+   :maxdepth: 1
+
+   install.rst
+   molecule/molecule-toc.rst
 
 .. toctree::
    :maxdepth: 2
+   
 
-   molecule.rst
    scf/scf.rst
    fci/ci_methods.rst  
    multi/multi.rst
    pt2/pt2.rst
    smith/smith.rst
    grad/grad.rst
+   asd/asd.rst
    miscellaneous/misc.rst
    supp_info/supp_info.rst
-   asd/asd.rst
    author.rst
 
-Indices and tables
+**Developer Manual**
+====================
+
+Index
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 

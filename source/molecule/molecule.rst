@@ -1,16 +1,18 @@
+.. index:: basis, df_basis, ecp, geometry, dkh
+
 .. _molecule:
 
-********
-Molecule 
-********
+**************************************
+Molecule (system specification)
+**************************************
 
-===========
 Description
 ===========
-Molecule, starting with ``"title" : "molecule"``, is one of the basic input blocks specifying important
-information such as basis sets and geometry for the input system.
 
-=================
+Molecule, starting with ``"title" : "molecule"``, is the input block which specifies the basic features of the calculation.
+It contains information such as basis sets and geometry for the input system. The user has to specify the contents of this block
+in order to run the calculation.
+
 Required keywords
 =================
 
@@ -20,14 +22,15 @@ Required keywords
    | **Datatype**: vector
    | **Values**:
    |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
-        (see example below)
+        Please see the end of the file for some examples.
 
 .. topic:: ``basis``
 
    | **Description**: define default basis set used for the system
    | **Datatype**: string
    | **Values**:
-   |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments
+   |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments.
+        `User defined basis sets`_ are also possible.
 
 .. topic:: ``df_basis``
 
@@ -39,61 +42,85 @@ Required keywords
 Note that the use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
 basis set other than the default for each atom (see example for `Basis sets`_ below).
 
-=================
 Optional keywords
 =================
 
 .. topic:: ``angstrom``
 
-   | **Description**: specify units for atomic coordinates (Angstrom or Bohr)
+   | **Description**: Specify units for atomic coordinates (Angstrom or Bohr)
    | **Default**: false (Angstrom)
    | **Datatype**: bool
    |    ``TRUE``: use Angstrom
    |    ``FALSE``: use Bohr
 
-.. topic:: ``schwarz_thresh``
-
-   | **Description**: Schwarz screening integral threshold (only used in RHF-FMM)
-   | **Default**: :math:`1.0\times 10^{-12}`
-   | **Datatype**: double 
-
 .. topic:: ``finite_nucleus``
 
-   | **Description**: represent nucleus as a Gaussian charge distribution with default exponents 
+   | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents 
    | **Default**: false 
    | **Datatype**: boolean 
+   | **Recommendation**: Improves description of relativistic effects. 
 
 .. topic:: ``molden_file``
 
-   | **Description**: filename of input molden file"
-   | **Default**: No Default
+   | **Description**: filename of input molden file, which is required if ``"basis" : "molden"`` is specified.
    | **Datatype**: string
-
+   | **Recommendation**: False. However, this can be useful for doing investigative calculations before using active space methods.
+ 
 .. topic:: ``cfmm``
 
-   | **Description**: option to do RHF-FMM, in which case density fitting is not used
+   | **Description**: Option to do RHF-FMM, in which case density fitting is not used, for more details,
+                      refer to :ref:`hf` section.
    | **Default**: false 
    | **Datatype**: boolean 
+   | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules. 
+
+.. topic:: ``schwarz_thresh``
+
+   | **Description**: Schwarz screening integral threshold (only used in RHF-FMM by specifying ``"cfmm" : "true"``).
+                      For more details, refer to :ref:`hf` section. 
+   | **Default**: :math:`1.0\times 10^{-12}`
+   | **Datatype**: double 
+   | **Recommendation**: Default, looser thresholds reduce accuracy but potentially increase speed. 
 
 .. topic:: ``dkh``
 
-   | **Description**: option to do Douglas-Kroll-Hess
+   | **Description**: Option to do second order Douglas-Kroll-Hess (DKH2).
    | **Default**: false 
    | **Datatype**: boolean 
+   | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.    
 
+.. topic:: ``basis_type``
+
+   | **Description**: Can request generation of gauge independent atomic orbitals (GIAO), London orbitals from requested basis.
+   | **Default**: Standard if no magnetic field, GIAO if there is a magnetic field.
+   | **Datatype**: String 
+   | **Recommendation**: Default. Asking for standard orbitals in a calculation with a finite magentic field is equivalent to asking for a common gauge origin, which is less expensive, bit significantly less accurate.
+ 
 .. topic:: ``magnetic_field``
 
-   | **Description**: a vector of external magnetic field
+   | **Description**: a vector of external magnetic field. When the magnetic field is non-zero,
+                      Gauge-invariant atomic orbitals (GIAO) is used by default.
    | **Default**: ``{{0.0, 0.0, 0.0}}``
+   | **Recommendation**: Only use it if you need to; running with a magnetic field of zero, whilst physically equivalent to switching the magnetic field off, may be computationally more expensive. The gauge origin of the vector potential corresponding to the magentic field is at the origin of the co-ordinate system, hence the geometry should be specified such that the paramagnetic centre of the system is located at the origin, particularly if are making use of the :ref:`aniso` tools. At present finite magnetic field is only well tested for :ref:`dhf` and :ref:`hf`, but can potentially used with :ref:`zcasscf`. 
 
 .. topic:: ``tesla``
 
    | **Description**: unit of the external magnetic field
    | **Default**: false (use atomic unit)
 
+.. topic:: ``basis_type``
+
+   | **Description**: type of basis set used: standard Gaussian or Gauge-invariant atomic orbitals (GIAO).
+                      Note that when the magnetic field is non-zero, GIAO is used by default.
+   | **Default**: gaussian
+   | **Values**: "london" or "giao" (for GIAO), and "gaussian"
+
 ==========
 Basis sets 
 ==========
+
+The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
+
 * sto-3g
 * 3-21g  
 * 6-31g
@@ -115,6 +142,9 @@ Basis sets
 ==========================
 Density fitting basis sets
 ==========================
+
+The following density fitting basis sets are available in BAGEL library. The basis set name can be used with the ``df_basis`` keyword.
+
 * svp-jkfit
 * tzvpp-jkfit
 * qzvpp-jkfit
@@ -123,8 +153,9 @@ Density fitting basis sets
 * cc-pvqz-jkfit
 * cc-pv5z-jkfit
 
-Example
--------
+========
+Examples
+========
 
 .. code-block:: javascript 
 
@@ -195,9 +226,41 @@ and providing a value for ``"molden_file"``:
 
 (refer to :ref:`molden` in :ref:`misc` for more details)
 
+Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO):
+
+.. code-block:: javascript 
+
+   { "bagel" : [
+   
+   {
+     "title" : "molecule",
+     "symmetry" : "C1",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : "false",
+     "basis_type" : "giao",
+     "tesla" : "false",
+     "magnetic_field" : [  0.2000,   0.3000,  -0.1500   ],
+     "geometry" : [
+       { "atom" : "F",  "xyz" : [ -1.200000,      2.500000,      2.720616]},
+       { "atom" : "H",  "xyz" : [ -1.200000,      2.500000,      0.305956]}
+     ]
+   },
+   
+   {
+     "title" : "hf",
+     "thresh" : 1.0e-10
+   }
+
+   ]}
+
 ====================
 Auxiliary basis sets
 ====================
+
+The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``aux_basis`` keyword
+in the method block (refer to :ref:`mp2` for more details).
+
 * cc-pv5z-ri
 * cc-pvdz-ri
 * cc-pvqz-ri
@@ -206,7 +269,7 @@ Auxiliary basis sets
 Example
 -------
 
-An example using ``cc-pvdz-ri`` in MP2 calculation
+An example using cc-pvdz-ri in MP2 calculation
 
 .. code-block:: javascript 
 
@@ -244,6 +307,7 @@ An example using ``cc-pvdz-ri`` in MP2 calculation
 =========================================
 Effective core potential (ECP) basis sets 
 =========================================
+The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
 * ecp10mdf
 * ecp28mdf
@@ -325,9 +389,9 @@ The basis set file is in the following format
 The file is essentially one large array, the elements of which are further arrays, each corresponding to the basis set for a given element.
 The basis set for associated with each element is then made up of futher arrays, each of which  contains information specifying the properties
 of a single basis function.
-* ``angular`` defines the kind of orbital (s,p,d,f...) . 
-* ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
-* ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
+ * ``angular`` defines the kind of orbital (s,p,d,f...) . 
+ * ``prim`` is a array containing the exponents of the primitive orbitals from which the basis funciton is composed.
+ * ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
  
 The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. Note that not
 all of the the basis sets are defined for all atoms;  an error of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).

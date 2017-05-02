@@ -1,7 +1,9 @@
+.. index:: hessian
+
 .. _hess:
 
 ****************************************
-Molecular hessian and frequency analysis
+Molecular Hessian and frequency analysis
 ****************************************
 
 Description

@@ -133,7 +133,7 @@ html_theme_options = {
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = 'BAGEL Manual'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
 #html_short_title = None
@@ -182,7 +182,7 @@ html_static_path = ['_static']
 #html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
+html_show_sourcelink = False 
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #html_show_sphinx = True
@@ -219,7 +219,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  ('index', 'BAGEL.tex', u'BAGEL Reference Manual',
+  ('index', 'BAGEL.tex', u'BAGEL Manual',
    u'Shiozaki Group', 'manual'),
 ]
 
@@ -241,7 +241,7 @@ latex_documents = [
 #latex_appendices = []
 
 # If false, no module index is generated.
-#latex_domain_indices = True
+# latex_domain_indices = True 
 
 
 # -- Options for manual page output ---------------------------------------
@@ -249,7 +249,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    ('index', 'bagel', u'BAGEL Reference Manual',
+    ('index', 'bagel', u'BAGEL Manual',
      [u'Shiozaki Group'], 1)
 ]
 
@@ -263,7 +263,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-  ('index', 'BAGEL', u'BAGEL Reference Manual',
+  ('index', 'BAGEL', u'BAGEL Manual',
    u'Shiozaki Group', 'BAGEL', 'Freshly leavened quantum chemistry.',
    'Miscellaneous'),
 ]
