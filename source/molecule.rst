@@ -164,7 +164,7 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
    {
      "charge" : "-1",
      "title" : "hf",
-     "thresh" : 1.0e-10
+     "thresh" : 1.0e-8
    }
    
    ]}
