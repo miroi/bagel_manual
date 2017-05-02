@@ -9,12 +9,6 @@ Description
 ===========
 Molecule is one of the basic blocks to specify information, such as basis sets and geometry for the input system.
 
-
-=============
-Pre-requisite
-=============
-None
-
 ========
 Keywords
 ========
@@ -24,7 +18,7 @@ Keywords
    | DEFAULT: No Default Value
    | DATATYPE: string
    | VALUES:
-   |    Please refer to $BAGEL_HOME/src/basis for possible aruments
+   |    Please refer to `Basis Sets`_ for possible aruments
    | RECOMMENDATION:
 
 .. topic:: ``df_basis``
@@ -33,7 +27,7 @@ Keywords
    | DEFAULT: No Default Value
    | DATATYPE: string
    | VALUES:
-   |     Please refer to $BAGEL_HOME/src/basis for possible aruments
+   |     Please refer to `Density fitting basis sets`_ for possible aruments
    | RECOMMENDATION:
 
 .. topic:: ``geometry``
@@ -57,7 +51,7 @@ Sample input
 
    {
      "title" : "molecule",
-     "basis" : "sto-3g",
+     "basis" : "svp",
      "df_basis" : "svp-jkfit",
      "angstrom" : false,
      "geometry" : [
