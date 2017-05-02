@@ -20,7 +20,7 @@ to the presence of multiple degenerate solutions.  For open-shell molecules, it 
 complete active space self-consistent field (ZCASSCF) instead, possibly with a minimal active space.  
 DHF can be used to generate guess orbitals by increasing the molecular charge to remove unpaired electrons.  
 
-Command: ``dhf``
+Calculations using DHF can be done using the keyword ``"title" : "dhf"``.
 
 Prerequisite
 =============
