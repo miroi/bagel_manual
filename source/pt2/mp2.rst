@@ -30,7 +30,7 @@ Keywords
 .. topic:: ``aux_basis``
    
    | **Description**: specify an auxiliary basis set for MP2
-   | **Default**: use the same density fitting basis as in molecule/df_basis
+   | **Default**: use the same density fitting basis as in :ref:`molecule`
    | **Datatype**: string
    | **Recommendation**: use MP2-fit auxiliary basis (auxiliary basis ends with 'ri')
 
