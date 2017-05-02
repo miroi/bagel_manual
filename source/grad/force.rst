@@ -143,31 +143,24 @@ Sample input
 
 .. code-block:: javascript 
 
-   { "bagel" : [
-
    {
-     "title" : "molecule",
-     "basis" : "sto-3g",
-     "df_basis" : "svp-jkfit",
-     "angstrom" : false,
-     "geometry" : [
-       { "atom" : "F",  "xyz" : [   -0.000000,     -0.000000,      2.720616]},
-       { "atom" : "H",  "xyz" : [   -0.000000,     -0.000000,      0.305956]}
-     ]
-   },
-
-   {
-     "title" : "hf",
-     "thresh" : 1.0e-10
-   },
-
-   {
-     "title" : "fci",
-     "algorithm" : "parallel",
-     "nstate" : 2
+      "title" : "force",
+      "target" : 0,
+      "method" : [ {
+        "title" : "caspt2",
+          "smith" : {
+            "method" : "caspt2",
+            "ms" : "true",
+            "xms" : "false",
+            "sssr" : "true",
+            "shift" : 0.2,
+            "frozen" : true
+        },
+        "nstate" : 4,
+        "nact_cas" : 4,
+       "nclosed" : 3
+     } ]
    }
-
-   ]}
 
 
 Some information about the output should also be included. This will not be entire output but enough for the reader to know their calculation worked.
@@ -202,7 +195,5 @@ General References
 |          Description of Reference             |                          Reference                                             | 
 +===============================================+================================================================================+
 | General review of gradient methods            | Pulay, P. WIREs Comput. Mol. Sci. 2014, 4, 169-181.                            |
-+-----------------------------------------------+--------------------------------------------------------------------------------+
-| Reference was used for...                     | John Doe and Jane Doe. J. Chem. Phys. 1980, 5, 120-124.                        |
 +-----------------------------------------------+--------------------------------------------------------------------------------+
 
