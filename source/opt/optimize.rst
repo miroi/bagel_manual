@@ -1,8 +1,8 @@
 .. _optimize:
 
-********
-Optimize
-********
+*******************************
+Molecular Geometry Optimization
+*******************************
 
 Description
 ===========
