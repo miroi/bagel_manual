@@ -216,7 +216,7 @@ BAGEL references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| Extension to permit external magnetic fields, | R\. D. Reynolds, and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,     |
+| Extension to permit external magnetic fields, | R\. D. Reynolds and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,      |
 | including GIAO-RMB atomic basis.              | 14280 (2015).                                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
@@ -225,6 +225,6 @@ General references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| General text on relativistic electronic       | M\. Reiher, and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH, |
+| General text on relativistic electronic       | M\. Reiher and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH,  |
 | structure, including Dirac--Hartree--Fock.    | Weinheim, 2009).                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------+

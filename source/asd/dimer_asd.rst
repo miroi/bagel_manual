@@ -27,7 +27,7 @@ Required Keywords
 
 .. topic:: ``method``
    
-   | **Description:** method to compute active subspaces
+   | **Description:** Method to compute active subspaces.
    | **Datatype:** string
    | **Value:**
    |   ``cas`` or ``fci``: use full configuration interaction method
@@ -35,86 +35,86 @@ Required Keywords
 
 .. topic:: ``fci``
 
-   | **Description:** if ``fci`` is used, specify the implementations here
-   | **Recommendation:** see :ref:`fci` for details
+   | **Description:** If ``fci`` is used, specify the implementations here.
+   | **Recommendation:** See :ref:`fci` for details.
 
 .. topic:: ``ras``
 
-   | **Description:** if ``ras`` is used, specify the implementations here
-   | **Recommendation:** see :ref:`rasci` for details
+   | **Description:** If ``ras`` is used, specify the implementations here.
+   | **Recommendation:** See :ref:`rasci` for details.
 
 .. topic:: ``space``
 
-   | **Description:** specify important fragment states with the following keys:
+   | **Description:** Specify important fragment states with the following keys:
    |  ``charge``, ``spin``, ``nstate``
-   | **Recommendation:** see sample input for details
+   | **Recommendation:** See sample input for details.
 
 Optional Keywords
 -----------------
 
 .. topic:: ``nstates``
    
-   | **Description:** number of target states
+   | **Description:** Number of target states.
    | **Datatype:** int
    | **Default** 10
 
 .. topic:: ``charge``
 
-   | **Description:** dimer charge
+   | **Description:** Dimer charge.
    | **Datatype:** int
    | **Default:** 0
 
 .. topic:: ``nspin``
 
-   | **Description:** number of dimer total spin
+   | **Description:** Number of dimer total spin.
    | **Datatype:** int
    | **Default:** 0
 
 .. topic:: ``nguess``
 
-   | **Description:** number of initial guess state vectors for Davidson diagonalization
+   | **Description:** Number of initial guess state vectors for Davidson diagonalization.
    | **Datatype:** int
    | **Default:** :math:`10\times nstates`
 
 .. topic:: ``Davidson_subspace``
    
-   | **Description:** size of Davidson subspace
+   | **Description:** Size of Davidson subspace.
    | **Datatype:** int
    | **Default:** 10
 
 .. topic:: ``max_iter``
    
-   | **Description:** maximum number of iterations for Davidson diagonalization 
+   | **Description:** Maximum number of iterations for Davidson diagonalization.
    | **Datatype:** int
    | **Default:** 50
 
 .. topic:: ``dipoles``
    
-   | **Description:** whether to calculate dipole moment
+   | **Description:** Whether to calculate dipole moment.
    | **Datatype:** bool
    | **Default:** false
 
 .. topic:: ``thresh``
    
-   | **Description:** threshold for convergence in Davidson diagonalization
+   | **Description:** Threshold for convergence in Davidson diagonalization.
    | **Datatype:** double
    | **Default:** :math:`1.0\times 10^{-7}`
 
 .. topic:: ``print_thresh``
 
-   | **Description:** threshold for printing out important configurations
+   | **Description:** Threshold for printing out important configurations.
    | **Datatype:** double
    | **Default:** 0.01
 
 .. topic:: ``store matrix``
    
-   | **Description:** whether the Hamiltonian matrix is stored
+   | **Description:** Whether the Hamiltonian matrix is stored.
    | **Datatye:** bool
    | **Default:** false
 
 .. topic:: ``print_info``   
    
-   | **Description:** whether print out information (e.g. reduced density matrix and energy)
+   | **Description:** Whether print out information (e.g. reduced density matrix and energy).
    | **Datatype:** bool
    | **Default:** false
 

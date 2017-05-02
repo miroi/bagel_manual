@@ -397,7 +397,7 @@ BAGEL References
 +-----------------------------------------------+----------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                    | 
 +===============================================+============================================================================+
-| Exact exchange evaluation using occ-RI-FMM    | H\.-A. Le, and T. Shiozaki, *in preparation*.                              |
+| Exact exchange evaluation using occ-RI-FMM    | H\.-A. Le and T. Shiozaki, *in preparation*.                               |
 +-----------------------------------------------+----------------------------------------------------------------------------+
 
 General References
@@ -405,7 +405,7 @@ General References
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                          | 
 +===============================================+==================================================================================+
-| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+| General text on electronic structure theory   | A\. Szabo and N. S. Ostlund,                                                     |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+

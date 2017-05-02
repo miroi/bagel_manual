@@ -35,7 +35,7 @@ Keywords
 
 .. topic:: ``norb``
 
-   | **Description**: Number of orbitals into which electrons can be excited..
+   | **Description**: Number of orbitals in which electrons can be populated.
    | **Default**: Uses all possible orbitals
    | **Datatype**: integer
    | **Recommendation**: System dependent, the user should specify a value. Using all possible configurations is typically computationally expensive, and is best reserved for benchmarking calculations.
@@ -220,7 +220,7 @@ References
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 | Efficient calculation of sigma vector         | R\. J\. Harrison and S\. Zarrabian, Chem. Phys. Lett. **158**, 393 (1989).       |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+| General text on electronic structure theory   | A\. Szabo and N. S. Ostlund,                                                     |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+

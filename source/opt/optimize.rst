@@ -343,10 +343,10 @@ References
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
 | Gradient projection algorithm                 | M\. J. Bearpark, M. A. Robb, and H. B. Schlegel, Chem. Phys. Lett. **223**, 269 (1994).  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
-| Flowchart method                              | A\. B. Birkholz, and H. B. Schlegel, Theor. Chem. Acc. **135**, 84 (2016).               |
+| Flowchart method                              | A\. B. Birkholz and H. B. Schlegel, Theor. Chem. Acc. **135**, 84 (2016).                |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
-| ETF in nonadiabatic coupling                  | S\. Fatehi, and J. E. Subotnik, J. Phys. Chem. Lett. **3**, 2039 (2012).                 |
+| ETF in nonadiabatic coupling                  | S\. Fatehi and J. E. Subotnik, J. Phys. Chem. Lett. **3**, 2039 (2012).                  |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
-| Thiel's conical intersection parameters       | T\. W. Keal, A. Koslowski and W. Thiel, Theor. Chem. Acc. **118**, 837 (2007).           |
+| Thiel's conical intersection parameters       | T\. W. Keal, A. Koslowski, and W. Thiel, Theor. Chem. Acc. **118**, 837 (2007).          |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
 
