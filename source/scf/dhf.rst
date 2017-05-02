@@ -30,80 +30,79 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``gaunt``
 
-   | Description:
+   | Description:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
+   |     If ``gaunt'' is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit 
+   |     coupling between electrons.  Note that if ``gaunt'' is set to true, ``breit'' is also set to true unless otherwise specified by the user.  
    | Default: false
    | Datatype: bool
-   | Recommendation: use default.
+   | Recommendation:  The default is often fine, unless very strong relativistic effects are expected.  
 
 .. topic:: ``breit``
 
-   | Description:
-   | Default: gaunt
+   | Description:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
+   | Default: value copied from ``gaunt''
    | Datatype: bool
-   | Recommendation: use default.
+   | Recommendation: Use default, unless you wish to include the Gaunt interaction without the additional computational costs of the 
+   |      full Breit interaction.
 
 .. topic:: ``robust``
 
-   | Description:
+   | Description:  Determines whether or not to use the ``robust'' density fitting algorithm.  
    | Default: false
    | Datatype: bool
    | Recommendation: use default.
 
-.. topic:: ``gradient``
+.. topic:: ``maxiter (or maxiter_scf)``
 
-   | Description:
-   | Default: false
-   | Datatype: bool
-   | Recommendation: use default.
-
-.. topic:: ``maxiter (overwrites maxiter_scf)``
-
-   | Description:
+   | Description:  Maximum number of iterations, after which the program will terminate if convergence is not reached.  
    | Default: 100
    | Datatype: int
    | Recommendation: use default.
 
 .. topic:: ``diis_start``
 
-   | Description:
+   | Description:  After the specified iteration, we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm for the 
+   |      to update the orbitals.  
    | Default: 1
    | Datatype: int
    | Recommendation: use default.
 
-.. topic:: ``thresh (overwrites) thresh_scf``
+.. topic:: ``thresh (or thresh_scf)``
 
-   | Description:
+   | Description:  Convergence threshold for the root-mean-squared of the error vector.  
    | Default: 1.0e-8
    | Datatype: double
-   | Recommendation: use default.
+   | Recommendation: The default value is good for production runs; often a looser threshold may be used if generating 
+   |     guess orbitals for ZCASSCF.  
 
 .. topic:: ``thresh_overlap``
 
-   | Description:
+   | Description:  Overlap threshold used to identify linear dependancy in the atomic basis set.  Increasing this value will 
+   |      more aggressively remove linearly dependent basis vectors.  
    | Default: 1.0e-8
    | Datatype: double
    | Recommendation: use default.
 
 .. topic:: ``charge``
 
-   | Description:
+   | Description:  Molecular charge.  
    | Default: 0
    | Datatype: int
-   | Recommendation:
 
 .. topic:: ``multipole``
 
-   | Description:
+   | Description:  Order of multipoles to be used.  At this time, only dipoles are implemented for DHF, but this option is included 
+   |      for future extensions and consistency with non-relativistic HF.  
    | Default: 1
    | Datatype: int
-   | Recommendation:
+   | Recommendation: use default.  
 
 .. topic:: ``pop``
 
-   | Description:
+   | Description:  If set to ``true,'' population analysis of the molecular orbitals will be printed to a file names dhf.log.  
    | Default: false
    | Datatype: bool
-   | Recommendation:
+   | Recommendation:  Not needed for SCF calculations, but this feature can be helpful in finding guess active orbitals for ZCASSCF.  
 
 Example
 =======
@@ -115,7 +114,6 @@ This should be an example that is chemically relevant. There should be text expl
 
 	{
 		"title" : "molecule",
-		"symmetry" : "C1",
 		"basis" : "svp",
 		"df_basis" : "svp-jkfit",
 		"angstrom" : "false",
@@ -146,7 +144,7 @@ References
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    | 
 +===============================================+=======================================================================+
-| General text on relativistic electronic       | Marcus Reiher and A. Wolf, Relativistic Quantum Chemistry,            |
+| General text on relativistic electronic       | Marcus Reiher and Alexander Wolf, Relativistic Quantum Chemistry,     |
 | structure, including Dirac--Hartree--Fock.    | Wiley-VCH, Weinheim, 2009.                                            |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 | Original implementation of density fitted     | Matthew S. Kelley and Toru Shiozaki J. Chem. Phys. 2013, 138, 204113. |
