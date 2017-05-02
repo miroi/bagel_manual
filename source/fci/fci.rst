@@ -33,14 +33,11 @@ Keywords
 ============
 
 
-<<<<<<< Updated upstream
 .. topic:: ``frozen``
 
    | **Description**: to have frozen orbitals or not.
    | **Default**: true
    | **Datatype**: bool
-=======
->>>>>>> Stashed changes
 
 .. topic:: ``algorithm``
    
@@ -60,24 +57,6 @@ Keywords
    | **Datatype**: integer
    | **Values**: `any int`
    | **Recommendation**: The electronic charge of the system. 
-
-
-.. topic:: ``frozen``
-
-<<<<<<< Updated upstream
-   | **Description**: Sp.
-   | **Default**: false.
-   | **Datatype**: boolean
-   | **Values**:
-=======
-   | DESCRIPTION: Set whether or not orbitals are frozen.
-   | DEFAULT: false.
-   | DATATYPE: boolean
-   | VALUES:
->>>>>>> Stashed changes
-   |    ``TRUE``: Freeze orbitals..
-   |    ``FALSE``: Do not freeze obitals.
-   | **Recommendation**: Use default; no frozen orbitals. Freezing orbitals can reduce the cost, but also the accuracy of the calculation.
 
 .. topic:: ``maxiter_fci``
 
@@ -128,6 +107,28 @@ Example
 A series of calculations for H2 with stretching bond, one set using HF and the other set using CI.
 The HF energies will not describe the bond breaking correclty.
 
+===========   ===========         ==========
+Bondlength    Hartree-fock         Full-CI
+(Angstrom)    Energy            
+===========   ===========         ==========
+0.75.         -0.8789543          -0.9944589  
+0.70          -0.9339395          -0.9946156  
+0.85          -0.9781963           0.9941103  
+0.80          -1.0138450           0.9942908  
+0.95          -1.0425208          -0.9937072  
+0.90          -1.0655018           0.9939161  
+1.00          -1.0837989           0.9934825  
+1.10          -1.1094197          -0.9929811  
+1.10          -1.1094197           0.9929811  
+1.20          -1.1241795          -0.9924015  
+1.30          -1.1312939          -0.9917318  
+1.40          -1.1329728           0.9909580  
+1.50          -1.1307655           0.9900640  
+==========    ===========         ===========
+
+Sample input
+------------
+
 .. code-block:: javascript 
 
    { "bagel" : [
@@ -156,15 +157,41 @@ The HF energies will not describe the bond breaking correclty.
 
    ]}
 
+Sample output
+-------------
+
+.. code-block:: javascript 
+
+     * ci vector   0, <S^2> = 0.0000, E =      -75.28621267
+       2-2222-..    -0.9869448133
+       2-2.22-.2     0.0722472124
+       2-22.2-2.     0.0518733106
+       2-2ba2-ba     0.0515088811
+       2-2ab2-ab     0.0515088811
+
+     * ci vector   1, <S^2> = 0.0000, E =      -74.84580572
+       2-222b-a.     0.6892819995
+       2-222a-b.     0.6892819995
+       2-2a2b-ab     0.0966215491
+       2-2b2a-ba     0.0966215491
+       2-22ab-2.     0.0724329521
+       2-22ba-2.     0.0724329521
+       2-2a2b-ba     0.0684729742
+       2-2b2a-ab     0.0684729742
+       2-a22b-2.    -0.0532858928
+       2-b22a-2.    -0.0532858928
+
+
+==========
 References
 ==========
 
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
-+===============================================+=======================================================================+
-| Used for CI convergence algorithm.            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984               |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Used for CI convergence algorithm.            | Harrison, R. J. and Zarrabian, S., **158**, 5, Chem. Phys. Lett.  1989            |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| General reference for CI.                     | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory, Dover Publications            |
-+-----------------------------------------------+-----------------------------------------------------------------------+
+ +-----------------------------------------------+-----------------------------------------------------------------------+
+ |          Description of Reference             |                          Reference                                    | 
+ +===============================================+=======================================================================+
+ | Used for CI convergence algorithm.            | Knowles, P. J. and Handy, N. C., **111.4-5**, 315-321, Chem. Phys. Lett.  1984               |
+ +-----------------------------------------------+-----------------------------------------------------------------------+
+ | Used for CI convergence algorithm.            | Harrison, R. J. and Zarrabian, S., **158**, 5, Chem. Phys. Lett.  1989            |
+ +-----------------------------------------------+-----------------------------------------------------------------------+
+ | General reference for CI.                     | Szabo A. and Ostlund N. S., Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory, Dover Publications            |
+ +===============================================+=======================================================================+

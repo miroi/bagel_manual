@@ -8,9 +8,9 @@ Description
 ===========
 
 CASSCF simultaneously optimizes the orbital coefficients and the CI coefficients of all the possible determinants generated from the active space.
-The second-order algorithm is implemented in BAGEL. The state-averaging scheme for calculating excited states is also implemented.
+The state-averaging scheme for calculating excited states is also implemented.
 
-This algorithm is constructed by macroiterations and microiterations. At each macroiteration,
+The second-order algorithm is implemented in BAGEL. This algorithm is constructed of macroiterations and microiterations. At each macroiteration,
 the CI coefficient is optimized by FCI calculations, while the orbitals are rotated in microiterations. 
 
 Keywords
@@ -93,16 +93,6 @@ Keywords
    | **Values:**
    |    ``true``: Print natural orbitals.
    |    ``false``: Do not print natural orbitals.
-   | **Recommendation:** use default.
-
-.. topic:: ``sort_by_coeff``
-
-   | **Description:** Sort orbitals by coefficients or by occupation number.
-   | **Default:** false.
-   | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Sort by coefficients.
-   |    ``false``: Sort by occupation numbers.
    | **Recommendation:** use default.
 
 .. topic:: ``maxiter``
