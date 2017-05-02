@@ -164,7 +164,7 @@ Example with mixed basis sets and density fitting basis sets:
      "geometry" : [
        { "atom" : "F",  "xyz" : [ -0.000000,     -0.000000,      2.720616]},
        { "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956],
-                        "basis" : "sto-3g", "df_basis" : "cc-pvqz-jkfit" }
+                        "basis" : "cc-pvqz", "df_basis" : "cc-pvqz-jkfit" }
      ]
    },
    
