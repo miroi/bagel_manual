@@ -3,7 +3,7 @@
 .. _hess:
 
 ****************************************
-Molecular hessian and frequency analysis
+Molecular Hessian and frequency analysis
 ****************************************
 
 Description

@@ -18,6 +18,7 @@
 
 .. toctree::
    :maxdepth: 2
+   
 
    scf/scf.rst
    fci/ci_methods.rst  
