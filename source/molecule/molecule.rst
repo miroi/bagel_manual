@@ -110,23 +110,26 @@ Basis sets
 
 The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
-* sto-3g
-* 3-21g  
-* 6-31g
-* svp
-* tzvpp
-* qzvpp
-* cc-pvdz  
-* cc-pvtz  
-* cc-pvqz
-* cc-pv5z  
-* cc-pv6z  
-* aug-cc-pvdz
-* aug-cc-pvtz
-* aug-cc-pvqz
-* aug-cc-pv5z
-* aug-cc-pv6z
-* ano-rcc
+.. hlist::
+   :columns: 3
+
+   * sto-3g
+   * 3-21g  
+   * 6-31g
+   * svp
+   * tzvpp
+   * qzvpp
+   * cc-pvdz  
+   * cc-pvtz  
+   * cc-pvqz
+   * cc-pv5z  
+   * cc-pv6z  
+   * aug-cc-pvdz
+   * aug-cc-pvtz
+   * aug-cc-pvqz
+   * aug-cc-pv5z
+   * aug-cc-pv6z
+   * ano-rcc
 
 ==========================
 Density fitting basis sets
@@ -134,13 +137,16 @@ Density fitting basis sets
 
 The following density fitting basis sets are available in BAGEL library. The basis set name can be used with the ``df_basis`` keyword.
 
-* svp-jkfit
-* tzvpp-jkfit
-* qzvpp-jkfit
-* cc-pvdz-jkfit
-* cc-pvtz-jkfit
-* cc-pvqz-jkfit
-* cc-pv5z-jkfit
+.. hlist::
+   :columns: 3
+
+   * svp-jkfit
+   * tzvpp-jkfit
+   * qzvpp-jkfit
+   * cc-pvdz-jkfit
+   * cc-pvtz-jkfit
+   * cc-pvqz-jkfit
+   * cc-pv5z-jkfit
 
 ========
 Examples
@@ -298,14 +304,17 @@ Effective core potential (ECP) basis sets
 =========================================
 The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
-* ecp10mdf
-* ecp28mdf
-* ecp46mdf
-* ecp60mdf
-* ecp78mdf
-* def2-SVP-ecp
-* def2-SVP-2c-ecp
-* lanl2dz-ecp
+.. hlist::
+   :columns: 3
+
+   * ecp10mdf
+   * ecp28mdf
+   * ecp46mdf
+   * ecp60mdf
+   * ecp78mdf
+   * def2-SVP-ecp
+   * def2-SVP-2c-ecp
+   * lanl2dz-ecp
 
 .. note::
    User-defined ECP basis sets need to contain the keyword "ecp" in the names. 
