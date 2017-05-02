@@ -7,8 +7,15 @@ Dimer ASD
 
 Description
 ===========
-Description to dimer ASD
+The active space decomposition algorithm for molecular dimers allows for efficient computation for the dimer's complete-active-space wave functions. The current algorithm only works for dimer molecules those fragments are not covalently bonded. Full-CI and restricted-active-space-CI can be used to obtain the fragment state wave functions. ASD calculation starts with dimer molecule construction, see (add ref Dimer) section for more information.
 
+
+Dimer Construction
+==================
+.. toctree::
+   :maxdepth: 1
+
+   dimer.rst
 
 Keywords
 ========
