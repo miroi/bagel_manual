@@ -1,4 +1,4 @@
-.. _molecule:
+. _molecule:
 
 *******
 Molecule 
@@ -85,6 +85,45 @@ Example
 
    ]}
 
+====================
+User defined basis sets
+====================
+
+The basis set file is in the following format
+
+.. code-block:: javascript 
+
+ {
+  "H" : [
+    {
+      "angular" : "s",
+      "prim" : [5.4471780, 0.8245470],
+      "cont" : [[0.1562850, 0.9046910]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.1831920],
+      "cont" : [[1.0000000]]
+    }
+  ],
+  "He" : [
+    {
+      "angular" : "s",
+      "prim" : [13.6267000, 1.9993500],
+      "cont" : [[0.1752300, 0.8934830]]
+    }, {
+      "angular" : "s",
+      "prim" : [0.3829930],
+      "cont" : [[1.0000000]]
+    }
+  ]
+ }
+
+| The file is essentially one large array, the elements of which each contain information specifying a given basis function.
+| "angular" defines the kind of orbital (s,p,d,f...) . 
+| "prim" is a array containing the exponents of the primative orbitals from which the basis funciton is composed.
+| "cont" is an array containing the coefficients associated with each of these primiative orbitals.
+
+ 
 ==========
 Basis sets 
 ==========
@@ -129,3 +168,6 @@ Auxiliary basis sets
 * cc-pvqz-ri
 * cc-pvtz-ri
 * cc-pv5z-ri
+
+
+
