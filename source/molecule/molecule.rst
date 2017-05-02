@@ -11,11 +11,11 @@ Required keywords
    | **Datatype**: vector
    | **Values**:
    |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
-        Please see the end of the file for some examples.
+        Please see the end of this section for some examples.
 
 .. topic:: ``basis``
 
-   | **Description**: define default basis set used for the system
+   | **Description**: define the default basis set to be used for the system
    | **Datatype**: string
    | **Values**:
    |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments.
@@ -45,16 +45,17 @@ Optional keywords
 
 .. topic:: ``finite_nucleus``
 
-   | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents 
+   | **Description**: Represent the nucleus as a Gaussian charge distribution with default exponents 
    | **Default**: false 
    | **Datatype**: bool
-   | **Recommendation**: Improves description of relativistic effects. 
+   | **Recommendation**: Improves the description of relativistic effects. 
 
 .. topic:: ``molden_file``
 
-   | **Description**: filename of input molden file, which is required if ``"basis" : "molden"`` is specified.
+   | **Description**: filename of an input molden file, which is required if ``"basis" : "molden"`` is specified.
    | **Datatype**: string
-   | **Recommendation**: False. However, this can be useful for doing investigative calculations before using active space methods.
+   | **Recommendation**: We recommend not restarting from a molden file whenever possible; however, this can be useful in some cases (for example, reading guess orbitals for highly symmetric molecules). Additionally, for larger calculations where the first calculation to converge the active space is time consuming, restarting from these optimized orbitals can be useful when performing subsequent calcualtions (for example, a geometry optimization) 
+
  
 .. topic:: ``cfmm``
 
@@ -231,7 +232,6 @@ and providing a value for ``"molden_file"``:
    
    {
      "title" : "molecule",
-     "symmetry" : "C1",
      "basis" : "molden",
      "df_basis" : "svp-jkfit",
      "cartesian" : true,
