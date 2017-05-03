@@ -17,12 +17,12 @@ In a force calculation, the methods can be nested in the followoing way. This is
 
   {
     "title" : "force",
-      "method" : [ {
+    "method" : [ {
       "title" : "caspt2",
-        "smith" : {
-           "method" : "caspt2",
-           "shift" : 0.2,
-           "frozen" : true
+      "smith" : {
+        "method" : "caspt2",
+        "shift" : 0.2,
+        "frozen" : true
       },
       "nstate" : 3,
       "nact" : 7,
@@ -36,21 +36,21 @@ The same calculation could also be performed by setting up the input specifying 
 
   {
     "title" : "force",
-      "method" : [ 
-        {
-          "title" : "casscf",
-          "nstate" : 3,
-          "nact" : 7,
-          "nclosed" : 44
-        },
+    "method" : [ 
+      {
+        "title" : "casscf",
+        "nstate" : 3,
+        "nact" : 7,
+        "nclosed" : 44
+      },
 
-        {
-          "title" : "smith",
-          "method" : "caspt2",
-          "shift" : 0.2,
-          "frozen" : true
-        } 
-      ]
+      {
+        "title" : "smith",
+        "method" : "caspt2",
+        "shift" : 0.2,
+        "frozen" : true
+      } 
+    ]
   }
 
 
