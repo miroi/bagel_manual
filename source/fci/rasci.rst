@@ -12,10 +12,10 @@ Description
 
 The basis into which the wavefunction is expanded is typically constructed by
 applying excitation operators to the determinant(s) included in the ground
-state wavefunction. The Restricted Active Space (RAS) method constrainst the
+state wavefunction. The Restricted Active Space (RAS) method constrains the
 types of excitations which can occur resulting in a smaller basis, and ideally
 a lower computational cost than that of full CI.  In RASCI as implemented in
-Bagel, the user constrains the excitations by specifying three "active" spaces,
+Bagel, the user constrains the excitations by specifying three "active" subspaces,
 R1, R2 and R3, which are three sets of orbitals.  The determinants in the CI
 expansion are obtained by exciting from R1 into R2, from R2 to R3, or between
 occupied and unoccupied orbitals in R2.  The number of excitations between R1
@@ -27,7 +27,7 @@ by specifying the maximium number of electrons which can occur in R2.
 This is useful close analysis of the impact of specific
 excitations on dynamic correlation effects, and also for investigating
 properties which depend on only a few specific excitations (e.g., x-ray
-adsorption spectra). The disadvantage is that the RASCI basis smaller than CI,
+adsorption spectra). The disadvantage is that the RASCI basis is smaller than full-CI,
 and that the active spaces must be selected with caution.
 
 The RASCI method is closely related to the :ref:`rasci` method.
@@ -97,7 +97,7 @@ Keywords
 
 .. topic:: ``maxiter``
 
-   | **Description**: Maximum number of iterations in RASCI algorithm 
+   | **Description**: Maximum number of iterations in RASCI algorithm.
    | **Default**: 100 
    | **Datatype**: integer
    | **Values**: ``Any positive integer``
@@ -105,7 +105,7 @@ Keywords
 
 .. topic:: ``davidson_subspace``
 
-   | **Description**: Maximum dimension of subspace used for Davidson diagonalization
+   | **Description**: Maximum dimension of subspace used for Davidson diagonalization.
    | **Default**: 20 
    | **Datatype**: integer
    | **Values**: ``Any positive integer``
@@ -119,15 +119,15 @@ Keywords
    | **Values**: ``any positive double``
    | **Recommendation**: User dependent, calculation of multiple states are slower.
 
-.. topic:: ``thresh```
+.. topic:: ``thresh``
 
-   | **Description**: Threshold for convergence of selected RASCI algorithm 
+   | **Description**: Threshold for convergence of selected RASCI algorithm.
    | **Default**: 1.0e-10 
    | **Datatype**: double
    | **Values**: ``any positive double``
    | **Recommendation**: Default, reduce for greater accuracy.
 
-.. topic:: ``batchsize```
+.. topic:: ``batchsize``
 
    | **Description** : Number of terms from RASCI interaction to be evaluated at simulataneously.
    | **Default**: 512 
