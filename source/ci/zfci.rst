@@ -21,104 +21,69 @@ Keywords
 .. topic:: ``maxiter (or maxiter_fci)``
 
    | **Description**: Maximum number of iterations in the FCI algorithm.
-   | **Default**: 100
    | **Datatype**: int
+   | **Default**: 100
    | **Recommendation**: Use default value. 
 
 .. topic:: ``davidson_subspace``
 
    | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
-   | **Default**: 20
    | **Datatype**: int
+   | **Default**: 20
    | **Recommendation**: Any number above 3 is reasonable.  
 
 .. topic:: ``thresh (or thresh_fci)``
 
    | **Description**: Threshold for the convergence of the selected CI algorithm.
-   | **Default**: 1.0e-10 
    | **Datatype**: double
+   | **Default**: 1.0e-10 
    | **Recommendation**: Use default value.
 
 .. topic:: ``print_thresh``
 
    | **Description**: Threshold below which CI coefficients are not printed.  
-   | **Default**: 0.05
    | **Datatype**: double
+   | **Default**: 0.05
 
 .. topic:: ``state``
 
    | **Description**: Number of states computed for each spin value.
-   | **Default**: There is no default; this parameter must be supplied in the input.  
    | **Datatype**: vector<int>
+   | **Default**: There is no default; this parameter must be supplied in the input.  
    | **Note**: An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example, the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).  Be careful!  While the spin values you specified are used in generating the guess CI coefficients, the spin vectors will mix, and the algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.  
 
 .. topic:: ``gaunt``
 
    | **Description**: Used to specify the form of the 2-electron Hamiltonian.  The default is the Dirac--Coulomb Hamiltonian. If ``gaunt`` is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit coupling between electrons.  
-   | **Default**: Value obtained from reference wavefunction.  
    | **Datatype**: bool
+   | **Default**: Value obtained from reference wavefunction.  
    | **Recommendation**: Choose based on the importance of the relativistic effects in your problem.  
 
 .. topic:: ``breit``
 
    | **Description**: Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
-   | **Default**: Value obtained from reference wavefunction.  
    | **Datatype**: bool
+   | **Default**: Value obtained from reference wavefunction.  
    | **Recommendation**: Choose based on the importance of relativistic effects in your problem.  
 
 .. topic:: ``frozen``
 
    | **Description**: If this is set to true, and ``ncore`` is not specified, then core molecular orbitals are frozen in all Slater determinants.  
-   | **Default**: false.
    | **Datatype**: bool
+   | **Default**: false
    | **Recommendation**: Frozen orbitals reduce the computational cost with some tradeoff in accuracy.  Freezing the core is often a good compromise, but this will depend on your particular problem. 
 
 .. topic:: ``ncore``
 
-   | **Description**:  Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by ``frozen``.
+   | **Description**: Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by ``frozen``.
    | **Default**: Either zero or all core orbitals, depending on the ``frozen`` parameter.  
-   | **Default**:  There is no default; this parameter must be supplied in the input.
-   | **Datatype**: vector<int>
-   | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example,
-   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
-   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
-   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
-
-.. topic:: ``gaunt``
-
-   | **Description**:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
-   |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit
-   |     coupling between electrons.
-   | **Default**: Value obtained from reference wavefunction.
-   | **Datatype**: bool
-   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.
-
-.. topic:: ``breit``
-
-   | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.
-   | **Default**: Value obtained from reference wavefunction.
-   | **Datatype**: bool
-   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.
-
-.. topic:: ``frozen``
-
-   | **Description**:  If this is set to true, and "ncore" is not specified, then core molecular orbitals are frozen as doubly occupied in all Slater determinants.
-   | **Default**: false.
-   | **Datatype**: bool
-   | **Recommendation**:  Frozen orbitals reduce the computational cost with some tradeoff in accuracy.  Freezing the core is often a good compromise, but this will depend on your particular problem.
-
-.. topic:: ``ncore``
-
-   | **Description**:  Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by "frozen."
-   | **Default**: Either zero or all core orbitals, depending on the "frozen" parameter.
-   | **Datatype**: bool
 
 .. topic:: ``norb``
 
-   | **Description**: Number of correlated orbitals. Any high-energy orbitals in excess of this number will be unoccupied.  
-   | **Default**: All molecular orbitals except those excluded using ncore.
-   | **Datatype**: int
-   | **Recommendation**: Include all virtual orbitals, if you can afford it.
+   | Description: Number of correlated orbitals. Any high-energy orbitals in excess of this number will be unoccupied.
+   | Datatype: int
+   | Default: All molecular orbitals except those excluded using ncore.
+   | Recommendation: Include all virtual orbitals, if you can afford it.
 
 .. topic:: ``only_ints``
 
