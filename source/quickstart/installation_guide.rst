@@ -30,14 +30,16 @@ The simplest approach is to just download and extract the tarball containing the
      $ cd /your/parent/directory
      $ wget https://github.com/nubakery/bagel/archive/v\ |version|\ .tar.gz
      $ tar -xzvf bagel-\ |version|\ .tar.gz
-     $ cd BAGEL
+     $ cd bagel
 
 Alternatively, you can clone the git repository:
 
 .. parsed-literal::
      $ cd /your/parent/directory
      $ git clone https://github.com/nubakery/bagel.git
-     $ cd BAGEL
+     $ cd bagel
+
+The SMITH3 code generator can be downloaded in a similar manner from `the NUBakery GitHub page <https://github.com/nubakery/>`_.
 
 -----------
 Build BAGEL
@@ -71,6 +73,9 @@ Build BAGEL
      | ``--with-include``  can be used to specifically include paths.
      | ``--with-libxc`` turns on the interface to libxc.
      | ``CXXFLAGS=-DNDEBUG`` deactivates the debugging mode. It is absolutely essential to specify "-DNDEBUG" for release builds.
+     | ``CXXFLAGS=-DCOMPILE_J_ORB`` allows the inclusion of *j*-type atomic basis functions, in addition to *s*, *p*, *d*, *f*, *g*, *h*, and *i*.  
+             This will increase the compile time and binary size, and is usually unnecessary.  
+             *j*-type basis functions might be worth using in the fitting basis set for Dirac--Breit calculations of very heavy elements.  
 
   Example (Release build on the Shiozaki group's cluster) ::
 
@@ -88,4 +93,20 @@ Build BAGEL
 * Test run ::
 
     $ ./BAGEL path_to_bagel/test/benzene_svp_mp2.json
+
+* Additional Notes
+
+  * Configuring without MKL
+
+    | If MKL is not available, the path to cblas headers may need to be included as a configure option
+    |      (e.g., '--with-include=-I/usr/path/to/cblas').  
+    | Furthermore, if relativistic calculations fail without MKL, users may consider reconfiguring and recompiling with -DZDOT_RETURN in CXXFLAGS.
+  
+  * Compiling on small machines
+
+    | Some files in BAGEL require several GB of RAM to compile.  This is generally not a problem for clusters, but on personal computers the 
+    |      compilation will occasionally fail.  Compiling with only one thread (make -j1) and not using -DCOMPILE_J_ORB can help.  
+
+
+
 
