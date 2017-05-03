@@ -79,7 +79,6 @@ Keywords
 
    | **Description**:  Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by ``frozen``.
    | **Default**: Either zero or all core orbitals, depending on the ``frozen`` parameter.  
-=======
    | **Default**:  There is no default; this parameter must be supplied in the input.
    | **Datatype**: vector of integers
    | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example,
