@@ -23,14 +23,14 @@ Keywords
 .. topic:: ``orbitals``
 
    | **Description:** Molecular orbitals are written to the molden file.
-   | **Default:** false
    | **Datatype:** bool
+   | **Default:** false
 
 .. topic:: ``vibration``
 
    | **Description:** The vibrational frequencies, infrared intensities, and the cartesian eigenvectors of the normal modes are written to the molden file.
-   | **Default:** false
    | **Datatype:** bool
+   | **Default:** false
 
 =======
 Example

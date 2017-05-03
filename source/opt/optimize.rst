@@ -30,39 +30,39 @@ Required Keywords
 .. topic:: ``title``
 
    | **Description:** Request geometry optimization.
-   | **Default:** N/A
    | **Datatype:** string
    | **Values:** (optimize)
    |    ``optimize``: Optimize geometry.
+   | **Default:** N/A
 
 .. topic:: ``opttype``
 
    | **Description:** Type of the optimization calculations.
-   | **Default:** energy.
    | **Datatype:** string
    | **Values:**
    |    ``energy``: find the most stable geometry.
    |    ``conical``: find the conical intersections, according to gradient projection method.
    |    ``transition``: find the transition state geometry (saddle point on the PES).
    |    ``mep``: find the minimum energy path using the second-order algorithm, starting from the transition state geometry.
+   | **Default:** energy.
 
 .. topic:: ``target``
 
    | **Description:** The target state to optimize.
-   | **Default:** 0
    | **Datatype:** int
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
+   | **Default:** 0
 
 .. topic:: ``target2``
 
    | **Description:** The second target state to optimize in the conical intersection optimization.
-   | **Default:** 1
    | **Datatype:** int
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
+   | **Default:** 1
 
 .. topic:: ``method``
 
@@ -74,22 +74,22 @@ Convergence Criteria
 .. topic:: ``maxgrad``
 
    | **Description:** Maximum component of the gradient in Hartree / Bohr.
-   | **Default:** 0.00001 (atoms in the molecule < 4); 0.0003 (larger).
    | **Datatype:** double precision.
+   | **Default:** 0.00001 (atoms in the molecule < 4); 0.0003 (larger).
    | **Recommendation:** use default.
 
 .. topic:: ``maxdisp``
 
    | **Description:** Maximum component of the displacement in Bohr.
-   | **Default:** 0.00004 (atoms in the molecule < 4); 0.0012 (larger).
    | **Datatype:** double precision.
+   | **Default:** 0.00004 (atoms in the molecule < 4); 0.0012 (larger).
    | **Recommendation:** use default.
 
 .. topic:: ``maxchange``
 
    | **Description:** The energy change in Hartree.
-   | **Default:** 0.000001.
    | **Datatype:** double precision.
+   | **Default:** 0.000001.
    | **Recommendation:** use default.
 
 Optional Keywords (Universal)
@@ -98,102 +98,102 @@ Optional Keywords (Universal)
 .. topic:: ``algorithm``
 
    | **Description:** Algorithm for the optimization calculations.
-   | **Default:** ef.
    | **Datatype:** string
    | **Values:**
    |    ``ef``: Eigenvector-following (EF) algorithm.
    |    ``rfo``: Rational functional optimization algorithm.
    |    ``nr``: Newton--Raphson algorithm.
+   | **Default:** ef.
    | **Recommendation:** use either "ef" or "rfo".
 
 .. topic:: ``maxstep``
 
    | **Description:** Maximum step. The unit is in the specifed coordinate.
-   | **Default:** 0.3 (energy optimization); 0.1 (otherwise).
    | **Datatype:** double precision.
+   | **Default:** 0.3 (energy optimization); 0.1 (otherwise).
    | **Recommendation:** use default.
 
 .. topic:: ``internal``
 
    | **Description:** Use internal coordinate or not.
-   | **Default:** true.
    | **Datatype:** bool
    | **Values:**
    |    ``true``: use internal coordinates.
    |    ``false``: use Cartesian coordinates.
+   | **Default:** true.
    | **Recommendation:** use default when you have a single molecule. If bond-breaking process is in consideration, use "false".
 
 .. topic:: ``redundant``
 
    | **Description:** Use redunant internal coordinate or delocalized internal coordinate.
-   | **Default:** false.
    | **Datatype:** bool
    | **Values:**
    |    ``true``: use redundant internal coordinate.
    |    ``false``: use delocalized internal coordinate.
+   | **Default:** false.
    | **Recommendation:** use default, except for the cases that has a problem in constructing delocalized internals (such as formaldehyde).
 
 .. topic:: ``maxiter``
 
    | **Description:** Maximum number of iteration for optimization.
-   | **Default:** 100.
    | **Datatype:** int
+   | **Default:** 100.
    | **Recommendation:** use default.
 
 .. topic:: ``maxziter``
 
    | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to SA-CASSCF, CASPT2, and MP2 calculations.
-   | **Default:** 100.
    | **Datatype:** int
+   | **Default:** 100.
    | **Recommendation:** increase the value when the Z-vector equation does not converge.
 
 .. topic:: ``numerical``
 
    | **Description:** Use numerical gradient.
-   | **Default:** false.
    | **Datatype:** bool
    | **Values:**
    |    ``true``: use numerical gradient.
    |    ``false``: use analytical gradient.
+   | **Default:** false.
    | **Recommendation:** use default.
 
 .. topic:: ``numerical_dx``
 
    | **Description:** \Delta x for numerical gradient.
-   | **Default:** 0.001 (bohr).
    | **Datatype:** double precision
+   | **Default:** 0.001 (bohr).
    | **Recommendation:** use default.
 
 .. topic:: ``hess_update``
 
    | **Description:** Hessian updating scheme.
-   | **Default:** flowchart.
    | **Datatype:** string
    | **Values:**
    |    ``flowchart``: use flowchart update. This automatically decides according to the shape of PES.
    |    ``bfgs``: use BFGS scheme.
    |    ``psb``: use PSB scheme.
    |    ``sr1``: use SR1 scheme.
+   | **Default:** flowchart.
    | **Recommendation:** use default.
 
 .. topic:: ``hess_approx``
 
    | **Description:** Use approximate Hessian for the initial step of the optimization.
-   | **Default:** true.
    | **Datatype:** bool
    | **Values:**
    |    ``true``: use approximate Hessian.
    |    ``false``: calculate numerical Hessian first, and start the optimization using the Hessian.
+   | **Default:** true.
    | **Recommendation:** use default.
 
 .. topic:: ``adaptive``
 
    | **Description:** Use adaptive stepsize in RFO algorithm.
-   | **Default:** true (algorithm is RFO); false (otherwise).
    | **Datatype:** bool
    | **Values:**
    |    ``true``: use adaptive maximum stepsize.
    |    ``false``: use fixed maximum stepsize.
+   | **Default:** true (algorithm is RFO); false (otherwise).
    | **Recommendation:** use default.
 
 Optional Keywords (Conical Intersection Optimization)
@@ -202,26 +202,26 @@ Optional Keywords (Conical Intersection Optimization)
 .. topic:: ``nacmtype``
 
    | **Description:** Type of non-adiabatic coupling matrix element to be used.
-   | **Default:** 1.
    | **Datatype:** int
    | **Values:**
    |    ``0``: use full nonadiabatic coupling.
    |    ``1``: use interstate coupling.
    |    ``2``: use nonadiabatic coupling with built-in electronic translational factor (ETF).
+   | **Default:** 1.
    | **Recommendation:** use default.
 
 .. topic:: ``thielc3``
 
    | **Description:** Thiel's C_3 parameter, which is multiplied to the full gradient.
-   | **Default:** 2.0.
    | **Datatype:** double precision
+   | **Default:** 2.0.
    | **Recommendation:** use default.
 
 .. topic:: ``thielc4``
 
    | **Description:** Thiel's C_4 parameter, which is multiplied to the gradient difference.
-   | **Default:** 0.5
    | **Datatype:** double precision
+   | **Default:** 0.5
    | **Recommendation:** use default.
 
 Optional Keywords (Minimum Energy Path)
@@ -230,11 +230,11 @@ Optional Keywords (Minimum Energy Path)
 .. topic:: ``mep_direction``
 
    | **Description:** Direction of the MEP calculation from the transition state.
-   | **Default:** 1.
    | **Datatype:** int
    | **Values:**
    |    ``1``: use the direction of the lowest eigenvector.
    |    ``-1``: use the opposite direction of the lowest eigenvector.
+   | **Default:** 1.
    | **Recommendation:** run two calculations with "1" and "-1" to get the full path.
 
 
