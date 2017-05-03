@@ -226,7 +226,15 @@ latex_elements = {
 \\ChNumVar{\\bfseries\\Huge}
 \\ChNameVar{\\bfseries\\Huge}
 \\ChTitleVar{\\bfseries\\Huge}
+\\include{titlesec}
+\\titleformat{\\section}[hang]
+{\\usefont{T1}{qhv}{b}{n}\\selectfont}{}{0em}{\\hspace{-0.4pt}\\Large \\thesection\\hspace{0.6em}}
+\\titleformat{\\subsection}[hang]
+{\\usefont{T1}{qhv}{b}{n}\\selectfont}{}{0em}{\\hspace{-0.4pt}\\large \\thesubsection\\hspace{0.6em}}
 ''',
+#\\titleformat{\\section}[display]
+#  {\\small\\bfseries}{}{0pt}{\\Large}
+#''',
 
 #\\ChTitleVar{\\bfseries\\Huge\\rm}
 #\\ChNumVar{\\normalfont\\Huge\\ttfamily}
