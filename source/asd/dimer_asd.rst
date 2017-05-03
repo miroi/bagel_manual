@@ -1,4 +1,3 @@
-.. index:: asd
 .. _dimer_asd:
 
 *********

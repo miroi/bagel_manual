@@ -1,5 +1,3 @@
-.. index:: basis, df_basis, ecp, geometry, dkh
-
 .. _molecule:
 
 Required keywords

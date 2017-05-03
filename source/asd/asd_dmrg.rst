@@ -1,4 +1,3 @@
-.. index:: asd_dmrg
 .. _asd_dmrg:
 
 ********

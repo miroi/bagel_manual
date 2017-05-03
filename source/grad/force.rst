@@ -1,5 +1,3 @@
-.. _index: force, title, method, nacmtype, numerical, dx, target, target2, export, export_single, maxziter,load_ref, ref_load
-
 .. _force:
 
 ****************************************
