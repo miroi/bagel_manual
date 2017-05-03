@@ -1,5 +1,3 @@
-.. index:: nevpt2
-
 .. _nevpt2:
 
 *****************************************************
@@ -45,7 +43,7 @@ The default values are recommended unless mentioned otherwise.
 
    | **Description**: specific state used in the evaluation of the dynamical correlation
    | **Default**: 0
-   | **Datatype**: integer
+   | **Datatype**: int
 
 Example
 =======

@@ -4,7 +4,7 @@
 Perturbation theory
 *******************
 
-PT2 methods include MP2, CASPT2, and NEVPT2
+BAGEL can perform various perturbation theory calculations to describe dynamical correlation, including Møller–Plesset perturbation theory (MP2), N-electron valence state perturbation theory (NEVPT2), and multireference second order perturbation theory (CASPT2). Note that the CASPT2 implementation in BAGEL is done by the automatic code generator SMITH3, and is described in the separate page.
 
 .. toctree::
    :maxdepth: 2

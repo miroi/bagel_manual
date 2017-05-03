@@ -54,7 +54,7 @@ Keywords
 .. topic:: ``region_size``
 
    | **Description:** Define the regions used if type is set to region.
-   | **Datatype:** vector of integers
+   | **Datatype:** vector<int>
    | **Values:** Define vector. For example, 3 regions of 2 atoms each would be [2,2,2]
 
 .. topic:: ``lowdin``

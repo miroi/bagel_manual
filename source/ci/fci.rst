@@ -1,5 +1,3 @@
-.. index:: fci
-
 .. _fci:
 
 ************************************
@@ -37,7 +35,7 @@ Keywords
 
    | **Description**: Number of orbitals in which electrons can be populated.
    | **Default**: Uses all possible orbitals
-   | **Datatype**: integer
+   | **Datatype**: int
    | **Recommendation**: System dependent, the user should specify a value. Using all possible configurations is typically computationally expensive and is best reserved for benchmarking calculations.
 
 .. topic:: ``algorithm``
@@ -55,19 +53,19 @@ Keywords
 
    | **Description**: The electronic charge of the system.
    | **Default**:  0
-   | **Datatype**: integer
+   | **Datatype**: int
 
 .. topic:: ``maxiter_fci``
 
    | **Description**: Maximum number of iterations in the FCI algorithm.
    | **Default**: 100
-   | **Datatype**: integer
+   | **Datatype**: int
 
 .. topic:: ``nspin``
 
    | **Description**: Number of unpaired electrons.
    | **Default**: 0
-   | **Datatype**: integer
+   | **Datatype**: int
    | **Values**: Any positive integer
    | **Recommendation**: Be careful as a common mistake is to input the total spin or multiplicity and not the number of electrons.
 
@@ -75,7 +73,7 @@ Keywords
 
    | **Description**: Number of states to calculate.
    | **Default**: 1
-   | **Datatype**: integer
+   | **Datatype**: int
 
 .. topic:: ``restart``
 
