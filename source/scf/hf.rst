@@ -33,14 +33,14 @@ The default values are recommended unless mentioned otherwise.
 
    | **Description**: number of iterations and number of SCF interations, after which the program will terminate if convergence is not reached.
    | **Default**: :math:`100`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``diis_start``
 
    | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
                       algorithm to update the orbitals.
    | **Default**: :math:`1`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 
 .. topic:: ``thresh_overlap``
@@ -55,21 +55,21 @@ The default values are recommended unless mentioned otherwise.
    | **Description**: rank of Cartesian multipole moments printed out.
    | **Default** : :math:`1` (dipoles)
    | **Values** : :math:`1, 2`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``dma``
 
    | **Description**: options to print out multipole moments from distributed multipole analysis.
    | **Default** : :math:`0` (not print out)
    | **Values** : :math:`0, 1, 2, 3`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 
 .. topic:: ``charge``
 
    | **Description**: molecular charge
    | **Default** : :math:`0`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``nopen``
 
@@ -90,39 +90,39 @@ Keywords for RHF-FMM
 
    | **Description**: level of descritization which controls the number of lowest-level boxes in one dimension for FMM
    | **Default**: :math:`4`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``ws``
 
    | **Description**: well-separatedness index, which is the number of boxes that must separate
-                      two collections of charges before they are considered distant 
+                      two collections of charges before they are considered distant
                       and can interact through multipole expansions
    | **Default**: :math:`2`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``lmax``
 
    | **Description**: order of the multipole expansions in FMM-J
    | **Default**: :math:`10`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``exchange``
 
    | **Description**: whether to include far-field exchange using occ-RI-FMM
    | **Default**: false
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``lmax_exchange``
 
    | **Description**: order of the multipole expansions in FMM-K
    | **Default**: :math:`2`
-   | **Datatype**: int 
+   | **Datatype**: int
 
 .. topic:: ``fmm_thresh``
 
    | **Description**: integral screening threshold used in FMM
    | **Default**: ``thresh_overlap``
-   | **Datatype**: double 
+   | **Datatype**: double
 
 Examples
 ========
@@ -131,10 +131,10 @@ Below are some examples for SCF calculations using RHF, ROHF, UHF, SOSCF, and RH
 RHF
 ---
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "svp",
@@ -145,22 +145,22 @@ RHF
        { "atom" : "H",  "xyz" : [ -0.000000,     -0.000000,      0.305956]}
      ]
    },
-   
+
    {
      "title" : "hf",
      "thresh" : 1.0e-8
    }
-   
+
    ]}
 
 The converged SCF energy is :math:`-99.84772354` after :math:`11` iterations.
 
 ROHF
 ----
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "svp",
@@ -171,22 +171,22 @@ ROHF
        { "atom" : "H",  "xyz" : [    0.000000,      0.000000,      0.000000] }
      ]
    },
-   
+
    {
      "title" : "rohf",
      "nact" : 1
    }
-   
+
    ]}
 
 The converged SCF energy is :math:`-38.16810629` after :math:`11` iterations.
 
 UHF
 ---
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "svp",
@@ -197,12 +197,12 @@ UHF
        { "atom" : "H",  "xyz" : [  -0.000000,     -0.000000,      0.000000]}
      ]
    },
-   
+
    {
      "title" : "uhf",
      "nact" : 1
    }
-   
+
    ]}
 
 The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations.
@@ -210,10 +210,10 @@ The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations.
 SOSCF
 -----
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "ecp28mdf",
@@ -225,26 +225,26 @@ SOSCF
                         "basis" : "sto-3g"}
      ]
    },
-   
+
    {
      "title" : "soscf"
    }
-   
+
    ]}
 
 RHF-FMM
 -------
 .. figure:: hf-graphene.png
-    :width: 300px
+    :width: 30 % 
     :align: center
     :alt: alternate text
     :figclass: align-center
 
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "/home/le/develop/bagel/src/basis/3-21g.json",
@@ -374,7 +374,7 @@ RHF-FMM
        { "atom" : "H", "xyz" : [      8.890000000,   -3.689268220,    0.000000000] }
      ]
    },
-   
+
    {
      "df" : false,
      "ns" : "4",
@@ -386,7 +386,7 @@ RHF-FMM
      "title" : "hf",
      "thresh" : 1.0e-6
    }
-   
+
    ]}
 
 References
@@ -395,7 +395,7 @@ BAGEL References
 ----------------
 
 +-----------------------------------------------+----------------------------------------------------------------------------+
-|          Description of Reference             |                               Reference                                    | 
+|          Description of Reference             |                               Reference                                    |
 +===============================================+============================================================================+
 | Exact exchange evaluation using occ-RI-FMM    | H\.-A. Le and T. Shiozaki, *in preparation*.                               |
 +-----------------------------------------------+----------------------------------------------------------------------------+
@@ -403,7 +403,7 @@ BAGEL References
 General References
 ------------------
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-|          Description of Reference             |                               Reference                                          | 
+|          Description of Reference             |                               Reference                                          |
 +===============================================+==================================================================================+
 | General text on electronic structure theory   | A\. Szabo and N. S. Ostlund,                                                     |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |

@@ -2,7 +2,7 @@
 .. _asd_dmrg:
 
 ********
-ASD-DMRG 
+ASD-DMRG
 ********
 
 
@@ -12,7 +12,7 @@ ASD-DMRG algorithm is able to deal with molecular aggregates with more than two 
 
 Multisite construction
 ======================
-.. toctree:: 
+.. toctree::
    :maxdepth: 1
 
    multisite.rst
@@ -22,7 +22,7 @@ Keywords
 ========
 
 .. topic:: ``method``
-   
+
    | **Description:** Method to compute active subspaces.
    | **Datatype:** string
    | **Value:**
@@ -34,7 +34,7 @@ Keywords
    | **Recommendation:** See :ref:`rasci` for details.
 
 .. topic:: ``restricted``
-   
+
    | **Description:** Specify occupation restriction in active space.
    | **Recommendation:** See sample input for details.
 
@@ -45,43 +45,43 @@ Keywords
    | **Recommendation:** See sample input for details.
 
 .. topic:: ``nstates``
-   
+
    | **Description:** Number of target states.
    | **Datatype:** int
    | **Default** 1
 
 .. topic:: ``ntrunc``
-   
+
    | **Description:** Number of dmrg states to keep.
    | **Datatype:** int
 
 .. topic:: ``thresh``
-   
+
    | **Description:** Threshold for convergence in Davidson diagonalization.
    | **Datatype:** double
 
 .. topic:: ``maxiter``
-   
+
    | **Description:** Maximum number of iterations for Davidson diagonalization.
    | **Datatype:** int
    | **Default:** 50
 
 .. topic:: ``perturb``
-   
+
    | **Description:** Initial perturbation value.
    | **Datatype:** double
    | **Default:** 0.001
    | **Recommendation:** Use default.
 
 .. topic:: ``perturb_thresh``
-   
+
    | **Description:** Threshold for energy convergence when perturbation is applied.
    | **Datatype:** double
    | **Default:** 0.0001
    | **Recommendation:** Use default.
-  
+
 .. topic:: ``perturb_min``
-   
+
    | **Description:** Minimum perturbation to be applied.
    | **Datatype:** double
    | **Default:** 0.00001
@@ -99,7 +99,7 @@ Sample input
 .. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "svp",
@@ -110,12 +110,12 @@ Sample input
        {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     0.00000000000000] }
      ]
    },
-   
+
    {
      "title" : "hf",
      "saveref" : "A"
    },
-   
+
    {
      "title" : "molecule",
      "basis" : "svp",
@@ -126,12 +126,12 @@ Sample input
        {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     3.00000000000000] }
      ]
    },
-   
+
    {
      "title" : "hf",
      "saveref" : "B"
    },
-   
+
    {
      "title" : "molecule",
      "basis" : "svp",
@@ -142,12 +142,12 @@ Sample input
        {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     6.00000000000000] }
      ]
    },
-   
+
    {
      "title" : "hf",
      "saveref" : "C"
    },
-   
+
    {
      "title" : "multisite",
      "refs" : ["A", "B", "C"],
@@ -160,7 +160,7 @@ Sample input
        "thresh" : 1.0e-12
      }
    },
-   
+
    {
      "title" : "asd_dmrg",
      "nstate" : 2,
@@ -182,7 +182,7 @@ Sample input
                     {"charge" : -1, "nspin" : 1, "nstate" : 1} ] ],
      "restricted" : [ { "orbitals" : [ 1, 0, 4], "max_holes" : 1, "max_particles" : 1 } ]
    }
-   
+
    ]}
 
 
@@ -190,7 +190,7 @@ Reference
 =========
 
 +------------------------------------------------+--------------------------------------------------------------------------------+
-|          Description of Reference              |                          Reference                                             | 
+|          Description of Reference              |                          Reference                                             |
 +================================================+================================================================================+
 | Active space decomposition with multiple sites:| S\. M. Parker and T. Shiozaki, J. Chem. Phys. **141**, 211102 (2014).          |
 | density matrix renormalization group algorithm |                                                                                |

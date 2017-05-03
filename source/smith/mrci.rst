@@ -64,7 +64,7 @@ SMITH keywords
 .. topic:: ``nfrozenvirt``
 
    | **Description:** Number of frozen virtual orbitals.
-   | **Default:** 0 
+   | **Default:** 0
    | **Datatype:** integer
    | **Recommendation:** Use default.
 
@@ -90,9 +90,8 @@ References
 ==========
 
 +---------------------------------------------------+-------------------------------------------------------------------------------------+
-|          Description of Reference                 |                         Reference                                                   | 
+|          Description of Reference                 |                         Reference                                                   |
 +===================================================+=====================================================================================+
 |  Fully internally contracted (Rel)MRCI            | T\. Shiozaki and W. Mizukami, J. Chem. Theory Comput. **11**, 4733 (2015)           |
 +---------------------------------------------------+-------------------------------------------------------------------------------------+
->>>>>>> 4db2aa50659f3f8685f92d77d783c446bd3e5e46
 

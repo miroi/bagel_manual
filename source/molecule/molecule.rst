@@ -7,7 +7,7 @@ Required keywords
 
 .. topic:: ``geometry``
 
-   | **Description**: specify atoms and their Cartesian coordinates  
+   | **Description**: specify atoms and their Cartesian coordinates
    | **Datatype**: vector
    | **Values**:
    |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
@@ -28,8 +28,8 @@ Required keywords
    | **Values**:
    |     Please refer to `Density fitting basis sets`_ for possible arguments
 
-.. note:: 
-   The use of mixed basis sets and/or density fitting basis sets is possible by specifying a different 
+.. note::
+   The use of mixed basis sets and/or density fitting basis sets is possible by specifying a different
    basis set other than the default for each atom (see example for `Basis sets`_ below).
 
 Optional keywords
@@ -45,69 +45,69 @@ Optional keywords
 
 .. topic:: ``finite_nucleus``
 
-   | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents 
-   | **Default**: false 
-   | **Datatype**: boolean 
-   | **Recommendation**: Improves description of relativistic effects. 
+   | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents
+   | **Default**: false
+   | **Datatype**: boolean
+   | **Recommendation**: Improves description of relativistic effects.
 
 .. topic:: ``molden_file``
 
    | **Description**: filename of input molden file, which is required if ``"basis" : "molden"`` is specified.
    | **Datatype**: string
    | **Recommendation**: False. However, this can be useful for doing investigative calculations before using active space methods.
- 
+
 .. topic:: ``cfmm``
 
    | **Description**: Option to do RHF-FMM, in which case density fitting is not used, for more details,
                       refer to :ref:`hf` section.
-   | **Default**: false 
-   | **Datatype**: boolean 
-   | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules. 
+   | **Default**: false
+   | **Datatype**: boolean
+   | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules.
 
 .. topic:: ``schwarz_thresh``
 
    | **Description**: Schwarz screening integral threshold (only used in RHF-FMM by specifying ``"cfmm" : "true"``).
-                      For more details, refer to :ref:`hf` section. 
+                      For more details, refer to :ref:`hf` section.
    | **Default**: :math:`1.0\times 10^{-12}`
-   | **Datatype**: double 
-   | **Recommendation**: Default, looser thresholds reduce accuracy but potentially increase speed. 
+   | **Datatype**: double
+   | **Recommendation**: Default, looser thresholds reduce accuracy but potentially increase speed.
 
 .. topic:: ``dkh``
 
    | **Description**: Option to do second order Douglas-Kroll-Hess (DKH2).
-   | **Default**: false 
-   | **Datatype**: boolean 
-   | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.    
+   | **Default**: false
+   | **Datatype**: boolean
+   | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.
 
 .. topic:: ``magnetic_field``
 
-   | **Description**: External magnetic field.  At this time, external magnetic fields are available only for the :ref:`hf` and :ref:`dhf` modules.  
+   | **Description**: External magnetic field.  At this time, external magnetic fields are available only for the :ref:`hf` and :ref:`dhf` modules.
    | **Default**: zero magnetic field
    | **Datatype**: Array of three doubles (x, y, z)
 
 .. topic:: ``tesla``
 
-   | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.  
+   | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.
    |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
    | **Default**: false (so atomic units are used)
    | **Datatype**: bool
- 
+
 .. topic:: ``basis_type``
 
-   | **Description**: Specifies the type of atomic orbital basis functions, 
-        either real Gaussian functions or complex gauge-including atomic orbitals (GIAOs).   
-        This keyword can be used to call the GIAO code with zero 
-        magnetic field, or to switch back to real Gaussians for common-gauge-origin calculations with the origin at (0, 0, 0).  
-   | **Datatype**: String 
-   | **Values**: "gaussian" or "giao."  "London" can be used as an alias for "giao," and this option is case-insensitive.  
+   | **Description**: Specifies the type of atomic orbital basis functions,
+        either real Gaussian functions or complex gauge-including atomic orbitals (GIAOs).
+        This keyword can be used to call the GIAO code with zero
+        magnetic field, or to switch back to real Gaussians for common-gauge-origin calculations with the origin at (0, 0, 0).
+   | **Datatype**: String
+   | **Values**: "gaussian" or "giao."  "London" can be used as an alias for "giao," and this option is case-insensitive.
    | **Default**: "gaussian" at zero magnetic field; GIAO a field is applied
-   | **Recommendation**:  Use the default.  
+   | **Recommendation**:  Use the default.
 
 
 
 
 ==========
-Basis sets 
+Basis sets
 ==========
 
 The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
@@ -116,16 +116,16 @@ The following basis sets are available in BAGEL library. The basis set name can 
    :columns: 3
 
    * sto-3g
-   * 3-21g  
+   * 3-21g
    * 6-31g
    * svp
    * tzvpp
    * qzvpp
-   * cc-pvdz  
-   * cc-pvtz  
+   * cc-pvdz
+   * cc-pvtz
    * cc-pvqz
-   * cc-pv5z  
-   * cc-pv6z  
+   * cc-pv5z
+   * cc-pv6z
    * cc-pcvdz
    * cc-pcvtz
    * cc-pcvqz
@@ -175,7 +175,7 @@ The following density fitting basis sets are available in BAGEL library. The bas
 Examples
 ========
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
 
@@ -200,10 +200,10 @@ Examples
 
 Example with mixed basis sets and density fitting basis sets:
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "symmetry" : "C1",
@@ -216,21 +216,21 @@ Example with mixed basis sets and density fitting basis sets:
                         "basis" : "cc-pvqz", "df_basis" : "cc-pvqz-jkfit" }
      ]
    },
-   
+
    {
      "title" : "hf",
      "thresh" : 1.0e-8
    }
-   
+
    ]}
 
 Example with running a calculation from a molden file using the keyword ``"basis" : "molden"``
 and providing a value for ``"molden_file"``:
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "symmetry" : "C1",
@@ -239,17 +239,17 @@ and providing a value for ``"molden_file"``:
      "cartesian" : true,
      "molden_file" : "hf_write_mol_cart.molden"
    }
-   
+
    ]}
 
 (refer to :ref:`molden` in :ref:`misc` for more details)
 
 Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO):
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "symmetry" : "C1",
@@ -264,7 +264,7 @@ Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO
        { "atom" : "H",  "xyz" : [ -1.200000,      2.500000,      0.305956]}
      ]
    },
-   
+
    {
      "title" : "hf",
      "thresh" : 1.0e-10
@@ -289,10 +289,10 @@ Example
 
 An example using cc-pvdz-ri in MP2 calculation.
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "cc-pvdz",
@@ -313,17 +313,17 @@ An example using cc-pvdz-ri in MP2 calculation.
        { "atom" : "H", "xyz" : [ -0.00000000000,  2.29608983528, -0.28688797942] }
      ]
    },
-   
+
    {
      "title" : "mp2",
      "aux_basis" : "cc-pvdz-ri",
      "frozen" : true
    }
-   
+
    ]}
 
 =========================================
-Effective core potential (ECP) basis sets 
+Effective core potential (ECP) basis sets
 =========================================
 The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
@@ -340,7 +340,7 @@ The following auxiliary basis sets are available in BAGEL library. The basis set
    * lanl2dz-ecp
 
 .. note::
-   User-defined ECP basis sets need to contain the keyword "ecp" in the names. 
+   User-defined ECP basis sets need to contain the keyword "ecp" in the names.
    Refer to `User defined basis sets`_ for more details.
 
 Example
@@ -348,10 +348,10 @@ Example
 
 Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy atom Cu
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "symmetry" : "C1",
@@ -366,13 +366,13 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
                         "basis" : "cc-pvtz"}
      ]
    },
-   
+
    {
      "charge" : "-1",
      "title" : "hf",
      "thresh" : 1.0e-8
    }
-   
+
    ]}
 
 ========================
@@ -381,7 +381,7 @@ User defined basis sets
 
 The basis set file is in the following format
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
  {
   "H" : [
@@ -412,21 +412,21 @@ The file is essentially one large array, the elements of which are further array
 The basis set for associated with each element is then made up of further arrays, each of which  contains information specifying the properties
 of a single basis function.
 
-  * ``angular`` defines the kind of orbital (s,p,d,f...) . 
+  * ``angular`` defines the kind of orbital (s,p,d,f...) .
   * ``prim`` is a array containing the exponents of the primitive orbitals from which the basis function is composed.
   * ``cont`` is an array containing the coefficients associated with each of these primitive orbitals.
- 
-The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_. 
 
-.. note:: 
+The user can specify their own basis set using the above format, or use one of the predefined basis sets listed in `Basis sets`_.
+
+.. note::
    Not all of the the basis sets are defined for all atoms;  an error message of form "No such node(X)", where X is the element, typically means that the relevant element was not found in the basis set file. Refer to the EMSL Basis set exchange library for more basis sets (https://bse.pnl.gov/bse/portal).
- 
+
 To use a user specified basis the explicit path to the basis set file must be specified in the basis set block.
 
 Example
 -------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
 
@@ -463,10 +463,10 @@ A dihydrogen molecule with a nearby dummy charge of +0.2. Note that the charge s
 Sample input
 ------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "symmetry" : "C1",
@@ -479,13 +479,13 @@ Sample input
        { "atom" :  "H",  "xyz" : [  0.000000,   0.000000,   0.0000]}
      ]
    },
-   
+
    {
      "title" : "hf",
      "charge" : "0",
      "thresh" : 1.0e-8
    }
-   
+
    ]}
 
 
