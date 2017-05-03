@@ -216,11 +216,21 @@ latex_elements = {
 'fncychap': '\usepackage[Lonny]{fncychap}',
 
 # The font size ('10pt', '11pt' or '12pt').
-'pointsize': '10pt',
-'fontpkg' : '',
+#'pointsize': '10pt',
+#'fontpkg' : '',
 
 # Additional stuff for the LaTeX preamble.
-'preamble':  '\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}',
+#'preamble':  '\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}',
+
+'preamble': '''\
+\\ChNumVar{\\bfseries\\Huge}
+\\ChNameVar{\\bfseries\\Huge}
+\\ChTitleVar{\\bfseries\\Huge}
+''',
+
+#\\ChTitleVar{\\bfseries\\Huge\\rm}
+#\\ChNumVar{\\normalfont\\Huge\\ttfamily}
+
 
 }
 
