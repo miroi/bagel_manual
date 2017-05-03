@@ -26,22 +26,22 @@ Build BAGEL
 
 * Automake ::
 
-     glibtoolize (in Linux, "libtoolize" instead)
-     aclocal
-     autoconf
-     autoheader
-     automake -a
+     $ glibtoolize (or, libtoolize)
+     $ aclocal
+     $ autoconf
+     $ autoheader
+     $ automake -a
  
 * Create an object directory ::
    
-    mkdir obj
-    cd obj
+    $ mkdir obj
+    $ cd obj
 
 * Configure
 
   A minimal set of configure options is ::
 
-    ../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST_ROOT)/lib' '--with-include=-I$(BOOST_ROOT)/include'
+    $ ../configure '--enable-mkl' 'LDFLAGS=-L$(BOOST_ROOT)/lib' '--with-include=-I$(BOOST_ROOT)/include'
    
   Configure options:
      | ``--with-mpi=value``  turns on MPI, where "value" can be "mvapich", "intel", or "openmpi".
@@ -55,19 +55,18 @@ Build BAGEL
 
   Example (Release build on the Shiozaki group's cluster) ::
 
-       ../configure 'LDFLAGS=-L/usr/local/boost/boost_1_59_0_gcc-5.2.0/lib'
-       'CXXFLAGS=-DNDEBUG -Wall -Wextra -Wno-type-limits -Wno-deprecated-declarations 
-       -Wno-sign-compare -Wno-unused-function -Wno-unused-parameter -Werror -O3 -mavx' 
-       '--enable-mkl' '--with-include=-I/usr/local/boost/boost_1_59_0_gcc-5.2.0/include
-       -I/opt/intel/mkl-11.3/mkl/include' '--with-mpi=intel' '--enable-static' '--disable-shared' 
-       'CC=/usr/local/gcc/gcc-5.2.0/bin/gcc' 'CXX=/usr/local/gcc/gcc-5.2.0/bin/g++'
+       $ export LD_LIBRARY_PATH=/usr/local/boost/boost_1_62_0_gcc-6.2.0/lib:$LD_LIBRARY_PATH
+
+       $ ../configure 'LDFLAGS=-L/usr/local/boost/boost_1_62_0_gcc-6.2.0/lib' 'CXXFLAGS=-DNDEBUG -O3 -mavx'
+         '--enable-mkl' '--with-include= -I/usr/local/boost/boost_1_62_0_gcc-6.2.0/include'
+         '--with-mpi=intel' 'CC=/usr/local/gcc/gcc-6.2.0/bin/gcc' 'CXX=/usr/local/gcc/gcc-6.2.0/bin/g++'
 
 * Compile ::
 
-    make -j4
-    make install
+    $ make -j4
+    $ make install
 
 * Test run ::
 
-    ./BAGEL Your_PATH_to_BAGEL/test/benzene_svp_mp2.json
+    $ ./BAGEL path_to_bagel/test/benzene_svp_mp2.json
 

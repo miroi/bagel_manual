@@ -13,7 +13,6 @@ This file can be read back to provide a reference for a future calculation.
 For some non-relativistic methods, this feature is redundant with the restart capability provided by writing and reading Molden files, but 
 the binary archives used in this module are compatible with every method in BAGEL.  
 
-This module is unavailable if -DDISABLE_SERIALIZATION is specified when baking BAGEL.  
 Binary archives generated using a different version of BAGEL might not be readable.  
 
 Commands: ``save_ref`` and ``load_ref``

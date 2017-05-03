@@ -17,7 +17,7 @@
    :maxdepth: 2
 
    scf/scf.rst
-   fci/ci_methods.rst  
+   ci/ci_methods.rst  
    multi/multi.rst
    pt2/pt2.rst
    smith/smith.rst

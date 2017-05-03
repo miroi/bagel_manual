@@ -38,7 +38,7 @@ div.bodywrapper {
 div.body {
     background-color: white;
     color: black;
-    padding: 0 20px 30px 20px;
+    padding: 20px 20px 30px 50px;
 }
 
 div.footer {
@@ -73,6 +73,7 @@ div.sphinxsidebar h3 {
     font-size: 1.1em;
     font-weight: bold;
     margin-left: 0.2em;
+    margin-bottom: 0.4em;
     padding: 0;
 }
 
@@ -85,7 +86,8 @@ div.sphinxsidebar h4 {
     color: white;
     font-size: 1.1em;
     font-weight: bold;
-    margin: 20px 0 0 0;
+    margin-left: 0.2em;
+    margin-bottom: 0.4em;
     padding: 0;
 }
 
