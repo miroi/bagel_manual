@@ -16,39 +16,39 @@ Keywords
 .. topic:: ``occupied``
 
    | **Description:** Localize the occupied orbitals
-   | **Default:** true
    | **Datatype:** bool
+   | **Default:** true
 
 .. topic:: ``active``
 
    | **Description:** Localize the active orbitals
-   | **Default:** true
    | **Datatype:** bool
+   | **Default:** true
 
 .. topic:: ``virtual``
 
    | **Description:** Localize the virtual orbitals
-   | **Default:** false
    | **Datatype:** bool
+   | **Default:** false
 
 .. topic:: ``algorithm``
 
    | **Description:** The localization scheme being used.
-   | **Default:** pm
    | **Datatype:** string
    | **Values:**
    |    ``pm``: Uses Pipek-Mezey localization
    |    ``region`` : Orthogonalize based on regions
+   | **Default:** pm
    | **Recommendation:** Defining regions is particularly useful when studying dimers or trimers. For standard cases, use default
 
 .. topic:: ``type``
 
    | **Description:** The type of localzation used in the Pipek-Mezey localization
-   | **Default:** atomic
    | **Datatype:** string
    | **Values:**
    |    ``region`` : localize to a region (a group of atoms defined by the user)
    |    ``atomic``: localize to the atoms
+   | **Default:** atomic
    | **Recommendation:** Defining regions is particularly useful when studying dimers or trimers. For standard cases, use default
 
 .. topic:: ``region_size``
@@ -60,11 +60,11 @@ Keywords
 .. topic:: ``lowdin``
 
    | **Description:** Lowdin charges are used in the localization (CHECK THIS)`
-   | **Default:** true
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Uses Lowdin charges
    |    ``false`` : Uses Mulliken charges
+   | **Default:** true
    | **Recommendation:** : Use default
 
 =======

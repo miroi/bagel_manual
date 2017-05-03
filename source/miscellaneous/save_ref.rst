@@ -25,8 +25,8 @@ Keywords
 
    | **Description:** Name of the file to be generated.  The extension .archive will be appended.
    |      A complete path can be supplied, or the name of a file in the current working directory.
-   | **Default:**  "reference"
    | **Datatype:** string
+   | **Default:**  "reference"
 
 .. topic:: ``continue_geom``
 
@@ -34,8 +34,8 @@ Keywords
    |      By default, the geometry is read from the binary archive file and used without modification.
    |      If this option is set to false, the molecular orbitals from the archive will be projected to a new geometry or
    |      basis set provided earlier in the input file.
-   | **Default:**  true
    | **Datatype:** bool
+   | **Default:**  true
 
 =======
 Example
