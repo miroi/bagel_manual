@@ -15,9 +15,6 @@ Keywords
 
 Required Keywords
 -----------------
-.. topic:: ``force``
-
-   | **Description:** Requests that the gradient (force) is calculated. 
 
 .. topic:: ``title``
 
