@@ -17,6 +17,19 @@ BAGEL sends output to the standard I/O stream, so you have to pipe the output in
 
    $ mpirun BAGEL input.json > output.out
 
+=======
+Environment Variables
+=======
+
+The folowing commands can be used to control the number of threads used by each MPI process of BAGEL::
+
+   $ export BAGEL_NUM_THREADS=16
+   $ export MKL_NUM_THREADS=16
+
+The default value for $BAGEL_NUM_THREADS is copied from $OMP_NUM_THREADS or the number of available CPU cores.  
+It is generally recommended to set this variable such that BAGEL_NUM_THREEADS times the number of MPI processes 
+equals the number of available cores on your machine.  
+
 =======================
 Test input and output
 =======================
