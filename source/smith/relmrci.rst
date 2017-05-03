@@ -17,70 +17,62 @@ CASSCF keywords
 ---------------
 See :ref:`casscf`.
 
+The default values are recommended unless mentioned otherwise.
+
 SMITH keywords
 --------------
 
 .. topic:: ``title``
 
    | **Description:** Method to use in SMITH-generated code.
-   | **Default:** N/A.
    | **Datatype:** string
    | **Values:**
    |    ``caspt2``: Request (Rel)CASPT2 calculation.
    |    ``mrci``: Request (Rel)MRCI calculation.
    |    ``casa``: Request (Rel)CAS/A calculation.
+   | **Default:** N/A.
 
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold.
-   | **Default:** 1.0e-8 (gradient) 1.0e-6 (otherwise)
    | **Datatype:** double precision
-   | **Recommendation:** use default.
+   | **Default:** 1.0e-8 (gradient) 1.0e-6 (otherwise)
 
 .. topic:: ``thresh_overlap``
 
    | **Description:** Overlap threshold.
-   | **Default:** 1.0-9
    | **Datatype:** double precision
-   | **Recommendation:** use default.
+   | **Default:** 1.0-9
 
 .. topic:: ``frozen``
 
    | **Description:** Have frozen orbitals or not.
-   | **Default:** true.
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: use frozen orbitals.
-   |    ``false``: do without frozen orbitals.
-   | **Recommendation:** use default.
+   | **Default:** true.
 
 .. topic:: ``ncore``
 
    | **Description:** Number of frozen core orbitals.
-   | **Default:** If ``frozen`` is true, then the number of core orbitals (first period, 2 per atom, second - third period, 8 per atom, ...).
    | **Datatype:** int
-   | **Recommendation:** Use default.
+   | **Default:** If ``frozen`` is true, then the number of core orbitals (first period, 2 per atom, second - third period, 8 per atom, ...).
 
 .. topic:: ``nfrozenvirt``
 
    | **Description:** Number of frozen virtual orbitals.
-   | **Default:** 0
    | **Datatype:** int
-   | **Recommendation:** Use default.
+   | **Default:** 0
 
 .. topic:: ``maxiter``
 
    | **Description:** Maximum number of iterations in MRCI calculations.
-   | **Default:** 50
    | **Datatype:** int
-   | **Recommendation:** use default.
+   | **Default:** 50
 
 .. topic:: ``maxtile``
 
    | **Description:** Maximum number of orbitals in a single data tile used in SMITH3.
-   | **Default:** 10
    | **Datatype:** int
-   | **Recommendation:** use default.
+   | **Default:** 10
 
 
 Example
