@@ -1,5 +1,3 @@
-.. index:: casscf
-
 .. _casscf:
 
 ****************************************************
@@ -27,19 +25,19 @@ Keywords
 
    | **Description:** Number of states included in the state averaging.
    | **Default:** 1.
-   | **Datatype:** integer
+   | **Datatype:** int
 
 .. topic:: ``nact``
 
    | **Description:** Number of active orbitals.
    | **Default:** 0.
-   | **Datatype:** integer
+   | **Datatype:** int
 
 .. topic:: ``nclosed``
 
    | **Description:** Number of closed orbitals.
    | **Default:** Number of electrons / 2.
-   | **Datatype:** integer
+   | **Datatype:** int
 
 .. topic:: ``active``
 
@@ -47,7 +45,7 @@ Keywords
    | **Default:** Nact / 2 orbitals lower and higher from the valence orbital.
    | **Example:**
    |    [36, 37, 39] : include 36th, 37th, and 39th orbitals.
-   | **Datatype:** integer array
+   | **Datatype:** vector<int>
 
 .. topic:: ``algorithm``
 
@@ -108,14 +106,14 @@ Keywords
 
    | **Description:** Maximum number of macroiteration.
    | **Default:** 50.
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** Increase if convergence is not obtained.
 
 .. topic:: ``maxiter_micro``
 
    | **Description:** Maximum number of microiteration.
    | **Default:** 100.
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** use default.
 
 Example

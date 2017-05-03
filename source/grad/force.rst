@@ -1,5 +1,3 @@
-.. _index: force, title, method, nacmtype, numerical, dx, target, target2, export, export_single, maxziter,load_ref, ref_load
-
 .. _force:
 
 ****************************************
@@ -35,7 +33,7 @@ Required Keywords
 
    | **Description:** Type of non-adiabatic coupling matrix element to be used
    | **Default:** 0
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Values:**
    |    ``0``: Use full non-adiabatic coupling
    |    ``1``: Use interstate coupling
@@ -66,18 +64,18 @@ Optional Keywords
 
    | **Description:** The target state for the energy and gradient evaluation (e.g. which state in a state-averaged CASSCF calculation)
    | **Default:** 0
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Values:**
-   |    ``integer``: ground state = 0
+   |    ``int``: ground state = 0
    | **Recommendation:** N/A
 
 .. topic:: ``target2``
 
    | **Description:** In an NACME or DGRAD calculation, target2 designates the target state for the second state.
    | **Default:** 1
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Values:**
-   |    ``integer``: first exited state = 1
+   |    ``int``: first exited state = 1
    | **Recommendation:** N/A
 
 .. topic:: ``export``
@@ -104,7 +102,7 @@ Optional Keywords
 
    | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to SA-CASSCF, CASPT2, and MP2 calculations.
    | **Default:** 100
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** Increase the value when Z-vector equation does not converge.
 
 .. topic:: ``save_ref``

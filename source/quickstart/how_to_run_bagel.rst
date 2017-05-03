@@ -52,7 +52,7 @@ This is an example input file for checking the BAGEL installation.
   },
 
   {
-    "title" : "hf",
+    "title" : "hf"
   }
 
   ]}
