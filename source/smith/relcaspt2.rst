@@ -19,6 +19,16 @@ See :ref:`casscf`.
 SMITH keywords
 --------------
 
+.. topic:: ``title``
+
+   | **Description:** Method to use in SMITH-generated code.
+   | **Default:** N/A.
+   | **Datatype:** string
+   | **Values:**
+   |    ``caspt2``: Request (Rel)CASPT2 calculation.
+   |    ``mrci``: Request (Rel)MRCI calculation.
+   |    ``casa``: Request (Rel)CAS/A calculation.
+
 .. topic:: ``ms``
 
    | **Description:** Do multistate CASPT2.
@@ -77,6 +87,20 @@ SMITH keywords
    | **Values:**
    |    ``true``: Use frozen orbitals.
    |    ``false``: Perform CASPT2 without frozen orbitals.
+   | **Recommendation:** Use default.
+
+.. topic:: ``ncore``
+
+   | **Description:** Number of frozen core orbitals.
+   | **Default:** If ``frozen`` is true, then the number of core orbitals (first period, 2 per atom, second - third period, 8 per atom, ...).
+   | **Datatype:** integer
+   | **Recommendation:** Use default.
+
+.. topic:: ``nfrozenvirt``
+
+   | **Description:** Number of frozen virtual orbitals.
+   | **Default:** 0
+   | **Datatype:** integer
    | **Recommendation:** Use default.
 
 .. topic:: ``maxiter``
@@ -154,7 +178,7 @@ References
 BAGEL References
 ----------------
 +---------------------------------------------------+----------------------------------------------------------------------------------------------+
-|          Description of Reference                 |                          Reference                                                           | 
+|          Description of Reference                 |                          Reference                                                           |
 +===================================================+==============================================================================================+
 | SMITH3                                            | M\. K. MacLeod and T. Shiozaki, J. Chem. Phys. **142**, 010507 (2015).                       |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------+
@@ -164,7 +188,7 @@ BAGEL References
 General References
 ------------------
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-|          Description of Reference                 |                          Reference                                                                    | 
+|          Description of Reference                 |                          Reference                                                                    |
 +===================================================+=======================================================================================================+
 | CASPT2                                            | K\. Andersson, P.-Å. Malmqvist, and B. O. Roos, J. Chem. Phys. **96**, 1218 (1992).                   |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------+

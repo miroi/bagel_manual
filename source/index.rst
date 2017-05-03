@@ -16,10 +16,3 @@ Brilliantly Advanced General Electronic-structure Library
    :maxdepth: 2
 
    user-manual.rst
-
-Index
-==================
-
-* :ref:`genindex`
-* :ref:`search`
-

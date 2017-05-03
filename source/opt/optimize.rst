@@ -9,34 +9,40 @@ Molecular geometry optimization
 Description
 ===========
 Three types of the geometry can be optimized: the most stable (minimum energy) geometry, conical intersections between the electronic states, and
-the transition state geometry (or the saddle point on the potential energy surface). 
+the transition state geometry (or the saddle point on the potential energy surface).
 
 In the optimizations, rather than using the exact Hessian, one can
 start using the approximate Hessian and update it according to the step taken.
-The advanced quasi-newton optimization methods, eigenvector following (EF) algorithm and rational functional optimization (RFO) are implemented. 
+The advanced quasi-newton optimization methods, eigenvector following (EF) algorithm and rational functional optimization (RFO) are implemented.
 In the conical intersection optimization, the
-molecular gradient is replaced by the sum of the energy difference gradient and the upper state gradient after projecting the 
-degeneracy lifting vectors out (gradient projection). 
+molecular gradient is replaced by the sum of the energy difference gradient and the upper state gradient after projecting the
+degeneracy lifting vectors out (gradient projection).
 In addition, the minimum energy path to the reactants and products
 from the saddle point can be calculated using the second order algorithm, without mass weighting.
 
 The output contains the gradient evaluation progress at the first step of the optimization, and the status of the optimization.
 The other information, including the quantum chemistry calculations at the optimization steps, are deposited in the file ``opt.log``.
+The history of the optimization and the final geometry are also saved in the ``MOLDEN`` files ``opt_history.molden`` and ``opt.molden``,
+and can be read by ``MOLDEN``.
 
 Keywords
 ========
 Required Keywords
 -----------------
-.. topic:: ``optimize``
+.. topic:: ``title``
 
-   | **Description:** Requests the geometry optimization. 
+   | **Description:** Request geometry optimization.
+   | **Default:** N/A
+   | **Datatype:** string
+   | **Values:** (optimize)
+   |    ``optimize``: Optimize geometry.
 
 .. topic:: ``opttype``
 
    | **Description:** Type of the optimization calculations.
    | **Default:** energy.
    | **Datatype:** string
-   | **Values:** 
+   | **Values:**
    |    ``energy``: find the most stable geometry.
    |    ``conical``: find the conical intersections, according to gradient projection method.
    |    ``transition``: find the transition state geometry (saddle point on the PES).
@@ -62,7 +68,7 @@ Required Keywords
 
 .. topic:: ``method``
 
-   | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information. 
+   | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information.
 
 Convergence Criteria
 --------------------
@@ -96,7 +102,7 @@ Optional Keywords (Universal)
    | **Description:** Algorithm for the optimization calculations.
    | **Default:** ef.
    | **Datatype:** string
-   | **Values:** 
+   | **Values:**
    |    ``ef``: Eigenvector-following (EF) algorithm.
    |    ``rfo``: Rational functional optimization algorithm.
    |    ``nr``: Newton--Raphson algorithm.
@@ -124,7 +130,7 @@ Optional Keywords (Universal)
    | **Description:** Use redunant internal coordinate or delocalized internal coordinate.
    | **Default:** false.
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: use redundant internal coordinate.
    |    ``false``: use delocalized internal coordinate.
    | **Recommendation:** use default, except for the cases that has a problem in constructing delocalized internals (such as formaldehyde).
@@ -148,7 +154,7 @@ Optional Keywords (Universal)
    | **Description:** Use numerical gradient.
    | **Default:** false.
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: use numerical gradient.
    |    ``false``: use analytical gradient.
    | **Recommendation:** use default.
@@ -165,7 +171,7 @@ Optional Keywords (Universal)
    | **Description:** Hessian updating scheme.
    | **Default:** flowchart.
    | **Datatype:** string
-   | **Values:** 
+   | **Values:**
    |    ``flowchart``: use flowchart update. This automatically decides according to the shape of PES.
    |    ``bfgs``: use BFGS scheme.
    |    ``psb``: use PSB scheme.
@@ -177,7 +183,7 @@ Optional Keywords (Universal)
    | **Description:** Use approximate Hessian for the initial step of the optimization.
    | **Default:** true.
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: use approximate Hessian.
    |    ``false``: calculate numerical Hessian first, and start the optimization using the Hessian.
    | **Recommendation:** use default.
@@ -187,7 +193,7 @@ Optional Keywords (Universal)
    | **Description:** Use adaptive stepsize in RFO algorithm.
    | **Default:** true (algorithm is RFO); false (otherwise).
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: use adaptive maximum stepsize.
    |    ``false``: use fixed maximum stepsize.
    | **Recommendation:** use default.
@@ -200,7 +206,7 @@ Optional Keywords (Conical Intersection Optimization)
    | **Description:** Type of non-adiabatic coupling matrix element to be used.
    | **Default:** 1.
    | **Datatype:** integer
-   | **Values:** 
+   | **Values:**
    |    ``0``: use full nonadiabatic coupling.
    |    ``1``: use interstate coupling.
    |    ``2``: use nonadiabatic coupling with built-in electronic translational factor (ETF).
@@ -208,7 +214,7 @@ Optional Keywords (Conical Intersection Optimization)
 
 .. topic:: ``thielc3``
 
-   | **Description:** Thiel's C_3 parameter, which is multiplied to the full gradient. 
+   | **Description:** Thiel's C_3 parameter, which is multiplied to the full gradient.
    | **Default:** 2.0.
    | **Datatype:** double precision
    | **Recommendation:** use default.
@@ -228,8 +234,8 @@ Optional Keywords (Minimum Energy Path)
    | **Description:** Direction of the MEP calculation from the transition state.
    | **Default:** 1.
    | **Datatype:** integer
-   | **Values:** 
-   |    ``1`` : use the direction of the lowest eigenvector.
+   | **Values:**
+   |    ``1``: use the direction of the lowest eigenvector.
    |    ``-1``: use the opposite direction of the lowest eigenvector.
    | **Recommendation:** run two calculations with "1" and "-1" to get the full path.
 
@@ -244,12 +250,12 @@ This optimizes the ground state geometry of benzophenone.
     :alt: alternate text
     :figclass: align-center
 
-    The benzophenone molecule with carbon atoms in grey, oxygen in red, and hydrogen in white. 
+    The benzophenone molecule with carbon atoms in grey, oxygen in red, and hydrogen in white.
 
 Sample input
 ------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
   { "bagel" : [
 
@@ -296,9 +302,9 @@ Sample input
   }
  ]}
 
-Using the same molecule block, a geometry optimization with XMS-CASPT2 can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 8 electrons and 7 orbitals, (8*e*,7*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states. Since a multistate calculation is performed, the user must specify which state is to be optimized (the target). In this example, we optimize the ground state.
+Using the same molecule block, a geometry optimization with XMS-CASPT2 can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 4 electrons and 3 orbitals, (4*e*,3*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states. Since a multistate calculation is performed, the user must specify which state is to be optimized (the target). In this example, we optimize the ground state.
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
   {
     "title" : "casscf",
@@ -333,7 +339,7 @@ References
 ==========
 
 +-----------------------------------------------+------------------------------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                                       | 
+|          Description of Reference             |                          Reference                                                       |
 +===============================================+==========================================================================================+
 | Eigenvector following algorithm               | J\. Baker, J. Comput. Chem. **7**, 385 (1986).                                           |
 +-----------------------------------------------+------------------------------------------------------------------------------------------+

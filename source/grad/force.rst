@@ -1,4 +1,4 @@
-.. _index: force, title, method, nacmtype, numerical, dx, target, target2, export, export_single, maxziter,load_ref, ref_load 
+.. _index: force, title, method, nacmtype, numerical, dx, target, target2, export, export_single, maxziter,load_ref, ref_load
 
 .. _force:
 
@@ -8,22 +8,19 @@ Nuclear gradient and derivative coupling
 
 Description
 ===========
-The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree–Fock (UHF), restricted open-shell Hartree–Fock (ROHF), restricted Hartree–Fock (RHF), Dirac–Hartree–Fock (DHF), Møller–Plesset perturbation theory (MP2), complete active space self consistent field (CASSCF), and multireference perturbation theory (CASPT2). 
+The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree–Fock (UHF), restricted open-shell Hartree–Fock (ROHF), restricted Hartree–Fock (RHF), Dirac–Hartree–Fock (DHF), Møller–Plesset perturbation theory (MP2), complete active space self consistent field (CASSCF), and multireference perturbation theory (CASPT2).
 
 Keywords
 ========
 
 Required Keywords
 -----------------
-.. topic:: ``force``
-
-   | **Description:** Requests that the gradient (force) is calculated. 
 
 .. topic:: ``title``
 
-   | **Description:** The title of the type of gradient calculation being performed. 
-   | **Default:** N/A 
-   | **Datatype:** string 
+   | **Description:** The title of the type of gradient calculation being performed.
+   | **Default:** N/A
+   | **Datatype:** string
    | **Values:** (force, nacme, dgrad)
    |    ``force``: Calculates the gradient (force)
    |    ``nacme``: Calculates the non-adiabatic coupling matrix elements
@@ -33,96 +30,96 @@ Required Keywords
 .. topic:: ``method``
 
    | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information.
- 
+
 .. topic:: ``nacmtype``
 
    | **Description:** Type of non-adiabatic coupling matrix element to be used
    | **Default:** 0
    | **Datatype:** integer
-   | **Values:** 
+   | **Values:**
    |    ``0``: Use full non-adiabatic coupling
-   |    ``1``: Use interstate coupling 
+   |    ``1``: Use interstate coupling
    |    ``2``: Use non-adiabtic coupling with built-in electronic translational factor (ETF)
-   | **Recommendation:** use default 
+   | **Recommendation:** use default
 
 Optional Keywords
 -----------------
 
 .. topic:: ``numerical``
 
-   | **Description:** The gradients will be computed by finite difference. 
+   | **Description:** The gradients will be computed by finite difference.
    | **Default:** false
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: Uses finite difference
-   |    ``false`` : Uses analytical gradient  
+   |    ``false`` : Uses analytical gradient
    | **Recommendation:** If available, use analytical gradient. If analytical gradient is not available, BAGEL automatically switches to numerical gradient.
 
 .. topic:: ``dx``
 
-   | **Description:** The step size used in the displacements in the finite difference calculations. The units are bohr. 
+   | **Description:** The step size used in the displacements in the finite difference calculations. The units are bohr.
    | **Default:** 1.0e-3
-   | **Datatype:** double precision 
-   | **Recommendation:** Use default 
+   | **Datatype:** double precision
+   | **Recommendation:** Use default
 
 .. topic:: ``target``
 
    | **Description:** The target state for the energy and gradient evaluation (e.g. which state in a state-averaged CASSCF calculation)
-   | **Default:** 0 
+   | **Default:** 0
    | **Datatype:** integer
-   | **Values:** 
-   |    ``integer``: ground state = 0 
-   | **Recommendation:** N/A 
+   | **Values:**
+   |    ``integer``: ground state = 0
+   | **Recommendation:** N/A
 
 .. topic:: ``target2``
 
-   | **Description:** In an NACME or DGRAD calculation, target2 designates the target state for the second state. 
-   | **Default:** 1 
+   | **Description:** In an NACME or DGRAD calculation, target2 designates the target state for the second state.
+   | **Default:** 1
    | **Datatype:** integer
-   | **Values:** 
-   |    ``integer``: first exited state = 1 
-   | **Recommendation:** N/A 
+   | **Values:**
+   |    ``integer``: first exited state = 1
+   | **Recommendation:** N/A
 
 .. topic:: ``export``
 
-   | **Description:** This option will export the nuclear gradient to a text file.  
+   | **Description:** This option will export the nuclear gradient to a text file.
    | **Default:** false
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: Export file
-   |    ``false``: Do not export file 
-   | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics. 
+   |    ``false``: Do not export file
+   | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
 .. topic:: ``export_single``
 
-   | **Description:** This option will export the nuclear gradient to a text file for a single state.  
-   | **Default:** false 
+   | **Description:** This option will export the nuclear gradient to a text file for a single state.
+   | **Default:** false
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: Export file
-   |    ``false``: Do not export file 
+   |    ``false``: Do not export file
    | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
 .. topic:: ``maxziter``
 
    | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to SA-CASSCF, CASPT2, and MP2 calculations.
-   | **Default:** 100 
+   | **Default:** 100
    | **Datatype:** integer
    | **Recommendation:** Increase the value when Z-vector equation does not converge.
 
 .. topic:: ``save_ref``
 
-   | **Description:** The reference wavefunction is saved to an archive file. 
+   | **Description:** The reference wavefunction is saved to an archive file.
    | **Default:** false
    | **Datatype:** bool
-   | **Values:** 
-   |    ``true``: Archive file is saved 
+   | **Values:**
+   |    ``true``: Archive file is saved
    |    ``false`` : Archive file is not saved
-   | **Recommendation:** Save file if it is likely that the calculation will need to be restarted 
+   | **Recommendation:** Save file if it is likely that the calculation will need to be restarted
 
 .. topic:: ``ref_out``
 
-   | **Description:** The name of the archive file for the stored reference. The path to the location the file should be written can also be specified here. 
+   | **Description:** The name of the archive file for the stored reference. The path to the location the file should be written can also be specified here.
    | **Datatype:** string
 
 Example
@@ -135,12 +132,12 @@ The benzophenone molecule
     :alt: alternate text
     :figclass: align-center
 
-    The benzophenone molecule with carbon atoms in grey, oxygen in red, and hydrogen in white. 
- 
+    The benzophenone molecule with carbon atoms in grey, oxygen in red, and hydrogen in white.
+
 Sample input: force
 -------------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
   { "bagel" : [
 
@@ -187,9 +184,9 @@ Sample input: force
  ]}
 
 
-Using the same molecule block, a XMS-CASPT2 analytical gradient calculation can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 8 electrons and 7 orbitals, (8*e*,7*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states. 
+Using the same molecule block, a XMS-CASPT2 analytical gradient calculation can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 4 electrons and 3 orbitals, (4*e*,3*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states.
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
   {
     "title" : "casscf",
@@ -218,10 +215,10 @@ Using the same molecule block, a XMS-CASPT2 analytical gradient calculation can 
      } ]
    }
 
-Sample input: NACME and DGRAD 
+Sample input: NACME and DGRAD
 -----------------------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
   {
    "title" : "nacme",
@@ -239,7 +236,7 @@ Sample input: NACME and DGRAD
        },
        "nstate" : 3,
        "nact_cas" : 7,
-       "nclosed" : 44 
+       "nclosed" : 44
      } ]
    }
 
@@ -249,20 +246,20 @@ References
 BAGEL References
 ----------------
 +-----------------------------------------------+---------------------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                              | 
+|          Description of Reference             |                          Reference                                              |
 +===============================================+=================================================================================+
 | SS-CASPT2 gradient                            | M\. K. MacLeod and T. Shiozaki, J. Chem. Phys. **142**, 051103 (2015).          |
 +-----------------------------------------------+---------------------------------------------------------------------------------+
-| (X)MS-CASPT2 gradient                         | B\. Vlaisavljevich and T. Shiozaki, J. Chem. Theory Comput. **12**, 3781 (2016).| 
+| (X)MS-CASPT2 gradient                         | B\. Vlaisavljevich and T. Shiozaki, J. Chem. Theory Comput. **12**, 3781 (2016).|
 +-----------------------------------------------+---------------------------------------------------------------------------------+
-| (X)MS-CASPT2 derivative coupling              | J\. W. Park and T. Shiozaki, *submitted*.                                       | 
+| (X)MS-CASPT2 derivative coupling              | J\. W. Park and T. Shiozaki, *submitted*.                                       |
 +-----------------------------------------------+---------------------------------------------------------------------------------+
 
 General References
 ------------------
 
 +-----------------------------------------------+--------------------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                             | 
+|          Description of Reference             |                          Reference                                             |
 +===============================================+================================================================================+
 | General review of gradient methods            | P\. Pulay, WIREs Comput. Mol. Sci. **4**, 169-181 (2014).                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------+
