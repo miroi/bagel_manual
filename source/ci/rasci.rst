@@ -24,82 +24,80 @@ Keywords
 .. topic:: ``active``
 
    | **Description:** Specifies the three active spaces used to generate the functions in the CI expansion.
-   | **Default:** Must be specified by the user.
    | **Datatype:** Three arrays of integers (see example).
    | **Values:** Three arrays containing the indexes that specify the orbitals in the R1, R2, and R2 spaces. 
+   | **Default:** Must be specified by the user.
    | **Recommendation:** This is highly system dependent. It is often useful to visualize the orbitals from a HF calculation in molden (see section :ref:`molden`). 
 
 .. topic:: ``max_holes``
 
    | **Description:** Maximum number of particles in R1.
-   | **Default:** 0
    | **Datatype:** int
-   | **Recommendation:** System dependent. 
+   | **Default:** 0
 
 
 .. topic:: ``max_particles``
 
    | **Description:** Maximum number of particles in R3.
-   | **Default:** 0
    | **Datatype:** int
-   | **Recommendation:** System dependent.
+   | **Default:** 0
 
 .. topic:: ``nspin``
 
    | **Description:** Specifies the number of unpaired electrons (for example, a triplet has a value of 2).
-   | **Default:** 0
    | **Datatype:** int
+   | **Default:** 0
 
 .. topic:: ``algorithm``
 
    | **Description:** Algorithm to be used in the determinantion of the CI coeffcients.
-   | **Default:** KH.
    | **Datatype:** string
    | **Values:**
    |    ``KH, Knowles, Handy``: Uses Knowles-Handy.
    |    ``HZ, Harrison, Zarrabian``: Uses Harrison-Zarrabian.
    |    ``Dist, parallel``: uses Parallel algorithm.
+   | **Default:** KH.
    | **Recommendation:** If the active space is large and you have multiple processors, use the parallel algorithm. Otherwise, use default.
 
 .. topic:: ``charge``
 
    | **Description:** The total charge of the system.
-   | **Default:** 0
    | **Datatype:** int
+   | **Default:** 0
 
 .. topic:: ``maxiter``
 
    | **Description**: Maximum number of iterations in the RASCI algorithm.
-   | **Default**: 100
    | **Datatype**: int
+   | **Default**: 100
    | **Recommendation**: Use default. While higher values can be experimented with, failure too converge often indicates a problem with the reference function, active space, number of excitations between the subspaces, or the requested number of states.
 
 .. topic:: ``davidson_subspace``
 
-   | **Description**: Maximum dimension of the subspace used for Davidson diagonalization.
-   | **Default**: 20
-   | **Datatype**: int
-   | **Recommendation**: Use the default. If a large number of states are being requested if may be worth increasing it.
+   | **Description:** Maximum dimension of the subspace used for Davidson diagonalization.
+   | **Datatype:** int
+   | **Default:** 20
+   | **Recommendation:** Use the default. If a large number of states are being requested if may be worth increasing it.
 
 .. topic:: ``nstate``
 
-   | **Description**: Number of states to calculate. 
-   | **Default**:1 (the ground state)
-   | **Datatype**: int
+   | **Description:** Number of states to calculate. 
+   | **Datatype:** int
+   | **Default:** 1 (the ground state)
 
 .. topic:: ``thresh``
 
-   | **Description**: Threshold for convergence of the selected RASCI algorithm.
-   | **Default**: 1.0e-10
-   | **Datatype**: double
-   | **Recommendation**: Use default. 
+   | **Description:** Threshold for convergence of the selected RASCI algorithm.
+   | **Datatype:** double
+   | **Default:** 1.0e-10
+   | **Recommendation:** Use default. 
 
 .. topic:: ``batchsize``
 
-   | **Description** : Number of terms from the RASCI interaction to be evaluated simulataneously.
-   | **Default**: 512
-   | **Datatype**: int
-   | **Recommendation**: Use default. 
+   | **Description:** Number of terms from the RASCI interaction to be evaluated simulataneously.
+   | **Datatype:** int
+   | **Default:** 512
+   | **Recommendation:** Use default. 
 
 =======
 Example
