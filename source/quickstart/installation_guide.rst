@@ -30,14 +30,16 @@ The simplest approach is to just download and extract the tarball containing the
      $ cd /your/parent/directory
      $ wget https://github.com/nubakery/bagel/archive/v\ |version|\ .tar.gz
      $ tar -xzvf bagel-\ |version|\ .tar.gz
-     $ cd BAGEL
+     $ cd bagel
 
 Alternatively, you can clone the git repository:
 
 .. parsed-literal::
      $ cd /your/parent/directory
      $ git clone https://github.com/nubakery/bagel.git
-     $ cd BAGEL
+     $ cd bagel
+
+The SMITH3 code generator can be downloaded in a similar manner from `the NUBakery GitHub page <https://github.com/nubakery/>`_.
 
 -----------
 Build BAGEL

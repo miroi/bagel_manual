@@ -10,11 +10,12 @@ Command
 
 BAGEL runs by ::
 
-   BAGEL input.json
+   $ BAGEL input.json
 
+Normally you will want to run in parallel using mpirun.  
 BAGEL sends output to the standard I/O stream, so you have to pipe the output in order to save it as a file: ::
 
-   BAGEL input.json > output.out
+   $ mpirun BAGEL input.json > output.out
 
 =======================
 Test input and output
