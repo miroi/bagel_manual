@@ -59,7 +59,7 @@ Optional keywords
                       refer to :ref:`hf` section.
    | **Default**: false
    | **Datatype**: bool
-   | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules.
+   | **Recommendation**: Use for calculations on very large systems.
 
 .. topic:: ``schwarz_thresh``
 
