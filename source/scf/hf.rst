@@ -24,62 +24,62 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``thresh``
 
    | **Description**: SCF convergence threshold for the root-mean-square of the error vector.
-   | **Default**: :math:`1.0\times 10^{-8}`
    | **Datatype**: double
+   | **Default**: :math:`1.0\times 10^{-8}`
 
 .. topic:: ``maxiter``/``maxiter_scf``
 
    | **Description**: number of iterations and number of SCF interations, after which the program will terminate if convergence is not reached.
-   | **Default**: :math:`100`
    | **Datatype**: int
+   | **Default**: :math:`100`
 
 .. topic:: ``diis_start``
 
    | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
                       algorithm to update the orbitals.
-   | **Default**: :math:`1`
    | **Datatype**: int
+   | **Default**: :math:`1`
 
 
 .. topic:: ``thresh_overlap``
 
    | **Description**: Overlap threshold used to identify linear dependancies in the atomic basis set.
                       Increasing this value will more aggressively remove linearly dependent basis vectors.
-   | **Default**: :math:`1.0\times 10^{-8}`
    | **Datatype**: double
+   | **Default**: :math:`1.0\times 10^{-8}`
 
 .. topic:: ``multipole``
 
    | **Description**: rank of Cartesian multipole moments printed out.
-   | **Default** : :math:`1` (dipoles)
-   | **Values** : :math:`1, 2`
    | **Datatype**: int
+   | **Values** : :math:`1, 2`
+   | **Default** : :math:`1` (dipoles)
 
 .. topic:: ``dma``
 
    | **Description**: options to print out multipole moments from distributed multipole analysis.
-   | **Default** : :math:`0` (not print out)
-   | **Values** : :math:`0, 1, 2, 3`
    | **Datatype**: int
+   | **Values** : :math:`0, 1, 2, 3`
+   | **Default** : :math:`0` (not print out)
 
 
 .. topic:: ``charge``
 
    | **Description**: molecular charge
-   | **Default** : :math:`0`
    | **Datatype**: int
+   | **Default** : :math:`0`
 
 .. topic:: ``nopen``
 
    | **Description**: number of unpaired electrons in high-spin unrestricted Hartree--Fock
-   | **Default** : (number of electrons - charge) % 2
    | **Datatype** : int
+   | **Default** : (number of electrons - charge) % 2
 
 .. topic:: ``restart``
 
    | **Description**: to restart the calculation from an archive file
-   | **Default**: false
    | **Datatype**: bool
+   | **Default**: false
 
 Keywords for RHF-FMM
 ====================
@@ -87,40 +87,40 @@ Keywords for RHF-FMM
 .. topic:: ``ns``
 
    | **Description**: level of descritization which controls the number of lowest-level boxes in one dimension for FMM
-   | **Default**: :math:`4`
    | **Datatype**: int
+   | **Default**: :math:`4`
 
 .. topic:: ``ws``
 
    | **Description**: well-separatedness index, which is the number of boxes that must separate
                       two collections of charges before they are considered distant
                       and can interact through multipole expansions
-   | **Default**: :math:`2`
    | **Datatype**: int
+   | **Default**: :math:`2`
 
 .. topic:: ``lmax``
 
    | **Description**: order of the multipole expansions in FMM-J
-   | **Default**: :math:`10`
    | **Datatype**: int
+   | **Default**: :math:`10`
 
 .. topic:: ``exchange``
 
    | **Description**: whether to include far-field exchange using occ-RI-FMM
-   | **Default**: false
    | **Datatype**: int
+   | **Default**: false
 
 .. topic:: ``lmax_exchange``
 
    | **Description**: order of the multipole expansions in FMM-K
-   | **Default**: :math:`2`
    | **Datatype**: int
+   | **Default**: :math:`2`
 
 .. topic:: ``fmm_thresh``
 
    | **Description**: integral screening threshold used in FMM
-   | **Default**: ``thresh_overlap``
    | **Datatype**: double
+   | **Default**: ``thresh_overlap``
 
 Examples
 ========
