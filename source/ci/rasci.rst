@@ -59,7 +59,7 @@ Keywords
    |    ``KH, Knowles, Handy``: Uses Knowles-Handy.
    |    ``HZ, Harrison, Zarrabian``: Uses Harrison-Zarrabian.
    |    ``Dist, parallel``: uses Parallel algorithm.
-   | **Recommendation:** If the active space is large and you have multiple processors, use Dist. Otherwise, use default.
+   | **Recommendation:** If the active space is large and you have multiple processors, use the parallel algorithm. Otherwise, use default.
 
 .. topic:: ``charge``
 
@@ -69,46 +69,43 @@ Keywords
 
 .. topic:: ``maxiter``
 
-   | **Description**: Maximum number of iterations in RASCI algorithm.
+   | **Description**: Maximum number of iterations in the RASCI algorithm.
    | **Default**: 100
    | **Datatype**: int
-   | **Recommendation**: Keep as default. Whilst higher values can be experimented with, failure too converge could also indicate an issue with the reference function, active spaces, or requested states.
+   | **Recommendation**: Use default. While higher values can be experimented with, failure too converge often indicates a problem with the reference function, active space, number of excitations between the subspaces, or the requested number of states.
 
 .. topic:: ``davidson_subspace``
 
-   | **Description**: Maximum dimension of subspace used for Davidson diagonalization.
+   | **Description**: Maximum dimension of the subspace used for Davidson diagonalization.
    | **Default**: 20
    | **Datatype**: int
    | **Recommendation**: Use the default. If a large number of states are being requested if may be worth increasing it.
 
 .. topic:: ``nstate``
 
-   | **Description**: Number of states to calculate. If set to one, it calculates the ground state.
-   | **Default**:1
+   | **Description**: Number of states to calculate. 
+   | **Default**:1 (the ground state)
    | **Datatype**: int
 
 .. topic:: ``thresh``
 
-   | **Description**: Threshold for convergence of selected RASCI algorithm.
+   | **Description**: Threshold for convergence of the selected RASCI algorithm.
    | **Default**: 1.0e-10
    | **Datatype**: double
-   | **Recommendation**: Default, reduce for greater accuracy.
+   | **Recommendation**: Use default. 
 
 .. topic:: ``batchsize``
 
-   | **Description** : Number of terms from RASCI interaction to be evaluated at simulataneously.
+   | **Description** : Number of terms from the RASCI interaction to be evaluated simulataneously.
    | **Default**: 512
    | **Datatype**: int
-   | **Recommendation**: Default, the optimimum value willbe system dependent.
+   | **Recommendation**: Use default. 
 
 =======
 Example
 =======
 
-A water molecule. The first active space, R1, contains the oxygen 1s orbital, the second active space,
-R2 contains the 1a1, 1b1, 2a1 and 2b1, orbitals. The third active space, R3, contains the
-3a1 and 2b2 antibonding orbitals. One excitation is allowed from R1 to R2, and two excitations are allowed from
-R2 to R3.
+A sample input for a RASCI calculation for the water molecule is included. The first active space, R1, contains the oxygen 1s orbital, the second active space, R2, contains the 1a1, 1b1, 2a1, and 2b1 orbitals. The third active space, R3, contains the 3a1 and 2b2 antibonding orbitals. One excitation is allowed from R1 to R2 and two excitations are allowed from R2 to R3.
 
 Sample input
 ------------
@@ -116,6 +113,7 @@ Sample input
 .. code-block:: javascript
 
  { "bagel" : [
+
  { "title" : "molecule",
    "basis" : "tzvpp",
    "df_basis" : "tzvpp-jkfit",
