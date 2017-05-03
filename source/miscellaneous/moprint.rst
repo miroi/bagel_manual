@@ -8,7 +8,7 @@ Printing orbital densities to cube files
 Description
 ===========
 
-This module prints molecular orbital densities :math:`\left(\Psi^\dagger\Psi\right)` in Gaussian Cube format.  
+This module prints molecular orbital densities in the Gaussian Cube format.  
 It can be used to view the shape and extent of relativistic or gauge-including molecular orbitals, which cannot 
 be viewed in Molden due to the use of complex basis functions or the four-component framework.  
 
