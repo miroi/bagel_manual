@@ -6,6 +6,8 @@
 Brilliantly Advanced General Electronic-structure Library
 =============================================================
 
+   Parallel electronic-structure program licensed under the GNU General Public License.
+
 .. only:: html
 
    .. image:: _static/bagel-final.*
