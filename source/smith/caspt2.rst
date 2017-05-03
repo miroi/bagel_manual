@@ -83,15 +83,15 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``frozen``
 
-   | **Description:** Have frozen orbitals or not.
-   | **Datatype:** bool
-   | **Default:** true.
+   | **Description**: Freeze core orbitals. 
+   | **Datatype**: bool
+   | **Default**: true
 
 .. topic:: ``ncore``
 
    | **Description:** Number of frozen core orbitals.
-   | **Datatype:** int
-   | **Default:** If ``frozen`` is true, then the number of core orbitals (first period, 2 per atom, second - third period, 8 per atom, ...).
+   | **Datatype:** int 
+   | **Default:** If ``frozen`` is true, subvalence orbitals are frozen. If false, zero. 
 
 .. topic:: ``nfrozenvirt``
 
