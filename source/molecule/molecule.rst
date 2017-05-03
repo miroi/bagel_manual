@@ -183,8 +183,7 @@ Examples
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
+     "title" : "hf"
    }
 
    ]}
@@ -209,8 +208,7 @@ Example with mixed basis sets and density fitting basis sets:
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-8
+     "title" : "hf"
    }
 
    ]}
@@ -257,8 +255,7 @@ Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
+     "title" : "hf"
    }
 
    ]}
@@ -359,9 +356,8 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
    },
 
    {
-     "charge" : "-1",
      "title" : "hf",
-     "thresh" : 1.0e-8
+     "charge" : "-1"
    }
 
    ]}
@@ -434,8 +430,7 @@ Example
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
+     "title" : "hf"
    }
 
    ]}
@@ -472,9 +467,7 @@ Sample input
    },
 
    {
-     "title" : "hf",
-     "charge" : "0",
-     "thresh" : 1.0e-8
+     "title" : "hf"
    }
 
    ]}
