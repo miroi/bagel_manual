@@ -50,7 +50,7 @@ Required Keywords
 
    | **Description:** The target state to optimize.
    | **Default:** 0
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
@@ -59,7 +59,7 @@ Required Keywords
 
    | **Description:** The second target state to optimize in the conical intersection optimization.
    | **Default:** 1
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Values:**
    |    ``0``: the ground state.
    |    ``1``: the first excited state, and so on.
@@ -137,14 +137,14 @@ Optional Keywords (Universal)
 
    | **Description:** Maximum number of iteration for optimization.
    | **Default:** 100.
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** use default.
 
 .. topic:: ``maxziter``
 
    | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to SA-CASSCF, CASPT2, and MP2 calculations.
    | **Default:** 100.
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** increase the value when the Z-vector equation does not converge.
 
 .. topic:: ``numerical``
@@ -203,7 +203,7 @@ Optional Keywords (Conical Intersection Optimization)
 
    | **Description:** Type of non-adiabatic coupling matrix element to be used.
    | **Default:** 1.
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Values:**
    |    ``0``: use full nonadiabatic coupling.
    |    ``1``: use interstate coupling.
@@ -231,7 +231,7 @@ Optional Keywords (Minimum Energy Path)
 
    | **Description:** Direction of the MEP calculation from the transition state.
    | **Default:** 1.
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Values:**
    |    ``1``: use the direction of the lowest eigenvector.
    |    ``-1``: use the opposite direction of the lowest eigenvector.

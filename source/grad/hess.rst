@@ -34,7 +34,7 @@ Optional Keywords
 
    | **Description:** The Hessian code is embarrassingly parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation.
    | **Default:** 1
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:**
 
 Example
