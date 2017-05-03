@@ -99,13 +99,13 @@ Build BAGEL
   * Configuring without MKL
 
     | If MKL is not available, the path to cblas headers may need to be included as a configure option
-    |      (e.g., '--with-include=-I/usr/path/to/cblas').  
-    | Furthermore, if relativistic calculations fail without MKL, users may consider reconfiguring and recompiling with -DZDOT_RETURN in CXXFLAGS.
+           (e.g., '--with-include=-I/usr/path/to/cblas').  
+      Furthermore, if relativistic calculations fail without MKL, users may consider reconfiguring and recompiling with -DZDOT_RETURN in CXXFLAGS.
   
   * Compiling on small machines
 
     | Some files in BAGEL require several GB of RAM to compile.  This is generally not a problem for clusters, but on personal computers the 
-    |      compilation will occasionally fail.  Compiling with only one thread (make -j1) and not using -DCOMPILE_J_ORB can help.  
+           compilation will occasionally fail.  Compiling with one thread (make -j1) and not using -DCOMPILE_J_ORB may help.  
 
 
 

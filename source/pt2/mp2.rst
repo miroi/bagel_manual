@@ -17,8 +17,8 @@ Keywords
 .. topic:: ``frozen``
 
    | **Description**: to have frozen orbitals or not
-   | **Default**: true
    | **Datatype**: bool
+   | **Default**: true
 
 .. topic:: ``ncore``
 
@@ -28,8 +28,8 @@ Keywords
 .. topic:: ``aux_basis``
 
    | **Description**: specify an auxiliary basis set for MP2
-   | **Default**: use the same density fitting basis as in :ref:`molecule`
    | **Datatype**: string
+   | **Default**: use the same density fitting basis as in :ref:`molecule`
    | **Recommendation**: use MP2-fit auxiliary basis (auxiliary basis ends with 'ri')
 
 
