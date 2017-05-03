@@ -1,5 +1,3 @@
-.. index:: dhf, gaunt, breit
-
 .. _dhf:
 
 ********************

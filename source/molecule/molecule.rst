@@ -1,5 +1,3 @@
-.. index:: basis, df_basis, ecp, geometry, dkh
-
 .. _molecule:
 
 Required keywords
@@ -66,7 +64,7 @@ Optional keywords
 
 .. topic:: ``schwarz_thresh``
 
-   | **Description**: Schwarz screening integral threshold (only used in RHF-FMM by specifying ``"cfmm" : "true"``).
+   | **Description**: Schwarz screening integral threshold, only used in RHF-FMM ``"cfmm" : "true"``.
                       For more details, refer to :ref:`hf` section.
    | **Default**: :math:`1.0\times 10^{-12}`
    | **Datatype**: double
@@ -74,7 +72,7 @@ Optional keywords
 
 .. topic:: ``dkh``
 
-   | **Description**: Option to do second order Douglas-Kroll-Hess (DKH2).
+   | **Description**: Option to use the second-order Douglas-Kroll-Hess Hamiltonian (DKH2).
    | **Default**: false
    | **Datatype**: boolean
    | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.
