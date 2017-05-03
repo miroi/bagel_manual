@@ -45,7 +45,7 @@ Optional keywords
 
    | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents
    | **Default**: false
-   | **Datatype**: boolean
+   | **Datatype**: bool
 
 .. topic:: ``molden_file``
 
