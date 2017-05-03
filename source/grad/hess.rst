@@ -23,8 +23,8 @@ Required Keywords
 .. topic:: ``dx``
 
    | **Description:** The step size used in the displacements in the gradient difference calculations. The units are bohr.
-   | **Default:** 1.0e-3
    | **Datatype:** double precision
+   | **Default:** 1.0e-3
    | **Recommendation:** Use default
 
 Optional Keywords
@@ -33,8 +33,8 @@ Optional Keywords
 .. topic:: ``nproc``
 
    | **Description:** The Hessian code is embarrassingly parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation.
-   | **Default:** 1
    | **Datatype:** int
+   | **Default:** 1
    | **Recommendation:**
 
 Example

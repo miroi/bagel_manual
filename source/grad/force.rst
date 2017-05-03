@@ -17,12 +17,12 @@ Required Keywords
 .. topic:: ``title``
 
    | **Description:** The title of the type of gradient calculation being performed.
-   | **Default:** N/A
    | **Datatype:** string
    | **Values:** (force, nacme, dgrad)
    |    ``force``: Calculates the gradient (force)
    |    ``nacme``: Calculates the non-adiabatic coupling matrix elements
    |    ``dgrad``: Difference gradient (only available for CASSCF)
+   | **Default:** N/A
    | **Recommendation:** N/A
 
 .. topic:: ``method``
@@ -32,12 +32,12 @@ Required Keywords
 .. topic:: ``nacmtype``
 
    | **Description:** Type of non-adiabatic coupling matrix element to be used
-   | **Default:** 0
    | **Datatype:** int
    | **Values:**
    |    ``0``: Use full non-adiabatic coupling
    |    ``1``: Use interstate coupling
    |    ``2``: Use non-adiabtic coupling with built-in electronic translational factor (ETF)
+   | **Default:** 0
    | **Recommendation:** use default
 
 Optional Keywords
@@ -46,73 +46,73 @@ Optional Keywords
 .. topic:: ``numerical``
 
    | **Description:** The gradients will be computed by finite difference.
-   | **Default:** false
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Uses finite difference
    |    ``false`` : Uses analytical gradient
+   | **Default:** false
    | **Recommendation:** If available, use analytical gradient. If analytical gradient is not available, BAGEL automatically switches to numerical gradient.
 
 .. topic:: ``dx``
 
    | **Description:** The step size used in the displacements in the finite difference calculations. The units are bohr.
-   | **Default:** 1.0e-3
    | **Datatype:** double precision
+   | **Default:** 1.0e-3
    | **Recommendation:** Use default
 
 .. topic:: ``target``
 
    | **Description:** The target state for the energy and gradient evaluation (e.g. which state in a state-averaged CASSCF calculation)
-   | **Default:** 0
    | **Datatype:** int
    | **Values:**
    |    ``int``: ground state = 0
+   | **Default:** 0
    | **Recommendation:** N/A
 
 .. topic:: ``target2``
 
    | **Description:** In an NACME or DGRAD calculation, target2 designates the target state for the second state.
-   | **Default:** 1
    | **Datatype:** int
    | **Values:**
    |    ``int``: first exited state = 1
+   | **Default:** 1
    | **Recommendation:** N/A
 
 .. topic:: ``export``
 
    | **Description:** This option will export the nuclear gradient to a text file.
-   | **Default:** false
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Export file
    |    ``false``: Do not export file
+   | **Default:** false
    | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
 .. topic:: ``export_single``
 
    | **Description:** This option will export the nuclear gradient to a text file for a single state.
-   | **Default:** false
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Export file
    |    ``false``: Do not export file
+   | **Default:** false
    | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
 .. topic:: ``maxziter``
 
    | **Description:** Maximum number of Z-vector iterations for gradient evaluation. Applies to SA-CASSCF, CASPT2, and MP2 calculations.
-   | **Default:** 100
    | **Datatype:** int
+   | **Default:** 100
    | **Recommendation:** Increase the value when Z-vector equation does not converge.
 
 .. topic:: ``save_ref``
 
    | **Description:** The reference wavefunction is saved to an archive file.
-   | **Default:** false
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Archive file is saved
    |    ``false`` : Archive file is not saved
+   | **Default:** false
    | **Recommendation:** Save file if it is likely that the calculation will need to be restarted
 
 .. topic:: ``ref_out``
