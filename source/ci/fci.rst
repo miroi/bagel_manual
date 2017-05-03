@@ -54,9 +54,9 @@ Keywords
 
 .. topic:: ``ncore``
 
-   | **Description:** Number of frozen core orbitals.
+   | **Description:** Number of frozen core orbitals. ``ncore`` overides ``frozen``. 
    | **Datatype:** int 
-   | **Default:** If ``frozen`` is true, subvalence orbitals are frozen. If false, zero. ``ncore`` overides ``frozen``. 
+   | **Default:** If ``frozen`` is true, subvalence orbitals are frozen. If false, zero. 
 
 .. topic:: ``norb``
 
