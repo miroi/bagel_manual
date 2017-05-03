@@ -72,7 +72,7 @@ A sample input for the benzene molecule.
   },
 
   {
-  "title" : "hf"
+    "title" : "hf"
   },
 
   {
