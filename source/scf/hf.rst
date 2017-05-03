@@ -235,7 +235,7 @@ SOSCF
 RHF-FMM
 -------
 .. figure:: hf-graphene.png
-    :width: 300px
+    :width: 30 % 
     :align: center
     :alt: alternate text
     :figclass: align-center
