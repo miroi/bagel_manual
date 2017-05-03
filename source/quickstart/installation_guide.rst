@@ -21,6 +21,27 @@ Prerequisites
 Intel MKL is strongly recommended for BLAS, LAPACK, and ScaLAPACK (distributed for free for academic users) 
 
 -----------
+Downloading the Source
+-----------
+
+The simplest approach is to just download and extract the tarball containing the most recent BAGEL release:
+
+::
+
+     $ cd /your/parent/directory
+     $ wget https://github.com/nubakery/bagel/archive/v1.0.0.tar.gz
+     $ tar -xzvf bagel-1.0.0.tar.gz
+     $ cd BAGEL
+
+Alternatively, you can clone the git repository:  
+
+::
+
+     $ cd /your/parent/directory
+     $ git clone https://github.com/nubakery/bagel.git
+     $ cd BAGEL
+
+-----------
 Build BAGEL
 -----------
 
