@@ -76,21 +76,18 @@ Convergence Criteria
    | **Description:** Maximum component of the gradient in Hartree / Bohr.
    | **Datatype:** double precision.
    | **Default:** 0.00001 (atoms in the molecule < 4); 0.0003 (larger).
-   | **Recommendation:** use default.
 
 .. topic:: ``maxdisp``
 
    | **Description:** Maximum component of the displacement in Bohr.
    | **Datatype:** double precision.
    | **Default:** 0.00004 (atoms in the molecule < 4); 0.0012 (larger).
-   | **Recommendation:** use default.
 
 .. topic:: ``maxchange``
 
    | **Description:** The energy change in Hartree.
    | **Datatype:** double precision.
    | **Default:** 0.000001.
-   | **Recommendation:** use default.
 
 Optional Keywords (Universal)
 -----------------------------
@@ -111,7 +108,6 @@ Optional Keywords (Universal)
    | **Description:** Maximum step. The unit is in the specifed coordinate.
    | **Datatype:** double precision.
    | **Default:** 0.3 (energy optimization); 0.1 (otherwise).
-   | **Recommendation:** use default.
 
 .. topic:: ``internal``
 
@@ -138,7 +134,6 @@ Optional Keywords (Universal)
    | **Description:** Maximum number of iteration for optimization.
    | **Datatype:** int
    | **Default:** 100.
-   | **Recommendation:** use default.
 
 .. topic:: ``maxziter``
 
@@ -155,14 +150,12 @@ Optional Keywords (Universal)
    |    ``true``: use numerical gradient.
    |    ``false``: use analytical gradient.
    | **Default:** false.
-   | **Recommendation:** use default.
 
 .. topic:: ``numerical_dx``
 
    | **Description:** \Delta x for numerical gradient.
    | **Datatype:** double precision
    | **Default:** 0.001 (bohr).
-   | **Recommendation:** use default.
 
 .. topic:: ``hess_update``
 
@@ -174,7 +167,6 @@ Optional Keywords (Universal)
    |    ``psb``: use PSB scheme.
    |    ``sr1``: use SR1 scheme.
    | **Default:** flowchart.
-   | **Recommendation:** use default.
 
 .. topic:: ``hess_approx``
 
@@ -184,7 +176,6 @@ Optional Keywords (Universal)
    |    ``true``: use approximate Hessian.
    |    ``false``: calculate numerical Hessian first, and start the optimization using the Hessian.
    | **Default:** true.
-   | **Recommendation:** use default.
 
 .. topic:: ``adaptive``
 
@@ -194,7 +185,6 @@ Optional Keywords (Universal)
    |    ``true``: use adaptive maximum stepsize.
    |    ``false``: use fixed maximum stepsize.
    | **Default:** true (algorithm is RFO); false (otherwise).
-   | **Recommendation:** use default.
 
 Optional Keywords (Conical Intersection Optimization)
 -----------------------------------------------------
@@ -208,21 +198,18 @@ Optional Keywords (Conical Intersection Optimization)
    |    ``1``: use interstate coupling.
    |    ``2``: use nonadiabatic coupling with built-in electronic translational factor (ETF).
    | **Default:** 1.
-   | **Recommendation:** use default.
 
 .. topic:: ``thielc3``
 
    | **Description:** Thiel's C_3 parameter, which is multiplied to the full gradient.
    | **Datatype:** double precision
    | **Default:** 2.0.
-   | **Recommendation:** use default.
 
 .. topic:: ``thielc4``
 
    | **Description:** Thiel's C_4 parameter, which is multiplied to the gradient difference.
    | **Datatype:** double precision
    | **Default:** 0.5
-   | **Recommendation:** use default.
 
 Optional Keywords (Minimum Energy Path)
 ---------------------------------------
