@@ -17,7 +17,7 @@
    :maxdepth: 2
 
    scf/scf.rst
-   ci/ci_methods.rst  
+   ci/ci_methods.rst
    multi/multi.rst
    pt2/pt2.rst
    smith/smith.rst
@@ -26,3 +26,4 @@
    miscellaneous/misc.rst
    supp_info/supp_info.rst
    author.rst
+   funding.rst

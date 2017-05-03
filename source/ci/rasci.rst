@@ -7,7 +7,7 @@ Restricted active space configuration interaction (RASCI)
 *********************************************************
 
 ===========
-Description 
+Description
 ===========
 
 The basis into which the wavefunction is expanded is typically constructed by
@@ -17,10 +17,10 @@ types of excitations which can occur resulting in a smaller basis, and ideally
 a lower computational cost than that of full CI.  In RASCI as implemented in
 Bagel, the user constrains the excitations by specifying three "active" subspaces,
 R1, R2 and R3, which are three sets of orbitals.  The determinants in the CI
-expansion are obtained by exciting electrons within and between these spaces. 
+expansion are obtained by exciting electrons within and between these spaces.
 The key feature of RASCI is that the number of excitations between the different spaces
 are constrained by specifying the maximium number
-of holes which can occur in R1, and the maximium number of electrons which can occur in R3. 
+of holes which can occur in R1, and the maximium number of electrons which can occur in R3.
 
 
 This is useful for close analysis of the impact of specific
@@ -45,39 +45,39 @@ Keywords
    | **Default**: Must be specified by user.
    | **Datatype**: Three arrays of integers (see example).
    | **Values** : Three arrays with the containing indexes which specficy the orbitals between which excitations are permitted to occur.
-   | **Recommendation** : This is highly system dependent, and dependent on the system under investigation. It is often good to run an initial Hartree Fock calculation, visualize the resulting orbitals in Molden (see section PRINT SECTION), and pick the spaces on the basis of chemical intuition. 
+   | **Recommendation** : This is highly system dependent, and dependent on the system under investigation. It is often good to run an initial Hartree Fock calculation, visualize the resulting orbitals in Molden (see section PRINT SECTION), and pick the spaces on the basis of chemical intuition.
 
 .. topic:: ``max_holes``
 
    | **Description**: Maximum number of particles in R1.
-   | **Default**: 0 
+   | **Default**: 0
    | **Datatype** : integer
-   | **Values**: Any integer which is possible given the initial occupation of R1 and R2..  
+   | **Values**: Any integer which is possible given the initial occupation of R1 and R2..
    | **Recommendation** : System dependent, note that larger values increase the number of possible configurations, and hence the cost of the calculation.
 
 
 .. topic:: ``max_particles``
 
    | **Description**: Maximum number of particles in R3.
-   | **Default**: 0 
+   | **Default**: 0
    | **Datatype** : integer
-   | **Values**: Any integer which is possible given the initial occupation of R2 and R3..  
+   | **Values**: Any integer which is possible given the initial occupation of R2 and R3..
    | **Recommendation** : System dependent, note that alrger values increase the number of possible configurations, and hence the cost of the calculation.
 
 .. topic:: ``nspin``
 
    | **Description**: Specifies the number of unpaired electrons, e.g., a triplet has an nspin of 2.
-   | **Default**: 0 
+   | **Default**: 0
    | **Datatype** : integer
-   | **Values**: Any integer.  
-   | **Recommendation** : The spin of the states or interest. 
+   | **Values**: Any integer.
+   | **Recommendation** : The spin of the states or interest.
 
 .. topic:: ``algorithm``
-   
+
    | **Description**: Algorithm to be used in the determinantion of the CI coeffcients.
    | **Default**: KH.
    | **Datatype**: string
-   | **Values**: 
+   | **Values**:
    |    ``KH, Knowles, Handy``: use Knowles-Handy.
    |    ``HZ, Harrison, Zarrabian``: use Harrison-Zarrabian.
    |    ``Dist, parallel``: use Parallel algorithm.
@@ -89,12 +89,12 @@ Keywords
    | **Default**:  0
    | **Datatype**: integer
    | **Values**: `any int`
-   | **Recommendation**: The electronic charge of the system. 
+   | **Recommendation**: The electronic charge of the system.
 
 .. topic:: ``maxiter``
 
    | **Description**: Maximum number of iterations in RASCI algorithm.
-   | **Default**: 100 
+   | **Default**: 100
    | **Datatype**: integer
    | **Values**: ``Any positive integer``
    | **Recommendation**: Keep as default. Whilst higher values can be experimented with, failure too converge could also indicate an issue with the reference function, active spaces, or requested states.
@@ -102,7 +102,7 @@ Keywords
 .. topic:: ``davidson_subspace``
 
    | **Description**: Maximum dimension of subspace used for Davidson diagonalization.
-   | **Default**: 20 
+   | **Default**: 20
    | **Datatype**: integer
    | **Values**: ``Any positive integer``
    | **Recommendation**: In most cases  it is best to use the default. If a large number of states are being requested if may be worth increasing it.
@@ -118,7 +118,7 @@ Keywords
 .. topic:: ``thresh``
 
    | **Description**: Threshold for convergence of selected RASCI algorithm.
-   | **Default**: 1.0e-10 
+   | **Default**: 1.0e-10
    | **Datatype**: double
    | **Values**: ``any positive double``
    | **Recommendation**: Default, reduce for greater accuracy.
@@ -126,7 +126,7 @@ Keywords
 .. topic:: ``batchsize``
 
    | **Description** : Number of terms from RASCI interaction to be evaluated at simulataneously.
-   | **Default**: 512 
+   | **Default**: 512
    | **Datatype**: integer
    | **Values**: ``any positive integer``
    | **Recommendation**: Default, the optimimum value willbe system dependent.
@@ -135,18 +135,18 @@ Keywords
 Example
 =======
 
-A water molecule. The first active space, R1, contains the oxygen 1s orbital, the second active space, 
-R2 contains the 1a1, 1b1, 2a1 and 2b1, orbitals. The third active space, R3, contains the 
+A water molecule. The first active space, R1, contains the oxygen 1s orbital, the second active space,
+R2 contains the 1a1, 1b1, 2a1 and 2b1, orbitals. The third active space, R3, contains the
 3a1 and 2b2 antibonding orbitals. One excitation is allowed from R1 to R2, and two excitations are allowed from
 R2 to R3.
 
 Sample input
 ------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
  { "bagel" : [
- { "title" : "molecule", 
+ { "title" : "molecule",
    "basis" : "tzvpp",
    "df_basis" : "tzvpp-jkfit",
    "angstrom" : true,
@@ -178,7 +178,7 @@ Sample input
 Sample output
 -------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
      * ci vector   0, <S^2> = 0.0000, E =      -76.06133473
        2-2222-..     0.9989778414
@@ -197,7 +197,7 @@ References
 ===========
 
 +-----------------------------------------------+---------------------------------------------------------------------+
-|          Description of Reference             |                           Reference                                 | 
+|          Description of Reference             |                           Reference                                 |
 +===============================================+=====================================================================+
 | Efficient calculation of sigma vector         | P.\ J. Knowles and N. C. Handy, Chem. Phys. Lett.                   |
 |                                               | **111**, 315-321 (1984).                                            |
