@@ -56,74 +56,74 @@ Keywords
 
    | **Description:** Number of frozen core orbitals.
    | **Datatype:** int 
-   | **Default:** If ``frozen`` is true, subvalence orbitals are frozen. If false, zero. 
+   | **Default:** If ``frozen`` is true, subvalence orbitals are frozen. If false, zero. ``ncore`` overides ``frozen``. 
 
 .. topic:: ``norb``
 
-   | **Description**: Number of correlated orbitals. Any high-energy orbitals in excess of this number will be excluded.
-   | **Datatype**: int
-   | **Default**: All molecular orbitals except those excluded using ncore. 
+   | **Description:** Number of correlated orbitals. Any high-energy orbitals in excess of this number will be excluded.
+   | **Datatype:** int
+   | **Default:** All molecular orbitals except those excluded using ncore. 
 
 .. topic:: ``active``
 
-   | **Description**: Orbital indices for the orbitals to be included. 
-   | **Datatype**: vector<int>
-   | **Default**: Frontier orbitals are used. 
+   | **Description:** Orbital indices for the orbitals to be included. 
+   | **Datatype:** vector<int>
+   | **Default:** Frontier orbitals are used. 
 
 .. topic:: ``charge``
 
-   | **Description**: The total charge of the system.
-   | **Datatype**: int
-   | **Default**:  0
+   | **Description:** The total charge of the system.
+   | **Datatype:** int
+   | **Default:**  0
 
 .. topic:: ``nspin``
 
-   | **Description**: The spin multiplicity of the wavefunction (2S+1). 
-   | **Datatype**: int
-   | **Default**: 0
+   | **Description:** The spin multiplicity of the wavefunction (2S+1). 
+   | **Datatype:** int
+   | **Default:** 0
 
 .. topic:: ``nstate``
 
-   | **Description**: Number of states to be calculated.
-   | **Datatype**: int
-   | **Default**: 1
+   | **Description:** Number of states to be calculated.
+   | **Datatype:** int
+   | **Default:** 1
 
 .. topic:: ``davidson_subspace``
 
-   | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
-   | **Datatype**: int
-   | **Default**: 20
-   | **Recommendation**: Reduce if an insufficient amount of memory is available (do not reduce to a value lower than 3). 
+   | **Description:**  Number of vectors retained in the limited-memory Davidson algorithm.
+   | **Datatype:** int
+   | **Default:** 20
+   | **Recommendation:** Reduce if an insufficient amount of memory is available (do not reduce to a value lower than 3). 
 
 .. topic:: ``nguess``
 
-   | **Description**: Number of guess configurations 
-   | **Datatype**: int 
-   | **Default**: ``nstate`` 
+   | **Description:** Number of guess configurations 
+   | **Datatype:** int 
+   | **Default:** ``nstate`` 
 
 .. topic:: ``only_ints``
 
-   | **Description**: If true, calculates integrals and dumps to a file. This is used to interface BAGEL to an external program.
-   | **Datatype**: bool
-   | **Default**: false
+   | **Description:** If true, calculates integrals and dumps to a file. This is used to interface BAGEL to an external program.
+   | **Datatype:** bool
+   | **Default:** false
 
 .. topic:: ``dipoles``
 
-   | **Description**: Calculate dipoles 
-   | **Datatype**: bool
-   | **Default**: false
+   | **Description:** Calculate dipoles 
+   | **Datatype:** bool
+   | **Default:** false
 
 .. topic:: ``restart``
 
-   | **Description**: Generate binary archive files that can be used to restart a calculation.
-   | **Datatype**: bool
-   | **Default**: false
+   | **Description:** Generate binary archive files that can be used to restart a calculation.
+   | **Datatype:** bool
+   | **Default:** false
 
 .. topic:: ``print_thresh``
 
-   | **Description**: Threshold below which CI coefficients are not printed 
-   | **Datatype**: double
-   | **Default**: 0.05 
+   | **Description:** Threshold below which CI coefficients are not printed 
+   | **Datatype:** double
+   | **Default:** 0.05 
 
 =======
 Example
