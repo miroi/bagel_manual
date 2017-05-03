@@ -101,7 +101,7 @@ Keywords
 
 .. topic:: ``active``
 
-   | **Description**: Orbital indices for the orbitals to be included in the active space.  
+   | **Description**: Orbital indices for the orbitals to be included. 
    | **Datatype**: vector<int>
    | **Default**: Frontier orbitals are used. 
 
@@ -112,9 +112,9 @@ Keywords
 
 .. topic:: ``restart``
 
-   | **Description**: Generate binary archive files that can be used to restart an incomplete calculation.
-   | **Default**: false
+   | **Description**: Generate binary archive files that can be used to restart a calculation.
    | **Datatype**: bool
+   | **Default**: false
 
 Example
 =======
