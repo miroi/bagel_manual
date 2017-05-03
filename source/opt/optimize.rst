@@ -22,6 +22,8 @@ from the saddle point can be calculated using the second order algorithm, withou
 
 The output contains the gradient evaluation progress at the first step of the optimization, and the status of the optimization.
 The other information, including the quantum chemistry calculations at the optimization steps, are deposited in the file ``opt.log``.
+The history of the optimization and the final geometry are also saved in the ``MOLDEN`` files ``opt_history.molden`` and ``opt.molden``,
+and can be read by ``MOLDEN``.
 
 Keywords
 ========
