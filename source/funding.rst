@@ -4,7 +4,7 @@
 Funding
 *********
 
-.. image:: funding.*
+.. image:: _static/funding.*
    :width: 60 % 
    :align: center 
 
