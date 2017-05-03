@@ -17,10 +17,10 @@ CASSCF keywords
 ---------------
 See :ref:`casscf`.
 
-The default values are recommended unless mentioned otherwise.
-
 SMITH keywords
 --------------
+
+The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``title``
 

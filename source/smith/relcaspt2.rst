@@ -16,10 +16,10 @@ CASSCF keywords
 ---------------
 See :ref:`casscf`.
 
-The default values are recommended unless mentioned otherwise.
-
 SMITH keywords
 --------------
+
+The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``title``
 
@@ -35,6 +35,9 @@ SMITH keywords
 
    | **Description:** Do multistate CASPT2.
    | **Datatype:** bool
+   | **Values:**
+   |    ``true``: Do MS-CASPT2.
+   |    ``false``: Do SS-CASPT2.
    | **Default:** true.
 
 .. topic:: ``xms``
