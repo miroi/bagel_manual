@@ -97,21 +97,21 @@ Keywords
 .. topic:: ``export``
 
    | **Description:** This option will export the nuclear gradient to a text file.
-   | **Default:** false
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Export file
    |    ``false``: Do not export file
+   | **Default:** false
    | **Recommendation:** Use ``true``.
 
 .. topic:: ``export_single``
 
    | **Description:** This option will export the nuclear gradient to a text file for a single state.
-   | **Default:** false
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Export file
    |    ``false``: Do not export file
+   | **Default:** false
    | **Recommendation:** Use ``true`` with single state dynamics / optimizations.
 
 

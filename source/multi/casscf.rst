@@ -24,96 +24,96 @@ Keywords
 .. topic:: ``nstate``
 
    | **Description:** Number of states included in the state averaging.
-   | **Default:** 1.
    | **Datatype:** int
+   | **Default:** 1.
 
 .. topic:: ``nact``
 
    | **Description:** Number of active orbitals.
-   | **Default:** 0.
    | **Datatype:** int
+   | **Default:** 0.
 
 .. topic:: ``nclosed``
 
    | **Description:** Number of closed orbitals.
-   | **Default:** Number of electrons / 2.
    | **Datatype:** int
+   | **Default:** Number of electrons / 2.
 
 .. topic:: ``active``
 
    | **Description:** Specify active orbitals. Note that the orbital index starts from 1.
+   | **Datatype:** vector<int>
    | **Default:** Nact / 2 orbitals lower and higher from the valence orbital.
    | **Example:**
    |    [36, 37, 39] : include 36th, 37th, and 39th orbitals.
-   | **Datatype:** vector<int>
 
 .. topic:: ``algorithm``
 
    | **Description:** Orbital optimization algorithm.
-   | **Default:** ``second``
    | **Datatype:** string
    | **Values:**
    |    ``second``: second-order algorithm.
    |    ``noopt``: no orbital optimization.
+   | **Default:** ``second``
    | **Recommendation:** use default.
 
 .. topic:: ``fci_algorithm``
 
    | **Description:** FCI algorithm employed in each macroiteration.
-   | **Default:** ``parallel`` (when the number of active orbital is larger than 9 and number of process is larger than 8), ``knowles`` (otherwise)
    | **Datatype:** string
    | **Values:**
    |    ``knowles``, ``handy``, ``kh``: Knowles--Handy Algorithm.
    |    ``harrison``, ``zarrabian``, ``hz``: Harrison--Zarrabian Algorithm.
    |    ``parallel``, ``dist``: Parallel FCI algorithm.
+   | **Default:** ``parallel`` (when the number of active orbital is larger than 9 and number of process is larger than 8), ``knowles`` (otherwise)
    | **Recommendation:** use default.
 
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold in macroiteration.
-   | **Default:** 1.0e-8.
    | **Datatype:** double precision
+   | **Default:** 1.0e-8.
    | **Recommendation:** use default.
 
 .. topic:: ``thresh_micro``
 
    | **Description:** Convergence threshold in microiteration.
-   | **Default:** 5.0e-6.
    | **Datatype:** double precision
+   | **Default:** 5.0e-6.
    | **Recommendation:** use default.
 
 .. topic:: ``conv_ignore``
 
    | **Description:** Throw the calculation or not when the convergence is not reached.
-   | **Default:** false.
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Do not throw the calculation.
    |    ``false``: Throw the calculation.
+   | **Default:** false.
    | **Recommendation:** use default.
 
 .. topic:: ``natocc``
 
    | **Description:** Print natural orbitals or not.
-   | **Default:** false.
    | **Datatype:** bool
    | **Values:**
    |    ``true``: Print natural orbitals.
    |    ``false``: Do not print natural orbitals.
+   | **Default:** false.
    | **Recommendation:** use default.
 
 .. topic:: ``maxiter``
 
    | **Description:** Maximum number of macroiteration.
-   | **Default:** 50.
    | **Datatype:** int
+   | **Default:** 50.
    | **Recommendation:** Increase if convergence is not obtained.
 
 .. topic:: ``maxiter_micro``
 
    | **Description:** Maximum number of microiteration.
-   | **Default:** 100.
    | **Datatype:** int
+   | **Default:** 100.
    | **Recommendation:** use default.
 
 Example
