@@ -229,7 +229,7 @@ Optional Keywords (Minimum Energy Path)
    | **Default:** 1.
    | **Datatype:** integer
    | **Values:** 
-   |    ``1``: use the direction of the lowest eigenvector.
+   |    ``1`` : use the direction of the lowest eigenvector.
    |    ``-1``: use the opposite direction of the lowest eigenvector.
    | **Recommendation:** run two calculations with "1" and "-1" to get the full path.
 

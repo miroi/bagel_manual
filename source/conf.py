@@ -214,7 +214,10 @@ latex_elements = {
 'pointsize': '10pt',
 
 # Additional stuff for the LaTeX preamble.
-'preamble':  '\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}'
+'preamble':  '\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}',
+  
+'classoptions': ',openany,oneside',
+'babel': '\\usepackage[english]{babel}'
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
@@ -243,7 +246,7 @@ latex_use_parts = True
 #latex_appendices = []
 
 # If false, no module index is generated.
-# latex_domain_indices = True 
+#latex_domain_indices = True 
 
 
 # -- Options for manual page output ---------------------------------------
