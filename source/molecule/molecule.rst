@@ -5,7 +5,7 @@ Required keywords
 
 .. topic:: ``geometry``
 
-   | **Description**: specify atoms and their Cartesian coordinates
+   | **Description**: Specify atoms and their Cartesian coordinates
    | **Datatype**: vector
    | **Values**:
    |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
@@ -13,7 +13,7 @@ Required keywords
 
 .. topic:: ``basis``
 
-   | **Description**: define default basis set used for the system
+   | **Description**: Define default basis set used for the system
    | **Datatype**: string
    | **Values**:
    |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments.
@@ -21,7 +21,7 @@ Required keywords
 
 .. topic:: ``df_basis``
 
-   | **Description**: basis sets used for density fitting
+   | **Description**: Basis sets used for density fitting
    | **Datatype**: string
    | **Values**:
    |     Please refer to `Density fitting basis sets`_ for possible arguments
@@ -36,64 +36,63 @@ Optional keywords
 .. topic:: ``angstrom``
 
    | **Description**: Specify units for atomic coordinates (Angstrom or Bohr)
-   | **Default**: false (Angstrom)
    | **Datatype**: bool
    |    ``true``: use Angstrom
    |    ``false``: use Bohr
+   | **Default**: false (Angstrom)
 
 .. topic:: ``finite_nucleus``
 
-   | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents
-   | **Default**: false
+   | **Description**: Represent the nucleus as a Gaussian charge distribution with default exponents
    | **Datatype**: bool
+   | **Default**: false
 
 .. topic:: ``molden_file``
 
-   | **Description**: filename of input molden file, which is required if ``"basis" : "molden"`` is specified.
+   | **Description**: Filename of the molden file, which is required if ``"basis" : "molden"`` is specified.
    | **Datatype**: string
-   | **Recommendation**: False. However, this can be useful for doing investigative calculations before using active space methods.
+   | **Recommendation**: restarting from a molden file is not recommended, which is nevertheless sometimes useful.
 
 .. topic:: ``cfmm``
 
-   | **Description**: Option to do RHF-FMM, in which case density fitting is not used, for more details,
-                      refer to :ref:`hf` section.
-   | **Default**: false
+   | **Description**: Turn on RHF-FMM; for more details, refer to :ref:`hf` section.
    | **Datatype**: bool
+   | **Default**: false
    | **Recommendation**: Use for calculations on very large systems.
 
 .. topic:: ``schwarz_thresh``
 
    | **Description**: Schwarz screening integral threshold, only used in RHF-FMM ``"cfmm" : "true"``.
                       For more details, refer to :ref:`hf` section.
-   | **Default**: :math:`1.0\times 10^{-12}`
    | **Datatype**: double
+   | **Default**: :math:`1.0\times 10^{-12}`
    | **Recommendation**: Default, looser thresholds reduce accuracy but potentially increase speed.
 
 .. topic:: ``dkh``
 
-   | **Description**: Option to use the second-order Douglas-Kroll-Hess Hamiltonian (DKH2).
-   | **Default**: false
+   | **Description**: Option to use the second-order Douglas--Kroll--Hess Hamiltonian (DKH2).
    | **Datatype**: bool
+   | **Default**: false
 
 .. topic:: ``magnetic_field``
 
-   | **Description**: External magnetic field.  At this time, external magnetic fields are available only for the :ref:`hf` and :ref:`dhf` modules.
-   | **Default**: zero magnetic field
+   | **Description**: External magnetic field.  External magnetic fields are available only for the :ref:`hf` and :ref:`dhf` modules.
    | **Datatype**: Array of three doubles (x, y, z)
+   | **Default**: (0.0, 0.0, 0.0)
 
 .. topic:: ``tesla``
 
-   | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.
-   | **Default**: false (i.e., atomic units are used)
+   | **Description**: External magnetic field in units of Tesla.
    | **Datatype**: bool
+   | **Default**: false (i.e., atomic units are used)
 
 .. topic:: ``basis_type``
 
-   | **Description**: Specifies the type of atomic orbital basis functions,
+   | **Description**: Specify the type of atomic orbital basis functions,
         either standard Gaussian functions or gauge-including atomic orbitals (GIAOs).
-   | **Datatype**: String
-   | **Values**: "gaussian" or "giao." "london" can be used as an alias for "giao".
-   | **Default**: "gaussian" at zero magnetic field; GIAO a field is applied
+   | **Datatype**: string
+   | **Values**: ``gaussian`` / ``giao``, ``london``
+   | **Default**: ``gaussian`` at zero magnetic field; ``giao`` when a field is applied
 
 
 ==========
