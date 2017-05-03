@@ -8,14 +8,7 @@ Relativistic complete active space self-consistent field (RelCASSCF)
 
 Description
 ===========
-Full CI diagonalizes the full CI Hamiltonian.
-
-.. math::
-  H\Psi = E\Psi
-
-Pre-requisite
-=============
-Reference wave function (such as HF).
+The relativistic analogue of CASSCF is implemented in BAGEL. The second-order algorithm which is basically the same as its non-relativistic analogue is used by default.
 
 Command: ``zcasscf``
 
