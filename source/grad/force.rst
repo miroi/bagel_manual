@@ -23,7 +23,6 @@ Required Keywords
    |    ``nacme``: Calculates the non-adiabatic coupling matrix elements
    |    ``dgrad``: Difference gradient (only available for CASSCF)
    | **Default:** N/A
-   | **Recommendation:** N/A
 
 .. topic:: ``method``
 
@@ -38,7 +37,6 @@ Required Keywords
    |    ``1``: Use interstate coupling
    |    ``2``: Use non-adiabtic coupling with built-in electronic translational factor (ETF)
    | **Default:** 0
-   | **Recommendation:** use default
 
 Optional Keywords
 -----------------
@@ -58,7 +56,6 @@ Optional Keywords
    | **Description:** The step size used in the displacements in the finite difference calculations. The units are bohr.
    | **Datatype:** double precision
    | **Default:** 1.0e-3
-   | **Recommendation:** Use default
 
 .. topic:: ``target``
 
@@ -67,7 +64,6 @@ Optional Keywords
    | **Values:**
    |    ``int``: ground state = 0
    | **Default:** 0
-   | **Recommendation:** N/A
 
 .. topic:: ``target2``
 
@@ -76,7 +72,6 @@ Optional Keywords
    | **Values:**
    |    ``int``: first exited state = 1
    | **Default:** 1
-   | **Recommendation:** N/A
 
 .. topic:: ``export``
 
@@ -113,7 +108,7 @@ Optional Keywords
    |    ``true``: Archive file is saved
    |    ``false`` : Archive file is not saved
    | **Default:** false
-   | **Recommendation:** Save file if it is likely that the calculation will need to be restarted
+   | **Recommendation:** Save file if it is likely that the calculation will need to be restarted.
 
 .. topic:: ``ref_out``
 

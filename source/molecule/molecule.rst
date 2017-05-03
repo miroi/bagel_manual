@@ -523,9 +523,9 @@ References
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                          |
 +===============================================+==================================================================================+
-| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
+| General text on electronic structure theory   | A\. Szabo and N. S. Ostlund,                                                     |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-| Gauge invariant atomic orbitals               | R\. Ditchfield.  Mol. Phys., *27* 789–807 1974.                                  |
+| Gauge invariant atomic orbitals               | R\. Ditchfield, Mol. Phys. **27**, 789 (1974).                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+

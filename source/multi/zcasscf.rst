@@ -18,7 +18,6 @@ Keywords
    | **Options**:  "second":  second-order optimization algorithm;  "noopt" - no orbital optimization performed; program exits after one CAS-CI calculation using the given input orbitals.  Obsolete versions of BAGEL might also include SuperCI and BFGS algorithms, but the second-order algorithm has shown better convergence.
    | **Datatype**: string
    | **Default**: "second"
-   | **Recommendation**:  Use default
 
 .. topic:: ``gaunt``
 
@@ -47,7 +46,6 @@ Keywords
    | **Description**: If set to "true," occupation numbers of natural orbitals within the active space will be printed to casscf.log after each macroiteration.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**:  Use default
 
 .. topic:: ``nclosed``
 
@@ -129,7 +127,6 @@ Keywords
    | **Description**:  This option allows the user to freeze all positronic orbitals and optimize only for rotations between electronic orbitals.
    | **Datatype**: bool
    | **Default**:   false
-   | **Recommendation**:  Use default
 
 .. topic:: ``pop``
 
@@ -180,21 +177,18 @@ Keywords
    | **Description**:  If DHF is automatically called to generate starting orbitals, this parameter determines whether or not to use the "robust fitting" algorithm for the integrals in that part.  For the main CASSCF calculation, robust fitting is always used with the full Breit interaction and not with the Dirac--Coulomb or Dirac--Coulomb--Gaunt Hamiltonians.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**: use default.
 
 .. topic:: ``diis_start``
 
    | **Description**:  If DHF is automatically called to generate starting orbitals, then during that part we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm to update the orbitals after the specified iteration.
    | **Datatype**: int
    | **Default**: 1
-   | **Recommendation**: use default.
 
 .. topic:: ``thresh_overlap``
 
    | **Description**:  If DHF is automatically called to generate starting orbitals, this is used to identify linear dependancy in the atomic basis set.  Increasing this value will more aggressively remove linearly dependent basis vectors.  If starting orbitals are provided by a previous calculation, the same set of truncated orbitals is used, and this parameter is ignored.
    | **Datatype**: double
    | **Default**: 1.0e-8
-   | **Recommendation**: use default.
 
 Example
 =======
