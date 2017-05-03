@@ -84,7 +84,6 @@ Optional keywords
 .. topic:: ``tesla``
 
    | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.
-   |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
    | **Default**: false (i.e., atomic units are used)
    | **Datatype**: bool
 
@@ -183,8 +182,7 @@ Examples
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
+     "title" : "hf"
    }
 
    ]}
@@ -209,8 +207,7 @@ Example with mixed basis sets and density fitting basis sets:
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-8
+     "title" : "hf"
    }
 
    ]}
@@ -257,8 +254,7 @@ Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
+     "title" : "hf"
    }
 
    ]}
@@ -352,16 +348,15 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
      "geometry" : [
        { "atom" : "Cu",  "xyz" : [  0.000000,      0.000000,      0.000000]},
        { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,     -1.560000],
-                        "basis" : "cc-pvtz"},
+                         "basis" : "cc-pvtz"},
        { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,      1.560000],
-                        "basis" : "cc-pvtz"}
+                         "basis" : "cc-pvtz"}
      ]
    },
 
    {
-     "charge" : "-1",
      "title" : "hf",
-     "thresh" : 1.0e-8
+     "charge" : "-1"
    }
 
    ]}
@@ -434,8 +429,7 @@ Example
    },
 
    {
-     "title" : "hf",
-     "thresh" : 1.0e-10
+     "title" : "hf"
    }
 
    ]}
@@ -472,9 +466,7 @@ Sample input
    },
 
    {
-     "title" : "hf",
-     "charge" : "0",
-     "thresh" : 1.0e-8
+     "title" : "hf"
    }
 
    ]}
