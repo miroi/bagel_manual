@@ -18,8 +18,8 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``frozen``
 
    | **Description:** to have frozen orbitals or not
-   | **Default:** true.
    | **Datatype:** bool
+   | **Default:** true.
 
 .. topic:: ``ncore``
 
@@ -31,19 +31,19 @@ The default values are recommended unless mentioned otherwise.
    | **Description**: specify an alternative density fitting basis set for NEVPT2. If ``aux_basis`` is not
                       specified, the same density fitting basis used for the SCF reference (using the keyword ``df_basis``)
                       will be used.
-   | **Default**: use the same density fitting basis as in molecule/df_basis.
    | **Datatype**: string
+   | **Default**: use the same density fitting basis as in molecule/df_basis.
 
 .. topic:: ``norm_thresh``
 
-   | **Default**: 1.0e-13
    | **Datatype**: double
+   | **Default**: 1.0e-13
 
 .. topic:: ``istate``
 
    | **Description**: specific state used in the evaluation of the dynamical correlation
-   | **Default**: 0
    | **Datatype**: int
+   | **Default**: 0
 
 Example
 =======
