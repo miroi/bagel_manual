@@ -11,5 +11,6 @@ Molecular properties, printing and reading, processing data.
 
    localization.rst
    molden.rst
+   moprint.rst
    save_ref.rst
 
