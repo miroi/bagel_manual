@@ -46,7 +46,6 @@ Optional keywords
    | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents
    | **Default**: false
    | **Datatype**: boolean
-   | **Recommendation**: Improves description of relativistic effects.
 
 .. topic:: ``molden_file``
 
@@ -59,7 +58,7 @@ Optional keywords
    | **Description**: Option to do RHF-FMM, in which case density fitting is not used, for more details,
                       refer to :ref:`hf` section.
    | **Default**: false
-   | **Datatype**: boolean
+   | **Datatype**: bool
    | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules.
 
 .. topic:: ``schwarz_thresh``
@@ -74,8 +73,7 @@ Optional keywords
 
    | **Description**: Option to use the second-order Douglas-Kroll-Hess Hamiltonian (DKH2).
    | **Default**: false
-   | **Datatype**: boolean
-   | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.
+   | **Datatype**: bool
 
 .. topic:: ``magnetic_field``
 
@@ -93,15 +91,10 @@ Optional keywords
 .. topic:: ``basis_type``
 
    | **Description**: Specifies the type of atomic orbital basis functions,
-        either real Gaussian functions or complex gauge-including atomic orbitals (GIAOs).
-        This keyword can be used to call the GIAO code with zero
-        magnetic field, or to switch back to real Gaussians for common-gauge-origin calculations with the origin at (0, 0, 0).
+        either standard Gaussian functions or gauge-including atomic orbitals (GIAOs).
    | **Datatype**: String
-   | **Values**: "gaussian" or "giao."  "London" can be used as an alias for "giao," and this option is case-insensitive.
+   | **Values**: "gaussian" or "giao." "london" can be used as an alias for "giao".
    | **Default**: "gaussian" at zero magnetic field; GIAO a field is applied
-   | **Recommendation**:  Use the default.
-
-
 
 
 ==========
