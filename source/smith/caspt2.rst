@@ -97,35 +97,35 @@ SMITH keywords
 
    | **Description:** Number of frozen core orbitals.
    | **Default:** If ``frozen`` is true, then the number of core orbitals (first period, 2 per atom, second - third period, 8 per atom, ...).
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** Use default.
 
 .. topic:: ``nfrozenvirt``
 
    | **Description:** Number of frozen virtual orbitals.
    | **Default:** 0
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** Use default.
 
 .. topic:: ``maxiter``
 
    | **Description:** Maximum number of iterations in CASPT2 calculations.
    | **Default:** 50
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** Use default.
 
 .. topic:: ``maxtile``
 
    | **Description:** Maximum number of orbitals in a single data tile used in CASPT2.
    | **Default:** 10
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** Use default.
 
 .. topic:: ``cimaxtile``
 
    | **Description:** Maximum number of Slater determinants in a single data tile used in CASPT2 gradient.
    | **Default:** 100 (When number of determinants is over 10000), 10 (otherwise)
-   | **Datatype:** integer
+   | **Datatype:** int
    | **Recommendation:** Use default. Increase further when the number of determinants is larger.
 
 
