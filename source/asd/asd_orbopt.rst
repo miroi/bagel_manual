@@ -1,4 +1,3 @@
-.. index:: asd_orbital_optimization
 .. _asd_orbopt:
 
 ************************

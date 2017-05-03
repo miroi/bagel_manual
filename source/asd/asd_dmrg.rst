@@ -1,4 +1,3 @@
-.. index:: asd_dmrg
 .. _asd_dmrg:
 
 ********
@@ -107,7 +106,7 @@ Sample input
      "angstrom" : false,
      "cartesian" : false,
      "geometry" : [
-       {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     0.00000000000000] }
+       {"atom" :"He", "xyz" : [    0.00000000000,     0.00000000000,     0.00000000000] }
      ]
    },
 
@@ -123,7 +122,7 @@ Sample input
      "angstrom" : false,
      "cartesian" : false,
      "geometry" : [
-       {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     3.00000000000000] }
+       {"atom" :"He", "xyz" : [    0.00000000000,     0.00000000000,     3.00000000000] }
      ]
    },
 
@@ -139,7 +138,7 @@ Sample input
      "angstrom" : false,
      "cartesian" : false,
      "geometry" : [
-       {"atom" :"He", "xyz" : [    0.00000000000000,     0.00000000000000,     6.00000000000000] }
+       {"atom" :"He", "xyz" : [    0.00000000000,     0.00000000000,     6.00000000000] }
      ]
    },
 
