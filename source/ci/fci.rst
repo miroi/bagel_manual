@@ -23,24 +23,21 @@ Keywords
 ============
 
 
-.. topic:: ``frozen``
+.. topic:: ``maxiter (or maxiter_fci)``
 
-   | **Description**: To have frozen orbitals or not.
-   | **Datatype**: bool
-   | **Default**: true
-   | **Recommendation**: Default, otherwise the basis for the CI expansion will become very large.
-
-
-.. topic:: ``norb``
-
-   | **Description**: Number of orbitals in which electrons can be populated.
+   | **Description**: Maximum number of iterations in the FCI algorithm.
    | **Datatype**: int
-   | **Default**: Uses all possible orbitals
-   | **Recommendation**: System dependent, the user should specify a value. Using all possible configurations is typically computationally expensive and is best reserved for benchmarking calculations.
+   | **Default**: 100
+
+.. topic:: ``thresh (or thresh_fci)``
+
+   | **Description**: Threshold for the convergence of the selected CI algorithm.
+   | **Datatype**: double
+   | **Default**: 1.0e-10
 
 .. topic:: ``algorithm``
 
-   | **Description**: Algorithm to be used in the determinantion of the CI coeffcients.
+   | **Description**: FCI algorithm to be used. 
    | **Datatype**: string
    | **Values**:
    |    ``KH, Knowles, Handy``: Use Knowles-Handy.
@@ -49,46 +46,53 @@ Keywords
    | **Default**: KH.
    | **Recommendation**: If the active space is large and you have multiple processors, use Dist. Otherwise, use default.
 
+.. topic:: ``frozen``
+
+   | **Description**: Freeze core orbitals. 
+   | **Datatype**: bool
+   | **Default**: false 
+
+.. topic:: ``ncore``
+
+   | **Description:** Number of frozen core orbitals.
+   | **Datatype:** int 
+   | **Default:** If ``frozen`` is true, subvalence orbitals are frozen. If false, zero. 
+
+.. topic:: ``norb``
+
+   | **Description**: Number of correlated orbitals. Any high-energy orbitals in excess of this number will be excluded.
+   | **Datatype**: int
+   | **Default**: All molecular orbitals except those excluded using ncore. 
+
+.. topic:: ``active``
+
+   | **Description**: Orbital indices for the orbitals to be included. 
+   | **Datatype**: vector<int>
+   | **Default**: Frontier orbitals are used. 
+
 .. topic:: ``charge``
 
-   | **Description**: The electronic charge of the system.
+   | **Description**: The total charge of the system.
    | **Datatype**: int
    | **Default**:  0
 
-.. topic:: ``maxiter_fci``
-
-   | **Description**: Maximum number of iterations in the FCI algorithm.
-   | **Datatype**: int
-   | **Default**: 100
-
 .. topic:: ``nspin``
 
-   | **Description**: Number of unpaired electrons.
+   | **Description**: The spin multiplicity of the wavefunction (2S+1). 
    | **Datatype**: int
    | **Default**: 0
-   | **Recommendation**: Be careful as a common mistake is to input the total spin or multiplicity and not the number of electrons.
 
 .. topic:: ``nstates``
 
-   | **Description**: Number of states to calculate.
+   | **Description**: Number of states to be calculated.
    | **Datatype**: int
    | **Default**: 1
 
 .. topic:: ``restart``
 
-   | **Description**: Restart the calcualtion from an archive file.
+   | **Description**: Generate binary archive files that can be used to restart a calculation.
    | **Datatype**: bool
    | **Default**: false
-
-
-.. topic:: ``thresh or thresh_fci``
-
-   | **Description**: Threshold for convergence of selected CI algorithm.
-   | **Datatype**: double
-   | **Default**: 1.0e-10
-   | **Recommendation**: Use default.
-
-
 
 =======
 Example
