@@ -38,15 +38,14 @@ Optional keywords
    | **Description**: Specify units for atomic coordinates (Angstrom or Bohr)
    | **Default**: false (Angstrom)
    | **Datatype**: bool
-   |    ``TRUE``: use Angstrom
-   |    ``FALSE``: use Bohr
+   |    ``true``: use Angstrom
+   |    ``false``: use Bohr
 
 .. topic:: ``finite_nucleus``
 
    | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents
    | **Default**: false
-   | **Datatype**: boolean
-   | **Recommendation**: Improves description of relativistic effects.
+   | **Datatype**: bool
 
 .. topic:: ``molden_file``
 
@@ -59,12 +58,12 @@ Optional keywords
    | **Description**: Option to do RHF-FMM, in which case density fitting is not used, for more details,
                       refer to :ref:`hf` section.
    | **Default**: false
-   | **Datatype**: boolean
-   | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules.
+   | **Datatype**: bool
+   | **Recommendation**: Use for calculations on very large systems.
 
 .. topic:: ``schwarz_thresh``
 
-   | **Description**: Schwarz screening integral threshold (only used in RHF-FMM by specifying ``"cfmm" : "true"``).
+   | **Description**: Schwarz screening integral threshold, only used in RHF-FMM ``"cfmm" : "true"``.
                       For more details, refer to :ref:`hf` section.
    | **Default**: :math:`1.0\times 10^{-12}`
    | **Datatype**: double
@@ -72,10 +71,9 @@ Optional keywords
 
 .. topic:: ``dkh``
 
-   | **Description**: Option to do second order Douglas-Kroll-Hess (DKH2).
+   | **Description**: Option to use the second-order Douglas-Kroll-Hess Hamiltonian (DKH2).
    | **Default**: false
-   | **Datatype**: boolean
-   | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.
+   | **Datatype**: bool
 
 .. topic:: ``magnetic_field``
 
@@ -87,21 +85,16 @@ Optional keywords
 
    | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.
    |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
-   | **Default**: false (so atomic units are used)
+   | **Default**: false (i.e., atomic units are used)
    | **Datatype**: bool
 
 .. topic:: ``basis_type``
 
    | **Description**: Specifies the type of atomic orbital basis functions,
-        either real Gaussian functions or complex gauge-including atomic orbitals (GIAOs).
-        This keyword can be used to call the GIAO code with zero
-        magnetic field, or to switch back to real Gaussians for common-gauge-origin calculations with the origin at (0, 0, 0).
+        either standard Gaussian functions or gauge-including atomic orbitals (GIAOs).
    | **Datatype**: String
-   | **Values**: "gaussian" or "giao."  "London" can be used as an alias for "giao," and this option is case-insensitive.
+   | **Values**: "gaussian" or "giao." "london" can be used as an alias for "giao".
    | **Default**: "gaussian" at zero magnetic field; GIAO a field is applied
-   | **Recommendation**:  Use the default.
-
-
 
 
 ==========
@@ -359,9 +352,9 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
      "geometry" : [
        { "atom" : "Cu",  "xyz" : [  0.000000,      0.000000,      0.000000]},
        { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,     -1.560000],
-                        "basis" : "cc-pvtz"},
+                         "basis" : "cc-pvtz"},
        { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,      1.560000],
-                        "basis" : "cc-pvtz"}
+                         "basis" : "cc-pvtz"}
      ]
    },
 
