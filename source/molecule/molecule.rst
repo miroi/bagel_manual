@@ -38,8 +38,8 @@ Optional keywords
    | **Description**: Specify units for atomic coordinates (Angstrom or Bohr)
    | **Default**: false (Angstrom)
    | **Datatype**: bool
-   |    ``TRUE``: use Angstrom
-   |    ``FALSE``: use Bohr
+   |    ``true``: use Angstrom
+   |    ``false``: use Bohr
 
 .. topic:: ``finite_nucleus``
 
@@ -85,7 +85,7 @@ Optional keywords
 
    | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.
    |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
-   | **Default**: false (so atomic units are used)
+   | **Default**: false (i.e., atomic units are used)
    | **Datatype**: bool
 
 .. topic:: ``basis_type``
