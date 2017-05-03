@@ -228,16 +228,12 @@ latex_elements = {
 \\ChTitleVar{\\bfseries\\Huge}
 \\include{titlesec}
 \\titleformat{\\section}[hang]
-{\\usefont{T1}{qhv}{b}{n}\\selectfont}{}{0em}{\\hspace{-0.4pt}\\Large \\thesection\\hspace{0.6em}}
+{\\bfseries\\selectfont}{}{0em}{\\hspace{-0.4pt}\\LARGE \\thesection\\hspace{0.6em}}
 \\titleformat{\\subsection}[hang]
-{\\usefont{T1}{qhv}{b}{n}\\selectfont}{}{0em}{\\hspace{-0.4pt}\\large \\thesubsection\\hspace{0.6em}}
-''',
-#\\titleformat{\\section}[display]
-#  {\\small\\bfseries}{}{0pt}{\\Large}
-#''',
+{\\bfseries\\selectfont}{}{0em}{\\hspace{-0.4pt}\\Large \\thesubsection\\hspace{0.6em}}
+\\usepackage{mathptmx}
 
-#\\ChTitleVar{\\bfseries\\Huge\\rm}
-#\\ChNumVar{\\normalfont\\Huge\\ttfamily}
+''',
 
 
 }
