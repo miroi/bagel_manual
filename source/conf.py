@@ -220,8 +220,6 @@ latex_elements = {
 #'fontpkg' : '',
 
 # Additional stuff for the LaTeX preamble.
-#'preamble':  '\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}',
-
 'preamble': '''\
 \\ChNumVar{\\bfseries\\Huge}
 \\ChNameVar{\\bfseries\\Huge}
@@ -231,6 +229,7 @@ latex_elements = {
 {\\usefont{T1}{qhv}{b}{n}\\selectfont}{}{0em}{\\hspace{-0.4pt}\\Large \\thesection\\hspace{0.6em}}
 \\titleformat{\\subsection}[hang]
 {\\usefont{T1}{qhv}{b}{n}\\selectfont}{}{0em}{\\hspace{-0.4pt}\\large \\thesubsection\\hspace{0.6em}}
+\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}
 ''',
 #\\titleformat{\\section}[display]
 #  {\\small\\bfseries}{}{0pt}{\\Large}
