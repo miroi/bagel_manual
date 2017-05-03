@@ -4,7 +4,7 @@
 Multireference second-order perturbation theory (CASPT2)
 ********************************************************
 
-Refer to :ref:`caspt2` in :ref:`smith`.
+Refer to :ref:`CASPT2 <caspt2>` in :ref:`SMITH3 <smith>`.
 
 |
 |
