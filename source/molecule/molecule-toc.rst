@@ -1,8 +1,8 @@
 .. _molecule-toc:
 
-*******************************
-Molecule (system specification)
-*******************************
+**********************
+Molecule specification
+**********************
 
 Molecule, starting with ``"title" : "molecule"``, is one of the basic input blocks specifying important
 information such as basis sets and geometry for the input system. The user has to specify the contents of this block
