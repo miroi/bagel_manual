@@ -4,7 +4,7 @@
 Relativistic multireference second-order perturbation theory (RelCASPT2)
 ************************************************************************
 
-Refer to :ref:`relcaspt2` in :ref:`smith`.
+Refer to :ref:`RelCASPT2 <relcaspt2>` in :ref:`SMITH3 <smith>`.
 
 |
 |
