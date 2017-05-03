@@ -25,5 +25,9 @@
    asd/asd.rst
    miscellaneous/misc.rst
    supp_info/supp_info.rst
+
+.. toctree::
+   :maxdepth: 1
+
    author.rst
    funding.rst
