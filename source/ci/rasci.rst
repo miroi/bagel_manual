@@ -12,10 +12,10 @@ Description
 
 The basis into which the wavefunction is expanded is typically constructed by
 applying excitation operators to the determinant(s) included in the ground
-state wavefunction. The Restricted Active Space (RAS) method constrainst the
+state wavefunction. The Restricted Active Space (RAS) method constrains the
 types of excitations which can occur resulting in a smaller basis, and ideally
 a lower computational cost than that of full CI.  In RASCI as implemented in
-Bagel, the user constrains the excitations by specifying three "active" spaces,
+Bagel, the user constrains the excitations by specifying three "active" subspaces,
 R1, R2 and R3, which are three sets of orbitals.  The determinants in the CI
 expansion are obtained by exciting electrons within and between these spaces. 
 The key feature of RASCI is that the number of excitations between the different spaces
@@ -93,7 +93,7 @@ Keywords
 
 .. topic:: ``maxiter``
 
-   | **Description**: Maximum number of iterations in RASCI algorithm 
+   | **Description**: Maximum number of iterations in RASCI algorithm.
    | **Default**: 100 
    | **Datatype**: integer
    | **Values**: ``Any positive integer``
@@ -101,7 +101,7 @@ Keywords
 
 .. topic:: ``davidson_subspace``
 
-   | **Description**: Maximum dimension of subspace used for Davidson diagonalization
+   | **Description**: Maximum dimension of subspace used for Davidson diagonalization.
    | **Default**: 20 
    | **Datatype**: integer
    | **Values**: ``Any positive integer``
@@ -115,15 +115,15 @@ Keywords
    | **Values**: ``any positive double``
    | **Recommendation**: User dependent, calculation of multiple states are slower.
 
-.. topic:: ``thresh```
+.. topic:: ``thresh``
 
-   | **Description**: Threshold for convergence of selected RASCI algorithm 
+   | **Description**: Threshold for convergence of selected RASCI algorithm.
    | **Default**: 1.0e-10 
    | **Datatype**: double
    | **Values**: ``any positive double``
    | **Recommendation**: Default, reduce for greater accuracy.
 
-.. topic:: ``batchsize```
+.. topic:: ``batchsize``
 
    | **Description** : Number of terms from RASCI interaction to be evaluated at simulataneously.
    | **Default**: 512 

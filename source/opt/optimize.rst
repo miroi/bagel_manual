@@ -27,9 +27,13 @@ Keywords
 ========
 Required Keywords
 -----------------
-.. topic:: ``optimize``
+.. topic:: ``title``
 
-   | **Description:** Requests the geometry optimization. 
+   | **Description:** Request geometry optimization. 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:** (optimize)
+   |    ``optimize``: Optimize geometry.
 
 .. topic:: ``opttype``
 
