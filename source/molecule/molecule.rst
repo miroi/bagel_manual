@@ -11,11 +11,11 @@ Required keywords
    | **Datatype**: vector
    | **Values**:
    |    Vector of atoms provided in the following format ``{ "atom" : "atom symbol",  "xyz" : [x, y, z] }``
-        Please see the end of this section for some examples.
+        Please see the end of the file for some examples.
 
 .. topic:: ``basis``
 
-   | **Description**: define the default basis set to be used for the system
+   | **Description**: define default basis set used for the system
    | **Datatype**: string
    | **Values**:
    |    Please refer to `Basis sets`_ and `Effective core potential (ECP) basis sets`_ for possible arguments.
@@ -45,24 +45,23 @@ Optional keywords
 
 .. topic:: ``finite_nucleus``
 
-   | **Description**: Represent the nucleus as a Gaussian charge distribution with default exponents 
+   | **Description**: Represent nucleus as a Gaussian charge distribution with default exponents 
    | **Default**: false 
-   | **Datatype**: bool
-   | **Recommendation**: Improves the description of relativistic effects. 
+   | **Datatype**: boolean 
+   | **Recommendation**: Improves description of relativistic effects. 
 
 .. topic:: ``molden_file``
 
-   | **Description**: filename of an input molden file, which is required if ``"basis" : "molden"`` is specified.
+   | **Description**: filename of input molden file, which is required if ``"basis" : "molden"`` is specified.
    | **Datatype**: string
-   | **Recommendation**: We do not recommend restarting from a molden file if it is possible to generate the orbitals within Bagel; however, this can be useful in some cases (for example, reading guess orbitals for highly symmetric molecules). Additionally, for larger calculations where the first calculation to converge the active space is time consuming, restarting from these optimized orbitals can be useful when performing subsequent calcualtions (for example, a geometry optimization) 
-
+   | **Recommendation**: False. However, this can be useful for doing investigative calculations before using active space methods.
  
 .. topic:: ``cfmm``
 
    | **Description**: Option to do RHF-FMM, in which case density fitting is not used, for more details,
                       refer to :ref:`hf` section.
    | **Default**: false 
-   | **Datatype**: bool
+   | **Datatype**: boolean 
    | **Recommendation**: Use for calculations on very large systems. This is method is particularly effective for long, chain-like molecules. 
 
 .. topic:: ``schwarz_thresh``
@@ -77,31 +76,33 @@ Optional keywords
 
    | **Description**: Option to do second order Douglas-Kroll-Hess (DKH2).
    | **Default**: false 
-   | **Datatype**: bool
+   | **Datatype**: boolean 
    | **Recommendation**: False, unless you are interested in relativistic effects. DKH2 is a cheaper than using full four component methods, but slightly less accurate. The four-compoment methods should be used for the calculation of electron paramagnetic resonance tensors.    
 
 .. topic:: ``magnetic_field``
 
-   | **Description**: a vector of external magnetic field. When the magnetic field is non-zero,
-                      Gauge-invariant atomic orbitals (GIAO) is used by default.
-   | **Default**: ``{{0.0, 0.0, 0.0}}``
-   | **Datatype** : Array of integers
-   | **Recommendation**: Only use it if you need to; running with a magnetic field of zero, whilst physically equivalent to switching the magnetic field off, may be computationally more expensive. The gauge origin of the vector potential corresponding to the magentic field is at the origin of the co-ordinate system, hence the geometry should be specified such that the paramagnetic centre of the system is located at the origin, particularly if are making use of the :ref:`aniso` tools. At present finite magnetic field is only well tested for :ref:`dhf` and :ref:`hf`, but can potentially used with :ref:`zcasscf`. 
+   | **Description**: External magnetic field.  At this time, external magnetic fields are available only for the :ref:`hf` and :ref:`dhf` modules.  
+   | **Default**: zero magnetic field
+   | **Datatype**: Array of three doubles (x, y, z)
 
 .. topic:: ``tesla``
 
-   | **Description**: unit of the external magnetic field
-   | **Default**: false (use atomic unit)
-   | **Datatype** : double
+   | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.  
+   |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
+   | **Default**: false (so atomic units are used)
+   | **Datatype**: bool
  
 .. topic:: ``basis_type``
 
-   | **Description**: Specify whether or not to use standard Gaussian basis functions from input, or to use input basis to generate gauge-invariant atomic orbitals (GIAO).
-   | **Default**: Standard if no magnetic field, GIAO if there is a magnetic field.
-   | **Datatype**: string 
-   | **Values**: "london" or "giao" (for GIAO), and "gaussian".
-   | **Recommendation**: Default. Asking for standard orbitals in a calculation with a finite magentic field will result in a common gauge origin being used in generation of the basis functions. This is less expensive, but significantly less accurate.
- 
+   | **Description**: Specifies the type of atomic orbital basis functions, 
+        either real Gaussian functions or complex gauge-including atomic orbitals (GIAOs).   
+        This keyword can be used to call the GIAO code with zero 
+        magnetic field, or to switch back to real Gaussians for common-gauge-origin calculations with the origin at (0, 0, 0).  
+   | **Datatype**: String 
+   | **Values**: "gaussian" or "giao."  "London" can be used as an alias for "giao," and this option is case-insensitive.  
+   | **Default**: "gaussian" at zero magnetic field; GIAO a field is applied
+   | **Recommendation**:  Use the default.  
+
 
 
 
@@ -111,47 +112,44 @@ Basis sets
 
 The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
-.. hlist::
-   :columns: 3
-
-   * sto-3g
-   * 3-21g  
-   * 6-31g
-   * svp
-   * tzvpp
-   * qzvpp
-   * cc-pvdz  
-   * cc-pvtz  
-   * cc-pvqz
-   * cc-pv5z  
-   * cc-pv6z  
-   * cc-pcvdz
-   * cc-pcvtz
-   * cc-pcvqz
-   * cc-pcv5z
-   * cc-pcvdz-dk
-   * cc-pcvtz-dk
-   * aug-cc-pvdz
-   * aug-cc-pvtz
-   * aug-cc-pvqz
-   * aug-cc-pv5z
-   * aug-cc-pv6z
-   * aug-cc-pcvdz
-   * aug-cc-pcvtz
-   * aug-cc-pcvqz
-   * aug-cc-pcv5z
-   * aug-cc-pcvdz-dk
-   * aug-cc-pcvtz-dk
-   * aug-cc-pcvqz-dk
-   * aug-cc-pwcvdz
-   * aug-cc-pwcvtz
-   * aug-cc-pwcvqz
-   * aug-cc-pwcv5z
-   * d-aug-cc-pvdz
-   * d-aug-cc-pvtz
-   * d-aug-cc-pvqz
-   * d-aug-cc-pv5z
-   * ano-rcc
+* sto-3g
+* 3-21g  
+* 6-31g
+* svp
+* tzvpp
+* qzvpp
+* cc-pvdz  
+* cc-pvtz  
+* cc-pvqz
+* cc-pv5z  
+* cc-pv6z  
+* cc-pcvdz
+* cc-pcvtz
+* cc-pcvqz
+* cc-pcv5z
+* cc-pcvdz-dk
+* cc-pcvtz-dk
+* aug-cc-pvdz
+* aug-cc-pvtz
+* aug-cc-pvqz
+* aug-cc-pv5z
+* aug-cc-pv6z
+* aug-cc-pcvdz
+* aug-cc-pcvtz
+* aug-cc-pcvqz
+* aug-cc-pcv5z
+* aug-cc-pcvdz-dk
+* aug-cc-pcvtz-dk
+* aug-cc-pcvqz-dk
+* aug-cc-pwcvdz
+* aug-cc-pwcvtz
+* aug-cc-pwcvqz
+* aug-cc-pwcv5z
+* d-aug-cc-pvdz
+* d-aug-cc-pvtz
+* d-aug-cc-pvqz
+* d-aug-cc-pv5z
+* ano-rcc
 
 ==========================
 Density fitting basis sets
@@ -232,6 +230,7 @@ and providing a value for ``"molden_file"``:
    
    {
      "title" : "molecule",
+     "symmetry" : "C1",
      "basis" : "molden",
      "df_basis" : "svp-jkfit",
      "cartesian" : true,
@@ -539,9 +538,9 @@ References
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                          |
 +===============================================+==================================================================================+
-| General text on electronic structure theory   | A\. Szabo and N. S. Ostlund,                                                     |
+| General text on electronic structure theory   | A\. Szabo, and N. S. Ostlund,                                                    |
 |                                               | *Modern Quantum Chemistry: Introduction to Advanced Electronic Structure Theory* |
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
-| Gauge invariant atomic orbitals               | R\. Ditchfield, Mol. Phys. **27**, 789 (1974).                                   |
+| Gauge invariant atomic orbitals               | R. Ditchfield.  Mol. Phys., *27* 789–807 1974.                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+

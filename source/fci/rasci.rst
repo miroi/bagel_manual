@@ -17,11 +17,10 @@ types of excitations which can occur resulting in a smaller basis, and ideally
 a lower computational cost than that of full CI.  In RASCI as implemented in
 Bagel, the user constrains the excitations by specifying three "active" spaces,
 R1, R2 and R3, which are three sets of orbitals.  The determinants in the CI
-expansion are obtained by exciting from R1 into R2, from R2 to R3, or between
-occupied and unoccupied orbitals in R2.  The number of excitations between R1
-and R2 is constrained by specifying the maximium number of holes which can
-occur in R1, whilst the number of excitations between R2 and R3 is constrained
-by specifying the maximium number of electrons which can occur in R2. 
+expansion are obtained by exciting electrons within and between these spaces. 
+The key feature of RASCI is that the number of excitations between the different spaces
+are constrained by specifying the maximium number
+of holes which can occur in R1, and the maximium number of electrons which can occur in R3. 
 
 
 This is useful for close analysis of the impact of specific
