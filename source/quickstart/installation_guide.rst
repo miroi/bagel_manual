@@ -73,6 +73,9 @@ Build BAGEL
      | ``--with-include``  can be used to specifically include paths.
      | ``--with-libxc`` turns on the interface to libxc.
      | ``CXXFLAGS=-DNDEBUG`` deactivates the debugging mode. It is absolutely essential to specify "-DNDEBUG" for release builds.
+     | ``CXXFLAGS=-DCOMPILE_J_ORB`` allows the inclusion of *j*-type atomic basis functions, in addition to *s*, *p*, *d*, *f*, *g*, *h*, and *i*.  
+             This will increase the compile time and binary size, and is usually unnecessary.  
+             *j*-type basis functions might be worth using in the fitting basis set for Dirac--Breit calculations of very heavy elements.  
 
   Example (Release build on the Shiozaki group's cluster) ::
 
