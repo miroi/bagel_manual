@@ -205,19 +205,23 @@ htmlhelp_basename = 'BAGELdoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
-
 latex_elements = {
   'classoptions': ',openany,oneside',
   'babel': '\\usepackage[english]{babel}',
+  'passoptionstopackages': r'\PassOptionsToPackage{svgnames}{xcolor}',
+
 # The paper size ('letterpaper' or 'a4paper').
 #'papersize': 'letterpaper',
 
+'fncychap': '\usepackage[Lonny]{fncychap}',
+
 # The font size ('10pt', '11pt' or '12pt').
 'pointsize': '10pt',
+'fontpkg' : '',
 
 # Additional stuff for the LaTeX preamble.
 'preamble':  '\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}',
-  
+
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
