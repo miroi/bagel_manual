@@ -10,6 +10,6 @@ Below is a quick start guide to install/compile BAGEL and run your very first ca
    :maxdepth: 3
 
    installation_guide.rst
-   how_to_run_bagel.rst   
+   how_to_run_bagel.rst
 
 

@@ -9,7 +9,7 @@ Keywords
 ========
 
 .. topic:: ``multisite``
-   
+
    | **Description:** start construting multisite
 
 .. topic:: ``refs``
@@ -18,7 +18,7 @@ Keywords
    | **Recommendation:** refer to sample input for details
 
 .. topic:: ``active``
-   
+
    | **Description:** specify single site active orbitals
    | **Datatype:** set<int>
 
@@ -31,8 +31,8 @@ Keywords
 
    | **Description:** localize multisite molecular orbitals
    | **Default:** use default :ref:`localization`
-   
-   
+
+
 
 
 

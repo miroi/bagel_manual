@@ -30,7 +30,7 @@ Keywords
    | **Description**: To have frozen orbitals or not.
    | **Default**: true
    | **Datatype**: bool
-   | **Recommendation**: Default, otherwise the basis for the CI expansion will become very large. 
+   | **Recommendation**: Default, otherwise the basis for the CI expansion will become very large.
 
 
 .. topic:: ``norb``
@@ -41,11 +41,11 @@ Keywords
    | **Recommendation**: System dependent, the user should specify a value. Using all possible configurations is typically computationally expensive and is best reserved for benchmarking calculations.
 
 .. topic:: ``algorithm``
-   
+
    | **Description**: Algorithm to be used in the determinantion of the CI coeffcients.
    | **Default**: KH.
    | **Datatype**: string
-   | **Values**: 
+   | **Values**:
    |    ``KH, Knowles, Handy``: Use Knowles-Handy.
    |    ``HZ, Harrison, Zarrabian``: Use Harrison-Zarrabian.
    |    ``Dist, parallel``: Use parallel algorithm.
@@ -65,7 +65,7 @@ Keywords
 
 .. topic:: ``nspin``
 
-   | **Description**: Number of unpaired electrons. 
+   | **Description**: Number of unpaired electrons.
    | **Default**: 0
    | **Datatype**: integer
    | **Values**: Any positive integer
@@ -73,13 +73,13 @@ Keywords
 
 .. topic:: ``nstates``
 
-   | **Description**: Number of states to calculate. 
-   | **Default**: 1 
+   | **Description**: Number of states to calculate.
+   | **Default**: 1
    | **Datatype**: integer
 
 .. topic:: ``restart``
 
-   | **Description**: Restart the calcualtion from an archive file. 
+   | **Description**: Restart the calcualtion from an archive file.
    | **Default**: false
    | **Datatype**: bool
 
@@ -87,9 +87,9 @@ Keywords
 .. topic:: ``thresh or thresh_fci``
 
    | **Description**: Threshold for convergence of selected CI algorithm.
-   | **Default**: 1.0e-10 
+   | **Default**: 1.0e-10
    | **Datatype**: double
-   | **Recommendation**: Use default. 
+   | **Recommendation**: Use default.
 
 
 
@@ -101,7 +101,7 @@ A Hartree-Fock and FCI calculation on an oxygen molecule with an elongated bond.
 Sample input
 ------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
    {
@@ -139,7 +139,7 @@ Sample input
 Sample output
 -------------
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
  ---------------------------
         FCI calculation

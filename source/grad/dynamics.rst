@@ -76,7 +76,7 @@ Files to be Modified in Dynamics Software
 
 Some source codes in the dynamics software should be modified. Many of the dynamics software in fact have QM/MM
 interfaces to the other quantum chemistry software, and by modifying the existent interface, one can perform the
-QM/MM dynamics or gas phase dynamics simulations. For instance, to perform QM/MM calculations in ``GROMACS``, one should modify 
+QM/MM dynamics or gas phase dynamics simulations. For instance, to perform QM/MM calculations in ``GROMACS``, one should modify
 
 ``src/gromacs/mdlib/qmmm.c``,
 
@@ -96,22 +96,22 @@ Keywords
 
 .. topic:: ``export``
 
-   | **Description:** This option will export the nuclear gradient to a text file.  
+   | **Description:** This option will export the nuclear gradient to a text file.
    | **Default:** false
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: Export file
-   |    ``false``: Do not export file 
+   |    ``false``: Do not export file
    | **Recommendation:** Use ``true``.
 
 .. topic:: ``export_single``
 
-   | **Description:** This option will export the nuclear gradient to a text file for a single state.  
-   | **Default:** false 
+   | **Description:** This option will export the nuclear gradient to a text file for a single state.
+   | **Default:** false
    | **Datatype:** bool
-   | **Values:** 
+   | **Values:**
    |    ``true``: Export file
-   |    ``false``: Do not export file 
+   |    ``false``: Do not export file
    | **Recommendation:** Use ``true`` with single state dynamics / optimizations.
 
 
@@ -122,7 +122,7 @@ General References
 ------------------
 
 +-----------------------------------------------+--------------------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                             | 
+|          Description of Reference             |                          Reference                                             |
 +===============================================+================================================================================+
 | Nonadiabatic dynamics (Surface hopping)       | M\. Barbatti, WIREs Comput. Mol. Sci. **1**, 620 (2011).                       |
 +-----------------------------------------------+--------------------------------------------------------------------------------+

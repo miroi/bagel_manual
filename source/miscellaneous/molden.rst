@@ -7,7 +7,7 @@ MOLDEN
 ===========
 Description
 ===========
-A molden file format can be generated as an output for orbitals, geometries, and vibrational frequencies. If a geometry optimization is performed, a molden file is generated that contains the geometry at each step in the optimization by default.   
+A molden file format can be generated as an output for orbitals, geometries, and vibrational frequencies. If a geometry optimization is performed, a molden file is generated that contains the geometry at each step in the optimization by default.
 
 A molden file can also be read to restart calculations. See the molecule section for more information.
 
@@ -17,19 +17,19 @@ Keywords
 
 .. topic:: ``file``
 
-   | **Description:** Name of the file to be generated 
-   | **Datatype:** string 
+   | **Description:** Name of the file to be generated
+   | **Datatype:** string
 
 .. topic:: ``orbitals``
 
-   | **Description:** Molecular orbitals are written to the molden file. 
-   | **Default:** false 
-   | **Datatype:** bool 
+   | **Description:** Molecular orbitals are written to the molden file.
+   | **Default:** false
+   | **Datatype:** bool
 
 .. topic:: ``vibration``
 
-   | **Description:** The vibrational frequencies, infrared intensities, and the cartesian eigenvectors of the normal modes are written to the molden file. 
-   | **Default:** false 
+   | **Description:** The vibrational frequencies, infrared intensities, and the cartesian eigenvectors of the normal modes are written to the molden file.
+   | **Default:** false
    | **Datatype:** bool
 
 =======
@@ -41,7 +41,7 @@ Sample input
 
 Write molecular orbitals:
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
 
@@ -57,7 +57,7 @@ Write molecular orbitals:
 
 Write results from a vibrational frequency calculation:
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
 
@@ -78,6 +78,6 @@ References
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 |          Description of Reference                  |                          Reference                                                                        |
 +====================================================+===========================================================================================================+
-| Molden and the model file format                   |   www.cmbi.ru.ml/molden                                                                                   | 
+| Molden and the model file format                   |   www.cmbi.ru.ml/molden                                                                                   |
 +----------------------------------------------------+-----------------------------------------------------------------------------------------------------------+
 

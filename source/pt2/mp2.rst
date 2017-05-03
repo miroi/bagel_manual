@@ -23,12 +23,12 @@ Keywords
    | **Datatype**: bool
 
 .. topic:: ``ncore``
-   
+
    | **Description**: manually specify number of frozen orbitals, used when 'frozen' is turned on
    | **Datatype**: int
 
 .. topic:: ``aux_basis``
-   
+
    | **Description**: specify an auxiliary basis set for MP2
    | **Default**: use the same density fitting basis as in :ref:`molecule`
    | **Datatype**: string
@@ -38,10 +38,10 @@ Keywords
 Example
 =======
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "cc-pvdz",
@@ -62,13 +62,13 @@ Example
        { "atom" : "H", "xyz" : [ -0.00000000000,  2.29608983528, -0.28688797942] }
      ]
    },
-   
+
    {
      "title" : "mp2",
      "aux_basis" : "cc-pvdz-ri",
      "frozen" : true
    }
-   
+
    ]}
 
 The SCF calculation should converge after 11 iterations with energy -230.72159477 and the DF-MP2 gives correlation energy
@@ -78,7 +78,7 @@ References
 ==========
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    | 
+|          Description of Reference             |                          Reference                                    |
 +===============================================+=======================================================================+
 | Original reference for MP2                    | C\. Møller and M. S. Plesset, Phys. Rev. **46**, 618 (1934).          |
 +-----------------------------------------------+-----------------------------------------------------------------------+
