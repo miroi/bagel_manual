@@ -1,4 +1,4 @@
-.. _molden:
+.. _save_ref:
 
 ******************************************
 Saving and loading MOs and CI coefficients

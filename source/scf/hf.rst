@@ -107,7 +107,7 @@ Keywords for RHF-FMM
 .. topic:: ``exchange``
 
    | **Description**: whether to include far-field exchange using occ-RI-FMM
-   | **Datatype**: int
+   | **Datatype**: bool 
    | **Default**: false
 
 .. topic:: ``lmax_exchange``
