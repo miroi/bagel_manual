@@ -84,7 +84,6 @@ Optional keywords
 .. topic:: ``tesla``
 
    | **Description**: Used to specify that the external magnetic field is specified in units of Tesla, rather than atomic units.
-   |    (1 a.u. is approximately :math:`2.35\times 10^5` T)
    | **Default**: false (i.e., atomic units are used)
    | **Datatype**: bool
 
