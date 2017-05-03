@@ -20,159 +20,101 @@ Keywords
 
 .. topic:: ``maxiter (or maxiter_fci)``
 
-   | **Description**: Maximum number of iterations in the FCI algorithm.
+   | **Description:** Maximum number of iterations in the FCI algorithm.
+   | **Datatype:** int
    | **Default**: 100
-   | **Datatype**: int
-   | **Recommendation**: Use default value. 
-
-.. topic:: ``davidson_subspace``
-
-   | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
-   | **Default**: 20
-   | **Datatype**: int
-   | **Recommendation**: Any number above 3 is reasonable.  
 
 .. topic:: ``thresh (or thresh_fci)``
 
    | **Description**: Threshold for the convergence of the selected CI algorithm.
+   | **Datatype**: double
    | **Default**: 1.0e-10 
-   | **Datatype**: double
-   | **Recommendation**: Use default value.
 
-.. topic:: ``print_thresh``
+.. topic:: ``frozen``
 
-   | **Description**: Threshold below which CI coefficients are not printed.  
-   | **Default**: 0.05
-   | **Datatype**: double
+   | **Description**: Freeze core orbitals. 
+   | **Datatype**: bool
+   | **Default**: false
 
-.. topic:: ``state``
+.. topic:: ``ncore``
 
-   | **Description**: Number of states computed for each spin value.
-   | **Default**: There is no default; this parameter must be supplied in the input.  
+   | **Description:** Number of frozen core orbitals.
+   | **Datatype:** int 
+   | **Default:** If ``frozen`` is true, subvalence orbitals are frozen. If false, zero. 
+
+.. topic:: ``norb``
+
+   | **Description:** Number of correlated orbitals. Any high-energy orbitals in excess of this number will be excluded.
+   | **Datatype:** int
+   | **Default:** All molecular orbitals except those excluded using ncore.
+
+.. topic:: ``active``
+
+   | **Description**: Orbital indices for the orbitals to be included. 
    | **Datatype**: vector<int>
-   | **Note**: An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example, the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).  Be careful!  While the spin values you specified are used in generating the guess CI coefficients, the spin vectors will mix, and the algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.  
+   | **Default**: Frontier orbitals are used. 
 
 .. topic:: ``gaunt``
 
    | **Description**: Used to specify the form of the 2-electron Hamiltonian.  The default is the Dirac--Coulomb Hamiltonian. If ``gaunt`` is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit coupling between electrons.  
-   | **Default**: Value obtained from reference wavefunction.  
    | **Datatype**: bool
-   | **Recommendation**: Choose based on the importance of the relativistic effects in your problem.  
+   | **Default**: Value obtained from reference wavefunction.  
 
 .. topic:: ``breit``
 
    | **Description**: Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
+   | **Datatype**: bool
    | **Default**: Value obtained from reference wavefunction.  
-   | **Datatype**: bool
-   | **Recommendation**: Choose based on the importance of relativistic effects in your problem.  
-
-.. topic:: ``frozen``
-
-   | **Description**: If this is set to true, and ``ncore`` is not specified, then core molecular orbitals are frozen in all Slater determinants.  
-   | **Default**: false.
-   | **Datatype**: bool
-   | **Recommendation**: Frozen orbitals reduce the computational cost with some tradeoff in accuracy.  Freezing the core is often a good compromise, but this will depend on your particular problem. 
-
-.. topic:: ``ncore``
-
-   | **Description**:  Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by ``frozen``.
-   | **Default**: Either zero or all core orbitals, depending on the ``frozen`` parameter.  
-   | **Default**:  There is no default; this parameter must be supplied in the input.
-   | **Datatype**: vector<int>
-   | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example,
-   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
-   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
-   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
-
-.. topic:: ``gaunt``
-
-   | **Description**:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
-   |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit
-   |     coupling between electrons.
-   | **Default**: Value obtained from reference wavefunction.
-   | **Datatype**: bool
-   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.
-
-.. topic:: ``breit``
-
-   | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.
-   | **Default**: Value obtained from reference wavefunction.
-   | **Datatype**: bool
-   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.
-
-.. topic:: ``frozen``
-
-   | **Description**:  If this is set to true, and "ncore" is not specified, then core molecular orbitals are frozen as doubly occupied in all Slater determinants.
-   | **Default**: false.
-   | **Datatype**: bool
-   | **Recommendation**:  Frozen orbitals reduce the computational cost with some tradeoff in accuracy.  Freezing the core is often a good compromise, but this will depend on your particular problem.
-
-.. topic:: ``ncore``
-
-   | **Description**:  Number of core molecular orbitals to be frozen as doubly occupied in all determinants.  This parameter overrides the default determined by "frozen."
-   | **Default**: Either zero or all core orbitals, depending on the "frozen" parameter.
-   | **Datatype**: bool
-
-.. topic:: ``norb``
-
-   | **Description**: Number of correlated orbitals. Any high-energy orbitals in excess of this number will be unoccupied.  
-   | **Default**: All molecular orbitals except those excluded using ncore.
-   | **Datatype**: int
-   | **Recommendation**: Include all virtual orbitals, if you can afford it.
-
-.. topic:: ``only_ints``
-
-   | **Description**: Used to compute integrals, print to a file, and terminate the program. This can be used to interface BAGEL to an external CASSCF solver.  
-   | **Default**: false
-   | **Datatype**: bool
-   | **Recommendation**: Use the default value.  
-
-.. topic:: ``spin_adapt``
-
-   | **Description**: This parameter allows us to deactivate the generation of spin-adapted configuration state functions in the starting guess of the CAS-CI part.  
-   | **Default**: true
-   | **Datatype**: bool
-   | **Recommendation**: Normally use the default setting. If you are computing all or nearly all the states that can be formed with a given active space, you will encounter an error stating that "generate_guess produced an invalid determinant."  Deactivating this feature leads to a poorer guess but eliminates this problem.  
 
 .. topic:: ``charge``
 
    | **Description**: The total charge of the system.
-   | **Default**:  0
    | **Datatype**: int
+   | **Default**:  0
 
-.. topic:: ``active``
+.. topic:: ``state``
 
-   | **Description**: Orbital indices for the orbitals to be included in the active space.  
-   | **Default**: Frontier orbitals are used. If a DHF reference waveunction (or Hcore guess) is used, the canonical orbitals are ordered by orbital energy, the ``nclosed`` lowest-energy orbitals are set to closed, and the next ``nact`` are set to active. If the reference wavefunction was generated by CASSCF, the order of orbitals is maintained.  
+   | **Description**: Number of states computed for each spin value.
    | **Datatype**: vector<int>
-   | **Recommendation**:  The convergence behavior is often improved by choosing guess orbitals similar in character to your target active orbitals. For both relativistic Hartree--Fock and CASSCF, useful tools to identify good starting orbitals include using the ``pop`` keyword to print orbital population analysis and using the ``moprint`` module to visualize orbital densities using the Gaussian cube format.  
+   | **Default**: There is no default; this parameter must be supplied in the input.  
+   | **Note**: An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example, the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).  Be careful!  While the spin values you specified are used in generating the guess CI coefficients, the spin vectors will mix, and the algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.  
 
-.. topic:: ``aniso``
+.. topic:: ``davidson_subspace``
 
-   | **Description**: This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis (the determination of g-factors and zero-field splitting parameters). See below for details.  
-   | **Values**: `any int`
-   | **Recommendation**: The electronic charge of the system.
+   | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
+   | **Datatype**: int
+   | **Default**: 20
+   | **Recommendation**: Reduce if an insufficient amount of memory is available (do not reduce to a value lower than 3). 
 
-.. topic:: ``active``
+.. topic:: ``only_ints``
 
-   | **Description**:  Orbital indices for the spatial MOs that should be included in the active space.
-   | **Default**:  Frontier orbitals are used.  If a DHF reference waveunction (or Hcore guess) is used, the canonical orbitals are ordered by orbital energy,
-   |     the "nclosed" lowest-energy orbitals are set to closed, and the next "nact" are set to active.  If the reference wavefunction was
-   |     generated by CASSCF, the order of orbitals is maintained.
-   | **Datatype**: vector<int>
-   | **Recommendation**:  The convergence behavior is often improved by choosing guess orbitals similar in character to your target active
-   |     orbitals. For both relativistic Hartree--Fock and CASSCF, useful tools to identify good starting orbitals include using the "pop" keyword to
-   |     print orbital population analysis and using the "moprint" module to visualize orbital densities using Gaussian cube format.
-
-.. topic:: ``aniso``
-
-   | **Description**:  This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis, in determination of g-factors and zero-field splitting parameters.  See below for details.
+   | **Description**: If true, calculates integrals and dumps to a file. This is used to interface BAGEL to an external program.
+   | **Datatype**: bool
+   | **Default**: false
 
 .. topic:: ``restart``
 
-   | **Description**: Generate binary archive files that can be used to restart an incomplete calculation.
-   | **Default**: false
+   | **Description**: Generate binary archive files that can be used to restart a calculation.
    | **Datatype**: bool
+   | **Default**: false
+
+.. topic:: ``print_thresh``
+
+   | **Description**: Threshold below which CI coefficients are not printed.  
+   | **Datatype**: double
+   | **Default**: 0.05
+
+.. topic:: ``spin_adapt``
+
+   | **Description**: Spin-adapt the starting guess. 
+   | **Datatype**: bool
+   | **Default**: true
+   | **Recommendation**: Use false if the error "generate_guess produced an invalid determinant" is generated. 
+
+.. topic:: ``aniso``
+
+   | **Description**: Performs magnetic anisotropy analysis (g-factors and zero-field splitting parameters). 
+   | **Datatype**: int
 
 Example
 =======

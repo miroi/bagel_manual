@@ -28,6 +28,8 @@ Prerequisite
 Keywords
 ========
 
+The default values are recommended unless mentioned otherwise.
+
 .. topic:: ``gaunt``
 
    | **Description**:  Used to specify the form of the 2-electron Hamiltonian.  The default is to use the Dirac--Coulomb Hamiltonian. If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit coupling between electrons.  Note that if "gaunt" is set to true, "breit" is also set to true unless otherwise specified by the user.
@@ -47,21 +49,18 @@ Keywords
    | **Description**:  Determines whether or not to use the "robust" density fitting algorithm.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**: use default.
 
 .. topic:: ``maxiter (or maxiter_scf)``
 
    | **Description**:  Maximum number of iterations, after which the program will terminate if convergence is not reached.
    | **Datatype**: int
    | **Default**: 100
-   | **Recommendation**: use default.
 
 .. topic:: ``diis_start``
 
    | **Description**:  After the specified iteration, we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm for the to update the orbitals.
    | **Datatype**: int
    | **Default**: 1
-   | **Recommendation**: use default.
 
 .. topic:: ``thresh (or thresh_scf)``
 
@@ -75,7 +74,6 @@ Keywords
    | **Description**:  Overlap threshold used to identify linear dependancy in the atomic basis set. Increasing this value will more aggressively remove linearly dependent basis vectors.
    | **Datatype**: double
    | **Default**: 1.0e-8
-   | **Recommendation**: use default.
 
 .. topic:: ``charge``
 
@@ -88,7 +86,6 @@ Keywords
    | **Description**:  Order of multipoles to be used.  At this time, only dipoles are implemented for DHF, but this option is included for future extensions and consistency with non-relativistic HF.
    | **Datatype**: int
    | **Default**: 1
-   | **Recommendation**: use default.
 
 .. topic:: ``pop``
 

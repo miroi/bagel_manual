@@ -12,13 +12,44 @@ Command: ``zcasscf``
 
 Keywords
 ========
+.. topic:: ``state``
+
+   | **Description**: Number of states computed for each spin value.  All are included in the state-averaging procedure when orbitals are optimized.
+   | **Datatype**: vector<int>
+   | **Default**:  There is no default; this parameter must be supplied in the input.
+   | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example,
+   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
+   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
+   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
+
+.. topic:: ``nact``
+
+   | **Description**: Number of active orbitals
+   | **Datatype**: int
+   | **Default**: 0
+
+.. topic:: ``nclosed``
+
+   | **Description**:  Number of closed orbitals
+   | **Datatype**: int
+   | **Default**: Number of electrons / 2. 
+
+.. topic:: ``active``
+
+   | **Description:** Specify active orbitals. Note that the orbital index starts from 1.
+   | **Datatype:** vector<int>
+   | **Default:** Nact / 2 orbitals lower and higher from the valence orbital.
+   | **Example:**
+   |    [36, 37, 39] : include 36th, 37th, and 39th orbitals.
+
 .. topic:: ``algorithm``
 
-   | **Description**:  CASSCF optimization algorithm
-   | **Options**:  "second":  second-order optimization algorithm;  "noopt" - no orbital optimization performed; program exits after one CAS-CI calculation using the given input orbitals.  Obsolete versions of BAGEL might also include SuperCI and BFGS algorithms, but the second-order algorithm has shown better convergence.
-   | **Datatype**: string
-   | **Default**: "second"
-   | **Recommendation**:  Use default
+   | **Description:** Orbital optimization algorithm.
+   | **Datatype:** string
+   | **Values:**
+   |    ``second``: second-order algorithm.
+   |    ``noopt``: no orbital optimization.
+   | **Default:** ``second``
 
 .. topic:: ``gaunt``
 
@@ -36,24 +67,17 @@ Keywords
    | **Default**: Value obtained from reference wavefunction.
    | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.
 
-.. topic:: ``nact``
+.. topic:: ``only_electrons``
 
-   | **Description**: Number of active orbitals
-   | **Datatype**: int
-   | **Default**: 0
+   | **Description**:  This option allows the user to freeze all positronic orbitals and optimize only for rotations between electronic orbitals.
+   | **Datatype**: bool
+   | **Default**:   false
 
 .. topic:: ``natocc``
 
    | **Description**: If set to "true," occupation numbers of natural orbitals within the active space will be printed to casscf.log after each macroiteration.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**:  Use default
-
-.. topic:: ``nclosed``
-
-   | **Description**:  Number of closed orbitals
-   | **Datatype**: int
-   | **Default**: Full core space (1 orbital for He - F atom; 5 for each Ne - Cl atom, etc.)
 
 .. topic:: ``charge``
 
@@ -66,135 +90,61 @@ Keywords
    | **Description**:  If set to true, the one-electron Hamiltonian is diagonalized to generate initial guess orbitals.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**:  Use default.  The guess orbitals obtained from this option are usually inferior to those from DHF or a CASSCF calculation with a smaller active space.
 
 .. topic:: ``maxiter``
 
-   | **Description**:  Maximum number of macroiterations, after which the program will terminate if convergence is not reached.
+   | **Description**: Maximum number of macroiterations.
    | **Datatype**: int
    | **Default**: 100
-   | **Recommendation**:  The default is usually more than enough, if it is going to converge.
-   |      Note that if DHF is automatically called to generate guess orbitals, "maxiter_scf" can be used to set a different maximum for that step.
 
 .. topic:: ``maxiter_micro``
 
-   | **Description**:  Maximum number of microiterations, after which the program will terminate if convergence is not reached.
+   | **Description**: Maximum number of microiterations.
    | **Datatype**: int
-   | **Default**: 20
-   | **Recommendation**:  This parameter must sometimes be increased for difficult optimizations.
+   | **Default**: 20 
 
 .. topic:: ``maxiter_fci``
 
-   | **Description**: Maximum number of iterations in CI coefficient optimization for the CAS-CI part
+   | **Description**: Maximum number of iterations in CI coefficient optimization 
    | **Datatype**: int
-   | **Default**: copied from "maxiter"
-   | **Recommendation**:  It is recommended to set this to a fairly high value.  If the CAS-CI part does not fully converge, the
-   |     CASSCF algorithm will continue using the approximate solution, but you should make sure it is fully converged in the final macroiteration.
-
-.. topic:: ``thresh``
-
-   | **Description**:  Convergence threshold for the root-mean-squared of the error vector.
-   | **Datatype**: double
-   | **Default**: 1.0e-8
-   | **Recommendation**:  1.0e-8 is a fairly tight threshold; 1.0e-7 or 1.0e-6 might be appropriate for some problems.
-   |      Note that if DHF is automatically called to generate guess orbitals, "thresh_scf" can be used to set a different convergence threshold for that step.
-
-.. topic:: ``thresh_micro``
-
-   | **Description**:  Microiteration convergence threshold
-   | **Datatype**: double
-   | **Default**:  One-half the value set for "thresh"
-   | **Recommendation**:  Use the default value.
+   | **Default**: copied from ``maxiter``
 
 .. topic:: ``thresh_fci``
 
-   | **Description**:  Convergence threshold for the CI coefficients during the CAS-CI step
+   | **Description**: Convergence threshold for the CI coefficients
    | **Datatype**: double
-   | **Default**:  Value copied from "thresh"
-   | **Recommendation**:  A low convergence threshold here sometimes causes a loss of time-reversal symmetry; we recommend setting it a couple orders of magnitude smaller than the "thresh" value.
-
-.. topic:: ``active``
-
-   | **Description**:  Orbital indices for the spatial MOs that should be included in the active space.
-   | **Datatype**: vector<int>
-   | **Default**:  Frontier orbitals are used.  If a DHF reference waveunction (or Hcore guess) is used, the canonical orbitals are ordered by orbital energy,
-   |     the "nclosed" lowest-energy orbitals are set to closed, and the next "nact" are set to active.  If the reference wavefunction was
-   |     generated by CASSCF, the order of orbitals is maintained.
-   | **Recommendation**:  The convergence behavior is often improved by choosing guess orbitals similar in character to your target active orbitals.
-   |     For both relativistic Hartree--Fock and CASSCF, useful tools to identify good starting orbitals include using the "pop" keyword to print
-   |     orbital population analysis and using the "moprint" module to visualize orbital densities using Gaussian cube format.
-
-.. topic:: ``only_electrons``
-
-   | **Description**:  This option allows the user to freeze all positronic orbitals and optimize only for rotations between electronic orbitals.
-   | **Datatype**: bool
-   | **Default**:   false
-   | **Recommendation**:  Use default
+   | **Default**: Value copied from ``thresh``
 
 .. topic:: ``pop``
 
-   | **Description**:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.
+   | **Description**: If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**:  It is recommended to verify that your converged orbitals are what you expect, and this is one tool for doing that.
-
-.. topic:: ``aniso``
-
-   | **Description**:  This is the key for a block in the input file which provides parameters for magnetic anisotropy analysis, in determination of *g*-factors and zero-field splitting parameters.  See below for details.
 
 .. topic:: ``davidson_subspace``
 
-   | **Description**:  Number of vectors retained in the limited-memory algorithm for the CAS-CI part
+   | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
    | **Datatype**: int
    | **Default**: 20
-   | **Recommendation**: Altering this parameter can sometimes change the convergence behavior.  Any number above 3 is reasonable.
+   | **Recommendation**: Reduce if an insufficient amount of memory is available (do not reduce to a value lower than 3). 
 
 .. topic:: ``print_thresh``
 
-   | **Description**:  Threshold below which CI coefficients are not printed (to casscf.log after each macroiteration, and to the standard output at the end of the calculation)
+   | **Description**: Threshold below which CI coefficients are not printed.  
    | **Datatype**: double
    | **Default**: 0.05
 
-.. topic:: ``state``
-
-   | **Description**: Number of states computed for each spin value.  All are included in the state-averaging procedure when orbitals are optimized.
-   | **Datatype**: vector<int>
-   | **Default**:  There is no default; this parameter must be supplied in the input.
-   | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example,
-   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
-   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
-   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
-
 .. topic:: ``spin_adapt``
 
-   | **Description**:  This parameter allows us to deactivate the generation of spin-adapted configuration state functions in the starting guess for the CAS-CI part.
+   | **Description**: Spin-adapt the starting guess. 
    | **Datatype**: bool
    | **Default**: true
-   | **Recommendation**:  Normally use the default setting.  If you are computing all or nearly all the states that can be formed with a given
-   |     active space, you will encounter an error stating that "generate_guess produced an invalid determinant."
-   |     Deactivating this feature leads to a poorer guess but eliminates that problem.
+   | **Recommendation**: Use false if the error "generate_guess produced an invalid determinant" is generated. 
 
+.. topic:: ``aniso``
 
-.. topic:: ``robust``
-
-   | **Description**:  If DHF is automatically called to generate starting orbitals, this parameter determines whether or not to use the "robust fitting" algorithm for the integrals in that part.  For the main CASSCF calculation, robust fitting is always used with the full Breit interaction and not with the Dirac--Coulomb or Dirac--Coulomb--Gaunt Hamiltonians.
-   | **Datatype**: bool
-   | **Default**: false
-   | **Recommendation**: use default.
-
-.. topic:: ``diis_start``
-
-   | **Description**:  If DHF is automatically called to generate starting orbitals, then during that part we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm to update the orbitals after the specified iteration.
+   | **Description**: Performs magnetic anisotropy analysis (g-factors and zero-field splitting parameters). 
    | **Datatype**: int
-   | **Default**: 1
-   | **Recommendation**: use default.
-
-.. topic:: ``thresh_overlap``
-
-   | **Description**:  If DHF is automatically called to generate starting orbitals, this is used to identify linear dependancy in the atomic basis set.  Increasing this value will more aggressively remove linearly dependent basis vectors.  If starting orbitals are provided by a previous calculation, the same set of truncated orbitals is used, and this parameter is ignored.
-   | **Datatype**: double
-   | **Default**: 1.0e-8
-   | **Recommendation**: use default.
 
 Example
 =======

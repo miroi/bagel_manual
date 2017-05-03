@@ -55,7 +55,6 @@ Keywords
    |    ``second``: second-order algorithm.
    |    ``noopt``: no orbital optimization.
    | **Default:** ``second``
-   | **Recommendation:** use default.
 
 .. topic:: ``fci_algorithm``
 
@@ -66,21 +65,18 @@ Keywords
    |    ``harrison``, ``zarrabian``, ``hz``: Harrison--Zarrabian Algorithm.
    |    ``parallel``, ``dist``: Parallel FCI algorithm.
    | **Default:** ``parallel`` (when the number of active orbital is larger than 9 and number of process is larger than 8), ``knowles`` (otherwise)
-   | **Recommendation:** use default.
 
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold in macroiteration.
    | **Datatype:** double precision
    | **Default:** 1.0e-8.
-   | **Recommendation:** use default.
 
 .. topic:: ``thresh_micro``
 
    | **Description:** Convergence threshold in microiteration.
    | **Datatype:** double precision
    | **Default:** 5.0e-6.
-   | **Recommendation:** use default.
 
 .. topic:: ``conv_ignore``
 
@@ -90,17 +86,18 @@ Keywords
    |    ``true``: Do not throw the calculation.
    |    ``false``: Throw the calculation.
    | **Default:** false.
-   | **Recommendation:** use default.
 
 .. topic:: ``natocc``
 
-   | **Description:** Print natural orbitals or not.
+   | **Description**: If set to "true," occupation numbers of natural orbitals within the active space will be printed to casscf.log after each macroiteration.
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Print natural orbitals.
-   |    ``false``: Do not print natural orbitals.
    | **Default:** false.
-   | **Recommendation:** use default.
+
+.. topic:: ``charge``
+
+   | **Description**:  Molecular charge.
+   | **Datatype**: int
+   | **Default**: 0
 
 .. topic:: ``maxiter``
 
@@ -114,7 +111,12 @@ Keywords
    | **Description:** Maximum number of microiteration.
    | **Datatype:** int
    | **Default:** 100.
-   | **Recommendation:** use default.
+
+.. topic:: ``maxiter_fci``
+
+   | **Description**: Maximum number of iterations in CI coefficient optimization 
+   | **Datatype**: int
+   | **Default**: copied from ``maxiter``
 
 Example
 =======
