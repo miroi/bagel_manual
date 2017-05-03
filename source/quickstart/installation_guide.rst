@@ -26,17 +26,15 @@ Downloading the Source
 
 The simplest approach is to just download and extract the tarball containing the most recent BAGEL release:
 
-::
-
+.. parsed-literal::
      $ cd /your/parent/directory
-     $ wget https://github.com/nubakery/bagel/archive/v1.0.0.tar.gz
-     $ tar -xzvf bagel-1.0.0.tar.gz
+     $ wget https://github.com/nubakery/bagel/archive/v\ |version|\ .tar.gz
+     $ tar -xzvf bagel-\ |version|\ .tar.gz
      $ cd BAGEL
 
 Alternatively, you can clone the git repository:  
 
-::
-
+.. parsed-literal::
      $ cd /your/parent/directory
      $ git clone https://github.com/nubakery/bagel.git
      $ cd BAGEL
