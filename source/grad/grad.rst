@@ -4,7 +4,7 @@
 Nuclear gradients and related functionalities
 *********************************************
 
-Gradient, Hessian and Geometry optimization
+BAGEL supports efficient evaluations of analytical energy gradient and derivative couplings for various quantum chemistry methods. This enables BAGEL to take you on a journey on the potential energy surface of the molecule of interest, such as frequency analysis, geometry optimizations, and direct molecular dynamics (MD) simulations.
 
 .. toctree::
    :maxdepth: 2
