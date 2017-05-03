@@ -13,7 +13,7 @@ The active space decomposition algorithm for molecular dimers allows for efficie
 
 Dimer Construction
 ==================
-.. toctree:: 
+.. toctree::
    :maxdepth: 1
 
    dimer.rst
@@ -26,7 +26,7 @@ Required Keywords
 -----------------
 
 .. topic:: ``method``
-   
+
    | **Description:** Method to compute active subspaces.
    | **Datatype:** string
    | **Value:**
@@ -53,7 +53,7 @@ Optional Keywords
 -----------------
 
 .. topic:: ``nstates``
-   
+
    | **Description:** Number of target states.
    | **Datatype:** int
    | **Default** 10
@@ -77,25 +77,25 @@ Optional Keywords
    | **Default:** :math:`10\times nstates`
 
 .. topic:: ``Davidson_subspace``
-   
+
    | **Description:** Size of Davidson subspace.
    | **Datatype:** int
    | **Default:** 10
 
 .. topic:: ``max_iter``
-   
+
    | **Description:** Maximum number of iterations for Davidson diagonalization.
    | **Datatype:** int
    | **Default:** 50
 
 .. topic:: ``dipoles``
-   
+
    | **Description:** Whether to calculate dipole moment.
    | **Datatype:** bool
    | **Default:** false
 
 .. topic:: ``thresh``
-   
+
    | **Description:** Threshold for convergence in Davidson diagonalization.
    | **Datatype:** double
    | **Default:** :math:`1.0\times 10^{-7}`
@@ -107,13 +107,13 @@ Optional Keywords
    | **Default:** 0.01
 
 .. topic:: ``store matrix``
-   
+
    | **Description:** Whether the Hamiltonian matrix is stored.
    | **Datatye:** bool
    | **Default:** false
 
-.. topic:: ``print_info``   
-   
+.. topic:: ``print_info``
+
    | **Description:** Whether print out information (e.g. reduced density matrix and energy).
    | **Datatype:** bool
    | **Default:** false
@@ -135,7 +135,7 @@ Sample input
 .. code-block:: javascript
 
    { "bagel" : [
-   
+
    {
      "title" : "molecule",
      "basis" : "svp",
@@ -157,11 +157,11 @@ Sample input
        {"atom" :"H", "xyz" : [    0.00000000000000,     0.00000000000000,     4.70197960246451] }
      ]
    },
-   
+
    {
      "title" : "hf"
    },
-   
+
    {
      "title" : "dimerize",
      "angstrom" : true,
@@ -175,7 +175,7 @@ Sample input
        "thresh" : 1.0e-8
      }
    },
-   
+
    {
      "title" : "asd",
      "method" : "cas",
@@ -193,14 +193,14 @@ Sample input
      },
      "nstates" : 5
    }
-   
+
    ]}
 
- 
+
 Reference
 =========
 +-----------------------------------------------+--------------------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                             | 
+|          Description of Reference             |                          Reference                                             |
 +===============================================+================================================================================+
 | Active Space Decompotion Method               | S\. M. Parker, T. Seideman, M. A. Ratner, and T. Shiozaki,                     |
 |                                               | J. Chem. Phys. **139**, 021108 (2013).                                         |

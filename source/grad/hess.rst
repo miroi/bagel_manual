@@ -8,7 +8,7 @@ Molecular Hessian and frequency analysis
 
 Description
 ===========
-The Hessian section can be used to compute the numerical Hessian by central gradient differences. The Hessian, mass weighted Hessian, and symmetrized mass weighted Hessian are printed in the output by default. The rotational and translational degrees of freedom have been projected out. Vibrational frequencies, infrared intensities, and the Cartesian eigenvectors of each normal mode are also computed. The masses are averaged over the natural occurrence of isotopes. 
+The Hessian section can be used to compute the numerical Hessian by central gradient differences. The Hessian, mass weighted Hessian, and symmetrized mass weighted Hessian are printed in the output by default. The rotational and translational degrees of freedom have been projected out. Vibrational frequencies, infrared intensities, and the Cartesian eigenvectors of each normal mode are also computed. The masses are averaged over the natural occurrence of isotopes.
 
 Keywords
 ========
@@ -16,28 +16,28 @@ Required Keywords
 -----------------
 .. topic:: ``hessian``
 
-   | **Description:** Requests that the Numerical Hessian be computed 
+   | **Description:** Requests that the Numerical Hessian be computed
 
 .. topic:: ``method``
 
-   | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information. 
+   | **Description:** The method array allows the user to specify one or more methods to be used in the Hessian calculation. See section on input structure for more information.
 
 .. topic:: ``dx``
 
-   | **Description:** The step size used in the displacements in the gradient difference calculations. The units are bohr. 
+   | **Description:** The step size used in the displacements in the gradient difference calculations. The units are bohr.
    | **Default:** 1.0e-3
-   | **Datatype:** double precision 
-   | **Recommendation:** Use default 
+   | **Datatype:** double precision
+   | **Recommendation:** Use default
 
 Optional Keywords
 -----------------
 
 .. topic:: ``nproc``
 
-   | **Description:** The Hessian code is embarrassingly parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation. 
+   | **Description:** The Hessian code is embarrassingly parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each gradient calculation.
    | **Default:** 1
    | **Datatype:** integer
-   | **Recommendation:**  
+   | **Recommendation:**
 
 Example
 =======
@@ -46,7 +46,7 @@ Sample input
 ------------
 A sample input for the benzene molecule.
 
-.. code-block:: javascript 
+.. code-block:: javascript
 
   { "bagel" : [
 
@@ -72,7 +72,7 @@ A sample input for the benzene molecule.
   },
 
   {
-  "title" : "hf"
+    "title" : "hf"
   },
 
   {
@@ -103,10 +103,10 @@ A sample input for the benzene molecule.
   }
 
   ]}
- 
-If you are running a Hessian calculation using the embarassingly parallel implementation, it is recommended to only have the Hessian calculation in your input. A molden file generated from a previous calculation can be read at the start of the calculation. 
 
-.. code-block:: javascript 
+If you are running a Hessian calculation using the embarassingly parallel implementation, it is recommended to only have the Hessian calculation in your input. A molden file generated from a previous calculation can be read at the start of the calculation.
+
+.. code-block:: javascript
 
   { "bagel" : [
 
@@ -143,7 +143,7 @@ References
 ==========
 
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-|          Description of Reference                  |                          Reference                                                                       | 
+|          Description of Reference                  |                          Reference                                                                       |
 +====================================================+==========================================================================================================+
 | General description of vibrational spectroscopy    | E\. B. Wilson, Jr., J. C. Decius, and P. C. Cross, *Molecular Vibrations* (McGraw-Hill, New York, 1955). |
 +----------------------------------------------------+----------------------------------------------------------------------------------------------------------+

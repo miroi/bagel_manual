@@ -11,5 +11,5 @@ in order to run the calculation.
 .. toctree::
    :maxdepth: 3
 
-   molecule.rst 
+   molecule.rst
 

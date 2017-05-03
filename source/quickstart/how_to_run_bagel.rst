@@ -48,7 +48,7 @@ This is an example output file for checking BAGEL installation.
 .. code-block:: javascript
 
   ===============================================================
-    BAGEL - Freshly leavened quantum chemistry                   
+    BAGEL - Freshly leavened quantum chemistry
   ===============================================================
 
   *** Geometry ***
@@ -82,7 +82,7 @@ This is an example output file for checking BAGEL installation.
   *** RHF ***
 
   === Nuclear Repulsion ===
-  
+
      3.7272328195
 
       * DIIS with orbital gradients will be used.
@@ -90,7 +90,7 @@ This is an example output file for checking BAGEL installation.
        - SCF startup                               0.56
 
   === RHF iteration (svp) ===
-  
+
                o Fock build                                  0.02
       0        -99.70639103          0.06595513           0.02
                o DIIS                                        0.00
@@ -153,7 +153,7 @@ This is an example output file for checking BAGEL installation.
                o Post process                                0.00
                o Fock build                                  0.02
      12        -99.84772354          0.00000000           0.02
-  
+
     * SCF iteration converged.
 
     * Permanent dipole moment:
@@ -163,9 +163,9 @@ This is an example output file for checking BAGEL installation.
     * METHOD: HF                                   0.83
 
 
-  
+
   ===============================================================
- 
+
 ---------------
 Common mistakes
 ---------------

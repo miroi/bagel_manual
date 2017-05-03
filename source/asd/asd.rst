@@ -4,7 +4,7 @@
 Active space decomposition method
 *********************************
 
-Efficient total active space decomposition methods for multi-site molecules with distinct active subspaces. 
+Efficient total active space decomposition methods for multi-site molecules with distinct active subspaces.
 
 .. toctree::
    :maxdepth: 2
