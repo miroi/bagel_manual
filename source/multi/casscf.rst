@@ -89,12 +89,15 @@ Keywords
 
 .. topic:: ``natocc``
 
-   | **Description:** Print natural orbitals or not.
+   | **Description**: If set to "true," occupation numbers of natural orbitals within the active space will be printed to casscf.log after each macroiteration.
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Print natural orbitals.
-   |    ``false``: Do not print natural orbitals.
    | **Default:** false.
+
+.. topic:: ``charge``
+
+   | **Description**:  Molecular charge.
+   | **Datatype**: int
+   | **Default**: 0
 
 .. topic:: ``maxiter``
 
@@ -108,6 +111,12 @@ Keywords
    | **Description:** Maximum number of microiteration.
    | **Datatype:** int
    | **Default:** 100.
+
+.. topic:: ``maxiter_fci``
+
+   | **Description**: Maximum number of iterations in CI coefficient optimization 
+   | **Datatype**: int
+   | **Default**: copied from ``maxiter``
 
 Example
 =======

@@ -25,32 +25,32 @@ Keywords
 
 .. topic:: ``maxiter (or maxiter_fci)``
 
-   | **Description**: Maximum number of iterations in the FCI algorithm.
-   | **Datatype**: int
-   | **Default**: 100
+   | **Description:** Maximum number of iterations in the FCI algorithm.
+   | **Datatype:** int
+   | **Default:** 100
 
 .. topic:: ``thresh (or thresh_fci)``
 
-   | **Description**: Threshold for the convergence of the selected CI algorithm.
-   | **Datatype**: double
-   | **Default**: 1.0e-10
+   | **Description:** Threshold for the convergence of the selected CI algorithm.
+   | **Datatype:** double
+   | **Default:** 1.0e-10
 
 .. topic:: ``algorithm``
 
-   | **Description**: FCI algorithm to be used. 
-   | **Datatype**: string
-   | **Values**:
+   | **Description:** FCI algorithm to be used. 
+   | **Datatype:** string
+   | **Values:**
    |    ``KH, Knowles, Handy``: Use Knowles-Handy.
    |    ``HZ, Harrison, Zarrabian``: Use Harrison-Zarrabian.
    |    ``Dist, parallel``: Use parallel algorithm.
-   | **Default**: KH.
-   | **Recommendation**: If the active space is large and you have multiple processors, use Dist. Otherwise, use default.
+   | **Default:** KH.
+   | **Recommendation:** If the active space is large and you have multiple processors, use Dist. Otherwise, use default.
 
 .. topic:: ``frozen``
 
-   | **Description**: Freeze core orbitals. 
-   | **Datatype**: bool
-   | **Default**: false 
+   | **Description:** Freeze core orbitals. 
+   | **Datatype:** bool
+   | **Default:** false 
 
 .. topic:: ``ncore``
 
@@ -82,7 +82,7 @@ Keywords
    | **Datatype**: int
    | **Default**: 0
 
-.. topic:: ``nstates``
+.. topic:: ``nstate``
 
    | **Description**: Number of states to be calculated.
    | **Datatype**: int
@@ -99,7 +99,7 @@ Keywords
 
    | **Description**: Number of guess configurations 
    | **Datatype**: int 
-   | **Default**: ``nstates`` 
+   | **Default**: ``nstate`` 
 
 .. topic:: ``only_ints``
 
