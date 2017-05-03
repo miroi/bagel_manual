@@ -20,47 +20,15 @@ Keywords
 
 .. topic:: ``maxiter (or maxiter_fci)``
 
-   | **Description**: Maximum number of iterations in the FCI algorithm.
-   | **Datatype**: int
+   | **Description:** Maximum number of iterations in the FCI algorithm.
+   | **Datatype:** int
    | **Default**: 100
-
-.. topic:: ``davidson_subspace``
-
-   | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
-   | **Datatype**: int
-   | **Default**: 20
-   | **Recommendation**: Reduce if an insufficient amount of memory is available (do not reduce to a value lower than 3). 
 
 .. topic:: ``thresh (or thresh_fci)``
 
    | **Description**: Threshold for the convergence of the selected CI algorithm.
    | **Datatype**: double
    | **Default**: 1.0e-10 
-
-.. topic:: ``print_thresh``
-
-   | **Description**: Threshold below which CI coefficients are not printed.  
-   | **Datatype**: double
-   | **Default**: 0.05
-
-.. topic:: ``state``
-
-   | **Description**: Number of states computed for each spin value.
-   | **Datatype**: vector<int>
-   | **Default**: There is no default; this parameter must be supplied in the input.  
-   | **Note**: An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example, the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).  Be careful!  While the spin values you specified are used in generating the guess CI coefficients, the spin vectors will mix, and the algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.  
-
-.. topic:: ``gaunt``
-
-   | **Description**: Used to specify the form of the 2-electron Hamiltonian.  The default is the Dirac--Coulomb Hamiltonian. If ``gaunt`` is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit coupling between electrons.  
-   | **Datatype**: bool
-   | **Default**: Value obtained from reference wavefunction.  
-
-.. topic:: ``breit``
-
-   | **Description**: Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
-   | **Datatype**: bool
-   | **Default**: Value obtained from reference wavefunction.  
 
 .. topic:: ``frozen``
 
@@ -80,11 +48,61 @@ Keywords
    | **Datatype:** int
    | **Default:** All molecular orbitals except those excluded using ncore.
 
+.. topic:: ``active``
+
+   | **Description**: Orbital indices for the orbitals to be included. 
+   | **Datatype**: vector<int>
+   | **Default**: Frontier orbitals are used. 
+
+.. topic:: ``gaunt``
+
+   | **Description**: Used to specify the form of the 2-electron Hamiltonian.  The default is the Dirac--Coulomb Hamiltonian. If ``gaunt`` is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit coupling between electrons.  
+   | **Datatype**: bool
+   | **Default**: Value obtained from reference wavefunction.  
+
+.. topic:: ``breit``
+
+   | **Description**: Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.  
+   | **Datatype**: bool
+   | **Default**: Value obtained from reference wavefunction.  
+
+.. topic:: ``charge``
+
+   | **Description**: The total charge of the system.
+   | **Datatype**: int
+   | **Default**:  0
+
+.. topic:: ``state``
+
+   | **Description**: Number of states computed for each spin value.
+   | **Datatype**: vector<int>
+   | **Default**: There is no default; this parameter must be supplied in the input.  
+   | **Note**: An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example, the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).  Be careful!  While the spin values you specified are used in generating the guess CI coefficients, the spin vectors will mix, and the algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.  
+
+.. topic:: ``davidson_subspace``
+
+   | **Description**:  Number of vectors retained in the limited-memory Davidson algorithm.
+   | **Datatype**: int
+   | **Default**: 20
+   | **Recommendation**: Reduce if an insufficient amount of memory is available (do not reduce to a value lower than 3). 
+
 .. topic:: ``only_ints``
 
    | **Description**: If true, calculates integrals and dumps to a file. This is used to interface BAGEL to an external program.
    | **Datatype**: bool
    | **Default**: false
+
+.. topic:: ``restart``
+
+   | **Description**: Generate binary archive files that can be used to restart a calculation.
+   | **Datatype**: bool
+   | **Default**: false
+
+.. topic:: ``print_thresh``
+
+   | **Description**: Threshold below which CI coefficients are not printed.  
+   | **Datatype**: double
+   | **Default**: 0.05
 
 .. topic:: ``spin_adapt``
 
@@ -93,28 +111,10 @@ Keywords
    | **Default**: true
    | **Recommendation**: Use false if the error "generate_guess produced an invalid determinant" is generated. 
 
-.. topic:: ``charge``
-
-   | **Description**: The total charge of the system.
-   | **Datatype**: int
-   | **Default**:  0
-
-.. topic:: ``active``
-
-   | **Description**: Orbital indices for the orbitals to be included. 
-   | **Datatype**: vector<int>
-   | **Default**: Frontier orbitals are used. 
-
 .. topic:: ``aniso``
 
    | **Description**: Performs magnetic anisotropy analysis (g-factors and zero-field splitting parameters). 
    | **Datatype**: int
-
-.. topic:: ``restart``
-
-   | **Description**: Generate binary archive files that can be used to restart a calculation.
-   | **Datatype**: bool
-   | **Default**: false
 
 Example
 =======
