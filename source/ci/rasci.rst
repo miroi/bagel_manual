@@ -25,10 +25,9 @@ All of the keywords in FCI apply and are not duplicated in this section.
 .. topic:: ``active``
 
    | **Description:** Specifies the three active spaces used to generate the functions in the CI expansion.
-   | **Datatype:** Three arrays of integers (see example).
+   | **Datatype:** Three arrays of integers. 
    | **Values:** Three arrays containing the indexes that specify the orbitals in the R1, R2, and R2 spaces. 
-   | **Default:** Must be specified by the user.
-   | **Recommendation:** This is highly system dependent. It is often useful to visualize the orbitals from a HF calculation in molden (see section :ref:`molden`). 
+   | **Default:** Must be specified. 
 
 .. topic:: ``max_holes``
 
