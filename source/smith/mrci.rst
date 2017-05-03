@@ -20,6 +20,16 @@ See :ref:`casscf`.
 SMITH keywords
 --------------
 
+.. topic:: ``title``
+
+   | **Description:** Method to use in SMITH-generated code.
+   | **Default:** N/A.
+   | **Datatype:** string
+   | **Values:**
+   |    ``caspt2``: Request (Rel)CASPT2 calculation.
+   |    ``mrci``: Request (Rel)MRCI calculation.
+   |    ``casa``: Request (Rel)CAS/A calculation.
+
 .. topic:: ``thresh``
 
    | **Description:** Convergence threshold.
@@ -43,6 +53,20 @@ SMITH keywords
    |    ``true``: use frozen orbitals.
    |    ``false``: do without frozen orbitals.
    | **Recommendation:** use default.
+
+.. topic:: ``ncore``
+
+   | **Description:** Number of frozen core orbitals.
+   | **Default:** If ``frozen`` is true, then the number of core orbitals (first period, 2 per atom, second - third period, 8 per atom, ...).
+   | **Datatype:** integer
+   | **Recommendation:** Use default.
+
+.. topic:: ``nfrozenvirt``
+
+   | **Description:** Number of frozen virtual orbitals.
+   | **Default:** 0 
+   | **Datatype:** integer
+   | **Recommendation:** Use default.
 
 .. topic:: ``maxiter``
 

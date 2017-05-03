@@ -114,9 +114,6 @@ Keywords
    |    ``false``: Do not export file 
    | **Recommendation:** Use ``true`` with single state dynamics / optimizations.
 
-Example
-=======
-
 
 References
 ==========

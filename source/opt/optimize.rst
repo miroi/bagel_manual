@@ -27,9 +27,13 @@ Keywords
 ========
 Required Keywords
 -----------------
-.. topic:: ``optimize``
+.. topic:: ``title``
 
-   | **Description:** Requests the geometry optimization. 
+   | **Description:** Request geometry optimization. 
+   | **Default:** N/A 
+   | **Datatype:** string 
+   | **Values:** (optimize)
+   |    ``optimize``: Optimize geometry.
 
 .. topic:: ``opttype``
 
@@ -296,7 +300,7 @@ Sample input
   }
  ]}
 
-Using the same molecule block, a geometry optimization with XMS-CASPT2 can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 8 electrons and 7 orbitals, (8*e*,7*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states. Since a multistate calculation is performed, the user must specify which state is to be optimized (the target). In this example, we optimize the ground state.
+Using the same molecule block, a geometry optimization with XMS-CASPT2 can be performed. In this particular example as is often the case, the active keyword is used to select the orbitals for the active space that includes 4 electrons and 3 orbitals, (4*e*,3*o*). Three sets of  :math:`\pi` and :math:`\pi^*` orbitals localized on the phenyl rings are included along with one non-bonding orbital (oxygen lone pair). The casscf orbitals are state-averaged over three states. Since a multistate calculation is performed, the user must specify which state is to be optimized (the target). In this example, we optimize the ground state.
 
 .. code-block:: javascript 
 
