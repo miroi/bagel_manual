@@ -14,10 +14,10 @@ SCF can be run by specifying the following values to the keyword ``title``:
 * Restricted HF for closed-shell systems: ``rhf`` or ``hf``
 * Restricted open-shell HF: ``rohf``
 * Unrestricted HF: ``uhf``
-* Two-component HF using ECP basis sets: ``soscf``
+* Two-component HF using ECP basis sets spin-orbit SCF: ``soscf``
 
-RHF can be run with fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
-has to be specified in the :ref:`molecule-toc`.
+RHF can be run with the fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
+has to be specified in :ref:`molecule-toc`.
 
 Keywords
 ========
@@ -25,7 +25,7 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``thresh``
 
-   | **Description**: SCF convergence threshold for the root-mean-squared of the error vector.
+   | **Description**: SCF convergence threshold for the root-mean-square of the error vector.
    | **Default**: :math:`1.0\times 10^{-8}`
    | **Datatype**: double
 
@@ -38,14 +38,14 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``diis_start``
 
    | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
-                      algorithm for the to update the orbitals.
+                      algorithm to update the orbitals.
    | **Default**: :math:`1`
    | **Datatype**: int 
 
 
 .. topic:: ``thresh_overlap``
 
-   | **Description**: Overlap threshold used to identify linear dependancy in the atomic basis set.
+   | **Description**: Overlap threshold used to identify linear dependancies in the atomic basis set.
                       Increasing this value will more aggressively remove linearly dependent basis vectors.
    | **Default**: :math:`1.0\times 10^{-8}`
    | **Datatype**: double
