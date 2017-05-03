@@ -20,9 +20,9 @@ Prerequisites
 
 Intel MKL is strongly recommended for BLAS, LAPACK, and ScaLAPACK (distributed for free for academic users)
 
------------
+----------------------
 Downloading the Source
------------
+----------------------
 
 The simplest approach is to just download and extract the tarball containing the most recent BAGEL release:
 

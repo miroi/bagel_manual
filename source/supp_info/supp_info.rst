@@ -9,4 +9,3 @@ Supplementary information
 
    constants.rst
    errors.rst
-   funding.rst

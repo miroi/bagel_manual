@@ -165,7 +165,3 @@ This is an example output file for checking BAGEL installation.
 
 
   ===============================================================
-
----------------
-Common mistakes
----------------

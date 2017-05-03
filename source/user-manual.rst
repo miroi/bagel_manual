@@ -26,3 +26,4 @@
    miscellaneous/misc.rst
    supp_info/supp_info.rst
    author.rst
+   funding.rst
