@@ -352,9 +352,9 @@ Example for CuH2 using cc-pvtz basis set for H and lanl2dz-ecp for the heavy ato
      "geometry" : [
        { "atom" : "Cu",  "xyz" : [  0.000000,      0.000000,      0.000000]},
        { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,     -1.560000],
-                        "basis" : "cc-pvtz"},
+                         "basis" : "cc-pvtz"},
        { "atom" :  "H",  "xyz" : [  0.000000,      0.000000,      1.560000],
-                        "basis" : "cc-pvtz"}
+                         "basis" : "cc-pvtz"}
      ]
    },
 
