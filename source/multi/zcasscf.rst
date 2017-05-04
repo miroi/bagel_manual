@@ -18,9 +18,9 @@ Keywords
    | **Datatype**: vector<int>
    | **Default**:  There is no default; this parameter must be supplied in the input.
    | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example,
-   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
-   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
-   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
+          the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
+          Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
+          algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
 
 .. topic:: ``nact``
 
