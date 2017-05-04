@@ -1,7 +1,7 @@
 .. _funding:
 
 ********************
-Funding and Citation
+Funding and citation
 ********************
 
 ===============
