@@ -221,6 +221,7 @@ latex_elements = {
 
 # Additional stuff for the LaTeX preamble.
 'preamble': '''\
+\definecolor{VerbatimBorderColor}{rgb}{1, 1, 1}
 \\ChNumVar{\\bfseries\\Huge}
 \\ChNameVar{\\bfseries\\Huge}
 \\ChTitleVar{\\bfseries\\Huge}
