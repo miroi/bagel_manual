@@ -84,6 +84,13 @@ Keywords
    | **Datatype:** bool
    | **Default:** false.
 
+.. topic:: ``restart_cas``
+
+   | **Description:**  If set to "true", after each macroiteration the orbitals will be written to a binary archive with filename "casscf_<iter>.archive". 
+         They can be read back in using the "load_ref" module.  
+   | **Datatype:** bool
+   | **Default:** false.
+
 .. topic:: ``natocc``
 
    | **Description**: If set to "true," occupation numbers of natural orbitals within the active space will be printed to casscf.log after each macroiteration.

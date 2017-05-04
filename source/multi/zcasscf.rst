@@ -121,6 +121,13 @@ Keywords
    | **Datatype:** bool
    | **Default:** false.
 
+.. topic:: ``restart_cas``
+
+   | **Description:**  If set to "true", after each macroiteration the orbitals will be written to a binary archive with filename "zcasscf_<iter>.archive". 
+         They can be read back in using the "load_ref" module.  
+   | **Datatype:** bool
+   | **Default:** false.
+
 .. topic:: ``pop``
 
    | **Description**: If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.
