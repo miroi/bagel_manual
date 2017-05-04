@@ -270,7 +270,7 @@ Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO
 Auxiliary basis sets
 ====================
 
-The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``aux_basis`` keyword
+The following MP2-fit basis sets are available in BAGEL. The basis set name can be used with the ``aux_basis`` keyword
 in the method block (refer to :ref:`mp2` for more details).
 
 * cc-pvdz-ri
