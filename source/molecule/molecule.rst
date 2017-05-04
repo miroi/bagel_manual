@@ -265,10 +265,10 @@ Auxiliary basis sets
 The following auxiliary basis sets are available in BAGEL library. The basis set name can be used with the ``aux_basis`` keyword
 in the method block (refer to :ref:`mp2` for more details).
 
-* cc-pv5z-ri
 * cc-pvdz-ri
-* cc-pvqz-ri
 * cc-pvtz-ri
+* cc-pvqz-ri
+* cc-pv5z-ri
 
 Example
 -------
