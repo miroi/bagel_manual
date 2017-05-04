@@ -94,6 +94,14 @@ Optional keywords
    | **Values**: ``gaussian`` / ``giao``, ``london``
    | **Default**: ``gaussian`` at zero magnetic field; ``giao`` when a field is applied
 
+.. topic:: ``skip_self_interaction``
+
+   | **Description**: Skip the electrostatic interactions between the dummy atoms.
+   | **Datatype**: bool
+   |    ``true``: skip the electrostatic interactions between the dummies.
+   |    ``false``: explicitly calculate the electrostatic interactions between the dummies.
+   | **Default**: true
+
 
 ==========
 Basis sets
