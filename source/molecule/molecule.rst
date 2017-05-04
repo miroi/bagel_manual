@@ -94,7 +94,7 @@ Optional keywords
    | **Values**: ``gaussian`` / ``giao``, ``london``
    | **Default**: ``gaussian`` at zero magnetic field; ``giao`` when a field is applied
 
-.. topic:: ``skip_self_interact``
+.. topic:: ``skip_self_interaction``
 
    | **Description**: Skip the electrostatic interactions between the dummy atoms.
    | **Datatype**: bool
