@@ -115,6 +115,12 @@ Keywords
    | **Datatype**: double
    | **Default**: Value copied from ``thresh``
 
+.. topic:: ``conv_ignore``
+
+   | **Description:**  If set to "true," BAGEL will continue running even if the maximum iterations is reached without convergence.  Normally an error is thrown and the program terminates.  
+   | **Datatype:** bool
+   | **Default:** false.
+
 .. topic:: ``pop``
 
    | **Description**: If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.
