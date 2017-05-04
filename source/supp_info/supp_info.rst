@@ -8,4 +8,3 @@ Supplementary information
    :maxdepth: 2
 
    constants.rst
-   errors.rst

@@ -18,9 +18,9 @@ Keywords
    | **Datatype**: vector<int>
    | **Default**:  There is no default; this parameter must be supplied in the input.
    | **Note**:  An array of integers is supplied, where each one indicates the number of states for a given spin value.  For example,
-   |      the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
-   |      Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
-   |      algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
+          the input [ 1 ] gives a singlet ground state, while [ 3, 0, 1 ] gives three singlets and one triplet (6 states total).
+          Be careful!  While the spin values you specified are used in generating guess CI coefficients, the spin sectors will mix, and the
+          algorithm returns the *n* lowest eigenstates regardless of their spin expectation values.
 
 .. topic:: ``nact``
 
@@ -114,6 +114,19 @@ Keywords
    | **Description**: Convergence threshold for the CI coefficients
    | **Datatype**: double
    | **Default**: Value copied from ``thresh``
+
+.. topic:: ``conv_ignore``
+
+   | **Description:**  If set to "true," BAGEL will continue running even if the maximum iterations is reached without convergence.  Normally an error is thrown and the program terminates.  
+   | **Datatype:** bool
+   | **Default:** false.
+
+.. topic:: ``restart_cas``
+
+   | **Description:**  If set to "true", after each macroiteration the orbitals will be written to a binary archive with filename "zcasscf_<iter>.archive". 
+         They can be read back in using the "load_ref" module.  
+   | **Datatype:** bool
+   | **Default:** false.
 
 .. topic:: ``pop``
 

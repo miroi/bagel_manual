@@ -80,11 +80,15 @@ Keywords
 
 .. topic:: ``conv_ignore``
 
-   | **Description:** Throw the calculation or not when the convergence is not reached.
+   | **Description:**  If set to "true," BAGEL will continue running even if the maximum iterations is reached without convergence.  Normally an error is thrown and the program terminates.  
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Do not throw the calculation.
-   |    ``false``: Throw the calculation.
+   | **Default:** false.
+
+.. topic:: ``restart_cas``
+
+   | **Description:**  If set to "true", after each macroiteration the orbitals will be written to a binary archive with filename "casscf_<iter>.archive". 
+         They can be read back in using the "load_ref" module.  
+   | **Datatype:** bool
    | **Default:** false.
 
 .. topic:: ``natocc``

@@ -56,6 +56,12 @@ The default values are recommended unless mentioned otherwise.
    | **Datatype**: int
    | **Default**: 100
 
+.. topic:: ``conv_ignore``
+
+   | **Description:**  If set to "true," BAGEL will continue running even if the maximum iterations is reached without convergence.  Normally an error is thrown and the program terminates.  
+   | **Datatype:** bool
+   | **Default:** false.
+
 .. topic:: ``diis_start``
 
    | **Description**:  After the specified iteration, we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm for the to update the orbitals.
