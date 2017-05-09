@@ -125,42 +125,41 @@ Sample input
 
 .. code-block:: javascript
 
- { "bagel" : [
+   { "bagel" : [ 
 
- {
-  "title" : "molecule",
-  "angstrom" : true,
-  "basis" : "tzvpp",
-  "df_basis" : "tzvpp-jkfit",
-  "geometry" : [
-    { "atom" : "Se",  "xyz" : [  0.000,  0.0000,  0.2807  ] },
-    { "atom" : "O",  "xyz" :  [  0.000,  1.3464, -0.5965  ] },
-    { "atom" : "O",  "xyz" :  [  0.000, -1.3464, -0.5965  ] }
-  ]
- },
+   {
+    "title" : "molecule",
+    "angstrom" : true,
+    "basis" : "svp",
+    "df_basis" : "tzvpp-jkfit",
+    "geometry" : [ 
+      { "atom" : "O",  "xyz" :  [  0.000,  0.000,  0.500  ] },
+      { "atom" : "O",  "xyz" :  [  0.000,  0.000,  1.500  ] } 
+    ]
+   },
+
+   {
+     "title" : "hf"
+   },
+
+   {
+     "title" : "dhf",
+     "gaunt" : false,
+     "breit" : false
+   },
+
+   {
+     "title" : "zfci",
+     "spin" : 1 , 
+     "state" : [0,0,1],
+     "ncore" : 2,
+     "norb" :  8
+   }
+
+   ]}
 
 
- {
-  "title" : "dhf",
-  "gaunt" : true,
-  "breit" : false,
- },
-
- {
-  "title" : "zfci",
-  "spin" : 1 ,
-  "state" : [1],
-  "ncore" : 20,
-  "norb" :  9,
-  "davidson_subspace" : "10",
-  "thresh" : 5.0e-10
- }
-
- ]}
-
-
-Sample output
--------------
+from which one obtains
 
 .. code-block:: javascript
 
@@ -168,97 +167,107 @@ Sample output
   Relativistic FCI calculation
   ----------------------------
 
-    * Correlation of 10 active electrons in 9 orbitals.
+    * Correlation of 12 active electrons in 8 orbitals.
     * Time-reversal symmetry will be assumed.
-    * gaunt    : true
+    * gaunt    : false
     * breit    : false
-    * nstate   :      1
-    * nclosed  :     20
-    * nact     :      9
-    * nvirt    :    191
+    * nstate   :      3
+    * nclosed  :      2
+    * nact     :      8
+    * nvirt    :     46
   *** Geometry (Relativistic) ***
        - 3-index ints post                         0.00
        - 3-index ints prep                         0.00
-       - 3-index ints                              0.49
-       - 3-index ints post                         0.00
-       - 3-index ints prep                         0.00
-       - 3-index ints                              0.10
+       - 3-index ints                              0.02
        - 3-index ints post                         0.00
 
-       - Geometry relativistic (total)             0.59
+       - Geometry relativistic (total)             0.02
 
-       - Coulomb: half trans                       0.59
-       - Coulomb: metric multiply                  2.34
-       - Coulomb: J operator                       0.06
-       - Coulomb: K operator                       0.60
-       - Gaunt: half trans                         0.35
-       - Gaunt: metric multiply                    1.31
-       - Gaunt: J operator                         0.13
-       - Gaunt: K operator                         1.73
-       - Coulomb: half trans                       0.56
-       - Coulomb: metric multiply                  1.50
-       - Coulomb: J operator                       0.05
-       - Coulomb: K operator                       0.47
-       - Gaunt: half trans                         0.27
-       - Gaunt: metric multiply                    0.91
-       - Gaunt: J operator                         0.09
-       - Gaunt: K operator                         1.40
-    * Integral transformation done. Elapsed time: 7.49
+       - Coulomb: half trans                       0.02
+       - Coulomb: metric multiply                  0.05
+       - Coulomb: J operator                       0.00
+       - Coulomb: K operator                       0.01
+       - Coulomb: half trans                       0.01
+       - Coulomb: metric multiply                  0.03
+       - Coulomb: J operator                       0.00
+       - Coulomb: K operator                       0.00
+    * Integral transformation done. Elapsed time: 0.10
 
        - jop, kop                                  0.00
        - denom                                     0.00
-     guess   0:   closed 11111....            open .........
+     guess   0:   closed 11111...             open .....11.            
+
+     guess   1:   closed 11111...             open .....11.            
+
+     guess   2:   closed 11111...             open .....11.            
 
                  * guess generation                            0.00
   === Relativistic FCI iteration ===
 
-                 * sigma vector                                0.91
+                 * sigma vector                                0.17
                  * davidson                                    0.00
                  * error                                       0.00
                  * denominator                                 0.00
-      0   0      -2575.49908253     9.48e-04      0.91
-                 * sigma vector                                0.89
-                 * davidson                                    0.00
-                 * error                                       0.00
-                 * denominator                                 0.00
+      0   0       -149.49154103     5.51e-03      0.17
+      0   1       -149.49154101     5.51e-03      0.00
+      0   2       -149.49152458     5.51e-03      0.00
 
                  ..............................
-
-                 ... A few iterations later ...
-
+                       after 18 iteration 
                  ..............................
 
-    ** throwing out 1 trial vectors **
-                 * davidson                                    0.01
-                 * error                                       0.00
-                 * denominator                                 0.00
-     26   0  *   -2575.54892391     3.55e-10      0.90
+
+     19   0  *    -149.52141423     4.71e-11      0.07
+     19   1  *    -149.52140961     7.60e-11      0.00
+     19   2  *    -149.52140960     7.40e-11      0.00
 
      * ci vector, state   0
 
-     * ci vector, state   0
+     * ci vector, state   1
 
-     * ci vector, state   0
-       222bbbb..  (-0.0500743568,0.0000000007)
-
-     * ci vector, state   0
-
-     * ci vector, state   0
-       22222....  (0.9593555207,0.0000000000)
-       2222.2...  (-0.1404147020,-0.0000000000)
-       2.2222...  (-0.0847212161,-0.0000000000)
-       2b222a...  (-0.0715085374,0.0000000000)
-       2a222b...  (-0.0715085374,-0.0000000000)
-       222.22...  (-0.0541706237,-0.0000000000)
+     * ci vector, state   2
 
      * ci vector, state   0
 
+     * ci vector, state   1
+       22222bb.  (0.6996793603,0.0199412517)
+       22b2b22.  (-0.0847754623,-0.0024161521)
+
+     * ci vector, state   2
+       22222bb.  (-0.0011564447,0.6999374631)
+       22b2b22.  (0.0001401229,-0.0848067421)
+
      * ci vector, state   0
-       222aaaa..  (-0.0500743568,-0.0000000007)
+       22222ab.  (-0.6998438169,0.0000592354)
+       22222ba.  (-0.6998438169,0.0000591810)
+       22a2b22.  (0.0847936889,-0.0000071744)
+       22b2a22.  (0.0847936889,-0.0000071731)
+
+     * ci vector, state   1
+
+     * ci vector, state   2
 
      * ci vector, state   0
 
+     * ci vector, state   1
+       22222aa.  (0.6992592283,0.0308274507)
+       22a2a22.  (-0.0847245580,-0.0037351516)
+
+     * ci vector, state   2
+       22222aa.  (0.0120504704,-0.6998597262)
+       22a2a22.  (-0.0014600707,0.0847973233)
+
      * ci vector, state   0
+
+     * ci vector, state   1
+
+     * ci vector, state   2
+
+    * METHOD: ZFCI                                 2.97
+
+
+  
+  ===============================================================
 
 
 References
