@@ -120,10 +120,10 @@ General references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    |
 +===============================================+=======================================================================+
-| Original references for NEVPT2                | C\. Angeli, R. Cimiraglia, S. Evangelisti, T. Leininger, and J.-P.    |
-|                                               | Malrieu, J. Chem. Phys. **114**, 10252 (2011).                        |
+| Original reference  for NEVPT2                | C\. Angeli, R. Cimiraglia, S. Evangelisti, T. Leininger, and J.-P.    |
+|                                               | Malrieu, J. Chem. Phys. **114**, 10252 (2001).                        |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-|                                               | C\. Angeli, R. Cimiraglia, and J.-P. Malrieu, J. Chem. Phys. **117**, |
-|                                               | 9138 (2012).                                                          |
+| Spin-free formulation                         | C\. Angeli, R. Cimiraglia, and J.-P. Malrieu, J. Chem. Phys. **117**, |
+|                                               | 9138 (2002).                                                          |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
