@@ -29,7 +29,7 @@ The simplest approach is to just download and extract the tarball containing the
 .. parsed-literal::
      $ cd /your/parent/directory
      $ wget https://github.com/nubakery/bagel/archive/v\ |version|\ .tar.gz
-     $ tar -xzvf bagel-\ |version|\ .tar.gz
+     $ tar xvf bagel-\ |version|\ .tar.gz
      $ cd bagel
 
 Alternatively, you can clone the git repository:
@@ -90,7 +90,7 @@ Build BAGEL
 
 * Test run ::
 
-    $ ./BAGEL path_to_bagel/test/benzene_svp_mp2.json
+    $ BAGEL path_to_bagel/test/benzene_svp_mp2.json
 
 * Additional Notes
 
