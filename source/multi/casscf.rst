@@ -12,7 +12,7 @@ The state-averaging scheme for calculating excited states is also implemented. W
 Hartree--Fock calculation is performed by default prior to CASSCF. For the Hartree--Fock options, see the SCF section.
 
 The second-order algorithm is implemented in BAGEL. This algorithm is constructed of macroiterations and microiterations. At each macroiteration,
-the CI coefficient is optimized by FCI calculations and orbitals are updated. Microiterations are used for iteratively solving augmented Hessian problems for orbital updates.
+the CI coefficient is optimized by FCI calculations and the orbitals are updated. Microiterations are used for iteratively solving augmented Hessian problems for orbital updates.
 
 The CASSCF algorithm in BAGEL is very robust. If it fails to converge, it is highly likely that your active space is wrong, or your guess orbitals are wrong.
 

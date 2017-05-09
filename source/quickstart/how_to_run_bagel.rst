@@ -27,7 +27,7 @@ The folowing commands can be used to control the number of threads used by each 
    $ export MKL_NUM_THREADS=16
 
 The default value for $BAGEL_NUM_THREADS is copied from $OMP_NUM_THREADS or the number of available CPU cores.  
-It is generally recommended to set this variable such that BAGEL_NUM_THREEADS times the number of MPI processes 
+It is generally recommended to set this variable such that BAGEL_NUM_THREADS times the number of MPI processes 
 equals the number of available cores on your machine.  
 
 =======================
