@@ -8,9 +8,8 @@ Full configuration interaction (FCI)
 Description
 ===========
 
-This technique is good for describing systems featuring substantial dynamical correlation. The algorithm by which the coefficients are determined and the number of states to calculate are two of the most important quantities to be specified.
-
-This FCI section is closely connected to the :ref:`casscf` method.
+FCI exactly diagonalizes the molecular Hamiltonian within the space spanned by all of the Slater determinants.
+This FCI section is closely related to that for the :ref:`casscf` method.
 
 ==================
 Prerequisites
