@@ -7,9 +7,14 @@ Dirac--Hartree--Fock
 Description
 ===========
 
-The Dirac--Hartree--Fock method performs a self-consistent field orbital optimization and energy calculation within a four-component relativistic framework.  The Dirac--Coulomb, Dirac--Coulomb--Gaunt, or full Dirac--Coulomb--Breit Hamiltonian can be used.  In the BAGEL implementation, density fitting is used for the two-electron integrals, and 2-spinor basis functions are generated using restricted kinetic balance (RKB). External magnetic fields can be applied, in which case the spinor basis functions are generated using restricted magnetic balance (RMB) instead.
+The Dirac--Hartree--Fock method performs a self-consistent field orbital optimization and energy calculation within a four-component relativistic framework.
+The Dirac--Coulomb, Dirac--Coulomb--Gaunt, or full Dirac--Coulomb--Breit Hamiltonian can be used.
+Density fitting is used for the two-electron integrals, and 2-spinor basis functions are generated using restricted kinetic balance (RKB).
+External magnetic fields can be applied, in which case the spinor basis functions are generated using restricted magnetic balance (RMB) instead.
 
-Dirac--Hartree--Fock (DHF) cannot be run with an odd number of electrons in the absence of an external magnetic field, due to the presence of multiple degenerate solutions.  For open-shell molecules, it is recommended to run relativistic complete active space self-consistent field (ZCASSCF) instead, possibly with a minimal active space. DHF can be used to generate guess orbitals by increasing the molecular charge to remove unpaired electrons.
+**Dirac--Hartree--Fock (DHF) should not be run with an odd number of electrons** in the absence of an external magnetic field, due to the Kramers degeneracy.
+For open-shell molecules, it is recommended to run relativistic complete active space self-consistent field (ZCASSCF).
+Dirac HF can be used to generate guess orbitals by increasing the molecular charge to remove unpaired electrons.
 
 Calculations using DHF can be done using the keyword ``"title" : "dhf"``.
 
@@ -32,21 +37,20 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``gaunt``
 
-   | **Description**:  Used to specify the form of the 2-electron Hamiltonian.  The default is to use the Dirac--Coulomb Hamiltonian. If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit coupling between electrons.  Note that if "gaunt" is set to true, "breit" is also set to true unless otherwise specified by the user.
+   | **Description**: Turns on the Gaunt interaction in the Hamiltonian.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**:  The default is often fine, unless very strong relativistic effects are expected.
 
 .. topic:: ``breit``
 
-   | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.
+   | **Description**: Turns on the full Breit interaction in the Hamiltonian. 
    | **Datatype**: bool
    | **Default**: value copied from "gaunt" (if gaunt is true, breit is true)
-   | **Recommendation**: Use default, unless you wish to include the Gaunt interaction without the additional computational costs of the full Breit interaction.
+   | **Recommendation**: Usually the Breit contribution is not important for molecular properties.
 
 .. topic:: ``robust``
 
-   | **Description**:  Determines whether or not to use the "robust" density fitting algorithm.
+   | **Description**:  Determines whether or not to explicitly symmetrize the exchange matrix for numerical stability.
    | **Datatype**: bool
    | **Default**: false
 
@@ -58,26 +62,25 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``conv_ignore``
 
-   | **Description:**  If set to "true," BAGEL will continue running even if the maximum iterations is reached without convergence.  Normally an error is thrown and the program terminates.  
+   | **Description:**  If set to "true," BAGEL will continue running even if the maximum iterations is reached without convergence.
    | **Datatype:** bool
    | **Default:** false.
 
 .. topic:: ``diis_start``
 
-   | **Description**:  After the specified iteration, we will begin using Pulay's Direct Inversion in the Iterative Subspace (DIIS) algorithm for the to update the orbitals.
+   | **Description**:  After the specified iteration, we will begin using the DIIS algorithm the accelerate the convergence. 
    | **Datatype**: int
    | **Default**: 1
 
 .. topic:: ``thresh (or thresh_scf)``
 
-   | **Description**:  Convergence threshold for the root-mean-square of the error vector.
+   | **Description**:  Convergence threshold for the root mean square of the error vector.
    | **Datatype**: double
    | **Default**: 1.0e-8
-   | **Recommendation**: The default value is good for production runs; often a looser threshold may be used if generating guess orbitals for ZCASSCF.
 
 .. topic:: ``thresh_overlap``
 
-   | **Description**:  Overlap threshold used to identify linear dependancy in the atomic basis set. Increasing this value will more aggressively remove linearly dependent basis vectors.
+   | **Description**:  Overlap threshold used to identify linear dependancy in the atomic basis set.
    | **Datatype**: double
    | **Default**: 1.0e-8
 
@@ -87,18 +90,11 @@ The default values are recommended unless mentioned otherwise.
    | **Datatype**: int
    | **Default**: 0
 
-.. topic:: ``multipole``
-
-   | **Description**:  Order of multipoles to be used.  At this time, only dipoles are implemented for DHF, but this option is included for future extensions and consistency with non-relativistic HF.
-   | **Datatype**: int
-   | **Default**: 1
-
 .. topic:: ``pop``
 
-   | **Description**:  If set to true, population analysis of the molecular orbitals will be printed to a file names dhf.log.
+   | **Description**:  If set to true, population analysis of the molecular orbitals will be printed to a file named dhf.log.
    | **Datatype**: bool
    | **Default**: false
-   | **Recommendation**:  Not needed for SCF calculations, but this feature can be helpful in finding guess active orbitals for ZCASSCF.
 
 Example
 =======
@@ -130,22 +126,20 @@ Example
 
   ]}
 
-The non-relativistic SCF calculation converges in 13 iterations to -99.84772354 and the Dirac-HF converges after 9 iterations
-to -99.92755305.
+The non-relativistic SCF calculation converges in 13 iterations to :math:`-99.84772354`, and the Dirac HF converges after 9 iterations
+to :math:`-99.92755305`.
 
 References
 ==========
 BAGEL references
 ----------------
-+-----------------------------------------------+-----------------------------------------------------------------------+
-|          Description of Reference             |                          Reference                                    |
-+===============================================+=======================================================================+
-| Original implementation of density fitted     | M\. S. Kelley and T. Shiozaki, J. Chem. Phys. **138**, 204113 (2013). |
-| Dirac--Hartree--Fock with RMB spinor basis.   |                                                                       |
-+-----------------------------------------------+-----------------------------------------------------------------------+
-| Extension to permit external magnetic fields, | R\. D. Reynolds and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,      |
-| including GIAO-RMB atomic basis.              | 14280 (2015).                                                         |
-+-----------------------------------------------+-----------------------------------------------------------------------+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+|          Description of Reference             |                          Reference                                            |
++===============================================+===============================================================================+
+| Density fitted Dirac--Hartree--Fock method    | M\. S. Kelley and T. Shiozaki, J. Chem. Phys. **138**, 204113 (2013).         |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| GIAO extension                                | R\. D. Reynolds and T. Shiozaki, Phys. Chem. Chem. Phys. **17**, 14280 (2015).|
++-----------------------------------------------+-------------------------------------------------------------------------------+
 
 General references
 ------------------

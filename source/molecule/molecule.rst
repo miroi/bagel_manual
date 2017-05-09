@@ -239,7 +239,7 @@ and providing a value for ``"molden_file"``:
 
    ]}
 
-(refer to :ref:`molden` in :ref:`misc` for more details)
+(refer to Molden in :ref:`misc` for more details)
 
 Example with external magnetic field using Gauge-invariant atomic orbitals (GIAO):
 

@@ -35,8 +35,7 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``diis_start``
 
-   | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
-                      algorithm to update the orbitals.
+   | **Description**: after the specified iteration, we will begin using the DIIS algorithm to accelerate the convergence.
    | **Datatype**: int
    | **Default**: :math:`1`
 
@@ -44,13 +43,12 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``thresh_overlap``
 
    | **Description**: Overlap threshold used to identify linear dependancies in the atomic basis set.
-                      Increasing this value will more aggressively remove linearly dependent basis vectors.
    | **Datatype**: double
    | **Default**: :math:`1.0\times 10^{-8}`
 
 .. topic:: ``multipole``
 
-   | **Description**: rank of Cartesian multipole moments printed out.
+   | **Description**: rank of Cartesian multipole moments to be printed out.
    | **Datatype**: int
    | **Values** : :math:`1, 2`
    | **Default** : :math:`1` (dipoles)
@@ -77,7 +75,7 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``restart``
 
-   | **Description**: to restart the calculation from an archive file
+   | **Description**: save an archive in each iteration to allow for restarting the calculation
    | **Datatype**: bool
    | **Default**: false
 
@@ -172,12 +170,12 @@ ROHF
 
    {
      "title" : "rohf",
-     "nact" : 1
+     "nopen" : 1
    }
 
    ]}
 
-The converged SCF energy is :math:`-38.16810629` after :math:`11` iterations.
+The converged SCF energy is :math:`-38.16810629` after :math:`10` iterations.
 
 UHF
 ---
@@ -198,12 +196,12 @@ UHF
 
    {
      "title" : "uhf",
-     "nact" : 1
+     "nopen" : 1
    }
 
    ]}
 
-The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations.
+The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations. The expectation value of :math:`S^2` is :math:`0.7536`.
 
 SOSCF
 -----
