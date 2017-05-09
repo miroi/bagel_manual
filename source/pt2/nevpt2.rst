@@ -28,22 +28,16 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``aux_basis``
 
-   | **Description**: specify an alternative density fitting basis set for NEVPT2. If ``aux_basis`` is not
-                      specified, the same density fitting basis used for the SCF reference (using the keyword ``df_basis``)
-                      will be used.
+   | **Description**: specify an auxiliary basis set for MP2
    | **Datatype**: string
-   | **Default**: use the same density fitting basis as in molecule/df_basis.
-
-.. topic:: ``norm_thresh``
-
-   | **Datatype**: double
-   | **Default**: 1.0e-13
+   | **Default**: use the same density fitting basis as in :ref:`molecule`
+   | **Recommendation**: use MP2-fit auxiliary basis (auxiliary basis ends with 'ri')
 
 .. topic:: ``istate``
 
    | **Description**: specific state used in the evaluation of the dynamical correlation
    | **Datatype**: int
-   | **Default**: 0
+   | **Default**: 0 (ground state)
 
 Example
 =======
@@ -67,7 +61,7 @@ Example
 
    {
      "title" : "nevpt2",
-     "nact_cas" : 2,
+     "nact" : 2,
      "nclosed" : 4,
      "frozen" : true,
      "thresh" : 1.0e-8,
@@ -76,6 +70,37 @@ Example
    }
 
    ]}
+
+
+from which one obtains
+
+.. code-block:: javascript
+
+  === DF-NEVPT2 calculation ===
+
+       - RDMs, hole RDMs, others                   0.00
+       - Fock computation                          0.01
+    * 3-index integral transformation done
+       - K matrices                                0.00
+       - A, B, C, and D matrices                   0.00
+    * ncache = 20
+    * assembly done
+
+      NEVPT2 correlation energy:   -0.1703158878      0.02
+
+          (+0)     -0.0977514346
+          (+0)'    -0.0257993320
+          (+1)     -0.0086109214
+          (+1)'    -0.0000000000
+          (+2)     -0.0007336183
+          (-1)     -0.0341475759
+          (-1)'     0.0000000000
+          (-2)     -0.0032730057
+
+      NEVPT2 total energy:        -76.0205249507
+
+
+
 
 References
 ==========

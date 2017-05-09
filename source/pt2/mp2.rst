@@ -62,6 +62,10 @@ Example
    },
 
    {
+     "title" : "hf"
+   },
+
+   {
      "title" : "mp2",
      "aux_basis" : "cc-pvdz-ri",
      "frozen" : true
@@ -69,8 +73,37 @@ Example
 
    ]}
 
-The SCF calculation should converge after 11 iterations with energy -230.72159477 and the DF-MP2 gives correlation energy
-of -0.7813195592.
+The SCF calculation should converge after 11 iterations with energy -230.72159477. The DF-MP2 output is as follows: 
+
+.. code-block:: javascript
+
+  === DF-MP2 calculation ===
+
+    * freezing 6 orbitals
+  Number of auxiliary basis functions:      420
+
+  Since a DF basis is specified, we compute 2- and 3-index integrals:
+    o Being stored without compression. Storage requirement is 0.044 GB
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.06
+       - 2-index ints                              0.00
+       - computing inverse                         0.02
+        elapsed time:        0.09 sec.
+
+
+  Number of basis functions:      114
+  Number of electrons      :       42
+
+    * 3-index integral transformation done
+    * ncache = 20
+    * assembly done
+
+      MP2 correlation energy:   -0.7813195576      0.19
+
+      MP2 total energy:       -231.5029143295
+
+
+    * METHOD: MP2                                  0.34
 
 References
 ==========
