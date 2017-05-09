@@ -8,7 +8,7 @@ Description
 ===========
 The relativistic analogue of CASSCF is implemented in BAGEL. The second-order algorithm which is basically the same as its non-relativistic analogue is used by default.
 
-Command: ``zcasscf``
+Title: ``zcasscf``
 
 Keywords
 ========
@@ -53,19 +53,16 @@ Keywords
 
 .. topic:: ``gaunt``
 
-   | **Description**:  Used to specify the form of the 2-electron Hamiltonian used.  The default is to use the Dirac--Coulomb Hamiltonian;
-   |     If "gaunt" is set to true, the Gaunt interaction will be added, which accounts for direct spin--spin and spin-other-orbit
-   |     coupling between electrons.
+   | **Description**: Turns on the Gaunt interaction in the Hamiltonian.
    | **Datatype**: bool
-   | **Default**: Value obtained from reference wavefunction.
-   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.
+   | **Default**: false
 
 .. topic:: ``breit``
 
-   | **Description**:  Used to determine whether the full Breit interaction (including the gauge term) is included in the two-electron Hamiltonian.
+   | **Description**: Turns on the full Breit interaction in the Hamiltonian. 
    | **Datatype**: bool
-   | **Default**: Value obtained from reference wavefunction.
-   | **Recommendation**:  Choose based on the importance of relativistic effects for your problem.
+   | **Default**: value copied from "gaunt" (if gaunt is true, breit is true)
+   | **Recommendation**: Usually the Breit contribution is not important for molecular properties.
 
 .. topic:: ``only_electrons``
 
@@ -161,6 +158,141 @@ Keywords
 
 Example
 =======
+
+.. code-block:: javascript
+
+   { "bagel" : [ 
+   
+   {
+     "title" : "molecule",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "angstrom" : false,
+     "geometry" : [ 
+       { "atom" : "F",  "xyz" : [ 0.000000, 0.000000, 3.720616 ]},
+       { "atom" : "H",  "xyz" : [ 0.000000, 0.000000, 0.305956 ]}
+     ]
+   },
+   
+   {
+     "title"  : "zcasscf",
+     "state" : [1],
+     "thresh" : 5.0e-7,
+     "nact"   : 2,
+     "nclosed"  : 4 
+   }
+   
+   ]}
+
+
+from which one obtains
+
+.. code-block:: javascript
+
+  ---------------------------
+      CASSCF calculation     
+  ---------------------------
+
+  *** Geometry (Relativistic) ***
+       - 3-index ints post                         0.00
+       - 3-index ints prep                         0.00
+       - 3-index ints                              0.00
+       - 3-index ints post                         0.00
+
+       - Geometry relativistic (total)             0.01
+
+    * nclosed  :      4
+    * nact     :      2
+    * nvirt    :     32
+    * gaunt    : false
+    * breit    : false
+    * active space: 2 electrons in 2 orbitals
+    * time-reversal symmetry will be assumed.
+       - Coulomb: half trans                       0.01
+       - Coulomb: metric multiply                  0.03
+       - Coulomb: J operator                       0.00
+       - Coulomb: K operator                       0.00
+    * nstate   :      1
+
+  === Dirac CASSCF iteration (svp) ===
+
+   * Using the second-order algorithm
+
+         0   0        -99.87309219     1.03e-02      0.07
+
+         res : 1.24e-01   lamb: 1.00e+00   eps : -4.46e-02   step: 2.31e-01    0.06
+         res : 2.29e-02   lamb: 1.00e+00   eps : -4.93e-02   step: 2.94e-01    0.06
+         res : 2.90e-03   lamb: 1.00e+00   eps : -4.94e-02   step: 2.93e-01    0.05
+         res : 8.08e-04   lamb: 1.00e+00   eps : -4.94e-02   step: 2.94e-01    0.05
+         res : 1.96e-04   lamb: 1.00e+00   eps : -4.94e-02   step: 2.94e-01    0.05
+         res : 3.17e-04   lamb: 1.00e+00   eps : -4.94e-02   step: 2.94e-01    0.05
+         res : 1.13e-04   lamb: 1.00e+00   eps : -4.94e-02   step: 2.94e-01    0.06
+         res : 1.91e-05   lamb: 1.00e+00   eps : -4.94e-02   step: 2.94e-01    0.06
+         1   0        -99.90008454     9.20e-04      0.57
+
+         res : 7.91e-03   lamb: 1.00e+00   eps : -2.52e-04   step: 1.27e-02    0.06
+         res : 1.77e-03   lamb: 1.00e+00   eps : -2.72e-04   step: 1.61e-02    0.05
+         res : 5.19e-04   lamb: 1.00e+00   eps : -2.75e-04   step: 1.68e-02    0.05
+         res : 7.75e-04   lamb: 1.00e+00   eps : -2.75e-04   step: 1.75e-02    0.05
+         res : 5.66e-04   lamb: 1.00e+00   eps : -2.76e-04   step: 1.84e-02    0.06
+         res : 2.02e-04   lamb: 1.00e+00   eps : -2.76e-04   step: 1.89e-02    0.05
+         res : 6.00e-05   lamb: 1.00e+00   eps : -2.76e-04   step: 1.90e-02    0.06
+         res : 6.44e-06   lamb: 1.00e+00   eps : -2.76e-04   step: 1.90e-02    0.06
+         res : 1.06e-06   lamb: 1.00e+00   eps : -2.76e-04   step: 1.90e-02    0.06
+         2   0        -99.90024315     1.95e-04      0.62
+
+         res : 1.42e-03   lamb: 1.00e+00   eps : -1.03e-05   step: 2.44e-03    0.06
+         res : 3.04e-04   lamb: 1.00e+00   eps : -1.11e-05   step: 3.12e-03    0.05
+         res : 9.86e-05   lamb: 1.00e+00   eps : -1.11e-05   step: 3.18e-03    0.05
+         res : 4.00e-05   lamb: 1.00e+00   eps : -1.11e-05   step: 3.19e-03    0.05
+         res : 4.83e-05   lamb: 1.00e+00   eps : -1.11e-05   step: 3.20e-03    0.06
+         res : 3.89e-05   lamb: 1.00e+00   eps : -1.12e-05   step: 3.24e-03    0.06
+         res : 1.11e-05   lamb: 1.00e+00   eps : -1.12e-05   step: 3.25e-03    0.06
+         res : 2.28e-06   lamb: 1.00e+00   eps : -1.12e-05   step: 3.25e-03    0.05
+         res : 4.11e-07   lamb: 1.00e+00   eps : -1.12e-05   step: 3.25e-03    0.05
+         res : 9.17e-08   lamb: 1.00e+00   eps : -1.12e-05   step: 3.25e-03    0.05
+         3   0        -99.90025026     5.44e-05      0.67
+
+         res : 3.82e-04   lamb: 1.00e+00   eps : -7.76e-07   step: 6.56e-04    0.05
+         res : 8.18e-05   lamb: 1.00e+00   eps : -8.31e-07   step: 8.43e-04    0.05
+         res : 2.63e-05   lamb: 1.00e+00   eps : -8.36e-07   step: 8.59e-04    0.05
+         res : 9.66e-06   lamb: 1.00e+00   eps : -8.36e-07   step: 8.61e-04    0.06
+         res : 1.02e-05   lamb: 1.00e+00   eps : -8.36e-07   step: 8.61e-04    0.06
+         res : 1.06e-05   lamb: 1.00e+00   eps : -8.37e-07   step: 8.71e-04    0.05
+         res : 2.98e-06   lamb: 1.00e+00   eps : -8.37e-07   step: 8.73e-04    0.05
+         res : 6.25e-07   lamb: 1.00e+00   eps : -8.37e-07   step: 8.73e-04    0.05
+         res : 1.21e-07   lamb: 1.00e+00   eps : -8.37e-07   step: 8.73e-04    0.05
+         4   0        -99.90025079     1.49e-05      0.60
+
+         res : 1.04e-04   lamb: 1.00e+00   eps : -5.79e-08   step: 1.78e-04    0.05
+         res : 2.24e-05   lamb: 1.00e+00   eps : -6.20e-08   step: 2.29e-04    0.05
+         res : 7.19e-06   lamb: 1.00e+00   eps : -6.23e-08   step: 2.34e-04    0.05
+         res : 2.64e-06   lamb: 1.00e+00   eps : -6.23e-08   step: 2.34e-04    0.06
+         res : 2.77e-06   lamb: 1.00e+00   eps : -6.24e-08   step: 2.35e-04    0.05
+         res : 2.90e-06   lamb: 1.00e+00   eps : -6.24e-08   step: 2.37e-04    0.05
+         res : 8.21e-07   lamb: 1.00e+00   eps : -6.24e-08   step: 2.38e-04    0.05
+         res : 1.72e-07   lamb: 1.00e+00   eps : -6.24e-08   step: 2.38e-04    0.05
+         5   0        -99.90025083     4.07e-06      0.55
+
+         res : 2.83e-05   lamb: 1.00e+00   eps : -4.30e-09   step: 4.86e-05    0.05
+         res : 6.10e-06   lamb: 1.00e+00   eps : -4.61e-09   step: 6.25e-05    0.05
+         res : 1.96e-06   lamb: 1.00e+00   eps : -4.63e-09   step: 6.37e-05    0.06
+         res : 7.19e-07   lamb: 1.00e+00   eps : -4.64e-09   step: 6.39e-05    0.05
+         res : 7.56e-07   lamb: 1.00e+00   eps : -4.64e-09   step: 6.39e-05    0.06
+         res : 7.92e-07   lamb: 1.00e+00   eps : -4.64e-09   step: 6.46e-05    0.05
+         res : 2.25e-07   lamb: 1.00e+00   eps : -4.64e-09   step: 6.48e-05    0.06
+         6   0        -99.90025083     1.11e-06      0.51
+
+         res : 7.70e-06   lamb: 1.00e+00   eps : -3.20e-10   step: 1.32e-05    0.06
+         res : 1.66e-06   lamb: 1.00e+00   eps : -3.43e-10   step: 1.70e-05    0.05
+         res : 5.35e-07   lamb: 1.00e+00   eps : -3.44e-10   step: 1.74e-05    0.06
+         res : 2.00e-07   lamb: 1.00e+00   eps : -3.45e-10   step: 1.74e-05    0.05
+         7   0        -99.90025083     3.03e-07      0.36
+
+    * Second-order optimization converged. *   
+
+
+
 
 References
 ==========

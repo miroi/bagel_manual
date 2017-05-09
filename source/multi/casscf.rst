@@ -8,15 +8,15 @@ Description
 ===========
 
 CASSCF simultaneously optimizes the orbital coefficients and the CI coefficients of all the possible determinants generated from the active space.
-The state-averaging scheme for calculating excited states is also implemented. When no orbitals are specified as a input to CASSCF calculation,
-Hartree--Fock calculation is performed by default prior to CASSCF. For the Hartree--Fock options, see the SCF section.
+The state-averaging scheme can be used for calculating excited states. When reference wavefunctions are given as a input to a CASSCF calculation,
+a Hartree--Fock calculation is performed by default prior to CASSCF. For the Hartree--Fock options, see the SCF section.
 
-The second-order algorithm is implemented in BAGEL. This algorithm is constructed of macroiterations and microiterations. At each macroiteration,
+A two-step second-order algorithm is implemented in BAGEL. At each macroiteration,
 the CI coefficient is optimized by FCI calculations and the orbitals are updated. Microiterations are used for iteratively solving augmented Hessian problems for orbital updates.
 
 The CASSCF algorithm in BAGEL is very robust. If it fails to converge, it is highly likely that your active space is wrong, or your guess orbitals are wrong.
 
-Command: ``casscf``
+Title: ``casscf``
 
 Keywords
 ========
@@ -164,24 +164,84 @@ Sample input
   }
   ]}
 
-The specified active orbitals are printed in the output:
+the out of which is shown below. Note that the specified active orbitals are printed in the output.
 
 .. code-block:: javascript
 
   ---------------------------
-      CASSCF calculation
+      CASSCF calculation     
   ---------------------------
 
-  ==== Active orbitals : =====
-       Orbital 17
-       Orbital 20
-       Orbital 21
-       Orbital 22
-       Orbital 23
-       Orbital 30
-  ============================
+ 
+    ==== Active orbitals : ===== 
+         Orbital 17
+         Orbital 20
+         Orbital 21
+         Orbital 22
+         Orbital 23
+         Orbital 30
+    ============================ 
 
-This converges in five macroiterations.
+    * nstate   :      2
+    * nclosed  :     18
+    * nact     :      6
+    * nvirt    :     90
+  === CASSCF iteration (svp) ===
+
+    * Using the second-order algorithm
+
+      0  0      -230.58939332     3.18e-03      0.06
+      0  1      -230.39960500     0.00e+00      0.06
+
+         res : 9.89e-02   lamb: 1.00e+00   eps : -3.06e-02   step: 3.40e-01    0.02
+         res : 2.13e-02   lamb: 1.00e+00   eps : -3.21e-02   step: 3.56e-01    0.02
+         res : 2.72e-03   lamb: 1.00e+00   eps : -3.23e-02   step: 3.48e-01    0.02
+         res : 2.64e-04   lamb: 1.00e+00   eps : -3.23e-02   step: 3.49e-01    0.03
+         res : 3.09e-05   lamb: 1.00e+00   eps : -3.23e-02   step: 3.49e-01    0.04
+
+      1  0      -230.60443140     3.79e-04      0.37
+      1  1      -230.42264578     0.00e+00      0.37
+
+         res : 1.06e-02   lamb: 1.00e+00   eps : -3.62e-04   step: 3.57e-02    0.02
+         res : 2.13e-03   lamb: 1.00e+00   eps : -3.81e-04   step: 3.76e-02    0.02
+         res : 3.31e-04   lamb: 1.00e+00   eps : -3.82e-04   step: 3.69e-02    0.02
+         res : 4.53e-05   lamb: 1.00e+00   eps : -3.82e-04   step: 3.69e-02    0.03
+         res : 4.21e-06   lamb: 1.00e+00   eps : -3.82e-04   step: 3.69e-02    0.04
+         res : 5.33e-07   lamb: 1.00e+00   eps : -3.82e-04   step: 3.69e-02    0.02
+
+      2  0      -230.60501843     1.17e-05      0.36
+      2  1      -230.42244692     0.00e+00      0.36
+
+         res : 2.38e-04   lamb: 1.00e+00   eps : -1.11e-07   step: 2.86e-04    0.02
+         res : 3.75e-05   lamb: 1.00e+00   eps : -1.21e-07   step: 3.32e-04    0.02
+         res : 8.19e-06   lamb: 1.00e+00   eps : -1.21e-07   step: 3.41e-04    0.02
+         res : 1.11e-06   lamb: 1.00e+00   eps : -1.21e-07   step: 3.41e-04    0.03
+         res : 8.72e-08   lamb: 1.00e+00   eps : -1.21e-07   step: 3.41e-04    0.02
+         res : 2.97e-08   lamb: 1.00e+00   eps : -1.21e-07   step: 3.41e-04    0.03
+
+      3  0      -230.60502169     3.97e-07      0.36
+      3  1      -230.42244379     0.00e+00      0.36
+
+         res : 6.62e-06   lamb: 1.00e+00   eps : -1.91e-10   step: 1.92e-05    0.02
+         res : 1.37e-06   lamb: 1.00e+00   eps : -1.98e-10   step: 1.91e-05    0.02
+         res : 2.63e-07   lamb: 1.00e+00   eps : -1.99e-10   step: 1.82e-05    0.02
+         res : 4.76e-08   lamb: 1.00e+00   eps : -1.99e-10   step: 1.82e-05    0.03
+         res : 5.65e-09   lamb: 1.00e+00   eps : -1.99e-10   step: 1.82e-05    0.02
+         res : 1.68e-09   lamb: 1.00e+00   eps : -1.99e-10   step: 1.82e-05    0.03
+
+      4  0      -230.60502176     2.01e-08      0.36
+      4  1      -230.42244372     0.00e+00      0.36
+
+         res : 3.09e-07   lamb: 1.00e+00   eps : -6.58e-13   step: 1.33e-06    0.03
+         res : 7.14e-08   lamb: 1.00e+00   eps : -6.74e-13   step: 1.33e-06    0.03
+         res : 1.28e-08   lamb: 1.00e+00   eps : -6.76e-13   step: 1.28e-06    0.04
+         res : 2.75e-09   lamb: 1.00e+00   eps : -6.76e-13   step: 1.28e-06    0.02
+
+      5  0      -230.60502177     1.21e-09      0.33
+      5  1      -230.42244372     0.00e+00      0.33
+
+    * Second-order optimization converged. *   
+
 
 
 References
