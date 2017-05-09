@@ -103,9 +103,12 @@ Optional keywords
    | **Default**: true
 
 
-==========
 Basis sets
 ==========
+
+==================
+Orbital basis sets 
+==================
 
 The following basis sets are available in BAGEL library. The basis set name can be used with the ``basis`` keyword.
 
@@ -168,9 +171,8 @@ The following density fitting basis sets are available in BAGEL library. The bas
    * cc-pvqz-jkfit
    * cc-pv5z-jkfit
 
-========
 Examples
-========
+--------
 
 .. code-block:: javascript
 
@@ -441,19 +443,20 @@ Example
 
    ]}
 
+Other features
+==============
 
-=====================================================
-Dummy atoms (inclusion of an artificial point charge)
-=====================================================
-It is possible to include artificial point charges in the calculation. These introduce a user specified charge into the system, but  have no associated basis functions. Introduction of such a charge is accomplished by inclusion of an additional line in the geometry block for an atom of  element "Q". The user can specify the charge of this dummy atom at the after the array in the geometry block which specifies its position.
+===========
+Dummy atoms
+===========
+Artificial point charges can be included in the calculation.
+They introduce a user specified charge into the system, but  have no associated basis functions.
+Introduction of such a charge is accomplished by inclusion of an additional line in the geometry block for an atom of  element "Q".
 
 Example
 -------
 
 A dihydrogen molecule with a nearby dummy charge of +0.2. Note that the charge specified in the "hf" block does not include the charge associated with the dummy atom.
-
-Sample input
-------------
 
 .. code-block:: javascript
 
@@ -479,8 +482,7 @@ Sample input
    ]}
 
 
-Sample output
--------------
+from which one obtains
 
 .. code-block:: javascript
 
