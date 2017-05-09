@@ -129,26 +129,54 @@ Sample input
 
 .. code-block:: javascript
 
-  { "bagel" : [
+   { "bagel" : [ 
+   {
+     "title" : "molecule",
+     "basis" : "svp",
+     "df_basis" : "svp-jkfit",
+     "geometry" : [ 
+     { "atom" : "C", "xyz" : [     -0.079002,      2.543870,      0.000000 ] },
+     { "atom" : "C", "xyz" : [      2.557470,      2.543870,      0.000000 ] },
+     { "atom" : "C", "xyz" : [      3.875630,      4.826190,      0.000000 ] },
+     { "atom" : "C", "xyz" : [      2.557250,      7.109950,     -0.002266 ] },
+     { "atom" : "C", "xyz" : [     -0.078588,      7.109800,     -0.003171 ] },
+     { "atom" : "C", "xyz" : [     -1.396870,      4.826620,     -0.001289 ] },
+     { "atom" : "H", "xyz" : [     -1.117900,      0.744245,      0.000850 ] },
+     { "atom" : "H", "xyz" : [      3.595900,      0.743875,      0.002485 ] },
+     { "atom" : "H", "xyz" : [      5.953730,      4.826340,      0.001198 ] },
+     { "atom" : "H", "xyz" : [      3.596980,      8.909240,     -0.002377 ] },
+     { "atom" : "H", "xyz" : [     -1.118170,      8.909350,     -0.004972 ] },
+     { "atom" : "H", "xyz" : [     -3.474820,      4.826960,     -0.001629 ] } 
+     ]
+   },
+   {
+     "title" : "casscf",
+     "nstate" : 2,
+     "nact" : 6,
+     "nclosed" : 18, 
+     "active" : [17, 20, 21, 22, 23, 30] 
+   },
+   {
+     "title" : "caspt2",
+     "smith" : { 
+       "method" : "caspt2",
+       "ms" : true,
+       "xms" : true,
+       "sssr" : true,
+       "shift" : 0.2 
+     }
+   }
+   ]}
 
+or simply
+
+.. code-block:: javascript
+
+  { "bagel" : [
   {
     "title" : "molecule",
-    "basis" : "svp",
-    "df_basis" : "svp-jkfit",
-    "geometry" : [
-    { "atom" : "C", "xyz" : [     -0.079002,      2.543870,      0.000000 ] },
-    { "atom" : "C", "xyz" : [      2.557470,      2.543870,      0.000000 ] },
-    { "atom" : "C", "xyz" : [      3.875630,      4.826190,      0.000000 ] },
-    { "atom" : "C", "xyz" : [      2.557250,      7.109950,     -0.002266 ] },
-    { "atom" : "C", "xyz" : [     -0.078588,      7.109800,     -0.003171 ] },
-    { "atom" : "C", "xyz" : [     -1.396870,      4.826620,     -0.001289 ] },
-    { "atom" : "H", "xyz" : [     -1.117900,      0.744245,      0.000850 ] },
-    { "atom" : "H", "xyz" : [      3.595900,      0.743875,      0.002485 ] },
-    { "atom" : "H", "xyz" : [      5.953730,      4.826340,      0.001198 ] },
-    { "atom" : "H", "xyz" : [      3.596980,      8.909240,     -0.002377 ] },
-    { "atom" : "H", "xyz" : [     -1.118170,      8.909350,     -0.004972 ] },
-    { "atom" : "H", "xyz" : [     -3.474820,      4.826960,     -0.001629 ] }
-    ]
+    ........................
+    ........................
   },
   {
     "title" : "caspt2",
@@ -158,13 +186,93 @@ Sample input
       "xms" : true,
       "sssr" : true,
       "shift" : 0.2
-    }
+    },
     "nstate" : 2,
     "nact" : 6,
     "nclosed" : 18,
     "active" : [17, 20, 21, 22, 23, 30]
   }
   ]}
+
+from which one obtains
+
+.. code-block:: javascript
+
+  === DF-CASPT2 calculation ===
+
+    * freezing 6 orbitals
+    * SS-SR internal contraction is used
+       - MO integral evaluation                    0.18
+
+  ++ State-averaged Fock matrix over basis states ++
+
+                         0                   1
+     0       -2.0342653161       -0.0001122518
+     1       -0.0001122518       -1.5807049807
+
+
+    * Extended multi-state CASPT2 (XMS-CASPT2)
+      Rotation matrix:
+             -0.9999999694        0.0002474903
+             -0.0002474903       -0.9999999694
+
+
+  ++ Reference energies in XMS basis ++
+
+                         0                   1
+     0     -230.6050217540        0.0000451863
+     1        0.0000451863     -230.4224437280
+
+    - linear dependency detected:    2 /  144    min eigenvalue:    -1.4365e-15    max eigenvalue:    -2.7849e-16
+    - linear dependency detected:   17 /  432    min eigenvalue:    -2.0066e-15    max eigenvalue:     4.8064e-10
+    - linear dependency detected:   17 /  432    min eigenvalue:    -3.7436e-16    max eigenvalue:     2.6360e-10
+       - RDM + denominator evaluation              0.71
+
+    * Zeroth order energy : state  0       -2.0342653439
+    * Zeroth order energy : state  1       -1.5807049529
+
+      ---- iteration ----
+
+        0    -0.66979449     0.00004693      0.40
+        1    -0.67020074     0.00000237      0.39
+        2    -0.67020211     0.00000012      0.44
+
+        0    -0.66833574     0.00003953      0.43
+        1    -0.66872419     0.00000200      0.39
+        2    -0.66872593     0.00000012      0.40
+
+      -------------------
+
+       - CASPT2 energy evaluation                  2.55
+
+    * CASPT2 energy : state  0     -231.3177897496
+        w/o shift correction       -231.2752238636
+        reference weight              0.8245182506
+
+    * CASPT2 energy : state  1     -231.1349872864
+        w/o shift correction       -231.0911696588
+        reference weight              0.8202852351
+
+
+    * MS-CASPT2 Heff
+           -231.3177897496        0.0000232715
+              0.0000232715     -231.1349872864
+
+
+    * MS-CASPT2 rotation matrix
+             -0.9999999919       -0.0001273042
+              0.0001273042       -0.9999999919
+
+
+    * XMS-CASPT2 rotation matrix
+              0.9999999928       -0.0001201861
+              0.0001201861        0.9999999928
+
+    * MS-CASPT2 energy : state  0     -231.3177897526
+    * MS-CASPT2 energy : state  1     -231.1349872834
+
+
+
 
 References
 ==========
@@ -186,7 +294,7 @@ General References
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | MS-CASPT2                                         | J\. Finley, P.-Å. Malmqvist, B. O. Roos, and L. Serrano-Andres, Chem. Phys. Lett. **288**, 299 (1998).|
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| Extended multiconfigurational perturbation theory | A\. A. Granovsky, J. Chem. Phys. **134**, 214113 (2011).                                              |
+| XMCQDPT                                           | A\. A. Granovsky, J. Chem. Phys. **134**, 214113 (2011).                                              |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | XMS-CASPT2                                        | T\. Shiozaki, W. Győrffy, P. Celani, and H.-J. Werner, J. Chem. Phys. **135**, 081106 (2011).         |
 +---------------------------------------------------+-------------------------------------------------------------------------------------------------------+
