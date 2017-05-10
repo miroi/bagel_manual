@@ -4,6 +4,7 @@
 Hartree--Fock
 *************
 
+===========
 Description
 ===========
 
@@ -17,6 +18,7 @@ SCF can be run by specifying the following values to the keyword ``title``:
 RHF can be run with the fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
 has to be specified in :ref:`molecule-toc`.
 
+========
 Keywords
 ========
 The default values are recommended unless mentioned otherwise.
@@ -120,12 +122,13 @@ Keywords for RHF-FMM
    | **Datatype**: double
    | **Default**: ``thresh_overlap``
 
+========
 Examples
 ========
 Below are some examples for SCF calculations using RHF, ROHF, UHF, SOSCF, and RHF-FMM.
 
 RHF
----
+===
 
 .. code-block:: javascript
 
@@ -152,7 +155,7 @@ RHF
 The converged SCF energy is :math:`-99.84772354` after :math:`11` iterations.
 
 ROHF
-----
+====
 .. code-block:: javascript
 
    { "bagel" : [
@@ -178,7 +181,7 @@ ROHF
 The converged SCF energy is :math:`-38.16810629` after :math:`10` iterations.
 
 UHF
----
+===
 .. code-block:: javascript
 
    { "bagel" : [
@@ -204,7 +207,7 @@ UHF
 The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations. The expectation value of :math:`S^2` is :math:`0.7536`.
 
 SOSCF
------
+=====
 
 .. code-block:: javascript
 
@@ -229,7 +232,7 @@ SOSCF
    ]}
 
 RHF-FMM
--------
+=======
 .. figure:: hf-graphene.png
     :width: 30 % 
     :align: center
@@ -385,10 +388,12 @@ RHF-FMM
 
    ]}
 
+==========
 References
 ==========
+
 BAGEL References
-----------------
+================
 
 +-----------------------------------------------+----------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                    |
@@ -397,7 +402,7 @@ BAGEL References
 +-----------------------------------------------+----------------------------------------------------------------------------+
 
 General References
-------------------
+==================
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                          |
 +===============================================+==================================================================================+
