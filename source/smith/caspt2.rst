@@ -126,7 +126,7 @@ The default values are recommended unless mentioned otherwise.
    | **Default:** 100 (When number of determinants is over 10000), 10 (otherwise)
    | **Recommendation:** Use default. Increase further when the number of determinants is larger.
 
-
+=======
 Example
 =======
 XMS-CASPT2 calculation based on the two-state CASSCF reference function, with vertical shift of 0.2 :math:`E_h`. "SS-SR" contraction scheme is used.
@@ -255,7 +255,7 @@ from which one obtains
     * METHOD: SMITH                                3.54
 
 
-
+==========
 References
 ==========
 
@@ -264,7 +264,11 @@ BAGEL References
 +---------------------------------------------------+----------------------------------------------------------------------------------------------+
 |          Description of Reference                 |                          Reference                                                           |
 +===================================================+==============================================================================================+
-| SMITH3                                            | M\. K. MacLeod and T. Shiozaki, J. Chem. Phys. **142**, 010507 (2015).                       |
+| CASPT2 gradients / SMITH3                         | M\. K. MacLeod and T. Shiozaki, J. Chem. Phys. **142**, 010507 (2015).                       |
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
+| XMS-CASPT2 gradients                              | B\. Vlaisavljevich and T. Shiozaki, J. Chem. Theory Comput. **12**, 3781 (2016).             |
++---------------------------------------------------+----------------------------------------------------------------------------------------------+
+| XMS-CASPT2 derivative couplings                   | J\. W. Park and T. Shiozaki, J. Chem. Theory Comput. in press (2017).                        |
 +---------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 General References
