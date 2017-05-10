@@ -4,12 +4,13 @@
 N-electron valence state perturbation theory (NEVPT2)
 *****************************************************
 
-
+===========
 Description
 ===========
 Calculations using the strongly contracted state-specific n-electron valence state perturbation theory (NEVPT2)
 are done using the keyword ``"title" : "nevpt2"``.
 
+========
 Keywords
 ========
 
@@ -39,6 +40,7 @@ The default values are recommended unless mentioned otherwise.
    | **Datatype**: int
    | **Default**: 0 (ground state)
 
+=======
 Example
 =======
 
@@ -101,12 +103,12 @@ from which one obtains
 
 
 
-
+==========
 References
 ==========
 
 BAGEL references
-----------------
+================
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    |
 +===============================================+=======================================================================+
@@ -115,7 +117,7 @@ BAGEL references
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
 General references
-------------------
+==================
 
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    |

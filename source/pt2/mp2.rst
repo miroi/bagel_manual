@@ -4,13 +4,13 @@
 Møller–Plesset perturbation theory (MP2)
 ****************************************
 
-
+===========
 Description
 ===========
 Second-order Møller–Plesset perturbation theory (MP2) calculations are performed with density fitting using
 the keyword ``"title" : "mp2"``.
 
-
+========
 Keywords
 ========
 
@@ -32,7 +32,7 @@ Keywords
    | **Default**: use the same density fitting basis as in :ref:`molecule`
    | **Recommendation**: use MP2-fit auxiliary basis (auxiliary basis ends with 'ri')
 
-
+=======
 Example
 =======
 
@@ -73,7 +73,7 @@ Example
 
    ]}
 
-The SCF calculation should converge after 11 iterations with energy -230.72159477. The DF-MP2 output is as follows: 
+The SCF calculation should converge after 11 iterations with energy -230.72159477. The DF-MP2 output is as follows:
 
 .. code-block:: javascript
 
@@ -105,6 +105,7 @@ The SCF calculation should converge after 11 iterations with energy -230.7215947
 
     * METHOD: MP2                                  0.34
 
+==========
 References
 ==========
 
