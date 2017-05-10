@@ -59,7 +59,7 @@ The first active space, R1, contains the oxygen 1s orbital; the second active sp
 and the third active space, R3, contains the 3a1 and 2b2 antibonding orbitals.
 
 Sample input
-------------
+============
 
 .. code-block:: javascript
 
@@ -111,8 +111,9 @@ from which one obtains
        2-22ab-2.    -0.0510585950
        2-22ba-2.    -0.0510585950
 
+==========
 References
-===========
+==========
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 |          Description of Reference             |                           Reference                                 |

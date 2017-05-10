@@ -129,7 +129,7 @@ Example
 A Hartree--Fock and FCI calculation on an oxygen molecule with an elongated bond. The HF calculation is a references for the FCI calculation. Please refer to :ref:`molden` for more information on the print input block.
 
 Sample input
-------------
+============
 
 .. code-block:: javascript
 
@@ -219,7 +219,7 @@ from which one obtains
     * METHOD: FCI                                  0.00
 
 
-
+==========
 References
 ==========
 

@@ -4,12 +4,14 @@
 Relativistic complete active space self-consistent field (RelCASSCF)
 ********************************************************************
 
+===========
 Description
 ===========
 The relativistic analogue of CASSCF is implemented in BAGEL. The second-order algorithm which is basically the same as its non-relativistic analogue is used by default.
 
 Title: ``zcasscf``
 
+========
 Keywords
 ========
 .. topic:: ``state``
@@ -156,6 +158,7 @@ Keywords
    | **Description**: Performs magnetic anisotropy analysis (g-factors and zero-field splitting parameters). 
    | **Datatype**: int
 
+=======
 Example
 =======
 
@@ -293,24 +296,25 @@ from which one obtains
 
 
 
-
+==========
 References
 ==========
 
 BAGEL references
-----------------
+================
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    |
 +===============================================+=======================================================================+
-| Extension to permit external magnetic fields, | R\. D. Reynolds and T. Shiozaki, Phys. Chem. Chem. Phys. **17**,      |
-| including GIAO-RMB atomic basis.              | 14280 (2015).                                                         |
+| Relativistic CASSCF                           | J\. E. Bates and T. Shiozaki, J. Chem. Phys. **142**, 044112 (2015).  |
 +-----------------------------------------------+-----------------------------------------------------------------------+
 
+Note that the code has since been replaced by a more robust second-order algorithm (unpublished).
+
 General references
-------------------
+==================
 +-----------------------------------------------+-----------------------------------------------------------------------+
 |          Description of Reference             |                          Reference                                    |
 +===============================================+=======================================================================+
 | General text on relativistic electronic       | M\. Reiher and A. Wolf, *Relativistic Quantum Chemistry* (Wiley-VCH,  |
-| structure, including Dirac--Hartree--Fock.    | Weinheim, 2009).                                                      |
+| structure                                     | Weinheim, 2009).                                                      |
 +-----------------------------------------------+-----------------------------------------------------------------------+

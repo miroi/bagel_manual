@@ -4,6 +4,7 @@
 Complete active space self-consistent field (CASSCF)
 ****************************************************
 
+===========
 Description
 ===========
 
@@ -18,6 +19,7 @@ The CASSCF algorithm in BAGEL is very robust. If it fails to converge, it is hig
 
 Title: ``casscf``
 
+========
 Keywords
 ========
 
@@ -122,12 +124,13 @@ Keywords
    | **Datatype**: int
    | **Default**: copied from ``maxiter``
 
+=======
 Example
 =======
 Two-state CASSCF calculation of benzene. The active space of (6e,6o), which comprises three :math:`\pi` and three :math:`\pi^*` orbitals, is used.
 
 Sample input
-------------
+============
 
 .. code-block:: javascript
 
@@ -243,7 +246,7 @@ the out of which is shown below. Note that the specified active orbitals are pri
     * Second-order optimization converged. *   
 
 
-
+==========
 References
 ==========
 
