@@ -5,6 +5,7 @@ Constants
 *********
 
 Here is a table of the fundamental physical constants used in BAGEL.
+They are taken from CODATA 2014.
 
 
 +---------------------------------------+--+---------------------------------------+------------------+

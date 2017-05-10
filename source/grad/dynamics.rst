@@ -52,7 +52,7 @@ Some of dynamics software reads the informations in a fixed form. The gradient e
 The name of the file exported is ``ENERGY.txt`` (energy), ``FORCE_%d.txt`` (gradient, %d is the number of the state)
 and ``NACME_%d_%d.txt`` (derivative coupling). The gradient is written in ``FORCE.txt`` when ``export_single`` is ``true``.
 
-.. code-block:: cxx
+.. code-block:: cpp
 
                            0                   1                   2
         %6d         %20.10lf            %20.10lf            %20.10lf
@@ -62,7 +62,7 @@ Note that the QM and MM atoms is not distinguished to each other in the exported
 The exported gradients and nonadiabatic couplings are in the units of Hartrees/bohr and 1/bohr.
 The energy is also exported, as
 
-.. code-block:: cxx
+.. code-block:: cpp
 
           %20.10lf
     //   (statewise energy)
