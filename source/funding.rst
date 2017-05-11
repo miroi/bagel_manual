@@ -18,10 +18,8 @@ How to cite BAGEL
 
 .. only:: latex 
 
-   BAGEL is a parallel electronic-structure program licensed under the GNU General Public License.
+Please cite the package as: ::
 
-Please cite as: ::
-
-    "BAGEL, Brilliantly Advanced General Electronic-structure Library.
-    http://www.nubakery.org under the GNU General Public License."
+    BAGEL, Brilliantly Advanced General Electronic-structure Library.
+    http://www.nubakery.org under the GNU General Public License.
 
