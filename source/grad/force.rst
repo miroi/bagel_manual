@@ -115,6 +115,12 @@ Optional Keywords
    | **Description:** The name of the archive file for the stored reference. The path to the location the file should be written can also be specified here.
    | **Datatype:** string
 
+.. topic:: ``nproc``
+
+   | **Description:** This is only for finite difference evaluation (i.e. ``numerical`` : ``true``). Finite difference gradient is embarrassingly parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each energy calculation.
+   | **Datatype:** int
+   | **Default:** 1
+
 Example
 =======
 The benzophenone molecule
