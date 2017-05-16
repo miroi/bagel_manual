@@ -18,7 +18,7 @@ BAGEL sends output to the standard I/O stream, so you have to pipe the output in
    $ mpirun BAGEL input.json > output.out
 
 ======================
-Environment Variables
+Environment variables
 ======================
 
 The folowing commands can be used to control the number of threads used by each MPI process of BAGEL::
@@ -27,14 +27,20 @@ The folowing commands can be used to control the number of threads used by each 
    $ export MKL_NUM_THREADS=16
 
 The default value for $BAGEL_NUM_THREADS is copied from $OMP_NUM_THREADS or the number of available CPU cores.  
-It is generally recommended to set this variable such that BAGEL_NUM_THREEADS times the number of MPI processes 
+It is generally recommended to set this variable such that BAGEL_NUM_THREADS times the number of MPI processes 
 equals the number of available cores on your machine.  
+
+When you run BAGEL with Intel MPI using a large number (>16) of processes, you have to set::
+
+   $ export I_MPI_SCALABLE_OPTIMIZATION=off
+
+owing to the problem in Intel's MPI scalable optimization.
 
 =======================
 Test input and output
 =======================
 
-This is an example input file for checking the BAGEL installation.
+This is an example input file for a simple Hartree--Fock calculation:
 
 .. code-block:: javascript
 
@@ -57,12 +63,12 @@ This is an example input file for checking the BAGEL installation.
 
   ]}
 
-This is an example output file for checking BAGEL installation.
+from which you should get an output file as follows: 
 
 .. code-block:: javascript
 
   ===============================================================
-    BAGEL - Freshly leavened quantum chemistry
+    BAGEL - Freshly leavened quantum chemistry                   
   ===============================================================
 
   *** Geometry ***
@@ -78,104 +84,94 @@ This is an example output file for checking BAGEL installation.
     o Being stored without compression. Storage requirement is 0.000 GB
        - 3-index ints prep                         0.00
        - 3-index ints                              0.02
-       - 2-index ints                              0.01
-       - computing inverse                         0.17
-        elapsed time:        0.21 sec.
+       - 2-index ints                              0.00
+       - computing inverse                         0.02
+        elapsed time:        0.05 sec.
 
 
   Number of basis functions:       19
   Number of electrons      :       10
 
 
-    * METHOD: MOLECULE                             0.37
+    * METHOD: MOLECULE                             0.13
 
-       - Overlap matrix                            0.01
-       - Hcore matrix                              0.02
+       - Overlap matrix                            0.00
+       - Hcore matrix                              0.00
        - Overlap orthog                            0.00
 
   *** RHF ***
 
   === Nuclear Repulsion ===
-
+  
      3.7272328195
 
       * DIIS with orbital gradients will be used.
 
-       - SCF startup                               0.56
+       - SCF startup                               0.07
 
   === RHF iteration (svp) ===
-
-               o Fock build                                  0.02
-      0        -99.70639103          0.06595513           0.02
+  
+               o Fock build                                  0.00
+      0        -99.70639103          0.06595513           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      1        -99.78677680          0.04496384           0.02
+               o Fock build                                  0.00
+      1        -99.78677680          0.04496384           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      2        -99.84655378          0.00434989           0.02
+               o Fock build                                  0.00
+      2        -99.84655378          0.00434989           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      3        -99.84766336          0.00089762           0.02
+               o Fock build                                  0.00
+      3        -99.84766336          0.00089762           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      4        -99.84772173          0.00015090           0.02
+               o Fock build                                  0.00
+      4        -99.84772173          0.00015090           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      5        -99.84772349          0.00002429           0.02
+               o Fock build                                  0.00
+      5        -99.84772349          0.00002429           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      6        -99.84772354          0.00000255           0.02
+               o Fock build                                  0.00
+      6        -99.84772354          0.00000255           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      7        -99.84772354          0.00000043           0.02
+               o Fock build                                  0.00
+      7        -99.84772354          0.00000043           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      8        -99.84772354          0.00000012           0.02
+               o Fock build                                  0.00
+      8        -99.84772354          0.00000012           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-      9        -99.84772354          0.00000004           0.02
+               o Fock build                                  0.00
+      9        -99.84772354          0.00000004           0.00
                o DIIS                                        0.00
                o Diag                                        0.00
                o Post process                                0.00
-               o Fock build                                  0.02
-     10        -99.84772354          0.00000000           0.02
-               o DIIS                                        0.00
-               o Diag                                        0.00
-               o Post process                                0.00
-               o Fock build                                  0.02
-     11        -99.84772354          0.00000000           0.02
-               o DIIS                                        0.00
-               o Diag                                        0.00
-               o Post process                                0.00
-               o Fock build                                  0.02
-     12        -99.84772354          0.00000000           0.02
-
+               o Fock build                                  0.00
+     10        -99.84772354          0.00000000           0.00
+  
     * SCF iteration converged.
 
     * Permanent dipole moment:
            (    0.000000,    -0.000000,     1.055510) a.u.
 
 
-    * METHOD: HF                                   0.83
+    * METHOD: HF                                   0.08
 
 
-
+  
   ===============================================================
