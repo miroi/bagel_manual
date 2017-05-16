@@ -4,6 +4,7 @@
 Hartree--Fock
 *************
 
+===========
 Description
 ===========
 
@@ -17,6 +18,7 @@ SCF can be run by specifying the following values to the keyword ``title``:
 RHF can be run with the fast multipole method (FMM). For RHF-FMM, ``"cfmm" : "true"``
 has to be specified in :ref:`molecule-toc`.
 
+========
 Keywords
 ========
 The default values are recommended unless mentioned otherwise.
@@ -35,8 +37,7 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``diis_start``
 
-   | **Description**: after the specified iteration, we will begin using Pulay’s Direct Inversion in the Iterative Subspace (DIIS)
-                      algorithm to update the orbitals.
+   | **Description**: after the specified iteration, we will begin using the DIIS algorithm to accelerate the convergence.
    | **Datatype**: int
    | **Default**: :math:`1`
 
@@ -44,13 +45,12 @@ The default values are recommended unless mentioned otherwise.
 .. topic:: ``thresh_overlap``
 
    | **Description**: Overlap threshold used to identify linear dependancies in the atomic basis set.
-                      Increasing this value will more aggressively remove linearly dependent basis vectors.
    | **Datatype**: double
    | **Default**: :math:`1.0\times 10^{-8}`
 
 .. topic:: ``multipole``
 
-   | **Description**: rank of Cartesian multipole moments printed out.
+   | **Description**: rank of Cartesian multipole moments to be printed out.
    | **Datatype**: int
    | **Values** : :math:`1, 2`
    | **Default** : :math:`1` (dipoles)
@@ -77,7 +77,7 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``restart``
 
-   | **Description**: to restart the calculation from an archive file
+   | **Description**: save an archive in each iteration to allow for restarting the calculation
    | **Datatype**: bool
    | **Default**: false
 
@@ -122,12 +122,13 @@ Keywords for RHF-FMM
    | **Datatype**: double
    | **Default**: ``thresh_overlap``
 
+========
 Examples
 ========
 Below are some examples for SCF calculations using RHF, ROHF, UHF, SOSCF, and RHF-FMM.
 
 RHF
----
+===
 
 .. code-block:: javascript
 
@@ -154,7 +155,7 @@ RHF
 The converged SCF energy is :math:`-99.84772354` after :math:`11` iterations.
 
 ROHF
-----
+====
 .. code-block:: javascript
 
    { "bagel" : [
@@ -172,15 +173,15 @@ ROHF
 
    {
      "title" : "rohf",
-     "nact" : 1
+     "nopen" : 1
    }
 
    ]}
 
-The converged SCF energy is :math:`-38.16810629` after :math:`11` iterations.
+The converged SCF energy is :math:`-38.16810629` after :math:`10` iterations.
 
 UHF
----
+===
 .. code-block:: javascript
 
    { "bagel" : [
@@ -198,15 +199,15 @@ UHF
 
    {
      "title" : "uhf",
-     "nact" : 1
+     "nopen" : 1
    }
 
    ]}
 
-The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations.
+The converged SCF energy is :math:`-75.28410147` after :math:`12` iterations. The expectation value of :math:`S^2` is :math:`0.7536`.
 
 SOSCF
------
+=====
 
 .. code-block:: javascript
 
@@ -231,7 +232,7 @@ SOSCF
    ]}
 
 RHF-FMM
--------
+=======
 .. figure:: hf-graphene.png
     :width: 30 % 
     :align: center
@@ -245,7 +246,7 @@ RHF-FMM
 
    {
      "title" : "molecule",
-     "basis" : "/home/le/develop/bagel/src/basis/3-21g.json",
+     "basis" : "3-21g",
      "angstrom" : "true",
      "cfmm" : "true",
      "schwarz_thresh" : "1.0e-8",
@@ -387,10 +388,12 @@ RHF-FMM
 
    ]}
 
+==========
 References
 ==========
+
 BAGEL References
-----------------
+================
 
 +-----------------------------------------------+----------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                    |
@@ -399,7 +402,7 @@ BAGEL References
 +-----------------------------------------------+----------------------------------------------------------------------------+
 
 General References
-------------------
+==================
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 |          Description of Reference             |                               Reference                                          |
 +===============================================+==================================================================================+
