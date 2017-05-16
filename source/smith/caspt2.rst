@@ -118,6 +118,13 @@ The default values are recommended unless mentioned otherwise.
    | **Default:** 100 (When number of determinants is over 10000), 10 (otherwise)
    | **Recommendation:** Use default. Increase further when the number of determinants is larger.
 
+.. topic:: ``cimaxchunk``
+
+   | **Description:** Maximum number of words (in density matrix derivatives, whose number of words is :math:`N_\mathrm{det} N_\mathrm{act}^4`) processed in one pass of multipassing algorithm.
+   | **Datatype:** int
+   | **Default:** 317520001
+   | **Recommendation:** This number is adjusted for 64gb of memory. Decrease according to the specification of your machine.
+
 
 Example
 =======
