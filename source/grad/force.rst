@@ -117,7 +117,7 @@ Optional Keywords
 
 .. topic:: ``nproc``
 
-   | **Description:** This is only for finite difference evaluation (i.e. ``numerical`` : ``true``). Finite difference gradient is embarrassingly parallelized so that the displacements in the central gradient difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each energy calculation.
+   | **Description:** The numerical gradient code is embarrassingly parallelized so that the displacements in the finite difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each energy calculation.
    | **Datatype:** int
    | **Default:** 1
 

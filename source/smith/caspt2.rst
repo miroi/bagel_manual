@@ -124,10 +124,10 @@ The default values are recommended unless mentioned otherwise.
 
 .. topic:: ``cimaxchunk``
 
-   | **Description:** Maximum number of words (in density matrix derivatives, whose number of words is :math:`N_\mathrm{det} N_\mathrm{act}^4`) processed in one pass of multipassing algorithm.
+   | **Description:** Number of elements per pass in the multipassing algorithm.
    | **Datatype:** int
    | **Default:** 317520001
-   | **Recommendation:** This number is adjusted for 64GB of memory. Decrease according to the specification of your machine.
+   | **Recommendation:** This number is adjusted for 64GB of memory. Decrease if necessary. 
 
 =======
 Example
