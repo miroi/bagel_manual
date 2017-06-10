@@ -224,6 +224,7 @@ Optional Keywords (Conical Intersection Optimization)
    | **Default:** false
 
 .. topic:: ``refgeom``
+
    | **Description:** Reference geometry for MDCI optimization. The format is the same as the ``molecule`` block.
 
 Optional Keywords (Minimum Energy Path)
