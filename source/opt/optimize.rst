@@ -20,11 +20,11 @@ with the distance vector to the reference geometry.
 In addition, the minimum energy path to the reactants and products
 from the saddle point can be calculated using the second order algorithm, without mass weighting.
 
-The optimizer in BAGEL can be interfaced with the external molecular mechanics program package ``TINKER``,
-and the mixed quantum mechanics/molecular mechanics (QM/MM) optimization can be performed using this interface.
-For this, the ``TINKER`` inputs for molecular mechanics calculations (keyword file ``tinkin.key`` and initial coordinate file ``tinkin.xyz``)
-of the whole system and QM region should be provided in ``tinker1`` and ``tinker2`` subdirectories, respectively.
-The ``testgrad`` program of ``TINKER`` should be installed in ``$PATH``.
+The optimizer in BAGEL has been interfaced with an external molecular mechanics program, ``TINKER``,
+using which mixed quantum mechanics/molecular mechanics (QM/MM) optimization can be performed.
+To perform this, the ``TINKER`` input files (keyword file ``tinkin.key`` and initial coordinate file ``tinkin.xyz``)
+should be provided in ``tinker1`` and ``tinker2`` subdirectories, respectively.
+The ``testgrad`` program in the ``TINKER`` package should be installed in ``$PATH``.
 
 The output contains the gradient evaluation progress at the first step of the optimization, and the status of the optimization.
 The other information, including the quantum chemistry calculations at the optimization steps, are deposited in the file ``opt.log``.
