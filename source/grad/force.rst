@@ -79,6 +79,15 @@ Optional Keywords
    |    ``int``: first exited state = 1
    | **Default:** 1
 
+.. topic:: ``dipole``
+
+   | **Description:** Calculate unrelaxed dipole moments (available in SA-CASSCF and MS-CASPT2).
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: Calculate all possible unrelaxed dipole moments
+   |    ``false``: Calculate one dipole moment (relaxed and unrelaxed) from the gradient calculation
+   | **Default:** false
+
 .. topic:: ``export``
 
    | **Description:** This option will export the nuclear gradient to a text file.
