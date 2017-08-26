@@ -42,7 +42,7 @@ Required Keywords
    |    ``interstate``: Interstate coupling
    |    ``etf``: Non-adiabtic coupling with built-in electronic translational factor (ETF)
    |    ``noweight``: Interstate coupling without weighting it by energy gap
-   | **Default:** full
+   | **Default:** full.
 
 Optional Keywords
 -----------------
