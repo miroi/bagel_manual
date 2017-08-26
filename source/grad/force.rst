@@ -81,20 +81,14 @@ Optional Keywords
 
 .. topic:: ``dipole``
 
-   | **Description:** Calculate unrelaxed dipole moments (available in SA-CASSCF and MS-CASPT2).
+   | **Description:** Calculate unrelaxed (transition) dipole moments, available in SA-CASSCF and XMS-CASPT2.
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Calculate all possible unrelaxed dipole moments
-   |    ``false``: Calculate one dipole moment (relaxed and unrelaxed) from the gradient calculation
    | **Default:** false
 
 .. topic:: ``export``
 
    | **Description:** This option will export the nuclear gradient to a text file.
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Export file
-   |    ``false``: Do not export file
    | **Default:** false
    | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
@@ -102,9 +96,6 @@ Optional Keywords
 
    | **Description:** This option will export the nuclear gradient to a text file for a single state.
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Export file
-   |    ``false``: Do not export file
    | **Default:** false
    | **Recommendation:** This is used to interface with the QM/MM program. See section on non-adiabatic dynamics.
 
@@ -119,9 +110,6 @@ Optional Keywords
 
    | **Description:** The reference wavefunction is saved to an archive file.
    | **Datatype:** bool
-   | **Values:**
-   |    ``true``: Archive file is saved
-   |    ``false`` : Archive file is not saved
    | **Default:** false
    | **Recommendation:** Save file if it is likely that the calculation will need to be restarted.
 
