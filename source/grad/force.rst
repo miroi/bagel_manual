@@ -36,13 +36,13 @@ Required Keywords
 .. topic:: ``nacmtype``
 
    | **Description:** Type of non-adiabatic coupling matrix element to be computed
-   | **Datatype:** int
+   | **Datatype:** string
    | **Values:**
-   |    ``0``: Full non-adiabatic coupling
-   |    ``1``: Interstate coupling
-   |    ``2``: Non-adiabtic coupling with built-in electronic translational factor (ETF)
-   |    ``3``: Interstate coupling without weighting it by energy gap
-   | **Default:** 0
+   |    ``full``: Full non-adiabatic coupling
+   |    ``interstate``: Interstate coupling
+   |    ``etf``: Non-adiabtic coupling with built-in electronic translational factor (ETF)
+   |    ``noweight``: Interstate coupling without weighting it by energy gap
+   | **Default:** full.
 
 Optional Keywords
 -----------------
@@ -78,6 +78,15 @@ Optional Keywords
    | **Values:**
    |    ``int``: first exited state = 1
    | **Default:** 1
+
+.. topic:: ``dipole``
+
+   | **Description:** Calculate unrelaxed dipole moments (available in SA-CASSCF and MS-CASPT2).
+   | **Datatype:** bool
+   | **Values:**
+   |    ``true``: Calculate all possible unrelaxed dipole moments
+   |    ``false``: Calculate one dipole moment (relaxed and unrelaxed) from the gradient calculation
+   | **Default:** false
 
 .. topic:: ``export``
 
@@ -248,7 +257,7 @@ Sample input: NACME and DGRAD
      } ]
    }
 
-Using the keyword ``forces``, you can run multiple gradient or derivative coupling calculations without repeating the energy calculations. The example below evaluates the nuclear gradient of the energy of the ground state, the first excited state, and the interstate coupling vector (``nacmtype`` is 1) between these two states.
+Using the keyword ``forces``, you can run multiple gradient or derivative coupling calculations without repeating the energy calculations. The example below evaluates the nuclear gradient of the energy of the ground state, the first excited state, and the interstate coupling vector (``nacmtype`` is ``interstate``) between these two states.
 
 .. code-block:: javascript
 
@@ -257,7 +266,7 @@ Using the keyword ``forces``, you can run multiple gradient or derivative coupli
      "grads" : [
        { "title" : "force", "target" : 0 },
        { "title" : "force", "target" : 1 },
-       { "title" : "nacme", "target" : 0, "target2" : 1, "nacmtype" : 1 }
+       { "title" : "nacme", "target" : 0, "target2" : 1, "nacmtype" : "interstate" }
      ],
      "method" : [ {
        "title" : "caspt2",
@@ -287,7 +296,9 @@ BAGEL References
 +-----------------------------------------------+---------------------------------------------------------------------------------+
 | (X)MS-CASPT2 gradient                         | B\. Vlaisavljevich and T. Shiozaki, J. Chem. Theory Comput. **12**, 3781 (2016).|
 +-----------------------------------------------+---------------------------------------------------------------------------------+
-| (X)MS-CASPT2 derivative coupling              | J\. W. Park and T. Shiozaki, *submitted*.                                       |
+| (X)MS-CASPT2 derivative coupling              | J\. W. Park and T. Shiozaki, J. Chem. Theory Comput. **13**, 2561 (2017).       |
++-----------------------------------------------+---------------------------------------------------------------------------------+
+| Current (X)MS-CASPT2 gradient algorithm       | J\. W. Park and T. Shiozaki, J. Chem. Theory Comput. **13**, 3676 (2017).       |
 +-----------------------------------------------+---------------------------------------------------------------------------------+
 
 General References
