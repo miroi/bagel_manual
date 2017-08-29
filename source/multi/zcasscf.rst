@@ -153,6 +153,71 @@ Keywords
    | **Default**: true
    | **Recommendation**: Use false if the error "generate_guess produced an invalid determinant" is generated. 
 
+.. topic:: ``aniso``
+
+   | **Description**: Performs magnetic anisotropy analysis using a pseudospin Hamiltonian, to obtain g-factors and zero-field splitting parameters 
+   | **Datatype**: input block with several paramaters, given below:
+   |
+   |
+   |   ``nspin`` 
+   |
+   |   **Description**: 2 * the spin value of the pseudospin Hamiltonian
+   |   **Datatype**: integer
+   |   **Default**: Number of states in the CASSCF calculation minus one
+   |
+   |   ``ranks`` 
+   |
+   |   **Description**: Which ranks of the Extended Stevens Operators to include in the zero-field splitting Hamiltonian
+   |   **Datatype**: Array of integers
+   |   **Default**: Even integers from 2 to ``nspin``
+   |   **Recommendation**: Normally use default.  The array [ 2, 4, 6 ] can be used to specify the commonly-used sixth-order Hamiltonian if using the giant spin approximation.  
+   |   
+   |   ``print_operators`` 
+   |
+   |   **Description**: Option to print additional information.  If true, the Extended Stevens Operators will be printed in matrix form, along with the magnetic moment, spin, and orbital angular momentum matrices.  
+   |   **Datatype**: bool
+   |   **Default**: false
+   |   **Recommendation**: Use default
+   |   
+   |   ``zaxis`` and ``xaxis``
+   |
+   |   **Description**: Can be used to specify the orientation of the axes along which we should quantize the spin when mapping the zero-field anisotropy
+   |   **Datatype**: Arrays of 3 doubles
+   |   **Default**: The primary g-anisotropy axes are used
+   |   **Recommendation**: Use the default.
+   |   
+   |   ``states`` 
+   |
+   |   **Description**: Which electronic states are to be mapped to the pseudospin Hamiltonian
+   |   **Datatype**: Array of integers
+   |   **Default**: The lowest-lying states are used
+   |   
+   |   ``center``
+   |
+   |   **Description**: Coordinates of the spin center (typically a metal atom for a mononuclear complex), given in Bohr radii
+   |   **Datatype**: Arrays of 3 doubles
+   |   **Default**: [  0.0,  0.0,  0.0 ]
+   |   
+   |   ``energies``
+   |
+   |   **Description**: Energies to be used in the anisotropy analysis.  This option can be used to replace the CASSCF energies with those generated using another method, such as CASPT2.  
+   |   **Datatype**: Arrays of nspin+1 doubles
+   |   **Default**: The relativistic CASSCF energies are used.  
+   |   **Recommendation**: Use the default.  This option is deprecated now that the "aniso" module is interfaced directly to relativistic CASPT2 and MRCI.  
+   |   
+   |   ``diagop``
+   |
+   |   **Description**: Operator to be diagonalized in order to determine a mapping from ab initio electronic states to pseudospin states.  
+   |   **Datatype**: string - can be "Mu" for magnetic moment, "J", "S", or "L"
+   |   **Default**: Mu
+   |   **Recommendation**: Use the default.
+   |   
+   |   ``phases`` and ``phase_full``
+   |
+   |   **Description**: This is a debugging tool.  It allows the use to apply an arbitrary phase shift to the pseudospin states.  
+   |   **Datatype**: Array of doubles; double
+   |   **Default**: No phase shift is applied
+   |   **Recommendation**: Use the default.
 
 =======
 Example
