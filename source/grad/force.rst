@@ -7,7 +7,7 @@ Nuclear gradient and derivative coupling
 Description
 ===========
 The force section can be used to compute the analytical gradient (force), the numerical gradient by finite difference, or the non-adiabatic coupling matrix elements (NACME). Analytical gradients are implemented for unrestricted Hartree–Fock (UHF), restricted open-shell Hartree–Fock (ROHF), restricted Hartree–Fock (RHF), Dirac–Hartree–Fock (DHF), Møller–Plesset perturbation theory (MP2), complete active space self consistent field (CASSCF), and multireference perturbation theory (CASPT2). For CASSCF and CASPT2, it is also possible to perform multiple evaluations of the gradients without repeating the energy calculations.
-In addition, the relaxed densities from MP2, SA-CASSCF and CASPT2 calculations can be printed in the Gaussian Cube format.
+In addition, the relaxed density in MP2, SA-CASSCF, and CASPT2 calculations can be printed in the Gaussian Cube format.
 
 Keywords
 ========

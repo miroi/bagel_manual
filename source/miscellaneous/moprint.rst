@@ -15,8 +15,8 @@ be viewed in Molden due to the use of complex basis functions or the four-compon
 A separate .cub file is generated for each printed orbital, plus one for the total electron density.  
 The axis vectors are simply the Cartesian *x*, *y*, and *z* axes.
 
-You can also print the total relaxed electron densities from MP2, SA-CASSCF, and CASPT2 force calculations.
-See :ref:`nuclear gradient and derivative coupling <force>` and below for example.
+In addition, one can print the relaxed electron density in MP2, SA-CASSCF, and CASPT2 force calculations as well.
+See :ref:`nuclear gradient and derivative coupling <force>` and the example below.
 
 Command: ``moprint``
 
