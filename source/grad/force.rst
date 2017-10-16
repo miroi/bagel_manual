@@ -321,7 +321,35 @@ The example below prints the XMS-CASPT2 relaxed density of the ground state in t
 
   ]}
 
+Using the keyword ``forces``, you can print multiple relaxed densities without repeating the energy calculations.
+The example below prints all the XMS-CASPT2 relaxed densities.
 
+
+.. code-block:: javascript
+
+  {
+    "title" : "forces",
+    "grads" : [
+      { "title" : "force", "target" : 0, "density_print" : true, "moprint" : { "density_filename" : "density_0" } },
+      { "title" : "force", "target" : 1, "density_print" : true, "moprint" : { "density_filename" : "density_1" } },
+      { "title" : "force", "target" : 2, "density_print" : true, "moprint" : { "density_filename" : "density_2" } },
+      { "title" : "force", "target" : 3, "density_print" : true, "moprint" : { "density_filename" : "density_3" } }
+    ],
+    "method" : [ {
+      "title" : "caspt2",
+      "smith" : {
+        "method" : "caspt2",
+        "ms" : "true",
+        "xms" : "true",
+        "sssr" : "true",
+        "shift" : 0.2,
+        "frozen" : true
+      },
+      "nstate" : 4,
+      "nact" : 4,
+      "nclosed" : 3
+    } ]
+  }
 
 
 References
