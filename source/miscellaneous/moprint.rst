@@ -65,6 +65,18 @@ Keywords
    | **Datatype:** bool
    | **Default:** False (meaning Bohr; set to true for angstrom)
 
+.. topic:: ``mo_filename``
+
+   | **Description:** Name of the MO cube file
+   | **Datatype:** string
+   | **Default:** "mo"
+
+.. topic:: ``density_filename``
+
+   | **Description:** Name of the density cube file
+   | **Datatype:** string
+   | **Default:** "density"
+
 =======
 Example
 =======
@@ -91,7 +103,7 @@ Write molecular orbitals:
 Sample input: Print relaxed density
 -----------------------------------
 
-Write relaxed density from the XMS-CASPT2 force calculation:
+Write relaxed density to the file ``density_0.cub`` from the XMS-CASPT2 force calculation:
 
 .. code-block:: javascript
 
@@ -112,6 +124,7 @@ Write relaxed density from the XMS-CASPT2 force calculation:
     "target" : 0,
     "density_print" : true,
     "moprint" : {
+      "density_filename" : "density_0",
       "ngrid" : [ 41, 41, 41]
     },
     "method" : [ {
