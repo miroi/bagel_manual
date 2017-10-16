@@ -304,7 +304,7 @@ The example below prints the XMS-CASPT2 relaxed density of the ground state in t
     "target" : 0,
     "density_print" : true,
     "moprint" : {
-      "ngrid" : [ 41, 41, 41]
+      "inc_size" : [ 0.20, 0.20, 0.20]
     },
     "method" : [ {
       "title" : "caspt2",

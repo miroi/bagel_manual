@@ -37,26 +37,18 @@ Keywords
    | **Datatype:** Vector of integers
    | **Default:** Prints the active orbitals from CASSCF, and the frontier orbitals from Hartree--Fock
 
-.. topic:: ``ngrid``
-
-   | **Description:** Number of gridpoints in each dimension
-   | **Datatype:** Array of 3 integers
-   | **Default:** 61 gridpoints in each direction
-   | **Recommendation:** It is often reasonable to reduce this parameter, perhaps to [41, 41, 41], in order to lower the time needed to write and read cube files.
-
 .. topic:: ``start_pos``
 
    | **Description:** Coordinates for one corner of the box within which densities are printed.
    | **Datatype:** Array of 3 doubles
-   | **Default:** A position is chosen so that all atoms are at least :math:`4 a_0` from the edges of the box.
+   | **Default:** A position is chosen so that all atoms (except the dummy atoms) are at least :math:`4 a_0` from the edges of the box.
    | **Recommendation:** Use the default.
 
 .. topic:: ``inc_size``
 
    | **Description:** Distances between adjacent gridpoints in each of the three dimensions.
    | **Datatype:** Array of 3 doubles
-   | **Default:** If "start_pos" is not specified, an increment is chosen so that all atoms are at least :math:`4 a_0` from the edges of the box.
-   |     Otherwise, the default is :math:`0.25 a_0` in each direction.
+   | **Default:** :math:`0.25 a_0` in each direction.
    | **Recommendation:** Use the default.
 
 .. topic:: ``angstrom``
@@ -94,7 +86,7 @@ Write molecular orbitals:
 
    {
      "title" : "moprint",
-     "ngrid" : [ 41, 41, 41 ],
+     "inc_size" : [ 0.20, 0.20, 0.20 ],
      "orbitals" : [ 14, 15, 16, 17, 18, 19, 20, 21, 22 ]
    }
 
@@ -125,7 +117,7 @@ Write relaxed density to the file ``density_0.cub`` from the XMS-CASPT2 force ca
     "density_print" : true,
     "moprint" : {
       "density_filename" : "density_0",
-      "ngrid" : [ 41, 41, 41]
+      "inc_size" : [ 0.20, 0.20, 0.20 ]
     },
     "method" : [ {
       "title" : "caspt2",
