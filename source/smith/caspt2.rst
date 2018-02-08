@@ -120,7 +120,7 @@ The default values are recommended unless mentioned otherwise.
    | **Description:** Number of elements per pass in the multipassing algorithm.
    | **Datatype:** int
    | **Default:** 317520001
-   | **Recommendation:** This number is adjusted for 64GB of memory. Decrease if necessary. 
+   | **Recommendation:** This number is adjusted for 64GB of memory per node. Decrease if necessary. 
 
 .. topic:: ``davidson_subspace``
 
