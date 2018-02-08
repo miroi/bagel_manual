@@ -107,11 +107,6 @@ Optional Keywords
    | **Default:** 100
    | **Recommendation:** Increase the value when Z-vector equation does not converge.
 
-.. topic:: ``ref_out``
-
-   | **Description:** The name of the archive file for the stored reference. The path to the location the file should be written can also be specified here.
-   | **Datatype:** string
-
 .. topic:: ``nproc``
 
    | **Description:** The numerical gradient code is embarrassingly parallelized so that the displacements in the finite difference calculations can be run at the same time. The nproc keyword allows the user to specify the number of MPI processes to be used for each energy calculation.
