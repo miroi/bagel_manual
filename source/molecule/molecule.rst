@@ -46,6 +46,9 @@ Optional keywords
    | **Description**: Represent the nucleus as a Gaussian charge distribution with default exponents
    | **Datatype**: bool
    | **Default**: false
+   | **Note**:
+   |    Within the ``geometry`` block, the ``exponent`` keyword can be used to specify a different exponent for the charge distribution of a particular atom,
+        where a value of 0.0 indicates a point charge.  
 
 .. topic:: ``molden_file``
 
@@ -533,4 +536,7 @@ References
 |                                               | (McGraw-Hill, New York, 1989).                                                   |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
 | Gauge invariant atomic orbitals               | R\. Ditchfield, Mol. Phys. **27**, 789 (1974).                                   |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+| Finite nuclear charge distribution and        | L\. Visscher and K. G. Dyall, At. Data Nucl. Data Tables **67**, 207 (1997).     |
+| default exponents                             |                                                                                  |
 +-----------------------------------------------+----------------------------------------------------------------------------------+
