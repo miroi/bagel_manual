@@ -96,10 +96,6 @@ Optional keywords
    | **Datatype**: string
    | **Values**: ``gaussian`` / ``giao``, ``london``
    | **Default**: ``gaussian`` at zero magnetic field; ``giao`` when a field is applied
-   | **Recommendation**: Usually you want the default.  
-        This parameter can be used to activate the giao architecture even without a magnetic field 
-        or to run ``common origin`` calculations with a finite magnetic field and normal Gaussian basis.  
-        (The gauge origin is set to (0, 0, 0) and cannot be modified.)
 
 .. topic:: ``skip_self_interaction``
 
