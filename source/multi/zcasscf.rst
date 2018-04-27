@@ -183,14 +183,12 @@ Keywords
    |   **Description**: Option to print additional information.  If true, the Extended Stevens Operators will be printed in matrix form, along with the magnetic moment, spin, and orbital angular momentum matrices.  
    |   **Datatype**: bool
    |   **Default**: false
-   |   **Recommendation**: Use default
    |   
    |   ``zaxis`` and ``xaxis``
    |
    |   **Description**: Can be used to specify the orientation of the axes along which we should quantize the spin when mapping the zero-field anisotropy
    |   **Datatype**: Arrays of 3 doubles
    |   **Default**: The primary g-anisotropy axes are used
-   |   **Recommendation**: Use the default.
    |   
    |   ``states`` 
    |
@@ -216,14 +214,12 @@ Keywords
    |   **Description**: Operator to be diagonalized in order to determine a mapping from ab initio electronic states to pseudospin states.  
    |   **Datatype**: string - can be "Mu" for magnetic moment, "J", "S", or "L"
    |   **Default**: Mu
-   |   **Recommendation**: Use the default.
    |   
    |   ``phases`` and ``phase_full``
    |
    |   **Description**: This is a debugging tool.  It allows the use to apply an arbitrary phase shift to the pseudospin states.  
    |   **Datatype**: Array of doubles; double
    |   **Default**: No phase shift is applied
-   |   **Recommendation**: Use the default.
 
 =======
 Example
@@ -374,8 +370,8 @@ BAGEL references
 +===============================================+=======================================================================+
 | Relativistic CASSCF                           | J\. E. Bates and T. Shiozaki, J. Chem. Phys. **142**, 044112 (2015).  |
 +-----------------------------------------------+-----------------------------------------------------------------------+
-
-Note that the code has since been replaced by a more robust second-order algorithm (unpublished).
+| Second-order Relativistic CASSCF              | R\. D. Reynolds, T. Yanai, and T. Shiozaki, arXiv:1804.06470 (2018).  |
++-----------------------------------------------+-----------------------------------------------------------------------+
 
 General references
 ==================
