@@ -525,7 +525,6 @@ from which one obtains
     * Permanent dipole moment:
            (    0.000000,    -0.000000,    -0.427736) a.u.
 
-=================================
 Updates to Molecule Specification
 =================================
 
@@ -534,6 +533,7 @@ Alternatively, if a molecule block has already been provided, a new molecule inp
 the required inputs to be altered.  This is often useful when optimized orbitals from one calculation are to be 
 used to provide an initial guess for a more difficult calculation.  
 
+===========================
 Useful Parameters to Change
 ===========================
 
