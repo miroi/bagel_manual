@@ -84,7 +84,7 @@ The default values are recommended unless mentioned otherwise.
    |    ``true``: use orthogonal basis.
    |    ``false``: use redundant basis.
    | **Default:** with imaginary shift, true. otherwise, false.
-   | **Recommendation:** Imaginary shift only works with true. Use of orthogonal basis is a little slower due to the additional transformations between the basis.
+   | **Recommendation:** Imaginary shift only works with true. Use of orthogonal basis makes the code slightly slower due to the additional transformations.
 
 .. topic:: ``thresh``
 
