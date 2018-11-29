@@ -204,22 +204,22 @@ The CASSCF orbitals are state-averaged over two states.
 
   {
     "title" : "force",
-     "target" : 0,
-     "method" : [ {
-       "title" : "caspt2",
-         "smith" : {
-           "method" : "caspt2",
-           "ms" : "true",
-           "xms" : "true",
-           "sssr" : "true",
-           "shift" : 0.2,
-           "frozen" : true
-       },
-       "nstate" : 2,
-       "nact" : 3,
-       "nclosed" : 46
-     } ]
-   }
+    "target" : 0,
+    "method" : [ {
+      "title" : "caspt2",
+      "smith" : {
+        "method" : "caspt2",
+        "ms" : "true",
+        "xms" : "true",
+        "sssr" : "true",
+        "shift" : 0.2,
+        "frozen" : true
+      },
+      "nstate" : 2,
+      "nact" : 3,
+      "nclosed" : 46
+    } ]
+  }
 
 Sample input: NACME and DGRAD
 -----------------------------
@@ -228,23 +228,23 @@ Sample input: NACME and DGRAD
 
   {
    "title" : "nacme",
-     "target" : 0,
-     "target2" : 1,
-     "method" : [ {
-       "title" : "caspt2",
-         "smith" : {
-           "method" : "caspt2",
-           "ms" : "true",
-           "xms" : "true",
-           "sssr" : "true",
-           "shift" : 0.2,
-           "frozen" : true
-       },
-       "nstate" : 3,
-       "nact" : 7,
-       "nclosed" : 44
-     } ]
-   }
+   "target" : 0,
+   "target2" : 1,
+   "method" : [ {
+     "title" : "caspt2",
+     "smith" : {
+       "method" : "caspt2",
+       "ms" : "true",
+       "xms" : "true",
+       "sssr" : "true",
+       "shift" : 0.2,
+       "frozen" : true
+     },
+     "nstate" : 3,
+     "nact" : 7,
+     "nclosed" : 44
+   } ]
+  }
 
 Using the keyword ``forces``, you can run multiple gradient or derivative coupling calculations without repeating the energy calculations. The example below evaluates the nuclear gradient of the energy of the ground state, the first excited state, and the interstate coupling vector (``nacmtype`` is ``interstate``) between these two states.
 
@@ -252,26 +252,26 @@ Using the keyword ``forces``, you can run multiple gradient or derivative coupli
 
   {
    "title" : "forces",
-     "grads" : [
-       { "title" : "force", "target" : 0 },
-       { "title" : "force", "target" : 1 },
-       { "title" : "nacme", "target" : 0, "target2" : 1, "nacmtype" : "interstate" }
-     ],
-     "method" : [ {
-       "title" : "caspt2",
-         "smith" : {
-           "method" : "caspt2",
-           "ms" : "true",
-           "xms" : "true",
-           "sssr" : "true",
-           "shift" : 0.2,
-           "frozen" : true
-       },
-       "nstate" : 3,
-       "nact" : 7,
-       "nclosed" : 44
-     } ]
-   }
+   "grads" : [
+     { "title" : "force", "target" : 0 },
+     { "title" : "force", "target" : 1 },
+     { "title" : "nacme", "target" : 0, "target2" : 1, "nacmtype" : "interstate" }
+   ],
+   "method" : [ {
+     "title" : "caspt2",
+     "smith" : {
+       "method" : "caspt2",
+       "ms" : "true",
+       "xms" : "true",
+       "sssr" : "true",
+       "shift" : 0.2,
+       "frozen" : true
+     },
+     "nstate" : 3,
+     "nact" : 7,
+     "nclosed" : 44
+   } ]
+  }
 
 Sample input: Printing dipole moments
 -------------------------------------
@@ -282,22 +282,22 @@ You can use the keyword ``dipole`` to compute the dipole moments for all the sta
 
   {
    "title" : "forces",
-     "dipole" : "true",
-     "method" : [ {
-       "title" : "caspt2",
-         "smith" : {
-           "method" : "caspt2",
-           "ms" : "true",
-           "xms" : "true",
-           "sssr" : "true",
-           "shift" : 0.2,
-           "frozen" : true
-       },
-       "nstate" : 3,
-       "nact" : 7,
-       "nclosed" : 44
-     } ]
-   }
+   "dipole" : "true",
+   "method" : [ {
+     "title" : "caspt2",
+     "smith" : {
+       "method" : "caspt2",
+       "ms" : "true",
+       "xms" : "true",
+       "sssr" : "true",
+       "shift" : 0.2,
+       "frozen" : true
+     },
+     "nstate" : 3,
+     "nact" : 7,
+     "nclosed" : 44
+   } ]
+  }
 
 Alternatively, for CASPT2, you can use the keyword ``"ciderivative" : "false"`` to evaluate the dipole moments, transition dipole moments and oscillator strengths of selected states,
 without computing the CI derivative term and gradient.
@@ -307,26 +307,26 @@ The example below evaluates the dipole moments of state 0, state 1, and transiti
 
   {
    "title" : "forces",
-     "grads" : [
-       { "title" : "force", "target" : 0, "ciderivative" : "false" },
-       { "title" : "force", "target" : 1, "ciderivative" : "false" },
-       { "title" : "nacme", "target" : 0, "target2" : 1, "nacmtype" : "interstate", "ciderivative" : "false" }
-     ],
-     "method" : [ {
-       "title" : "caspt2",
-         "smith" : {
-           "method" : "caspt2",
-           "ms" : "true",
-           "xms" : "true",
-           "sssr" : "true",
-           "shift" : 0.2,
-           "frozen" : true
-       },
-       "nstate" : 3,
-       "nact" : 7,
-       "nclosed" : 44
-     } ]
-   }
+   "grads" : [
+     { "title" : "force", "target" : 0, "ciderivative" : "false" },
+     { "title" : "force", "target" : 1, "ciderivative" : "false" },
+     { "title" : "nacme", "target" : 0, "target2" : 1, "nacmtype" : "interstate", "ciderivative" : "false" }
+   ],
+   "method" : [ {
+     "title" : "caspt2",
+     "smith" : {
+       "method" : "caspt2",
+       "ms" : "true",
+       "xms" : "true",
+       "sssr" : "true",
+       "shift" : 0.2,
+       "frozen" : true
+     },
+     "nstate" : 3,
+     "nact" : 7,
+     "nclosed" : 44
+   } ]
+  }
 
 
 Sample input: Printing relaxed density
